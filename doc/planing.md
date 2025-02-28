@@ -17,11 +17,11 @@ Nos sprints ont été définis en fonction des dates de rendu et des exigences d
 
 #### **Sprint 1**  
 - **Durée** : 28 jours (du 23/02/2025 au 23/03/2025)  
-- **Tâches associées** : 36 tickets (1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 32, 33, 35, 36, 39, 41, 46, 48, 53, 59, 60, 109, 110, 111, 112, 113, 114, 115)
+- **Tâches associées** : ? tickets (1, 2, 3, 5, 6, 7, 8, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 32, 33, 35, 36, 39, 41, 46, 48, 53, 59, 60, 109, 110, 111, 112, 113, 114, 115)
 
 #### **Sprint 2**  
-- **Durée** : 49 jours (du 24/03/2025 au 11/05/2025)  
-- **Tâches associées** : 48 tickets (22, 25, 26, 27, 28, 29, 30, 31, 34, 37, 38, 40, 42, 43, 44, 45, 47, 49, 50, 51, 52, 54, 55, 56, 57, 58, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 128)
+- **Durée** : ? jours (du 24/03/2025 au 11/05/2025)  
+- **Tâches associées** : 48 tickets (4, 22, 24, 25, 26, 27, 28, 29, 30, 31, 34, 37, 38, 40, 42, 43, 44, 45, 47, 49, 50, 51, 52, 54, 55, 56, 57, 58, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 128)
 
 #### **Sprint 3**  
 - **Durée** : 42 jours (du 12/05/2025 au 22/06/2025)  
@@ -35,30 +35,30 @@ Nos sprints ont été définis en fonction des dates de rendu et des exigences d
 ### **4. Décomposition du projet**  
 | **Index** | **Catégorie** | **Tâche** | **Deadline** | **Responsable** |
 |-----------|---------------|-----------|--------------|-----------------|
-| 1 | Organisation | Lister toutes les étapes du projet, en produire un WBS, un PERT et un Gantt | 23/03/2025 |  |  
-| 2 | Organisation | Concevoir nos 4 sprint en fonction des étapes du syllabus | 23/03/2025 |  |
-| 3 | Organisation | Configuration du Trello | 23/03/2025 |  |
+| 1 | Organisation | Lister toutes les étapes du projet, en produire un WBS et un Gantt | 23/03/2025 | LB |  
+| 2 | Organisation | Concevoir nos 4 sprint en fonction des étapes du syllabus | 23/03/2025 | LB |
+| 3 | Organisation | Configuration du Trello | 23/03/2025 | LB |
 | 4 | Organisation | Louer un serveur hébergé | 23/03/2025 |  |
-| 5 | Documentation | Rédiger la réponse à l'appel d'offre (chiffrage financier : coût du développement et devis pour l’infrastructure matérielle) | 23/03/2025 |  |
-| 6 | Documentation | Rédiger l'organisation mise en place du projet | 23/03/2025 |  |
-| 7 | Documentation | Rédiger le descriptif visuel de l'application (charte graphique, design système, wireframes et maquettes) | 23/03/2025 |  |
-| 8 | Documentation | Rédiger le descriptif fonctionnel de l’application | 23/03/2025 |  |
-| 9 | Documentation | Rédiger le document d’architecture technique (explication de toute l’infrastructure a mettre en place pour le projet) | 22/06/2025  |  |
-| 10 | AppWeb:Init | Analyser le cahier des charges et identifier les besoins fonctionnels | 23/03/2025 |  |
-| 11 | AppWeb:Init | Définir les technologies et frameworks à utiliser | 23/03/2025 |  |
-| 12 | AppWeb:Init | Définir l'architectures de l'applications web, les routes de l’API REST | 23/03/2025 |  |
-| 13 | AppWeb:DB | Concevoir la base de données (définir la validation des entrées) | 23/03/2025 |  |
-| 14 | AppWeb:DB | Créer et peupler la base de données | 23/03/2025 |  |
-| 15 | AppWeb:DB | Implémenter la connexion à l'API | 23/03/2025 |  | 
-| 16 | AppWeb:NC | Implémenter la page d'accueil | 23/03/2025 |  | 
-| 17 | AppWeb:NC | Implémenter la page "A propos" | 23/03/2025 |  |
-| 18 | AppWeb:NC | Implémenter la page "Mentions légale" | 23/03/2025 |  |
-| 19 | AppWeb:NC | Implémenter la page de connexion | 23/03/2025 |  |
-| 20 | AppWeb:NC | Implémenter la page d'inscription | 23/03/2025 |  |
-| 21 | AppWeb:Auth | Implémenter la création de compte | 23/03/2025 |  |
+| 5 | Documentation | Rédiger la réponse à l'appel d'offre (chiffrage financier : coût du développement et devis pour l’infrastructure matérielle) | 23/03/2025 | LB |
+| 6 | Documentation | Rédiger l'organisation mise en place du projet | 23/03/2025 | LB |
+| 7 | Documentation | Rédiger le descriptif visuel de l'application (charte graphique, design système, wireframes et maquettes) | 23/03/2025 | LB |
+| 8 | Documentation | Rédiger le descriptif fonctionnel de l’application | 23/03/2025 | LB + BM |
+| 9 | Documentation | Rédiger le document d’architecture technique (explication de toute l’infrastructure a mettre en place pour le projet) | 22/06/2025  | LB + EA |
+| 10 | AppWeb:Init | Analyser le cahier des charges et identifier les besoins fonctionnels | 23/03/2025 | LB |
+| 11 | AppWeb:Init | Définir les technologies et frameworks à utiliser | 23/03/2025 | LB + EA + BM |
+| 12 | AppWeb:Init | Définir l'architectures de l'applications web, les routes de l’API REST | 23/03/2025 | LB + BM | *
+| 13 | AppWeb:DB | Concevoir la base de données | 23/03/2025 | BM | *
+| 14 | AppWeb:DB | Créer et peupler la base de données | 23/03/2025 | BM | *
+| 15 | AppWeb:DB | Implémenter la connexion à l'API | 23/03/2025 | BM | *
+| 16 | AppWeb:NC | Implémenter la page d'accueil | 23/03/2025 | LB | *
+| 17 | AppWeb:NC | Implémenter la page "A propos" | 23/03/2025 | EA | *
+| 18 | AppWeb:NC | Implémenter la page "Mentions légale" | 23/03/2025 | EA | *
+| 19 | AppWeb:NC | Implémenter la page de connexion | 23/03/2025 | BM | *
+| 20 | AppWeb:NC | Implémenter la page d'inscription | 23/03/2025 | BM | *
+| 21 | AppWeb:Auth | Implémenter la création de compte | 23/03/2025 | BM | *
 | 22 | AppWeb:Auth | Implémenter la vérification des comptes (pièces justificatives) | 11/05/2025 |  |
-| 23 | AppWeb:Auth | Implémenter l’authentification sécurisée (Firebase Auth ou Azure Key Vault) | 23/03/2025 |  |
-| 24 | AppWeb:Auth | Implémenter la gestion des rôles et permissions | 23/03/2025 |  |
+| 23 | AppWeb:Auth | Concevoir l’authentification sécurisée puis l'implémenter | 23/03/2025 | EA | *
+| 24 | AppWeb:Auth | Verification des rôles et permissions | 11/05/2025 |  | 
 | 25 | AppWeb:Auth | Sécuriser l’API : CORS, rate limiting | 11/05/2025 |  |
 | 26 | AppWeb:Auth | Mettre en place un système de logs centralisé | 11/05/2025 |  |
 | 27 | AppWeb:Global | Implémenter l’espace paramètre (modification du profil, photo, documents, stats) | 11/05/2025 |  |
@@ -66,35 +66,35 @@ Nos sprints ont été définis en fonction des dates de rendu et des exigences d
 | 29 | AppWeb:Global | Implémenter le système de messagerie interne | 11/05/2025 |  |
 | 30 | AppWeb:Global | Implémenter les notifications push | 11/05/2025 |  |
 | 31 | AppWeb:Global | Implémenter un tutoriel interactif pour les nouveaux utilisateurs | 11/05/2025 |  |
-| 32 | AppWeb:Global | Implémenter l’interface utilisateur multilingue | 23/03/2025 |  |
-| 33 | AppWeb:Delivery | Implémenter la page d'accueil | 23/03/2025 |  |
+| 32 | AppWeb:Global | Implémenter l’interface utilisateur multilingue | 23/03/2025 | LB | *
+| 33 | AppWeb:Delivery | Implémenter la page d'accueil | 23/03/2025 | BM | *
 | 34 | AppWeb:Delivery | Implémenter l’accès aux statistiques du profil | 11/05/2025 |  |
-| 35 | AppWeb:Delivery | Implémenter l’ajout et la gestion des trajets futurs | 23/03/2025 |  | 
-| 36 | AppWeb:Delivery | Implémenter la gestion des livraisons acceptées | 23/03/2025 |  |
+| 35 | AppWeb:Delivery | Implémenter l’ajout et la gestion des trajets futurs | 23/03/2025 | EA | *
+| 36 | AppWeb:Delivery | Implémenter la gestion des livraisons acceptées | 23/03/2025 | EA | *
 | 37 | AppWeb:Delivery | Implémenter le planning des déplacements et historique | 11/05/2025 |  |
 | 38 | AppWeb:Delivery | Implémenter le suivi des évaluations clients (avis et notation) | 11/05/2025 |  |
-| 39 | AppWeb:Provider | Implémenter la page d'accueil | 23/03/2025 |  |
+| 39 | AppWeb:Provider | Implémenter la page d'accueil | 23/03/2025 | BM | *
 | 40 | AppWeb:Provider | Implémenter l’accès aux statistiques du profil | 11/05/2025 |  |
-| 41 | AppWeb:Provider | Implémenter la gestion et la création des annonces | 23/03/2025 |  |
+| 41 | AppWeb:Provider | Implémenter la gestion et la création des annonces | 23/03/2025 | LB | *
 | 42 | AppWeb:Provider | Implémenter la gestion des commandes | 11/05/2025 |  |
 | 43 | AppWeb:Provider | Implémenter le suivi des colis en temps réel | 11/05/2025 |  |
 | 44 | AppWeb:Provider | Implémenter la gestion des contrats | 11/05/2025 |  |
 | 45 | AppWeb:Provider | Implémenter le suivi des évaluations clients (avis et notation) | 11/05/2025 |  |
-| 46 | AppWeb:Customer | Implémenter la page d'accueil | 23/03/2025 |  |
+| 46 | AppWeb:Customer | Implémenter la page d'accueil | 23/03/2025 | BM | *
 | 47 | AppWeb:Customer | Implémenter l’accès aux statistiques du profil | 11/05/2025 |  | 
-| 48 | AppWeb:Customer | Implémenter la gestion et la création des annonces | 23/03/2025 |  |
+| 48 | AppWeb:Customer | Implémenter la gestion et la création des annonces | 23/03/2025 | LB | *
 | 49 | AppWeb:Customer | Implémenter la consultation et réservation des services | 11/05/2025 |  |
 | 50 | AppWeb:Customer | Implémenter le suivi des colis et prestations en temps réel | 11/05/2025 |  |
 | 51 | AppWeb:Customer | Implémenter l’évaluation du service (avis et notation) | 11/05/2025 |  |
 | 52 | AppWeb:Customer | Implémenter la gestion de l’abonnement | 11/05/2025 |  |
-| 53 | AppWeb:Retailer | Implémenter la page d'accueil | 23/03/2025 |  |
+| 53 | AppWeb:Retailer | Implémenter la page d'accueil | 23/03/2025 | BM | *
 | 54 | AppWeb:Retailer | Implémenter l’accès aux statistiques du profil | 11/05/2025 |  |
 | 55 | AppWeb:Retailer | Implémenter la validation des compétences | 11/05/2025 |  |
 | 56 | AppWeb:Retailer | Implémenter la négociation des tarifs | 11/05/2025 |  | 
 | 57 | AppWeb:Retailer | Implémenter la gestion des interventions et disponibilités via un calendrier | 11/05/2025 |  |
 | 58 | AppWeb:Retailer | Implémenter le suivi des évaluations clients (avis et notation) | 11/05/2025 |  |
-| 59 | AppWeb:Admin | Implémenter la page d'accueil | 23/03/2025 |  |
-| 60 | AppWeb:Admin | Implémenter la gestion des utilisateurs | 23/03/2025 |  |
+| 59 | AppWeb:Admin | Implémenter la page d'accueil | 23/03/2025 | BM | *
+| 60 | AppWeb:Admin | Implémenter la gestion des utilisateurs | 23/03/2025 | EA |
 | 61 | AppWeb:Admin | Implémenter la gestion des annonces et services | 11/05/2025 |  | 
 | 62 | AppWeb:Admin | Implémenter la gestion des livraisons et paiements | 11/05/2025 |  |
 | 63 | AppWeb:Admin | Implémenter la gestion financière et suivi des transactions | 11/05/2025 |  |
@@ -143,13 +143,13 @@ Nos sprints ont été définis en fonction des dates de rendu et des exigences d
 | 106 | ToolsData | Déployer l’application sur les machines des employés | 22/06/2025  |  |
 | 107 | ToolsData | Ajouter un système de logs | 22/06/2025  |  |
 | 108 | ToolsData | Rédiger la documentation utilisateur | 22/06/2025  |  |
-| 109 | Infra | Lire et comprendre les exigences du projet | 23/03/2025 |  |
-| 110 | Infra | Définir le choix du matériel | 23/03/2025 |  |
-| 111 | Infra | Faire un schéma réseau de l’infrastructure globale et des sites | 23/03/2025 |  |
-| 112 | Infra | Déployer proxmox sur le serveur hébergé et le configurer | 23/03/2025 |  |
-| 113 | Infra | Créer/configurer une VM pour Zabbix et GLPI (Paris) | 23/03/2025 |  |
-| 114 | Infra | Créer/configurer une VM OPNSense pour chaque routeur et firewall | 23/03/2025 |  |
-| 115 | Infra | Configurer un switch virtuel dans Proxmox | 23/03/2025 |  |
+| 109 | Infra | Lire et comprendre les exigences du projet | 23/03/2025 | LB + EA | 
+| 110 | Infra | Définir le choix du matériel | 23/03/2025 | LB | *
+| 111 | Infra | Faire un schéma réseau de l’infrastructure globale et des sites | 23/03/2025 | LB + AE |
+| 112 | Infra | Déployer proxmox sur le serveur hébergé et le configurer | 11/05/2025 |  |
+| 113 | Infra | Créer/configurer une VM pour Zabbix et GLPI (Paris) | 11/05/2025 |  |
+| 114 | Infra | Créer/configurer une VM OPNSense pour chaque routeur et firewall | 11/05/2025 |  |
+| 115 | Infra | Configurer un switch virtuel dans Proxmox | 11/05/2025 |  |
 | 116 | Infra | Configurer les interfaces réseau (WAN, LAN, VLANs) | 11/05/2025 |  |
 | 117 | Infra | Activer RIP v2 pour la communication inter-routeurs | 11/05/2025 |  |
 | 118 | Infra | Configurer une connexion VPN site-to-site et client-to-site pour chaque site (ACL et IPSec over GRE) | 11/05/2025 |  |

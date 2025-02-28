@@ -5,7 +5,7 @@
 - **Back-end** : Node.js
 - **Mobile (Android)** : Kotlin
 - **Base de données** : MySQL  
-- **Authentification** : Firebase ou Azure Key Vault ?
+- **Authentification** : Firebase
 - **Paiements** : Stripe  
 - **Notifications** : OneSignal  
 - **App data** : Java Spring Boot (UI, data), Pandas, Matplotlib, Seaborn, FPDF
