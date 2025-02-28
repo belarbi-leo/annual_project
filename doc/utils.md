@@ -90,6 +90,8 @@
   - `VARCHAR` pour les chaînes de texte de taille variable.  
   - `DATE` ou `DATETIME` pour les dates et heures.  
   - Éviter `TEXT` ou `LONGTEXT`, sauf si nécessaire (ralentit les requêtes).  
+- Limiter les droits en SQL (`GRANT SELECT, INSERT, UPDATE` au lieu de `ALL PRIVILEGES`).  
+- Éviter les SELECT * en SQL, préférer des colonnes spécifiques.  
 
 **Git**  
 - Branche `main` : Stable et déployable.  
@@ -102,5 +104,3 @@
   - `refactor:` Amélioration sans changement fonctionnel.  
 - Pas de commits volumineux, découper en petites étapes.  
 - Code review obligatoire avant de merger une PR.  
-- Limiter les droits en SQL (`GRANT SELECT, INSERT, UPDATE` au lieu de `ALL PRIVILEGES`).  
-- Éviter les SELECT * en SQL, préférer des colonnes spécifiques.  
