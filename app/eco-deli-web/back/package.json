@@ -1,0 +1,23 @@
+{
+  "name": "eco-deli-web-back",
+  "version": "1.0.0",
+  "description": "Customer and service provider connect application",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belarbi-leo/annual_project.git"
+  },
+  "license": "ISC",
+  "homepage": "https://github.com/belarbi-leo/annual_project#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.0",
+    "nodemon": "^3.1.9",
+    "validate": "^5.2.0"
+  }
+}
