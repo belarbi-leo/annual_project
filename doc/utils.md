@@ -5,11 +5,13 @@
 - **Back-end** : Node.js
 - **Mobile (Android)** : Kotlin
 - **Base de données** : MySQL  
-- **Authentification** : Firebase
+- **Authentification** : Azure key vault
 - **Paiements** : Stripe  
 - **Notifications** : OneSignal  
 - **App data** : Java Spring Boot (UI, data), Pandas, Matplotlib, Seaborn, FPDF
 - **Versionning** : Git/GitHub
+
+JWT 
 
 ### **2. Architecture**
 ```

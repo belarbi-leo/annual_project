@@ -1,7 +1,7 @@
 # **Descriptif fonctionnel**
 
 ## **1. Concept**
-EcoDeli est une plateforme web et mobile de mise en relation entre particuliers, commerçants, lßivreurs et prestataires de services. Son objectif premier est d’optimiser la logistique des livraisons tout en réduisant les coûts et l’empreinte carbone, en utilisant les trajets des particuliers et professionnels déjà prévus. En parallèle, EcoDeli propose aussi un réseau de prestataires pour divers services (transport, installations, entretien, etc.).
+EcoDeli est une plateforme web et mobile de mise en relation entre particuliers, commerçants, livreurs et prestataires de services. Son objectif premier est d’optimiser la logistique des livraisons tout en réduisant les coûts et l’empreinte carbone, en utilisant les trajets des particuliers et professionnels déjà prévus. En parallèle, EcoDeli propose aussi un réseau de prestataires pour divers services (transport, installations, entretien, etc.).
 
 
 ## **2. Rôles**

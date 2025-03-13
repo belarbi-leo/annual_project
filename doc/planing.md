@@ -45,10 +45,11 @@ Nos sprints ont été définis en fonction des dates de rendu et des exigences d
 | 7 | Documentation | Rédiger le descriptif visuel de l'application (charte graphique, design système, wireframes et maquettes) | 23/03/2025 | LB |
 | 8 | Documentation | Rédiger le descriptif fonctionnel de l’application | 23/03/2025 | LB + BM |
 | 9 | Documentation | Rédiger le document d’architecture technique (explication de toute l’infrastructure a mettre en place pour le projet) | 22/06/2025  | LB + EA |
+
 ***| 10 | AppWeb:Init | Analyser le cahier des charges et identifier les besoins fonctionnels | 23/03/2025 | LB |
 | 11 | AppWeb:Init | Définir les technologies et frameworks à utiliser | 23/03/2025 | LB + EA + BM |
 ***| 12 | AppWeb:Init | Définir l'architectures de l'application, les routes de l’API REST | 23/03/2025 | LB + BM | *
-| 13 | AppWeb:DB | Concevoir la base de données (+ shcéma MCD, MLD) | 23/03/2025 | BM | *
+| 13 | AppWeb:DB | Concevoir la base de données (+ shcéma MCD, MLD, script SQL/NoSQL) | 23/03/2025 | BM | *
 | 14 | AppWeb:DB | Créer et peupler la base de données | 23/03/2025 | BM | *
 | 15 | AppWeb:DB | Initialiser un projet node et connecter la base | 23/03/2025 | BM | *
 | 16 | AppWeb:NC | Implémenter la page d'accueil (client non-connecté) | 23/03/2025 | LB | *
@@ -112,12 +113,13 @@ Nos sprints ont été définis en fonction des dates de rendu et des exigences d
 | 64 | AppWeb:Admin | Implémenter la gestion des avis | 11/05/2025 |  |
 | 65 | AppWeb:Service | Implémenter la mise en relation automatique ou manuelle | 11/05/2025 |  |
 | 66 | AppWeb:Service | Implémenter la recherche et le filtrage des annonces | 11/05/2025 |  |  
-| 67 | AppWeb:Service | Implémenter la gestion des services (acceptation, suivi, confirmation de livraison) | 11/05/2025 |  |
+***| 67 | AppWeb:Service | Implémenter la gestion des services (acceptation, suivi, confirmation de livraison) | 11/05/2025 |  |
 | 68 | AppWeb:Service | Implémenter l’historique des annonces et services | 11/05/2025 |  |
 | 69 | AppWeb:Service | Implémenter le système de tracking des colis/prestations en temps réel | 11/05/2025 |  |
 | 70 | AppWeb:Service | Implémenter la gestion des box et stockage temporaire | 11/05/2025 |  |
 | 71 | AppWeb:Service | Implémenter la gestion des paiements sécurisés | 11/05/2025 |  |
 | 72 | AppWeb:Service | Implémenter la génération automatique et l’archivage des factures PDF | 11/05/2025 |  |
+
 
 | 73 | AppMobile | Définir les technologies et frameworks à utiliser | 22/06/2025  |  |
 | 74 | AppMobile | Concevoir l’architecture logicelle de l'application mobile (MVVM) | 22/06/2025  |  |
@@ -136,25 +138,27 @@ Nos sprints ont été définis en fonction des dates de rendu et des exigences d
 | 87 | AppMobile | Implémenter les notifications push | 22/06/2025  |  |
 | 88 | AppMobile | Implémenter un tutoriel interactif pour les nouveaux utilisateurs | 22/06/2025  |  |
 | 89 | AppMobile | Implémenter l’interface utilisateur multilingue | 22/06/2025  |  |
-| 90 | AppMobile | Implémenter l'option de validation NFC | 22/06/2025  |  |
-| 91 | AppMobile | Vérifier que le téléphone supporte le mode NFC Reader (Android 5.0+) | 22/06/2025  |  |
-| 92 | AppMobile | Demander les permissions NFC nécessaires dans AndroidManifest.xml | 22/06/2025  |  | 
-| 93 | AppMobile | Implémenter la lecture, vérification et validation | 22/06/2025  |  |
-| 94 | AppMobile | Stocker les interactions NFC pour suivi et logs	en base | 22/06/2025  |  |
-| 95 | AppMobile | Envoyer une notification de validation | 22/06/2025  |  |
+| 90 | AppMobile | Implémenter l'option de validation NFC (suivi des interractions en base, notifications) | 22/06/2025  |  |
+***| 91 | AppMobile | Vérifier que le téléphone supporte le mode NFC Reader (Android 5.0+) | 22/06/2025  |  |
+***| 92 | AppMobile | Demander les permissions NFC nécessaires dans AndroidManifest.xml | 22/06/2025  |  | 
+***| 93 | AppMobile | Implémenter la lecture, vérification et validation | 22/06/2025  |  |
+***| 94 | AppMobile | Stocker les interactions NFC pour suivi et logs en base | 22/06/2025  |  |
+***| 95 | AppMobile | Envoyer une notification de validation | 22/06/2025  |  |
 | 96 | AppMobile | Préparer l’application pour déploiement sur le Play Store (Générer un APK / AAB) | 22/06/2025  |  |
-| 97 | ToolsData | Définir les technologies à utiliser | 22/06/2025  |  |
-| 98 | ToolsData | Concevoir l'architecture logicielle de l'application (MVC) | 22/06/2025  |  |
-| 99 | ToolsData | Implémenter la connexion aux données à l'API (authentification AD) | 22/06/2025  |  |
-| 100 | ToolsData | Implémenter le traitement des données pour le calcul des statistiques | 22/06/2025  |  |
-| 101 | ToolsData | Implémenter un tableau de bord | 22/06/2025  |  |
-| 102 | ToolsData | Implémenter la génération des graphiques | 22/06/2025  |  |
-| 103 | ToolsData | Implémenter la génération du rapport PDF | 22/06/2025  |  |
-| 104 | ToolsData | Ajouter une option d’export CSV/Excel | 22/06/2025  |  |
-| 105 | ToolsData | Packager l’application | 22/06/2025  |  |
-| 106 | ToolsData | Déployer l’application sur les machines des employés | 22/06/2025  |  |
-| 107 | ToolsData | Ajouter un système de logs | 22/06/2025  |  |
-| 108 | ToolsData | Rédiger la documentation utilisateur | 22/06/2025  |  |
+| 97 | AppData | Définir les technologies à utiliser | 22/06/2025  |  |
+| 98 | AppData | Concevoir l'architecture logicielle de l'application (MVC) | 22/06/2025  |  |
+| 99 | AppData | Implémenter la connexion aux données à l'API (authentification AD) | 22/06/2025  |  |
+| 100 | AppData | Implémenter le traitement des données pour le calcul des statistiques | 22/06/2025  |  |
+| 101 | AppData | Implémenter un tableau de bord | 22/06/2025  |  |
+| 102 | AppData | Implémenter la génération des graphiques | 22/06/2025  |  |
+| 103 | AppData | Implémenter la génération du rapport PDF | 22/06/2025  |  |
+| 104 | AppData | Ajouter une option d’export CSV/Excel | 22/06/2025  |  |
+| 105 | AppData | Packager l’application | 22/06/2025  |  |
+| 106 | AppData | Déployer l’application sur les machines des employés | 22/06/2025  |  |
+| 107 | AppData | Ajouter un système de logs | 22/06/2025  |  |
+***| 108 | AppData | Rédiger la documentation utilisateur | 22/06/2025  |  |
+
+
 | 109 | Infra | Lire et comprendre les exigences du projet | 23/03/2025 | LB + EA | 
 | 110 | Infra | Définir le choix du matériel | 23/03/2025 | LB | *
 | 111 | Infra | Faire un schéma réseau de l’infrastructure globale et des sites | 23/03/2025 | LB + AE |
@@ -164,7 +168,7 @@ Nos sprints ont été définis en fonction des dates de rendu et des exigences d
 | 115 | Infra | Configurer un switch virtuel dans Proxmox | 11/05/2025 |  |
 | 116 | Infra | Configurer les interfaces réseau (WAN, LAN, VLANs) | 11/05/2025 |  |
 | 117 | Infra | Activer RIP v2 pour la communication inter-routeurs | 11/05/2025 |  |
-| 118 | Infra | Configurer une connexion VPN site-to-site et client-to-site pour chaque site (ACL et IPSec over GRE) | 11/05/2025 |  |
+| 118 | Infra | Configurer les connexion VPN site-to-site et client-to-site pour chaque site (ACL et IPSec over GRE) | 11/05/2025 |  |
 | 119 | Infra | Implémenter HSRP ou VRRP pour la redondance des routeurs | 11/05/2025 |  |
 | 120 | Infra | Créer/configurer une VM pour l'AD et la baie de stockage | 11/05/2025 |  |
 | 121 | Infra | Configurer des GPOs pour gérer les accès et restrictions utilisateurs | 11/05/2025 |  |
@@ -191,3 +195,10 @@ Nos sprints ont été définis en fonction des dates de rendu et des exigences d
 
 #### **Diagramme de Gantt** :
 ![Texte alternatif](chemin/vers/image.png)
+
+
+conf le reseaux
+installe les vm  
+configurer les regles de routage 
+installe les service et backup 
+tester la sécu 

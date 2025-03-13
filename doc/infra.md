@@ -48,3 +48,6 @@ Le réseau EDN basé sur l’adresse 10.0.0.0/16 connecte donc tous les sites r�
 - **Serveur Mail :** Debian 12 (x2) – Postfix & Serveur mail sécurisé + back-up
 - **Serveur de stockage :** Debian 12 (x1) – Stockage partagé direction 
 - **Machines collaborateurs :** Windows Pro 11 (x60)
+
+
+close only port

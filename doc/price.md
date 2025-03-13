@@ -12,5 +12,5 @@
 - **Serveur de stockage :** NAS Synology RackStation RS822+ – Stockage partagé direction 
 - **PC portables :** Lenovo ThinkPad T14 Gen 3 (x65)
 - **Écran fixe :** Dell UltraSharp U2723QE (x65)
-- **Connectiques adaptées :** USB-C vers HDMI (x65)
+- **Connectiques adaptées :** USB-C vers HDMI (x65) Ethernet ? 
 - **License** : Windows Professionnel 11 (x65), Windows Server 2022 (x3)
