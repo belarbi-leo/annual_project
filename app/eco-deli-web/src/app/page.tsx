@@ -1,15 +1,10 @@
 'use client'
 
+import Image from 'next/image'
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-const navigation = [
-  { name: 'Nos services', href: '#' },
-  { name: 'Écologie', href: '#' },
-  { name: 'Nos prestataires', href: '#' },
-  { name: 'À propos', href: '#' },
-]
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -21,11 +16,15 @@ export default function Example() {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Notre plateforme éco-responsable</span>
-              <img
+              
+              <Image
+                src="/planete-terre.png"
                 alt=""
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                 className="h-8 w-auto"
+                width={500}
+                height={300} 
               />
+
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -38,16 +37,9 @@ export default function Example() {
               <Bars3Icon aria-hidden="true" className="size-6" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold text-gray-900">
-                {item.name}
-              </a>
-            ))}
-          </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="#" className="text-sm font-semibold text-gray-900">
-              Se connecter <span aria-hidden="true">&rarr;</span>
+              Se connecter
             </a>
           </div>
         </nav>
@@ -74,22 +66,8 @@ export default function Example() {
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
                 <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:bg-gray-50"
-                  >
+                  <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:bg-gray-50">
                     Se connecter
                   </a>
                 </div>
@@ -112,19 +90,10 @@ export default function Example() {
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#89c8fd] to-[#60b6ff] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Nous offrons des services engagés pour la planète.{' '}
-              <a href="#" className="font-semibold text-[#09a66d]">
-                <span aria-hidden="true" className="absolute inset-0" />
-                En savoir plus <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </div>
+        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-48">
           <div className="text-center">
             <h1 className="text-5xl font-semibold tracking-tight text-[#49cb5c] sm:text-7xl">
-              Connectez-vous avec des prestataires engagés pour l'environnement
+              ECODELI <br/> Engagés pour l'environnement
             </h1>
             <p className="mt-8 text-lg font-medium text-gray-500 sm:text-xl">
               Trouvez des prestataires qui partagent vos valeurs écologiques et réduisez l'empreinte carbone de vos projets.
@@ -154,6 +123,7 @@ export default function Example() {
             className="relative left-[calc(50%+3rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 bg-linear-to-tr from-[#96d629] to-[#baeb6c] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
           />
         </div>
+        <div className='text-center'>Mentions légales</div>
       </div>
     </div>
   )
