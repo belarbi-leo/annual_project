@@ -53,7 +53,7 @@ export default function Home() {
             EcoDeli
           </h1>
           <h1 className="text-3xl font-semibold tracking-tight text-[#49cb5c] dark:text-[#36a84b] sm:text-5xl">
-            Le service réinventé
+            La livraison repensée, solidaire et responsable.
           </h1>
           <p className="mt-8 text-lg font-medium text-gray-500 dark:text-gray-300 sm:text-xl">
             Trouvez des prestataires qui partagent vos valeurs écologiques et réduisez l'empreinte carbone de vos projets.

@@ -9,8 +9,29 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6">
-      
+    <div className="min-h-screen flex items-center justify-center px-6 overflow-hidden relative">
+      {/* Effet de fond supérieur gauche */}
+      <div
+        aria-hidden="true"
+        className="absolute top-[-10%] left-[-10%] -z-10 transform-gpu blur-3xl opacity-50"
+      >
+        <div
+          className="h-100 w-100 bg-gradient-to-tr from-[#89c8fd] to-[#60b6ff] dark:from-[#245b90] dark:to-[#1a426a] rounded-full"
+          style={{ filter: 'blur(100px)' }}
+        />
+      </div>
+
+      {/* Effet de fond inférieur droit */}
+      <div
+        aria-hidden="true"
+        className="absolute bottom-[-10%] right-[-10%] -z-10 transform-gpu blur-3xl opacity-50"
+      >
+        <div
+          className="h-100 w-100 bg-gradient-to-tr from-[#96d629] to-[#baeb6c] dark:from-[#3f7d1c] dark:to-[#67a731] rounded-full"
+          style={{ filter: 'blur(100px)' }}
+        />
+      </div>
+
       <div className="w-full max-w-md p-8 space-y-6 rounded-2xl shadow-lg bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white">
         <div className="flex items-center justify-center space-x-3">
           <Image src="/logo.png" alt="Logo" width={40} height={40} className="h-10 w-10" />
@@ -50,7 +71,7 @@ export default function LoginPage() {
           </button>
         </form>
         <p className="text-center text-sm">
-          Pas encore de compte ? <Link href="#" className="text-[#49cb5c] hover:underline">Inscrivez-vous</Link>
+          Pas encore de compte ? <Link href="/register" className="text-[#49cb5c] hover:underline">Inscrivez-vous</Link>
         </p>
       </div>
     </div>
