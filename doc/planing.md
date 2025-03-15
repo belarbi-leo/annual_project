@@ -8,7 +8,7 @@
 
 **Approche choisie** : Agile Scrum  
 **Outils utilisés** :  
-- **Trello** : gestion des tâches  
+- **Azure Devops Boards** : gestion des tâches  
 - **GitHub** : versioning  
 - **Discord** : collaboration  
 - **Figma** : 
