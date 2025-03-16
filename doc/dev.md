@@ -189,3 +189,38 @@ Mise à jour et évolution : Processus pour mettre à jour l’application en pr
 Glossaire : Définitions des termes techniques.
 Références et documentation : Liens vers la documentation technique, guides de l'API, etc.
 Convention de dev : API, front, tcheck responsive, git, sql, js, java, indentation, nommage des variables, fonction 
+
+
+Tickets Front-end (React & Tailwind)
+🔹 Interfaces utilisateur
+Page d’accueil avec présentation des services
+Formulaire d’inscription avec choix du rôle utilisateur
+Espace utilisateur (modification des infos, abonnement, factures, stats financières)
+Espace administrateur (gestion des utilisateurs, annonces, litiges, stats)
+Messagerie interne entre clients et administrateurs
+🔹 Gestion des annonces
+Formulaire de création/modification d’une annonce
+Affichage des annonces disponibles (livraisons & prestations)
+Interface pour postuler à une prestation avec sélection d’un créneau
+🔹 Gestion des livraisons
+Carte interactive avec suivi des colis en temps réel
+Interface pour les livreurs afin de sélectionner un colis à livrer
+Interface pour les prestataires pour gérer leurs prestations
+🔹 Paiement & Facturation
+Interface de paiement pour les services
+Affichage des factures et exportation
+Affichage des statistiques financières des utilisateurs
+🔹 Gestion des avis
+Ajout d’un avis sur une prestation
+Consultation des avis donnés et reçus
+🔹 Administration & Modération
+Interface pour gérer les utilisateurs (ajout, modification, suppression)
+Interface de validation des demandes d’habilitation
+Interface de gestion des litiges
+Dashboard avec statistiques globales
+
+interface d'explications front a linscription 
+
+
+mobile 
+Scan NFC pour validation de la réception du colis <-> a mettre coté livreur 
