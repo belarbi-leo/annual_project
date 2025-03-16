@@ -2,6 +2,7 @@
 
 ### **1. Contexte**
 Face à la croissance exponentielle d'EcoDeli, l’entreprise a décidé d’être à la fois son propre fournisseur d’accès à Internet (FAI) et de gérer l’intégralité de ses connexions intersites, ainsi que son propre datacenter. L’infrastructure doit donc répondre aux besoins suivants :
+- Anticiper le devellopement etc. 
 - Assurer une connectivité sécurisée entre les différents sites de l’entreprise.
 - Garantir la disponibilité des services critiques (web, mail, stockage).
 - Mettre en place une redondance efficace pour éviter les interruptions de service.
@@ -34,7 +35,7 @@ Pour une entreprise en croissance, il est préférable d’adopter un schéma d�
 
 Le réseau EDN basé sur l’adresse 10.0.0.0/16 connecte donc tous les sites régionaux via des routeurs dédiés, l'interconnexion s'établiera via RIP v2, IPSec over GRE, des ACLs ainsi que la mise en place de HSRP et chaque site disposera d'une segmentation VLAN adaptée à ses besoin : 
 
-![Texte alternatif](img/rsx.png)
+![Texte alternatif](img/rsx.svg)
 
 ### **3. Technologies**
 - **Environnement de virtualisation :** Proxmox
@@ -51,3 +52,11 @@ Le réseau EDN basé sur l’adresse 10.0.0.0/16 connecte donc tous les sites r�
 
 
 close only port
+
+ORDRE DE DEV :
+
+conf le reseaux
+installe les vm  
+configurer les regles de routage 
+installe les service et backup 
+tester la sécu 

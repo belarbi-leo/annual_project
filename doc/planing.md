@@ -1,37 +1,31 @@
-## **Organisation**
+# **Organisation**
 
-### **1. Équipe projet**
+Nous avons adopté une **approche Agile** pour le développement de notre projet, permettant ainsi une gestion flexible des tâches, des priorités et une amélioration continue tout au long du cycle de vie du projet. Nous avons donc divisé le travail en **4 sprints** successifs, définis en fonction des dates de rendu et des exigences du syllabus, structurés comme suit :
 
-**Afonso Enzo** - **Belarbi Léo** - **Mathurel Bryan**
+- **Sprint 1** (28 jours - du 23/02/2025 au 23/03/2025) : Analyse, conception initiale et développement des premières fonctionnalités. Ce sprint est axé sur les bases du projet et l'établissement des priorités techniques.
+- **Sprint 2** (? jours - du 24/03/2025 au 11/05/2025) : Développement des fonctionnalités principales, en se concentrant sur les applications web et mobiles ainsi que la mise en place initiale de l'infrastructure réseau.
+- **Sprint 3** (42 jours - du 12/05/2025 au 22/06/2025) : Finalisation des fonctionnalités principales et mise en production. Ce sprint comprend la finalisation de l'intégration des applications et des tests d'infrastructure.
+- **Sprint 4** (21 jours - du 23/06/2025 au 13/07/2025) : Ce sprint est plus court et dédié à l'innovation, à l'amélioration continue et à la correction des bugs afin de peaufiner les fonctionnalités et d'assurer une présentation réussit pour la soutenance finale.
 
-### **2. Méthodologie**  
+Avant le démarrage des sprints, nous avons effectué les étapes suivantes :
 
-**Approche choisie** : Agile Scrum  
-**Outils utilisés** :  
-- **Azure Devops Boards** : gestion des tâches  
-- **GitHub** : versioning  
-- **Discord** : collaboration  
-- **Figma** : 
+- **Analyse du sujet** : Compréhension des besoins et des exigences du projet.
+- **Création du WBS** : Décomposition du projet en sous-tâches et activités essentielles.
+![Texte alternatif](chemin/vers/image.png)
+- **Élaboration du PERT** : Identification des dépendances et des relations entre les tâches.
+![Texte alternatif](chemin/vers/image.png)
+- **Élaboration du Gantt** : Planification temporelle du projet avec des échéances précises.
+![Texte alternatif](chemin/vers/image.png)
 
-### **3. Organisation des sprints**  
-Nos sprints ont été définis en fonction des dates de rendu et des exigences du syllabus.  
+Pour assurer la collaboration et la gestion optimale du projet, nous avons choisi les outils suivants :
 
-#### **Sprint 1**  
-- **Durée** : 28 jours (du 23/02/2025 au 23/03/2025)  
-- **Tâches associées** : ? tickets (1, 2, 3, 5, 6, 7, 8, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 32, 33, 35, 36, 39, 41, 46, 48, 53, 59, 60, 109, 110, 111, 112, 113, 114, 115)
+- **Azure DevOps Boards** : Gestion des tâches et suivi de l'avancement de manière centralisée.
+- **GitHub** : Gestion du versioning et des contributions sur le code.
+- **Discord** : Communication et collaboration en temps réel entre les membres de l'équipe.
+- **Figma** : Outil de conception pour le développement des interfaces front-end.
+- **Draw.io** : Outil utilisé pour la création de maquettes et diagrammes de processus.
 
-#### **Sprint 2**  
-- **Durée** : ? jours (du 24/03/2025 au 11/05/2025)  
-- **Tâches associées** : ? tickets (4, 22, 24, 25, 26, 27, 28, 29, 30, 31, 34, 37, 38, 40, 42, 43, 44, 45, 47, 49, 50, 51, 52, 54, 55, 56, 57, 58, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 128)
 
-#### **Sprint 3**  
-- **Durée** : 42 jours (du 12/05/2025 au 22/06/2025)  
-- **Tâches associées** : 43 tickets (73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 127, 128, 129, 130, 131, 132, 133)
-
-#### **Sprint 4**  
-- **Durée** : 21 jours (du 23/06/2025 au 13/07/2025)  
-- **Tâches associées** : Aucune  
-- **Objectif** : Ce sprint sera entièrement dédié à l’innovation et au perfectionnement. Étant donné que toutes les tâches auront été terminées lors des sprints précédents, cette période sera consacrée à l'amélioration des fonctionnalités, à l'optimisation du code et à l'ajout d'éventuelles innovations pour peaufiner le projet avant sa présentation. 
 
 ### **4. Décomposition du projet**  
 | **Index** | **Catégorie** | **Tâche** | **Deadline** | **Responsable** |
@@ -185,16 +179,6 @@ Nos sprints ont été définis en fonction des dates de rendu et des exigences d
 | 132 | Infra | Vérifier la sécurisation des données sensibles | 22/06/2025  |  |
 | 133 | Infra | Installer une connexion de secours vers Internet en cas de panne de l’EDN | 22/06/2025  |  |
 
-### **5. Diagrammes et graphiques**  
-
-#### **Work Breakdown Structure** :
-![Texte alternatif](chemin/vers/image.png)
-
-#### **Diagramme de PERT** :
-![Texte alternatif](chemin/vers/image.png)
-
-#### **Diagramme de Gantt** :
-![Texte alternatif](chemin/vers/image.png)
 
 
 conf le reseaux
