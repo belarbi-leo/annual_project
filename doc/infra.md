@@ -60,3 +60,29 @@ installe les vm
 configurer les regles de routage 
 installe les service et backup 
 tester la sécu 
+
+| 109 | Infra | Lire et comprendre les exigences du projet | 23/03/2025 | LB + EA | 
+| 110 | Infra | Définir le choix du matériel | 23/03/2025 | LB | *
+| 111 | Infra | Faire un schéma réseau de l’infrastructure globale et des sites | 23/03/2025 | LB + AE |
+| 112 | Infra | Déployer proxmox sur le serveur hébergé et le configurer | 11/05/2025 |  |
+| 113 | Infra | Créer/configurer une VM pour Zabbix et GLPI (Paris) | 11/05/2025 |  |
+| 114 | Infra | Créer/configurer une VM OPNSense pour chaque routeur et firewall | 11/05/2025 |  |
+| 115 | Infra | Configurer un switch virtuel dans Proxmox | 11/05/2025 |  |
+| 116 | Infra | Configurer les interfaces réseau (WAN, LAN, VLANs) | 11/05/2025 |  |
+| 117 | Infra | Activer RIP v2 pour la communication inter-routeurs | 11/05/2025 |  |
+| 118 | Infra | Configurer les connexion VPN site-to-site et client-to-site pour chaque site (ACL et IPSec over GRE) | 11/05/2025 |  |
+| 119 | Infra | Implémenter HSRP ou VRRP pour la redondance des routeurs | 11/05/2025 |  |
+| 120 | Infra | Créer/configurer une VM pour l'AD et la baie de stockage | 11/05/2025 |  |
+| 121 | Infra | Configurer des GPOs pour gérer les accès et restrictions utilisateurs | 11/05/2025 |  |
+| 122 | Infra | Créer les groupes et utilisateurs connu dans l'AD | 11/05/2025 |  |
+| 123 | Infra | Créer/configurer un VM pour un serveur web, mail, ainsi qu'un reverse proxy | 11/05/2025 |  |
+| 124 | Infra | Créer/configurer une VM pour le serveur back-up de mail | 11/05/2025 |  |
+| 125 | Infra | Créer/configurer des VM client collaborateur pour chaque VLAN | 11/05/2025 |  |
+| 126 | Infra | Créer/configurer une VM pour le DNS, le DHCP et le serveur back-up de stockage | 11/05/2025 |  |
+| 127 | Infra | Mettre en place un back-up journalier à 23h du serveur de stockage de Paris | 22/06/2025  |  |  
+| 128 | Infra | Créer/configurer une VM pour le RODC et un serveur de stockage full direction chiffré | 11/05/2025 |  |
+| 129 | Infra | Déployer l'application web via docker en accès sécuriser HTTPS avec TLS | 22/06/2025  |  |
+| 130 | Infra | Test de routage, redondance et simulation de panne | 22/06/2025  |  |
+| 131 | Infra | Créer une GPO pour installer l'application ToolsData automatiquement en client lourd | 22/06/2025  |  |
+| 132 | Infra | Vérifier la sécurisation des données sensibles | 22/06/2025  |  |
+| 133 | Infra | Installer une connexion de secours vers Internet en cas de panne de l’EDN | 22/06/2025  |  |

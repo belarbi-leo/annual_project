@@ -1,0 +1,412 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.1">
+  <diagram name="Page-1" id="0z-PwB4HZmKqcYCsZPZt">
+    <mxGraphModel dx="177" dy="1701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jnrshBMGlnO5nboHbdF4-2" value="Eco-Deli" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
+          <mxGeometry x="2120" y="-1120" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-3" value="Organistation" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
+          <mxGeometry x="1480" y="-1040" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-4" value="Livrable" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
+          <mxGeometry x="1680" y="-1040" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-5" value="Application Web" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
+          <mxGeometry x="2080" y="-1040" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-6" value="Application Mobile" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
+          <mxGeometry x="2280" y="-1040" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-7" value="Application Data" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
+          <mxGeometry x="2480" y="-1040" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-8" value="Infrastructure" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
+          <mxGeometry x="2680" y="-1040" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-10" value="Créer un dépôt GItHub" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="-960" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-11" value="Créer un serveur de messagerie Discord" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="-920" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-12" value="Créer un compte Microsoft Azure" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="-880" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-13" value="Créer un espace de travail Figma" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="-840" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-17" value="Configurer les sprints et tickets dans Azure DevOps Boards" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="-800" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-20" value="Rédiger les devis (dev software, infra on-premise, gestion projet)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="1650" y="-960" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-21" value="Louer le serveur" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="2650" y="-960" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-22" value="Rédiger l&#39;organisation mise en place (outils collaboratif, orga sprint, tickets, WBS, gantt)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="1650" y="-920" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-23" value="Rédiger descriptif fonctionnel des dev" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="1650" y="-880" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-25" value="Rédiger le document d&#39;architecture fonctionnel&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="1650" y="-840" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-27" value="Définir les technologies à utiliser" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="2050" y="-960" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-28" value="Définir les technologies à utiliser" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="2250" y="-960" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-29" value="Définir les technologies à utiliser" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="2450" y="-960" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-32" value="&lt;div&gt;Interfaces &quot;home&quot; non-connecté&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="2050" y="-840" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jnrshBMGlnO5nboHbdF4-33" value="&lt;div&gt;Interfaces &quot;about&quot; non-connecté&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" parent="1" vertex="1">
+          <mxGeometry x="2050" y="-800" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-6" value="&lt;div&gt;Interfaces &quot;contact&quot; non-connecté&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-760" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-7" value="&lt;div&gt;Interfaces &quot;legal&quot; non-connecté&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-720" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-8" value="&lt;div&gt;Interfaces &quot;signin&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-680" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-9" value="&lt;div&gt;Interfaces &quot;login&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-640" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-10" value="&lt;div&gt;Interfaces &quot;forgot password&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-600" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-11" value="Développer les components (nav-bar, button, card, form etc.)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-880" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-23" value="&lt;div&gt;Interfaces tutorial à l&#39;inscription (bloquant)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-560" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-24" value="&lt;div&gt;Interfaces compte bloquer en attente de validation administrateur&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-520" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-25" value="&lt;div&gt;Interfaces &quot;home&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-480" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-26" value="&lt;div&gt;Interfaces &quot;param&quot; (&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;stats,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;modif info&lt;font&gt;s&lt;/font&gt; et abonnement, export données et factures)&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-440" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-27" value="&lt;div&gt;Interfaces &quot;messages&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-400" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-28" value="&lt;div&gt;Form créa / modif d’une annonces (dispo presta ou demande de livraison colis)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-360" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-29" value="&lt;div&gt;Interfaces affichage des annonces (prestations et livraisons) disponibles&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-320" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-30" value="&lt;div&gt;Form postuler à une prestation (+ creation d&#39;un conv pour négociations si presta)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-280" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-31" value="&lt;div&gt;Interfaces suivi de colis en temps réel&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-240" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-32" value="&lt;div&gt;Interfaces de paiements&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-200" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-33" value="Form avis et affichage des avis sur une presta" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-160" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-34" value="Form litiges et affichage du litige sur une presta&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-120" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-35" value="&lt;div&gt;Interfaces admin de dashboard avec statistiques globales&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-80" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-36" value="&lt;div&gt;Interfaces admin de validation des demandes d’habilitation&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-40" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-37" value="&lt;div&gt;Interfaces admin de messagerie&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-38" value="&lt;div&gt;Interfaces admin de gestion des utilisateurs&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="40" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-39" value="Interfaces admin de gestion des annonces" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="80" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-40" value="Interfaces admin de gestion des litiges" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="120" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-58" value="Integration des notifications" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="360" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-59" value="Interfaces admin de gestion des paiements" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="320" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-60" value="API REST" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1880" y="-1040" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-61" value="Définir les technologies à utiliser" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-960" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-62" value="Concevoir la base de données (MCD, MLD, SQL)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-920" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-63" value="Créer l’API d’inscription des utilisateurs avec validation des données" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-880" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-64" value="&lt;div&gt;Implémenter l’API de connexion avec gestion des erreurs&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-840" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-65" value="&lt;div&gt;Générer et valider les tokens JWT pour l’authentification&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-800" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-66" value="&lt;div&gt;Mise en place de la gestion des sessions (expiration, rafraîchissement de token)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-760" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-67" value="&lt;div&gt;Implémenter le chiffrement des mots de passe et tokens avant stockage&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-720" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-68" value="Configurer Azure Key Vault pour stocker les identifiants sensibles" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-680" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-69" value="&lt;div&gt;Créer système de rôles et permissions pour restreindre les accès aux fonctionnalités&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-640" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-70" value="&lt;div&gt;Créer un endpoint pour récupérer les informations d’un utilisateur authentifié&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-600" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-71" value="&lt;div&gt;Créer endpoint pour modifier ses info personnelles (avec restrictions par rôle)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-560" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-72" value="&lt;div&gt;Créer un endpoint pour la suppression de compte&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-520" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-73" value="&lt;div&gt;Créer un endpoint pour l&#39;exportation des données personnelles sur demande&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-480" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-74" value="&lt;div&gt;Développer l’API de création, édition et suppression d’une annonce&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-440" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-75" value="&lt;div&gt;Créer une API permettant aux clients de faire la demande d&#39;une prestation&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-400" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-76" value="&lt;div&gt;Mettre en place l’acceptation, le refus et la négociation des demandes&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-360" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-77" value="&lt;div&gt;Créer une conversation entre clients et prestataires lors d&#39;une demande&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-320" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-78" value="&lt;div&gt;Créer API pour la recherche des prestations (catégorie, localisation, prix, etc.)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-280" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-79" value="&lt;div&gt;Créer un algo de sélection du trajet le plus adapté (rapport aux entrepôts et trajets)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-240" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-80" value="&lt;div&gt;Créer une API pour l’évaluation des prestations&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-200" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-81" value="&lt;div&gt;Créer une API pour les litiges&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-160" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-82" value="&lt;div&gt;Développer un service de tracking des colis en temps réel&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-120" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-83" value="&lt;div&gt;Permettre aux prestataires d’accepter une annonce de livraison&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-80" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-84" value="&lt;div&gt;Créer un système de validation de la livraison par le livreur&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="-40" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-85" value="&lt;div&gt;Créer un système de scan NFC pour l’authentification des livreurs&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-86" value="&lt;div&gt;Notifier les prestataires lorsqu’un client fait une demande&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="40" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-87" value="Interfaces admin de gestion d&#39;abonnement" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="160" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-88" value="Interfaces admin de gestion des services" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="200" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-89" value="Interfaces admin de gestion des entrepôts&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="240" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-90" value="Interfaces admin de gestion des avis" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="280" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-95" value="&lt;div&gt;Interfaces &quot;signin&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-840" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-96" value="&lt;div&gt;Interfaces &quot;login&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-800" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-97" value="&lt;div&gt;Interfaces &quot;forgot password&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-760" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-98" value="Développer les components (nav-bar, button, card, form etc.)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-880" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-99" value="&lt;div&gt;Interfaces tutorial à l&#39;inscription (bloquant)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-720" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-100" value="&lt;div&gt;Interfaces compte bloquer en attente de validation administrateur&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-680" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-101" value="&lt;div&gt;Interfaces &quot;home&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-640" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-102" value="&lt;div&gt;Interfaces &quot;param&quot; (&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;stats,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;modif info&lt;font&gt;s&lt;/font&gt; et abonnement, export données et factures)&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-600" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-103" value="&lt;div&gt;Interfaces &quot;messages&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-560" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-104" value="&lt;div&gt;Form créa / modif d’une annonces (dispo presta ou demande de livraison colis)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-520" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-105" value="&lt;div&gt;Interfaces affichage des annonces (prestations et livraisons) disponibles&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-480" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-106" value="&lt;div&gt;Form postuler à une prestation (+ creation d&#39;un conv pour négociations si presta)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-440" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-107" value="&lt;div&gt;Interfaces suivi de colis en temps réel&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-400" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-108" value="&lt;div&gt;Interfaces de paiements&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-360" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-109" value="Form avis et affichage des avis sur une presta" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-320" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-110" value="Form litiges et affichage du litige sur une presta&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-280" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-111" value="&lt;div&gt;Interfaces scan NFC pour validation de la réception du colis&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-240" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-112" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space-collapse: preserve;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="2520" y="-152" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-113" value="Implémenter la connexion avec l’API" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="-920" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-114" value="Implémenter la connexion avec l’API" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-920" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-115" value="Implémenter la connexion avec l’API" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2450" y="-920" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-116" value="&lt;div&gt;Préparer l’application pour déploiement PlayStore&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="-200" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-117" value="&lt;div&gt;Préparer l’application pour déploiement sur Infra&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="400" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-118" value="Implémenter le traitement des données pour le calcul des statistiques" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2450" y="-880" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-119" value="Implémenter un tableau de bord" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2450" y="-840" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-120" value="Implémenter la génération des graphiques" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2450" y="-800" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-121" value="Packager l’application" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2450" y="-680" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-122" value="Implémenter la génération du rapport PDF" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2450" y="-760" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-123" value="Ajouter une option d’export CSV/Excel" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2450" y="-720" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-124" value="Déployer l’application sur les machines des employés (via GPO?)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="2450" y="-640" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-125" value="&lt;div&gt;Notifier les utilisateurs en cas d’acceptation/refus d’une demande&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="80" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-126" value="&lt;div&gt;Notifier les utilisateurs en cas de message&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="120" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-127" value="&lt;div&gt;Notifier les prestataire en cas de matching d&#39;un trajet a une demande&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="160" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-128" value="&lt;div&gt;Gérer les préférences de notifications des utilisateurs&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="200" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-129" value="&lt;div&gt;Créer un système support via messagerie (connecté) ou form contact (non-connecté)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="240" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-130" value="&lt;div&gt;Implémenter le paiement en ligne via Stripe&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="280" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-131" value="&lt;div&gt;Générer et stocker les factures pour chaque transaction&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="320" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-132" value="&lt;div&gt;Permettre l’export des factures par les utilisateurs&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="360" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-133" value="&lt;div&gt;Ajouter/modifier/supprimer des annonces&amp;nbsp;&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="400" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-134" value="&lt;div&gt;Ajouter/modifier/supprimer des services&amp;nbsp;&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="440" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-135" value="&lt;div&gt;Ajouter/modifier/supprimer des abonnements&amp;nbsp;&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="480" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-136" value="&lt;div&gt;Ajouter/modifier/supprimer des entrepôts&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="520" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-137" value="&lt;div&gt;Ajouter/modifier/supprimer des avis&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="560" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-138" value="&lt;div&gt;Valider les demandes d’habilitation et d’inscription&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="600" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-139" value="&lt;div&gt;Gérer les comptes utilisateurs (modification, suspension, suppression)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="640" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-140" value="&lt;div&gt;Créer des comptes administrateurs&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="680" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-141" value="&lt;div&gt;Gérer et traiter les litiges entre utilisateurs&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="720" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-142" value="&lt;div&gt;Consulter et exporter toutes les factures du site&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="760" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-143" value="&lt;div&gt;Consulter le tracking de tous les colis&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="800" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-144" value="&lt;div&gt;Mettre en place un tableau de bord administrateur avec statistiques&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="840" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-145" value="&lt;div&gt;Consulter et répondre aux messages utilisateurs&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="880" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-147" value="&lt;div&gt;Implémenter les middlewares de protection des routes API&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="920" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-148" value="&lt;div&gt;Appliquer restrictions d’accès aux différentes routes en fonction d&#39;habilitations&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="960" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-149" value="&lt;div&gt;Gérer les erreurs globalement avec un middleware dédié&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="1000" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-150" value="&lt;div&gt;Implémenter la chaine d&#39;intégration continue&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="1040" width="180" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
