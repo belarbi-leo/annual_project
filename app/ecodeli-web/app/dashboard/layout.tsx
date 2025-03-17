@@ -3,21 +3,26 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import NavLinks from "../ui/dashboard/nav-links";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import LanguageSelector from "../ui/dashboard/languages";
+import Notifications from "../ui/dashboard/notifications";
+import { 
+  ChevronLeftIcon, 
+  ChevronRightIcon, 
+  BellIcon, 
+  MagnifyingGlassIcon 
+} from "@heroicons/react/24/outline";
 import clsx from "clsx";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
-  const [isCollapsed, setIsCollapsed] = useState<boolean | null>(null); // Utilisation de `null` comme valeur par défaut
+  const [isCollapsed, setIsCollapsed] = useState<boolean | null>(null);
 
-  // Détection automatique de la taille de l’écran uniquement côté client
   useEffect(() => {
     const handleResize = () => setIsCollapsed(window.innerWidth < 768);
-    handleResize(); // Vérifie la taille de l'écran au moment du montage
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Si `isCollapsed` est `null`, on rend une valeur par défaut avant d'être défini (en attendant le client)
   if (isCollapsed === null) {
     return true;
   }
@@ -25,10 +30,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <div className="flex min-h-screen bg-gray-100 dark:bg-gray-900">
       {/* Sidebar */}
-      <aside className={clsx(
-        "bg-white dark:bg-gray-800 sticky top-0 h-screen p-5 shadow-md transition-all duration-300 flex flex-col",
-        isCollapsed ? "w-16 items-center" : "w-64"
-      )}>
+      <aside
+        className={clsx(
+          "bg-white dark:bg-gray-800 sticky top-0 h-screen p-5 shadow-md transition-all duration-300 flex flex-col",
+          isCollapsed ? "w-16 items-center" : "w-64"
+        )}
+      >
         {/* Logo et bouton */}
         <div className="flex items-center justify-between">
           {!isCollapsed && (
@@ -37,12 +44,15 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               <span className="text-xl font-semibold text-gray-900 dark:text-white">EcoDeli</span>
             </div>
           )}
-          <button 
-            onClick={() => setIsCollapsed(!isCollapsed)} 
+          <button
+            onClick={() => setIsCollapsed(!isCollapsed)}
             className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
           >
-            {isCollapsed ? <ChevronRightIcon className="w-6 h-4 text-gray-900 dark:text-white" /> 
-                         : <ChevronLeftIcon className="w-6 h-4 text-gray-900 dark:text-white" />}
+            {isCollapsed ? (
+              <ChevronRightIcon className="w-6 h-4 text-gray-900 dark:text-white" />
+            ) : (
+              <ChevronLeftIcon className="w-6 h-4 text-gray-900 dark:text-white" />
+            )}
           </button>
         </div>
 
@@ -53,8 +63,26 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* Contenu principal */}
       <div className="flex-1 flex flex-col">
         {/* Navbar */}
-        <header className="h-16 bg-white dark:bg-gray-800 shadow-md flex items-center px-6">
-          <h1 className="text-xl font-semibold text-gray-900 dark:text-white">Tableau de bord</h1>
+        <header className="h-16 bg-white dark:bg-gray-800 shadow-md flex items-center px-6 justify-between">
+          {/* Barre de recherche (visible sur écrans md et +) */}
+          <div className="hidden sm:block flex-1 max-w-lg">
+            <input
+              type="text"
+              placeholder="Rechercher..."
+              className="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#49cb5c]"
+            />
+          </div>
+
+          {/* Bouton recherche (visible uniquement sur petits écrans sm) */}
+          <button className="sm:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
+            <MagnifyingGlassIcon className="w-6 h-6 text-gray-900 dark:text-white" />
+          </button>
+
+          {/* Boutons notifications et langue */}
+          <div className="flex items-center space-x-4">
+            <Notifications />
+            <LanguageSelector />
+          </div>
         </header>
 
         {/* Contenu dynamique */}

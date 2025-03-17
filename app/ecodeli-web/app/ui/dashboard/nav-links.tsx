@@ -5,9 +5,9 @@ import Link from "next/link";
 import {
   HomeIcon,
   ArrowsRightLeftIcon,
-  UserIcon,
+  RectangleStackIcon,
   ArchiveBoxIcon,
-  Cog6ToothIcon,
+  UserIcon,
   ArrowLeftStartOnRectangleIcon,
   ChatBubbleLeftRightIcon,
 } from "@heroicons/react/24/outline";
@@ -16,10 +16,10 @@ import clsx from "clsx";
 const links = [
   { name: "Accueil", href: "/dashboard", icon: HomeIcon },
   { name: "Livraison", href: "/dashboard/delivery", icon: ArrowsRightLeftIcon },
-  { name: "Prestations", href: "/dashboard/prestations", icon: UserIcon },
+  { name: "Prestations", href: "/dashboard/prestations", icon: RectangleStackIcon },
   { name: "Historique", href: "/dashboard/history", icon: ArchiveBoxIcon },
   { name: "Messages", href: "/dashboard/messages", icon: ChatBubbleLeftRightIcon },
-  { name: "Réglages", href: "/dashboard/settings", icon: Cog6ToothIcon },
+  { name: "Compte", href: "/dashboard/account", icon: UserIcon },
   { name: 'Déconnexion', href: '/logout', icon: ArrowLeftStartOnRectangleIcon, isLogout: true },
 ];
 
