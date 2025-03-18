@@ -5,11 +5,10 @@ import Image from "next/image";
 import NavLinks from "../ui/dashboard/nav-links";
 import LanguageSelector from "../ui/dashboard/languages";
 import Notifications from "../ui/dashboard/notifications";
-import { 
-  ChevronLeftIcon, 
-  ChevronRightIcon, 
-  BellIcon, 
-  MagnifyingGlassIcon 
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 
@@ -63,7 +62,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* Contenu principal */}
       <div className="flex-1 flex flex-col">
         {/* Navbar */}
-        <header className="h-16 bg-white dark:bg-gray-800 shadow-md flex items-center px-6 justify-between">
+        <header className="h-16 bg-white dark:bg-gray-800 sticky top-0 shadow-md flex items-center px-6 justify-between">
           {/* Barre de recherche (visible sur écrans md et +) */}
           <div className="hidden sm:block flex-1 max-w-lg">
             <input

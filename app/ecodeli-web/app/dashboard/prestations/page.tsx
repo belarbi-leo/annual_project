@@ -53,7 +53,7 @@ export default function ProductPage() {
           {/* Conteneur des deux boutons dropdown */}
           <div className="flex flex-row sm:flex-row gap-4 w-full sm:w-auto justify-center">
             {/* Menu dropdown Catégories */}
-            <div className="relative" ref={categoryRef}>
+            <div className="" ref={categoryRef}>
               <button
                 onClick={() => {
                   setCategoryOpen(!categoryOpen);
@@ -83,7 +83,7 @@ export default function ProductPage() {
             </div>
 
             {/* Menu dropdown Prix */}
-            <div className="relative" ref={priceRef}>
+            <div className="" ref={priceRef}>
               <button
                 onClick={() => {
                   setPriceOpen(!priceOpen);

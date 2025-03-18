@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { GlobeAltIcon } from "@heroicons/react/24/outline";
+import { LanguageIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 
 const languages = [
@@ -20,9 +20,9 @@ export default function LanguageSelector() {
       {/* Bouton principal */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+        className="p-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600"
       >
-        <GlobeAltIcon className="w-6 h-6 text-gray-900 dark:text-white" />
+        <LanguageIcon className="w-6 h-6 text-gray-900 dark:text-white" />
       </button>
 
       {/* Dropdown */}

@@ -23,12 +23,12 @@ export default function Notifications() {
       {/* Bouton Notification */}
       <button
         onClick={() => setIsOpen(true)}
-        className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 relative"
+        className="p-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 relative"
       >
         <BellIcon className="w-6 h-6 text-gray-900 dark:text-white" />
         {/* Badge de notification */}
         <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
-          3
+          99+
         </span>
       </button>
 
