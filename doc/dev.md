@@ -8,10 +8,13 @@ EcoDeli est une entreprise de mise en relation entre clients et prestataires de 
 
 Ce document détaille le descriptif technique du projet en termes de développement informatique sur les différentes applications commandées par l’entreprise :
 
--	Application web et mobile (public)
+-	Application web (public)
+-   Application mobile (public)
 -	Application data (interne)
 
 L’application web doit offrir une interface utilisateur et administrative ergonomique et sécurisée permettant d’assurer l’intermédiation pour les prestations de service. Elle doit être développée de manière évolutive et durable pour accompagner la croissance de l’entreprise.
+
+L'application mobile ? pas backoffice
 
 L’application de visualisation des données servira de tableau de bord pour les employés d’EcoDeli afin de ?
 
