@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name="depots")
 @Getter
@@ -22,4 +25,9 @@ public class Depots {
     private String postal_code_depot;
     @Column(length = 100)
     private String country_depot;
+    @ManyToMany(cascade=CascadeType.ALL)
+    @JoinTable(name = "stock_control",
+            joinColumns = @JoinColumn(name="id_depot"),
+            inverseJoinColumns = @JoinColumn(name="id_package"))
+    private Set<Packages> packages_set = new HashSet<>();
 }

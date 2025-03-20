@@ -17,9 +17,12 @@ public class Disputes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_dispute;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="id_ad", nullable = false)
     private Ads id_ad;
+    @ManyToOne
+    @JoinColumn(name="id_user", nullable = false)
+    private Users id_user;
     @Column
     private Timestamp date_status_dispute;
     @Column

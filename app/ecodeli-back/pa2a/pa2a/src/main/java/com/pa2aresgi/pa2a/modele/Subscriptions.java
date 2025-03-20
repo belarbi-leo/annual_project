@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name="subscriptions")
 @Getter
@@ -18,4 +21,8 @@ public class Subscriptions {
     private String name_sub;
     @Column
     private String description_sub;
+    @OneToMany(mappedBy = "subscriptions")
+    private List<Users> users_list = new ArrayList<>();
+    @OneToMany(mappedBy = "subscriptions")
+    private List<Ads> ads_list = new ArrayList<>();
 }

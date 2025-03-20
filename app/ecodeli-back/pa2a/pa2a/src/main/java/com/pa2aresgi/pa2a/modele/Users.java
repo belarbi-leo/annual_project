@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -54,10 +56,26 @@ public class Users {
     private String expiration_payment;
     @Column(length=34)
     private String iban;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="id_sub", nullable = false)
     private Subscriptions id_subscription;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="id_langue", nullable = false)
     private Languages id_langue;
+    @OneToMany(mappedBy = "users")
+    private List<Disputes> dipustes_list = new ArrayList<>();
+    @OneToMany(mappedBy = "users")
+    private List<Authorizations> authorizations_list = new ArrayList<>();
+    @OneToMany(mappedBy = "users")
+    private List<Services> services_list = new ArrayList<>();
+    @OneToMany(mappedBy = "users")
+    private List<Routes> routes_list = new ArrayList<>();
+    @OneToMany(mappedBy = "users")
+    private List<Requests_svc> requests_svc_user_req_list = new ArrayList<>();
+    @OneToMany(mappedBy = "users")
+    private List<Requests_svc> requests_svc_admin_res_list = new ArrayList<>();
+    @OneToMany(mappedBy = "users")
+    private List<Ads> ads_user_creator_list = new ArrayList<>();
+    @OneToMany(mappedBy = "users")
+    private List<Ads> ads__user_accept_list = new ArrayList<>();
 }

@@ -6,6 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="ads")
@@ -16,16 +20,16 @@ public class Ads {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_ad;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="id_user", nullable = false)
     private Users id_user_creator;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="id_user")
     private Users id_user_accept;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="id_svc", nullable = false)
     private Services id_svc;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="id_sub", nullable = false)
     private Subscriptions id_sub;
     @Column
@@ -50,8 +54,20 @@ public class Ads {
     private String country_end_ad;
     @Column(length = 255)
     private String description_ad;
-    @Column(columnDefinition="numeric(10,2) default '100.00'")
+    @Column(columnDefinition="numeric(10,2)")
     private Float price_ad;
     @Column
     private String photo_ad;
+    @OneToMany(mappedBy = "ads")
+    private List<Requests_ads> requests_ads_list = new ArrayList<>();
+    @OneToMany(mappedBy = "ads")
+    private List<Packages> packages_list = new ArrayList<>();
+    @OneToMany(mappedBy = "ads")
+    private List<Opinions> opinions_list = new ArrayList<>();
+    @OneToMany(mappedBy = "ads")
+    private List<Payments> payments_list = new ArrayList<>();
+    @OneToMany(mappedBy = "ads")
+    private List<Disputes> disputes_list = new ArrayList<>();
+    @ManyToMany(mappedBy="ads")
+    private Set<Routes> routes_set = new HashSet<>();
 }

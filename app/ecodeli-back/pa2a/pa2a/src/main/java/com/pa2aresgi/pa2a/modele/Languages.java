@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name="languages")
 @Getter
@@ -16,4 +19,6 @@ public class Languages {
     private Integer id_language;
     @Column(length = 30)
     private String langue;
+    @OneToMany(mappedBy = "languages")
+    private List<Users> users_list = new ArrayList<>();
 }

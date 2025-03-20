@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="authorizations")
@@ -16,12 +18,14 @@ public class Authorizations {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_auth;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="id_svc", nullable = false)
     private Services id_svc;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="id_user", nullable = false)
     private Services id_user;
     @Column
     private Timestamp date_granted;
+    @OneToMany(mappedBy = "authorizations")
+    private List<Users> users_list = new ArrayList<>();
 }
