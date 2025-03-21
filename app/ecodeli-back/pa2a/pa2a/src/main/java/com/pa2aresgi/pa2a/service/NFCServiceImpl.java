@@ -33,7 +33,7 @@ public class NFCServiceImpl implements NFCService {
     }
 
     @Override
-    public NFC update(Integer id, NFC nfc) {    //Pas correct pour nfc, rien à modifier
+    public NFC update(Integer id, NFC nfc) {
         return nfcRepository.findById(id).map(nfc1 -> {
             nfc1.setId_user(nfc.getId_user());
             return nfcRepository.save(nfc1);

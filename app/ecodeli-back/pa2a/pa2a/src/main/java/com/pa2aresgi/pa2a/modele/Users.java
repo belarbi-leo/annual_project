@@ -20,6 +20,7 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_user;
+    @Column
     private Timestamp date_create;
     @Column
     @Enumerated(EnumType.STRING)
