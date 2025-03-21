@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/subscription")
+@RequestMapping("/subscriptions")
 @AllArgsConstructor
 public class SubscriptionsController {
     private final SubscriptionsService subscriptionsService;

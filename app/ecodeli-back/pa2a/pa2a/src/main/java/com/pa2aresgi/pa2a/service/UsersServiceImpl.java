@@ -1,15 +1,11 @@
 package com.pa2aresgi.pa2a.service;
 
-import com.pa2aresgi.pa2a.enumeratation.Account_status_enum;
-import com.pa2aresgi.pa2a.enumeratation.Role_enum;
+
 import com.pa2aresgi.pa2a.modele.*;
 import com.pa2aresgi.pa2a.repository.UsersRepository;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
