@@ -42,6 +42,6 @@ public class Packages {
     private String photo_pack;
     @Column
     private Boolean fragile;
-    @ManyToMany(mappedBy="packages")
+    @ManyToMany(mappedBy="packages_set")
     private Set<Depots> depots_set = new HashSet<>();
 }

@@ -58,24 +58,24 @@ public class Users {
     private String iban;
     @ManyToOne
     @JoinColumn(name="id_sub", nullable = false)
-    private Subscriptions id_subscription;
+    private Subscriptions id_sub;
     @ManyToOne
     @JoinColumn(name="id_langue", nullable = false)
     private Languages id_langue;
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "id_user")
     private List<Disputes> dipustes_list = new ArrayList<>();
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "id_user")
     private List<Authorizations> authorizations_list = new ArrayList<>();
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "id_admin_creator")
     private List<Services> services_list = new ArrayList<>();
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "id_user")
     private List<Routes> routes_list = new ArrayList<>();
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "id_user_req")
     private List<Requests_svc> requests_svc_user_req_list = new ArrayList<>();
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "id_admin_res")
     private List<Requests_svc> requests_svc_admin_res_list = new ArrayList<>();
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "id_user_creator")
     private List<Ads> ads_user_creator_list = new ArrayList<>();
-    @OneToMany(mappedBy = "users")
-    private List<Ads> ads__user_accept_list = new ArrayList<>();
+    @OneToMany(mappedBy = "id_user_accept")
+    private List<Ads> ads_user_accept_list = new ArrayList<>();
 }

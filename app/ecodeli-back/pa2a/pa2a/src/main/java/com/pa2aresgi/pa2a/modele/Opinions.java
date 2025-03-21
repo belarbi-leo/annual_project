@@ -18,7 +18,7 @@ public class Opinions {
     private Integer id_opinion;
     @ManyToOne
     @JoinColumn(name="id_ad", nullable = false)
-    private Users id_ad;
+    private Ads id_ad;
     @Column
     private short note_opinion;
     @Column(length = 255)

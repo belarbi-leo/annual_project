@@ -27,14 +27,14 @@ public class Services {
     private String name_svc;
     @Column(length=50)
     private String category;
-    @OneToMany(mappedBy = "services")
+    @OneToMany(mappedBy = "id_svc")
     private List<Services_docs> services_docs_list = new ArrayList<>();
-    @OneToMany(mappedBy = "services")
+    @OneToMany(mappedBy = "id_svc")
     private List<Materiels> materiels_list = new ArrayList<>();
-    @OneToMany(mappedBy = "services")
+    @OneToMany(mappedBy = "id_svc")
     private List<Authorizations> authorizations_list = new ArrayList<>();
-    @OneToMany(mappedBy = "services")
+    @OneToMany(mappedBy = "id_svc")
     private List<Requests_svc> requests_svc_list = new ArrayList<>();
-    @OneToMany(mappedBy = "services")
+    @OneToMany(mappedBy = "id_svc")
     private List<Ads> ads_list = new ArrayList<>();
 }

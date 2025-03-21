@@ -21,8 +21,8 @@ public class Subscriptions {
     private String name_sub;
     @Column
     private String description_sub;
-    @OneToMany(mappedBy = "subscriptions")
+    @OneToMany(mappedBy = "id_sub")
     private List<Users> users_list = new ArrayList<>();
-    @OneToMany(mappedBy = "subscriptions")
+    @OneToMany(mappedBy = "id_sub")
     private List<Ads> ads_list = new ArrayList<>();
 }

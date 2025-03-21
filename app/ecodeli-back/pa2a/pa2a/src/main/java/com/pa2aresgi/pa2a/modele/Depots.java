@@ -28,6 +28,6 @@ public class Depots {
     @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable(name = "stock_control",
             joinColumns = @JoinColumn(name="id_depot"),
-            inverseJoinColumns = @JoinColumn(name="id_package"))
+            inverseJoinColumns = @JoinColumn(name="id_pack"))
     private Set<Packages> packages_set = new HashSet<>();
 }

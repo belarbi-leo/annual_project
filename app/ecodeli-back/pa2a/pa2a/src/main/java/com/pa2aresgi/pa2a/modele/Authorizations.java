@@ -23,9 +23,7 @@ public class Authorizations {
     private Services id_svc;
     @ManyToOne
     @JoinColumn(name="id_user", nullable = false)
-    private Services id_user;
+    private Users id_user;
     @Column
     private Timestamp date_granted;
-    @OneToMany(mappedBy = "authorizations")
-    private List<Users> users_list = new ArrayList<>();
 }

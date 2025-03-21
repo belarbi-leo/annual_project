@@ -19,6 +19,6 @@ public class Languages {
     private Integer id_language;
     @Column(length = 30)
     private String langue;
-    @OneToMany(mappedBy = "languages")
+    @OneToMany(mappedBy = "id_user")
     private List<Users> users_list = new ArrayList<>();
 }

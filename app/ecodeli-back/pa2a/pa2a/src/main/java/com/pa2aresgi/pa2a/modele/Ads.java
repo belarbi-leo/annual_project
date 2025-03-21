@@ -21,10 +21,10 @@ public class Ads {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_ad;
     @ManyToOne
-    @JoinColumn(name="id_user", nullable = false)
+    @JoinColumn(name="id_user_creator", nullable = false)
     private Users id_user_creator;
     @ManyToOne
-    @JoinColumn(name="id_user")
+    @JoinColumn(name="id_user_accept")
     private Users id_user_accept;
     @ManyToOne
     @JoinColumn(name="id_svc", nullable = false)
@@ -58,16 +58,16 @@ public class Ads {
     private Float price_ad;
     @Column
     private String photo_ad;
-    @OneToMany(mappedBy = "ads")
+    @OneToMany(mappedBy = "id_ad")
     private List<Requests_ads> requests_ads_list = new ArrayList<>();
-    @OneToMany(mappedBy = "ads")
+    @OneToMany(mappedBy = "id_ad")
     private List<Packages> packages_list = new ArrayList<>();
-    @OneToMany(mappedBy = "ads")
+    @OneToMany(mappedBy = "id_ad")
     private List<Opinions> opinions_list = new ArrayList<>();
-    @OneToMany(mappedBy = "ads")
+    @OneToMany(mappedBy = "id_ad")
     private List<Payments> payments_list = new ArrayList<>();
-    @OneToMany(mappedBy = "ads")
+    @OneToMany(mappedBy = "id_ad")
     private List<Disputes> disputes_list = new ArrayList<>();
-    @ManyToMany(mappedBy="ads")
+    @ManyToMany(mappedBy="ads_set")
     private Set<Routes> routes_set = new HashSet<>();
 }

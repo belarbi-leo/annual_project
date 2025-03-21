@@ -20,11 +20,11 @@ public class Requests_svc {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_req_svc;
     @ManyToOne
-    @JoinColumn(name="id_user", nullable = false)
-    private Users id_user;
+    @JoinColumn(name="id_user_req", nullable = false)
+    private Users id_user_req;
     @ManyToOne
-    @JoinColumn(name="id_user")
-    private Users id_amdin_res;
+    @JoinColumn(name="id_admin_res")
+    private Users id_admin_res;
     @ManyToOne
     @JoinColumn(name="id_svc", nullable = false)
     private Services id_svc;
@@ -37,6 +37,6 @@ public class Requests_svc {
     private Timestamp date_res;
     @Column(length=255)
     private String reason_res;
-    @OneToMany(mappedBy = "requests_svc")
+    @OneToMany(mappedBy = "id_req_svc")
     private List<Requests_docs> requests_docs_list = new ArrayList<>();
 }
