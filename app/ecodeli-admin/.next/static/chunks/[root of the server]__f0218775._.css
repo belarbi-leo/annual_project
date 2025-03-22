@@ -639,10 +639,6 @@
     height: calc(var(--spacing) * 100);
   }
 
-  .h-\[80\%\] {
-    height: 80%;
-  }
-
   .h-screen {
     height: 100vh;
   }
@@ -677,10 +673,6 @@
 
   .w-100 {
     width: calc(var(--spacing) * 100);
-  }
-
-  .w-\[90\%\] {
-    width: 90%;
   }
 
   .w-auto {
@@ -1128,12 +1120,6 @@
   @media (width >= 40rem) {
     .sm\:hidden {
       display: none;
-    }
-  }
-
-  @media (width >= 48rem) {
-    .md\:w-\[50\%\] {
-      width: 50%;
     }
   }
 
