@@ -4,9 +4,10 @@ EcoDeli est une entreprise de mise en relation entre client et pretstataire afin
 
 ```
 /EcoDeli
-│── /app                    # Répertoire contenant les applications
-│   ├── /ecodeli-web       # Code de l'application web
-│   ├── /ecodeli-mobile    # Code de l'application mobile
+│── /app                   # Répertoire contenant les applications
+│   ├── /ecodeli-admin     # Code de l'application web back-office
+│   ├── /ecodeli-public    # Code de l'application web clients
+│   ├── /ecodeli-mobile    # Code de l'application mobile clients
 │   ├── /ecodeli-data      # Code de l'application data
 │   ├── /ecodeli-back      # Code de l'API REST
 │

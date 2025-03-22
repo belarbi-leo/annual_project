@@ -18,8 +18,6 @@ Avant le démarrage des sprints, nous avons effectué les étapes suivantes :
 
 ![](inc/wbs.svg)
 
-- **Élaboration du PERT** : Identification des dépendances et des relations entre les tâches.
-![](chemin/vers/image.png)
 - **Élaboration du Gantt** : Planification temporelle du projet avec des échéances précises.
 ![](chemin/vers/image.png)
 
