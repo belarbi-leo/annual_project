@@ -1,11 +1,4 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/auth/forgot/page": "app/auth/forgot/page.js",
-  "/auth/page": "app/auth/page.js",
-  "/home/account/page": "app/home/account/page.js",
-  "/home/delivery/page": "app/home/delivery/page.js",
-  "/home/history/page": "app/home/history/page.js",
-  "/home/messages/page": "app/home/messages/page.js",
   "/home/page": "app/home/page.js",
   "/page": "app/page.js"
 }

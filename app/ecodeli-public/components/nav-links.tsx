@@ -4,22 +4,34 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import {
   HomeIcon,
-  ArrowsRightLeftIcon,
-  RectangleStackIcon,
-  ArchiveBoxIcon,
-  UserIcon,
-  ArrowLeftStartOnRectangleIcon,
+  BriefcaseIcon,
+  StarIcon,
+  ExclamationCircleIcon,
+  NewspaperIcon,
+  CreditCardIcon,
   ChatBubbleLeftRightIcon,
+  MapIcon,
+  TruckIcon,
+  CogIcon,
+  ArrowLeftStartOnRectangleIcon
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 
 const links = [
   { name: "Accueil", href: "/home", icon: HomeIcon },
-  { name: "Livraison", href: "/home/delivery", icon: ArrowsRightLeftIcon },
-  { name: "Prestations", href: "/home/prestations", icon: RectangleStackIcon },
-  { name: "Historique", href: "/home/history", icon: ArchiveBoxIcon },
-  { name: "Messages", href: "/home/messages", icon: ChatBubbleLeftRightIcon },
-  { name: "Compte", href: "/home/account", icon: UserIcon },
+  { name: "Separator", href: "", icon: null },
+  { name: "Trajets", href: "/home/prestations", icon: MapIcon },
+  { name: "Livraisons", href: "/home/history", icon: TruckIcon },
+  { name: "Mes services", href: "/home/messages", icon: HomeIcon },
+  { name: "Separator", href: "", icon: null },
+  { name: "Colis",  href: "home/packages", icon: HomeIcon },
+  { name: "Prestations", href: "/home/ads", icon: BriefcaseIcon },
+  { name: "Avis", href: "/home/prestations", icon: StarIcon },
+  { name: "Litiges", href: "/home/history", icon: ExclamationCircleIcon },
+  { name: "Abonnements", href: "/home/messages", icon: NewspaperIcon },
+  { name: "Paiements", href: "/home/account", icon: CreditCardIcon },
+  { name: "Messagerie", href: "/home/account", icon: ChatBubbleLeftRightIcon },
+  { name: "Compte", href: "/home/account", icon: CogIcon },
   { name: 'Déconnexion', href: '/logout', icon: ArrowLeftStartOnRectangleIcon, isLogout: true },
 ];
 
@@ -33,7 +45,10 @@ export default function NavLinks({ isCollapsed, onNavigate }: NavLinksProps) {
 
   return (
     <nav className="mt-4 space-y-2">
-      {links.map((link) => {
+      {links.map((link, index) => {
+        if (link.name === "Separator") {
+          return <hr key={index} className="my-2 border-gray-300 dark:border-gray-700" />;
+        }
         const LinkIcon = link.icon;
         return (
           <Link
