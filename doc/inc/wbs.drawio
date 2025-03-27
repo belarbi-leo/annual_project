@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.1">
   <diagram name="Page-1" id="0z-PwB4HZmKqcYCsZPZt">
-    <mxGraphModel dx="-700" dy="1674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="-291" dy="1890" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -97,32 +97,8 @@
         <mxCell id="RLQJDiiOx_Z5LadbRoZ9-25" value="&lt;div&gt;Interfaces &quot;home&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="2490" y="-520" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-26" value="&lt;div&gt;Interfaces &quot;compte&quot; (&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;stats,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;modif info&lt;font&gt;s&lt;/font&gt; et abonnement, export données et factures)&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2490" y="-480" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-27" value="&lt;div&gt;Interfaces &quot;messages&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-27" value="&lt;div&gt;Interfaces &quot;prestations&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="2490" y="-440" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-28" value="&lt;div&gt;Form créa / modif d’une annonces (dispo presta ou demande de livraison colis)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;fillStyle=auto;" parent="1" vertex="1">
-          <mxGeometry x="2490" y="-400" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-29" value="&lt;div&gt;Interfaces affichage des annonces (prestations et livraisons) disponibles&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2490" y="-360" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-30" value="&lt;div&gt;Form postuler à une prestation (+ creation d&#39;un conv pour négociations si presta)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2490" y="-320" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-31" value="&lt;div&gt;Interfaces suivi de colis en temps réel&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2490" y="-160" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-32" value="&lt;div&gt;Interfaces de paiements&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2490" y="-120" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-33" value="Form avis et affichage des avis sur une presta" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2490" y="-40" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-34" value="Form litiges et affichage du litige sur une presta&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2290" y="-120" width="180" height="30" as="geometry" />
         </mxCell>
         <mxCell id="RLQJDiiOx_Z5LadbRoZ9-58" value="Integration des notifications" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="2290" y="-480" width="180" height="30" as="geometry" />
@@ -190,29 +166,8 @@
         <mxCell id="RLQJDiiOx_Z5LadbRoZ9-101" value="&lt;div&gt;Interfaces &quot;home&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="2690" y="-680" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-102" value="&lt;div&gt;Interfaces &quot;param&quot; (&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;stats,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;modif info&lt;font&gt;s&lt;/font&gt; et abonnement, export données et factures)&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-640" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-103" value="&lt;div&gt;Interfaces &quot;messages&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-600" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-104" value="&lt;div&gt;Form créa / modif d’une annonces (dispo presta ou demande de livraison colis)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-560" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-105" value="&lt;div&gt;Interfaces affichage des annonces (prestations et livraisons) disponibles&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-520" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-106" value="&lt;div&gt;Form postuler à une prestation (+ creation d&#39;un conv pour négociations si presta)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-480" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-109" value="Form avis et affichage des avis sur une presta" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-200" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-110" value="Form litiges et affichage du litige sur une presta&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-160" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-111" value="&lt;div&gt;Interfaces scan NFC pour validation de la réception du colis&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-80" width="180" height="30" as="geometry" />
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-111" value="&lt;div&gt;Scan NFC pour validation de la réception du colis&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="2690" y="-120" width="180" height="30" as="geometry" />
         </mxCell>
         <mxCell id="RLQJDiiOx_Z5LadbRoZ9-113" value="Implémenter la connexion avec l’API" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="2490" y="-960" width="180" height="30" as="geometry" />
@@ -224,9 +179,9 @@
           <mxGeometry x="2890" y="-960" width="180" height="30" as="geometry" />
         </mxCell>
         <mxCell id="RLQJDiiOx_Z5LadbRoZ9-116" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Déployer l&#39;application via&lt;/span&gt;&amp;nbsp;PlayStore&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-40" width="180" height="30" as="geometry" />
+          <mxGeometry x="2690" y="-80" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-117" value="&lt;div&gt;Déployer l&#39;application via docker sur l&#39;infra en accès sécuriser HTTPS avec TLS&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+        <mxCell id="RLQJDiiOx_Z5LadbRoZ9-117" value="&lt;div&gt;Déployer l&#39;application via docker sur l&#39;infra en accès sécuriser (HTTPS avec TLS)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="2290" y="-440" width="180" height="30" as="geometry" />
         </mxCell>
         <mxCell id="RLQJDiiOx_Z5LadbRoZ9-118" value="Implémenter le traitement des données pour le calcul des statistiques" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#b0e3e6;strokeColor=#0e8088;" parent="1" vertex="1">
@@ -341,46 +296,88 @@
           <mxGeometry x="2290" y="-960" width="180" height="30" as="geometry" />
         </mxCell>
         <mxCell id="h03y03Ldj3mYA7bmxw5R-61" value="Integration des notifications" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2290" y="-80" width="180" height="30" as="geometry" />
+          <mxGeometry x="2490" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h03y03Ldj3mYA7bmxw5R-62" value="&lt;div&gt;Déployer l&#39;application via docker sur l&#39;infra en accès sécuriser HTTPS avec TLS&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2290" y="-40" width="180" height="30" as="geometry" />
+        <mxCell id="h03y03Ldj3mYA7bmxw5R-62" value="&lt;div&gt;Déployer l&#39;application via docker sur l&#39;infra en accès sécuriser (&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;HTTPS avec TLS)&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="2490" y="40" width="180" height="30" as="geometry" />
         </mxCell>
         <mxCell id="h03y03Ldj3mYA7bmxw5R-63" value="Louer le serveur hébergé" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="1690" y="-760" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h03y03Ldj3mYA7bmxw5R-64" value="Integration des notifications" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-120" width="180" height="30" as="geometry" />
+        <mxCell id="TACe9J5SAN_pHX19FYqv-1" value="&lt;div&gt;Interfaces &quot;colis&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="2490" y="-480" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h03y03Ldj3mYA7bmxw5R-65" value="&lt;div&gt;Générer factures pour chaque partie à chaque prestation&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2490" y="-80" width="180" height="30" as="geometry" />
+        <mxCell id="TACe9J5SAN_pHX19FYqv-2" value="&lt;div&gt;Interfaces &quot;litiges&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="2490" y="-360" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h03y03Ldj3mYA7bmxw5R-66" value="&lt;div&gt;Interfaces &quot;nouveaux trajet&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="TACe9J5SAN_pHX19FYqv-3" value="&lt;div&gt;Interfaces &quot;avis&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="2490" y="-400" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-4" value="&lt;div&gt;Interfaces &quot;paiements&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="2490" y="-280" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h03y03Ldj3mYA7bmxw5R-67" value="&lt;div&gt;Interfaces prestataires (presta en cours, demande clients, litige, choisir un colis)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2490" y="-240" width="180" height="30" as="geometry" />
+        <mxCell id="TACe9J5SAN_pHX19FYqv-5" value="&lt;div&gt;Interfaces &quot;abonnements&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="2490" y="-320" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h03y03Ldj3mYA7bmxw5R-68" value="&lt;div&gt;Interfaces demandes de prestations&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="TACe9J5SAN_pHX19FYqv-6" value="&lt;div&gt;Interfaces &quot;compte&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="2490" y="-200" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h03y03Ldj3mYA7bmxw5R-69" value="&lt;div&gt;Interfaces suivi de colis en temps réel&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-320" width="180" height="30" as="geometry" />
+        <mxCell id="TACe9J5SAN_pHX19FYqv-7" value="&lt;div&gt;Interfaces &quot;messagerie&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="2490" y="-240" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h03y03Ldj3mYA7bmxw5R-70" value="&lt;div&gt;Interfaces de paiements&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-280" width="180" height="30" as="geometry" />
+        <mxCell id="TACe9J5SAN_pHX19FYqv-8" value="&lt;div&gt;Interfaces &quot;livraisons&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="2490" y="-120" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h03y03Ldj3mYA7bmxw5R-71" value="&lt;div&gt;Générer factures pour chaque partie à chaque prestation&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-240" width="180" height="30" as="geometry" />
+        <mxCell id="TACe9J5SAN_pHX19FYqv-9" value="&lt;div&gt;Interfaces &quot;trajets&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="2490" y="-160" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h03y03Ldj3mYA7bmxw5R-72" value="&lt;div&gt;Interfaces &quot;nouveaux trajet&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="TACe9J5SAN_pHX19FYqv-10" value="&lt;div&gt;Interfaces &quot;services&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="2490" y="-80" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-11" value="&lt;div&gt;Génération de factures automatique et email&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="2490" y="-40" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-12" value="&lt;div&gt;Interfaces &quot;prestations&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2690" y="-600" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-13" value="Integration des notifications" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2690" y="-160" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-14" value="&lt;div&gt;Interfaces &quot;colis&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2690" y="-640" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-15" value="&lt;div&gt;Interfaces &quot;litiges&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2690" y="-520" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-16" value="&lt;div&gt;Interfaces &quot;avis&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2690" y="-560" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-17" value="&lt;div&gt;Interfaces &quot;paiements&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="2690" y="-440" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h03y03Ldj3mYA7bmxw5R-73" value="&lt;div&gt;Interfaces prestataires (presta en cours, demande clients, litige, choisir un colis)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="TACe9J5SAN_pHX19FYqv-18" value="&lt;div&gt;Interfaces &quot;abonnements&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2690" y="-480" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-19" value="&lt;div&gt;Interfaces &quot;compte&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2690" y="-360" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-20" value="&lt;div&gt;Interfaces &quot;messagerie&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="2690" y="-400" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h03y03Ldj3mYA7bmxw5R-74" value="&lt;div&gt;Interfaces demandes de prestations&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2690" y="-360" width="180" height="30" as="geometry" />
+        <mxCell id="TACe9J5SAN_pHX19FYqv-21" value="&lt;div&gt;Interfaces &quot;livraisons&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2690" y="-280" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-22" value="&lt;div&gt;Interfaces &quot;trajets&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2690" y="-320" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-23" value="&lt;div&gt;Interfaces &quot;services&quot;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2690" y="-240" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-24" value="&lt;div&gt;Génération de factures automatique et email&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2690" y="-200" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TACe9J5SAN_pHX19FYqv-26" value="&lt;div&gt;Déployer via docker sur l&#39;infra&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=middle;spacingLeft=2;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="2090" y="-599" width="180" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

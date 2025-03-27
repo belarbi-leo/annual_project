@@ -156,3 +156,39 @@ L’application web et mobile propose donc un ensemble de fonctionnalités adapt
 | Consulter et exporter toutes les factures | ❌ | ❌ | ❌ | ❌ | ✅ |
 | Consulter le tracking de tous les colis | ❌ | ❌ | ❌ | ❌ | ✅ |
 | Créer des administrateurs | ❌ | ❌ | ❌ | ❌ | ✅ |
+
+
+### **Conventio de code**
+
+#### Conventions de nommage
+
+- Fichiers et dossiers 
+  - Utiliser le kebab-case pour les noms de dossiers: user-profile/
+  - Composants React: PascalCase.tsx (exemple: UserCard.tsx)
+  - Hooks: useNomDuHook.ts (exemple: useAuthentication.ts)
+  - Utilitaires: camelCase.ts (exemple: formatDate.ts)
+
+#### Git
+
+- Branches
+  - `main`: branche principale, code en production
+  - `develop`: branche de développement
+  - `feature/nom-feature`: nouvelles fonctionnalités
+  - `bugfix/nom-bug`: corrections de bugs
+
+- Commits
+  - Format: `type(scope): description courte`
+  - Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
+  - Exemple: `feat(auth): ajouter système de connexion OAuth`
+
+
+  
+Une annonces livraison : passe au status refuser quand personne ne la accepter avant la date de récup
+refusée = aucun livreur pour la commande ou un livreur a accepter la commande puis la refuser pour x raisons 
+
+batch un livreur qui refuse trop de commande aprèsq les avoir accepter en une semaine se vois mis en garde 
+
+donc livraison et prestation son la meme entité une annonces
+
+un user peut faire une demande de prestation 
+

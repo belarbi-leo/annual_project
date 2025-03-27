@@ -15,10 +15,10 @@ EcoDeli est une entreprise de mise en relation entre client et pretstataire afin
 │   ├── /inc                # Répertoire de stockage
 │   ├── syllabus.pdf        # Documents relatifs aux attentes et exigences du projet
 │   ├── subject.pdf         # Cahier des charges et spécifications du projet
-│   ├── price.md            # Reponse à l'appel d'offre et estimations budgétaires
+│   ├── rep.pdf             # Reponse à l'appel d'offre, estimations budgétaires et documentation sur l'organisation
 │   ├── infra.md            # Documentation d'architecture technique
 │   ├── dev.md              # Descriptif fonctionnel des developpement 
-│   ├── planned.md          # Documentation sur l'organisation, méthodologie et planification
+│   ├── gantt.xlsx          # Planification temporelle du projet avec des échéances précises
 ```
 
 - [Léo Belarbi](https://github.com/belarbi-leo)
