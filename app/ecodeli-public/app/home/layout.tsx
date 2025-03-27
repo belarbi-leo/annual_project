@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import NavLinks from "../../components/nav-links";
-import LanguageSelector from "../../components/languages";
-import Notifications from "../../components/notifications";
+import NavLinks from "@/components/nav-links";
+import LanguageSelector from "@/components/languages";
+import Notifications from "@/components/notifications";
 import { ChevronLeftIcon, ChevronRightIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 
@@ -35,8 +35,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         {/* Logo et bouton */}
         <div className={clsx("flex w-full mb-1", isCollapsed ? "justify-center" : "items-center justify-between")}>
           {!isCollapsed && (
-            <div className="flex items-center space-x-3 m-auto">
+            <div className="flex space-x-3 mx-3">
               <Image src="/favicon.ico" alt="Logo EcoDeli" width={40} height={40} className="h-10 w-10" />
+              <h1 className="text-xl my-auto">EcoDeli</h1>
             </div>
           )}
           <button
@@ -67,7 +68,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       >
         {/* Entête avec logo et bouton de fermeture */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3 m-auto">
+          <div className="flex space-x-3 mx-3">
             <Image src="/favicon.ico" alt="Logo EcoDeli" width={40} height={40} className="h-10 w-10" />
           </div>
           <button
@@ -96,7 +97,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               <Bars3Icon className="w-6 h-6 text-gray-900 dark:text-white" />
             </button>
             
-            <div className="flex-1 max-w-lg w-90 mr-3">
+            <div className="flex-1 max-w-lg md:w-2xl mr-3">
               <input
                 type="text"
                 placeholder="Rechercher..."

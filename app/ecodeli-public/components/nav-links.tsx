@@ -7,7 +7,6 @@ import {
   BriefcaseIcon,
   StarIcon,
   ExclamationCircleIcon,
-  NewspaperIcon,
   CreditCardIcon,
   ChatBubbleLeftRightIcon,
   MapIcon,
@@ -20,17 +19,16 @@ import clsx from "clsx";
 const links = [
   { name: "Accueil", href: "/home", icon: HomeIcon },
   { name: "Separator", href: "", icon: null },
-  { name: "Trajets", href: "/home/prestations", icon: MapIcon },
-  { name: "Livraisons", href: "/home/history", icon: TruckIcon },
-  { name: "Mes services", href: "/home/messages", icon: HomeIcon },
+  { name: "Trajets", href: "/home/trips", icon: MapIcon },
+  { name: "Livraisons", href: "/home/deliveries", icon: TruckIcon },
+  { name: "Mes services", href: "/home/services", icon: HomeIcon },
   { name: "Separator", href: "", icon: null },
   { name: "Colis",  href: "home/packages", icon: HomeIcon },
-  { name: "Prestations", href: "/home/ads", icon: BriefcaseIcon },
-  { name: "Avis", href: "/home/prestations", icon: StarIcon },
-  { name: "Litiges", href: "/home/history", icon: ExclamationCircleIcon },
-  { name: "Abonnements", href: "/home/messages", icon: NewspaperIcon },
-  { name: "Paiements", href: "/home/account", icon: CreditCardIcon },
-  { name: "Messagerie", href: "/home/account", icon: ChatBubbleLeftRightIcon },
+  { name: "Prestations", href: "/home/prestations", icon: BriefcaseIcon },
+  /*{ name: "Avis", href: "/home/ratings", icon: StarIcon },*/
+  { name: "Litiges", href: "/home/dispute", icon: ExclamationCircleIcon },
+  { name: "Paiements", href: "/home/payments", icon: CreditCardIcon },
+  { name: "Messagerie", href: "/home/messages", icon: ChatBubbleLeftRightIcon },
   { name: "Compte", href: "/home/account", icon: CogIcon },
   { name: 'Déconnexion', href: '/logout', icon: ArrowLeftStartOnRectangleIcon, isLogout: true },
 ];
@@ -49,7 +47,7 @@ export default function NavLinks({ isCollapsed, onNavigate }: NavLinksProps) {
         if (link.name === "Separator") {
           return <hr key={index} className="my-2 border-gray-300 dark:border-gray-700" />;
         }
-        const LinkIcon = link.icon;
+        const LinkIcon = link.icon as React.ElementType;
         return (
           <Link
             key={link.name}

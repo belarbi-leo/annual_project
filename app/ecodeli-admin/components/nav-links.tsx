@@ -18,13 +18,13 @@ import {
 import clsx from "clsx";
 
 const links = [
-{ name: "Tableau de bord", href: "/admin/home", icon: HomeIcon },//user langues notif add admin
+{ name: "Tableau de bord", href: "/admin", icon: HomeIcon },
 { name: "Gestion des utilisateurs", href: "/admin/users", icon: UserIcon },
 { name: "Gestion des litiges", href: "/admin/disputes", icon: ExclamationCircleIcon },
-{ name: "Gestion des prestations", href: "/admin/services", icon: BriefcaseIcon },//crée services
+{ name: "Gestion des prestations", href: "/admin/services", icon: BriefcaseIcon },
 { name: "Gestion des livraisons", href: "/admin/deliveries", icon: ClipboardIcon },
 { name: "Gestion des entrepôts", href: "/admin/warehouses", icon: BuildingOfficeIcon },
-{ name: "Suivi des colis", href: "/admin/track", icon: TruckIcon },
+{ name: "Suivi des colis", href: "/admin/tracking", icon: TruckIcon },
 { name: "Paiements", href: "/admin/payments", icon: CreditCardIcon },
 { name: "Abonnements", href: "/admin/subscriptions", icon: NewspaperIcon },
 { name: "Messagerie", href: "/admin/messages", icon: ChatBubbleLeftRightIcon },
