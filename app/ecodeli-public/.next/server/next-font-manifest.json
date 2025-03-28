@@ -3,10 +3,7 @@
     "[project]/app/_not-found/page": [
       "static/media/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ-s.p.a797655c.woff2"
     ],
-    "[project]/app/home/account/page": [
-      "static/media/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ-s.p.a797655c.woff2"
-    ],
-    "[project]/app/home/history/page": [
+    "[project]/app/auth/page": [
       "static/media/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ-s.p.a797655c.woff2"
     ],
     "[project]/app/home/messages/page": [
@@ -16,6 +13,9 @@
       "static/media/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ-s.p.a797655c.woff2"
     ],
     "[project]/app/home/prestations/page": [
+      "static/media/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ-s.p.a797655c.woff2"
+    ],
+    "[project]/app/page": [
       "static/media/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ-s.p.a797655c.woff2"
     ]
   },
