@@ -1,0 +1,49 @@
+package com.pa2aresgi.pa2a.service;
+
+import com.pa2aresgi.pa2a.modele.Subscriptions;
+import com.pa2aresgi.pa2a.repository.SubscriptionsRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@AllArgsConstructor
+public class SubscriptionsServiceImpl implements SubscriptionsService{
+
+    private SubscriptionsRepository subscriptionsRepository;
+
+    @Override
+    public Subscriptions create(Subscriptions subscription) {
+        return subscriptionsRepository.save(subscription);
+    }
+
+    @Override
+    public List<Subscriptions> readAll() {
+        return subscriptionsRepository.findAll();
+    }
+
+    @Override
+    public Subscriptions findById(Integer id) {
+        if (subscriptionsRepository.findById(id).isPresent()){
+            return subscriptionsRepository.findById(id).get();
+        } else {
+            throw new RuntimeException("Subscription not found ! ");
+        }
+    }
+
+    @Override
+    public Subscriptions update(Integer id, Subscriptions subscription) {
+        return subscriptionsRepository.findById(id).map(sub -> {
+            sub.setName_sub(subscription.getName_sub());
+            sub.setDescription_sub(subscription.getDescription_sub());
+            return subscriptionsRepository.save(sub);
+        }).orElseThrow(() -> new RuntimeException("Language not found !"));
+    }
+
+    @Override
+    public String deleteById(Integer id) {
+        subscriptionsRepository.deleteById(id);
+        return "Subscription deleted!";
+    }
+}

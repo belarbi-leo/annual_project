@@ -1,0 +1,42 @@
+package com.pa2aresgi.pa2a.controller;
+
+import com.pa2aresgi.pa2a.modele.Disputes;
+import com.pa2aresgi.pa2a.service.DisputesService;
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/disputes")
+@AllArgsConstructor
+public class DisputesController {
+
+    private final DisputesService disputesService;
+
+    @PostMapping("/create")
+    public Disputes create(@RequestBody Disputes dispute){
+        return disputesService.create(dispute);
+    }
+
+    @GetMapping("/read")
+    public List<Disputes> readAll(){
+        return disputesService.readAll();
+    }
+
+    @GetMapping("/read/{id}")
+    public Disputes findById(@PathVariable Integer id){
+        return disputesService.findById(id);
+    }
+
+
+    @PutMapping("/update/{id}")
+    public Disputes update(@PathVariable Integer id, @RequestBody Disputes dispute) {
+        return disputesService.update(id, dispute);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id) {
+        return disputesService.deleteById(id);
+    }
+}
