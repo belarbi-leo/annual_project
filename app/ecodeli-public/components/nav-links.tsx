@@ -5,7 +5,7 @@ import Link from "next/link";
 import {
   HomeIcon,
   BriefcaseIcon,
-  StarIcon,
+  /* StarIcon, */
   ExclamationCircleIcon,
   CreditCardIcon,
   ChatBubbleLeftRightIcon,
@@ -23,13 +23,14 @@ const links = [
   { name: "Livraisons", href: "/home/deliveries", icon: TruckIcon },
   { name: "Mes services", href: "/home/services", icon: HomeIcon },
   { name: "Separator", href: "", icon: null },
-  { name: "Colis",  href: "home/packages", icon: HomeIcon },
+  { name: "Colis",  href: "/home/packages", icon: HomeIcon },
   { name: "Prestations", href: "/home/prestations", icon: BriefcaseIcon },
   /*{ name: "Avis", href: "/home/ratings", icon: StarIcon },*/
   { name: "Litiges", href: "/home/dispute", icon: ExclamationCircleIcon },
   { name: "Paiements", href: "/home/payments", icon: CreditCardIcon },
   { name: "Messagerie", href: "/home/messages", icon: ChatBubbleLeftRightIcon },
   { name: "Compte", href: "/home/account", icon: CogIcon },
+  { name: "Separator", href: "", icon: null },
   { name: 'Déconnexion', href: '/logout', icon: ArrowLeftStartOnRectangleIcon, isLogout: true },
 ];
 

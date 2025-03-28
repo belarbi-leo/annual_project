@@ -34,8 +34,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         {/* Logo et bouton */}
         <div className={clsx("flex w-full mb-1", isCollapsed ? "justify-center" : "items-center justify-between")}>
           {!isCollapsed && (
-            <div className="flex items-center space-x-3 m-auto">
-              <Image src="/favicon.ico" alt="Logo EcoDeli" width={40} height={40} className="h-10 w-10"/>
+            <div className="flex space-x-3 mx-3">
+              <Image src="/favicon.ico" alt="Logo EcoDeli" width={40} height={40} className="h-10 w-10" />
+              <h1 className="text-xl my-auto">EcoDeli</h1>
             </div>
           )}
           <button
@@ -66,7 +67,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       >
         {/* Entête avec logo et bouton de fermeture */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3 m-auto">
+          <div className="flex space-x-3 mx-3">
             <Image src="/favicon.ico" alt="Logo EcoDeli" width={40} height={40} className="h-10 w-10" />
           </div>
           <button

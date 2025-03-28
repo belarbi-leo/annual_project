@@ -19,6 +19,7 @@ import clsx from "clsx";
 
 const links = [
 { name: "Tableau de bord", href: "/admin", icon: HomeIcon },
+{ name: "Separator", href: "", icon: null },
 { name: "Gestion des utilisateurs", href: "/admin/users", icon: UserIcon },
 { name: "Gestion des litiges", href: "/admin/disputes", icon: ExclamationCircleIcon },
 { name: "Gestion des prestations", href: "/admin/services", icon: BriefcaseIcon },
@@ -28,6 +29,7 @@ const links = [
 { name: "Paiements", href: "/admin/payments", icon: CreditCardIcon },
 { name: "Abonnements", href: "/admin/subscriptions", icon: NewspaperIcon },
 { name: "Messagerie", href: "/admin/messages", icon: ChatBubbleLeftRightIcon },
+{ name: "Separator", href: "", icon: null },
 { name: 'Déconnexion', href: '/logout', icon: ArrowLeftStartOnRectangleIcon, isLogout: true },
 ];
 
@@ -41,8 +43,11 @@ export default function AdminNavLinks({ isCollapsed, onNavigate }: NavLinksProps
 
   return (
     <nav className="mt-4 space-y-2">
-      {links.map((link) => {
-        const LinkIcon = link.icon;
+      {links.map((link, index) => { 
+        const LinkIcon = link.icon as React.ElementType;
+        if (link.name === "Separator") {
+          return <hr key={index} className="my-2 border-gray-300 dark:border-gray-700" />;
+        }
         return (
           <Link
             key={link.name}

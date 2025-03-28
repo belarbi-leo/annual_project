@@ -15,7 +15,7 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         // Autoriser les requêtes depuis toutes les origines (pour le dev, à restreindre en prod)
-        config.setAllowedOrigins(List.of("http://localhost:3000")); // Remplace par l'URL de ton front
+        config.setAllowedOrigins(List.of("http://localhost:3000/")); // Remplace par l'URL de ton front
 
         // Autoriser ces méthodes HTTP
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
