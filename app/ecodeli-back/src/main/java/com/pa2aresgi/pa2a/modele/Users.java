@@ -22,7 +22,7 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_user;
     @Column
-    private Timestamp date_create;
+    private Timestamp date_registration;
     @Column
     @Enumerated(EnumType.STRING)
     private Role_enum role;
@@ -60,7 +60,7 @@ public class Users {
     @Column(length=34)
     private String iban;
     @ManyToOne
-    @JoinColumn(name="id_sub", nullable = false)
+    @JoinColumn(name="id_subscription", nullable = false)
     private Subscriptions id_sub;
     @ManyToOne
     @JoinColumn(name="id_langue", nullable = false)

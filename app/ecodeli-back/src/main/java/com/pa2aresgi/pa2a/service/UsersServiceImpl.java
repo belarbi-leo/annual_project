@@ -35,7 +35,7 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public Users update(Integer id, Users user) {
         return usersRepository.findById(id).map(usr -> {
-            usr.setDate_create(user.getDate_create());
+            usr.setDate_registration(user.getDate_registration());
             usr.setRole(user.getRole());
             usr.setAccount_status(user.getAccount_status());
             usr.setDate_status(user.getDate_status());
