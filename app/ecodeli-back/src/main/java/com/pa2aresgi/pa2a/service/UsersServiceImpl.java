@@ -53,7 +53,7 @@ public class UsersServiceImpl implements UsersService {
             usr.setCode_payment(user.getCode_payment());
             usr.setExpiration_payment(user.getExpiration_payment());
             usr.setIban(user.getIban());
-            usr.setId_sub(user.getId_sub());
+            usr.setId_subscription(user.getId_subscription());
             usr.setId_langue(user.getId_langue());/*
             usr.setDipustes_list(user.getDipustes_list());
             usr.setAuthorizations_list(user.getAuthorizations_list());

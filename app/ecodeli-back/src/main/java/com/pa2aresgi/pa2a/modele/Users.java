@@ -61,7 +61,7 @@ public class Users {
     private String iban;
     @ManyToOne
     @JoinColumn(name="id_subscription", nullable = false)
-    private Subscriptions id_sub;
+    private Subscriptions id_subscription;
     @ManyToOne
     @JoinColumn(name="id_langue", nullable = false)
     private Languages id_langue;

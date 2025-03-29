@@ -17,7 +17,7 @@ web_modules/
 
 # Fichiers de build et production
 /build
-/.next/
+.next/
 /out/
 /dist
 .nuxt

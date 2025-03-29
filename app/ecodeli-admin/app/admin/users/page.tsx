@@ -53,8 +53,8 @@ export default function UsersManagementPage() {
         ) : users.length > 0 ? (
           <ul>
             {users.map((user: any) => (
-              <li key={user.id} className="py-2 border-b border-gray-200 dark:border-gray-700">
-                {user.name} - {user.email}
+              <li key={user.id_user} className="py-2 border-b border-gray-200 dark:border-gray-700">
+                {user.first_name}  {user.last_name} - {user.email}
               </li>
             ))}
           </ul>

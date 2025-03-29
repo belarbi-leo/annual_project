@@ -22,7 +22,7 @@ public class Subscriptions {
     private String name_sub;
     @Column
     private String description_sub;
-    @OneToMany(mappedBy = "id_sub")
+    @OneToMany(mappedBy = "id_subscription")
     @JsonIgnore
     private List<Users> users_list = new ArrayList<>();
     @OneToMany(mappedBy = "id_sub")
