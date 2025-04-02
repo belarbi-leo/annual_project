@@ -1,155 +1,207 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import Image from "next/image";
+import { useState } from "react";
 
-export default function ProductPage() {
-  const router = useRouter();
-  const [categoryOpen, setCategoryOpen] = useState(false);
-  const [priceOpen, setPriceOpen] = useState(false);
+const categories = [
+  {
+    name: "Services à la personne",
+    icon: "👩‍🔧",
+    subcategories: ["Garde d'enfants", "Aide à domicile", "Coach personnel"],
+  },
+  {
+    name: "Transport & Livraison",
+    icon: "🚚",
+    subcategories: ["Déménagement", "Livraison de colis", "Taxi privé"],
+  },
+  {
+    name: "Travaux & Réparations",
+    icon: "🔧",
+    subcategories: ["Plomberie", "Électricité", "Menuiserie"],
+  },
+  {
+    name: "Informatique & Digital",
+    icon: "💻",
+    subcategories: ["Développement Web", "Support IT", "Montage vidéo"],
+  },
+  {
+    name: "Événementiel & Loisirs",
+    icon: "🎉",
+    subcategories: ["DJ", "Photographe", "Organisateur d'événements"],
+  },
+];
 
-  // Déclaration des références avec types explicites
-  const categoryRef = useRef<HTMLDivElement | null>(null);
-  const priceRef = useRef<HTMLDivElement | null>(null);
+const prestations = {
+  "Garde d'enfants": [
+    { name: "BabyCare+", price: "15€/h", rating: 4.8 },
+    { name: "BabyBaby+", price: "25€/h", rating: 4.3 },
+  ],
+  "Aide à domicile": [
+    { name: "HomeHelp", price: "12€/h", rating: 4.6 },
+    { name: "HomeSweatHome", price: "24€/h", rating: 3.6 },
+  ],
+  "Coach personnel": [{ name: "FitCoach", price: "30€/h", rating: 4.9 }],
+  "Déménagement": [{ name: "Démélogistics", price: "50€", rating: 4.5 }],
+  "Livraison de colis": [{ name: "Speedy Express", price: "20€", rating: 4.7 }],
+  "Taxi privé": [{ name: "UrbanCab", price: "30€", rating: 4.2 }],
+  "Plomberie": [{ name: "AquaFix", price: "40€", rating: 4.4 }],
+  "Électricité": [{ name: "VoltSafe", price: "45€", rating: 4.3 }],
+  "Menuiserie": [{ name: "BoisExpert", price: "50€", rating: 4.1 }],
+  "Développement Web": [{ name: "WebSolutions", price: "500€", rating: 4.9 }],
+  "Support IT": [{ name: "ITAssist", price: "40€/h", rating: 4.5 }],
+  "Montage vidéo": [{ name: "VidéoPro", price: "100€", rating: 4.6 }],
+  "DJ": [{ name: "SoundMax", price: "200€", rating: 4.7 }],
+  "Photographe": [{ name: "PhotoArt", price: "150€", rating: 4.8 }],
+  "Organisateur d'événements": [{ name: "EventMaster", price: "500€", rating: 4.9 }],
+};
 
-  // Fonction pour appliquer un filtre via l'URL
-  const applyFilter = (type: string, value: string) => {
-    const params = new URLSearchParams(window.location.search);
-    params.set(type, value);
-    router.push(`?${params.toString()}`, { scroll: false });
-  };
+export default function Prestations() {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedSubCategory, setSelectedSubCategory] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filter, setFilter] = useState("all");
 
-  // Fermer les menus si on clique en dehors
-  useEffect(() => {
-    // Fonction de gestion des clics en dehors des menus
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        categoryRef.current && !categoryRef.current.contains(event.target as Node) &&
-        priceRef.current && !priceRef.current.contains(event.target as Node)
-      ) {
-        setCategoryOpen(false);
-        setPriceOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  const currentCategory = categories.find(
+    (cat) => cat.name === selectedCategory
+  );
+  const filteredPrestations = selectedSubCategory
+    ? prestations[selectedSubCategory]?.filter((p) =>
+        p.name.toLowerCase().includes(searchQuery.toLowerCase())
+      ) || []
+    : [];
 
   return (
-    <div>
-      {/* En-tête avec filtres */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-0">
-          Prestations
+    <div className="space-y-8 p-6 bg-gray-50 dark:bg-gray-900 min-h-screen">
+      {/* Texte d'introduction */}
+      <div className="text-center max-w-3xl mx-auto">
+        <h2 className="text-3xl font-bold text-gray-800 my-5 dark:text-white">
+          Nos Prestations
         </h2>
+        <p className="text-gray-600 dark:text-gray-300 my-10 text-lg">
+          Nous sélectionnons soigneusement nos prestataires pour vous offrir des
+          services de qualité. Trouvez des experts qualifiés, notés et approuvés
+          par notre communauté. Que ce soit pour des travaux, du transport, ou
+          du digital, nous avons la prestation qu'il vous faut.
+        </p>
+      </div>
+      <div className="w-full h-[2px] bg-gray-300 dark:bg-gray-600 mt-15"></div>
 
-        {/* Conteneur des filtres et boutons */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4 w-full sm:w-auto">
-          {/* Conteneur des deux boutons dropdown */}
-          <div className="flex flex-row sm:flex-row gap-4 w-full sm:w-auto justify-center">
-            {/* Menu dropdown Catégories */}
-            <div className="" ref={categoryRef}>
-              <button
-                onClick={() => {
-                  setCategoryOpen(!categoryOpen);
-                  setPriceOpen(false); // Ferme l'autre menu si ouvert
-                }}
-                className="flex items-center justify-between bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md shadow-md hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none w-full sm:w-auto"
-              >
-                Catégories
-                <ChevronDownIcon className="w-5 h-5 ml-2" />
-              </button>
-              {categoryOpen && (
-                <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-700 z-10">
-                  <ul className="py-1">
-                    {["Électronique", "Maison", "Mode"].map((cat) => (
-                      <li key={cat}>
-                        <button
-                          onClick={() => applyFilter("category", cat)}
-                          className="w-full text-left px-4 py-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-600"
-                        >
-                          {cat}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-
-            {/* Menu dropdown Prix */}
-            <div className="" ref={priceRef}>
-              <button
-                onClick={() => {
-                  setPriceOpen(!priceOpen);
-                  setCategoryOpen(false); // Ferme l'autre menu si ouvert
-                }}
-                className="flex items-center justify-between bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md shadow-md hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none w-full sm:w-auto"
-              >
-                Prix
-                <ChevronDownIcon className="w-5 h-5 ml-2" />
-              </button>
-              {priceOpen && (
-                <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-700 z-10">
-                  <ul className="py-1">
-                    {["Moins de 50€", "50€ - 100€", "Plus de 100€"].map((price) => (
-                      <li key={price}>
-                        <button
-                          onClick={() => applyFilter("price", price)}
-                          className="w-full text-left px-4 py-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-600"
-                        >
-                          {price}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Bouton vert Ajouter une prestation */}
-          <button className="bg-green-500 text-white px-6 py-2 rounded-md shadow-md hover:bg-green-600 focus:outline-none w-full sm:w-auto">
-            Ajouter une prestation
-          </button>
-        </div>
+      {/* Barre de recherche */}
+      <div className="flex justify-between items-center mt-10">
+        <input
+          type="text"
+          placeholder="Rechercher une prestation..."
+          className="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#49cb5c]"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
       </div>
 
-      {/* Liste des produits */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {[1, 2, 3, 4].map((id) => (
-          <div key={id} className="dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
-            <Image
-              src="/deliveryman.jpg"
-              alt={`Produit ${id}`}
-              className="w-full h-48 object-cover shadow-md"
-              width={240}
-              height={240}
+      {/* Catégories */}
+      <div className="flex flex-wrap gap-4 justify-around my-10">
+        {categories.map((cat) => (
+          <label
+            key={cat.name}
+            className="cursor-pointer flex items-center gap-2"
+          >
+            <input
+              type="radio"
+              name="category"
+              value={cat.name}
+              checked={selectedCategory === cat.name}
+              onChange={() => {
+                setSelectedCategory(cat.name);
+                setSelectedSubCategory(null);
+              }}
+              className="hidden"
             />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Produit {id}
-              </h3>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                Une description courte du produit {id}.
-              </p>
-              <div className="mt-4 flex justify-between items-center">
-                <span className="text-xl font-bold text-gray-900 dark:text-white">
-                  {id * 20 + 9},99€
-                </span>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-600 focus:outline-none">
-                  Acheter
-                </button>
-              </div>
-            </div>
-          </div>
+            <span
+              className={`w-5 h-5 ${
+                selectedCategory === cat.name
+                  ? "text-lime-600"
+                  : "text-gray-400"
+              }`}
+            >
+              {cat.icon}
+            </span>
+            <span
+              className={`text-gray-700 text-sm font-medium transition-all duration-300
+              ${
+                selectedCategory === cat.name
+                  ? "text-lime-600 font-semibold border-b-2 border-lime-600"
+                  : "hover:text-lime-500 hover:border-b-2 hover:border-lime-500"
+              }`}
+            >
+              {cat.name}
+            </span>
+          </label>
         ))}
       </div>
+
+      {/* Sous-catégories */}
+      {selectedCategory && currentCategory?.subcategories.length > 0 && (
+        <div className="flex flex-wrap gap-4 justify-around mb-5">
+          {currentCategory.subcategories.map((subCat) => (
+            <label
+              key={subCat}
+              className="cursor-pointer flex items-center gap-2"
+            >
+              <input
+                type="radio"
+                name="subcategory"
+                value={subCat}
+                checked={selectedSubCategory === subCat}
+                onChange={() => setSelectedSubCategory(subCat)}
+                className="hidden"
+              />
+              <span
+                className={`text-gray-700 text-sm font-medium transition-all duration-300
+                ${
+                  selectedSubCategory === subCat
+                    ? "text-green-600 font-semibold border-b-2 border-green-600"
+                    : "hover:text-green-500 hover:border-b-2 hover:border-green-500"
+                }`}
+              >
+                {subCat}
+              </span>
+            </label>
+          ))}
+        </div>
+      )}
+
+      <hr className="my-6 border-t border-gray-300 dark:border-gray-600" />
+
+      {/* Filtres - Affichés seulement si une sous-catégorie est sélectionnée */}
+      {selectedSubCategory && (
+        <div className="flex justify-end items-center my-5">
+          <select
+            className="border py-2 px-3 rounded-md"
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+          >
+            <option value="all">Trier par</option>
+            <option value="price">Prix</option>
+            <option value="rating">Note</option>
+          </select>
+        </div>
+      )}
+
+      {/* Liste des prestations - S'affiche seulement après avoir choisi une sous-catégorie */}
+      {selectedSubCategory && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filteredPrestations.length > 0
+            ? filteredPrestations.map((prestation, index) => (
+                <div
+                  key={index}
+                  className="p-4 border rounded-md shadow-md hover:shadow-lg bg-white"
+                >
+                  <h3 className="text-lg font-semibold">{prestation.name}</h3>
+                  <p className="text-gray-500">{prestation.price}</p>
+                  <p className="text-yellow-500">⭐ {prestation.rating}</p>
+                </div>
+              ))
+            : null}
+        </div>
+      )}
     </div>
   );
 }
