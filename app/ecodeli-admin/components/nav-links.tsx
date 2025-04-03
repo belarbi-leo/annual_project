@@ -57,7 +57,7 @@ export default function AdminNavLinks({ isCollapsed, onNavigate }: NavLinksProps
                 ? 'text-sm text-red-600 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-800'
                 : 'text-sm text-gray-700 dark:text-gray-300',
               "text-sm flex items-center gap-2 px-4 py-2 rounded-md text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700",
-              pathname === link.href && "bg-sky-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300"
+              pathname === link.href && "bg-sky-100 text-green-600 dark:bg-green-900 dark:text-green-300"
             )}
             onClick={() => {
               if (onNavigate) onNavigate();

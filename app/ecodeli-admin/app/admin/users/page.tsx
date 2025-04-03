@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
-import { fetchUsers } from "@/lib/users/fetchUsers";
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
+import { fetchUsers } from "@/lib/users/fetchAllUsers";
 
 const userTypes = [
   { label: "Clients Particuliers", value: "clients_particuliers" },
@@ -15,7 +16,6 @@ const userTypes = [
 
 export default function UsersManagementPage() {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -30,19 +30,19 @@ export default function UsersManagementPage() {
   }, [selectedType]);
 
   return (
-    <div className="p-6">
+    <div className="">
       <h2 className="text-2xl font-semibold mb-4">Gestion des Utilisateurs</h2>
       
       {/* Boutons de sélection */}
       <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         {userTypes.map(({ label, value }) => (
-          <button
-            key={value}
-            onClick={() => router.push(`/admin/users?type=${value}`)}
-            className={`px-4 py-2 w-full rounded-md ${selectedType === value ? "bg-blue-500 text-white" : "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600"}`}
-          >
-            {label}
-          </button>
+          <Link key={value} href={`/admin/users?type=${value}`}>
+            <button
+              className={`px-4 py-2 w-full rounded-md ${selectedType === value ? "bg-green-500 text-white" : "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600"}`}
+            >
+              {label}
+            </button>
+          </Link>
         ))}
       </div>
 
@@ -53,8 +53,11 @@ export default function UsersManagementPage() {
         ) : users.length > 0 ? (
           <ul>
             {users.map((user: any) => (
-              <li key={user.id_user} className="py-2 border-b border-gray-200 dark:border-gray-700">
-                {user.first_name}  {user.last_name} - {user.email}
+              <li key={user.id_user} className="py-2 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+                <span>{user.first_name} {user.last_name} - {user.email}</span>
+                <Link href={`/admin/users/${user.id_user}`} className="px-3 py-1 bg-green-500 text-white rounded-md hover:bg-green-600">
+                  Voir
+                </Link>
               </li>
             ))}
           </ul>
