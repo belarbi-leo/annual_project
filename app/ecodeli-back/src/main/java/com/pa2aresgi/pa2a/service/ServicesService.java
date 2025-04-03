@@ -8,6 +8,9 @@ public interface ServicesService {
     Services create(Services service);
 
     List<Services> readAll();
+
+    List<Services> readAllOrderById();
+
     Services findById(Integer id);
 
     Services update(Integer id, Services service);

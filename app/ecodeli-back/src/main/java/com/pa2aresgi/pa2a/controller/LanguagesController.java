@@ -21,7 +21,8 @@ public class LanguagesController {
 
     @GetMapping("/read")
     public List<Languages> readAll(){
-        return languagesService.readAll();
+        return languagesService.readAllOrderById();
+        //return languagesService.readAll();
     }
 
     @GetMapping("/read/{id}")

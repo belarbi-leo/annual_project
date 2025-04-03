@@ -21,7 +21,8 @@ public class PaymentsController {
 
     @GetMapping("/read")
     public List<Payments> readAll(){
-        return paymentsService.readAll();
+        return paymentsService.readAllOrderById();
+        //return paymentsService.readAll();
     }
 
     @GetMapping("/read/{id}")

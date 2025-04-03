@@ -8,6 +8,9 @@ public interface OpinionsService {
     Opinions create(Opinions opinion);
 
     List<Opinions> readAll();
+
+    List<Opinions> readAllOrderById();
+
     Opinions findById(Integer id);
 
     Opinions update(Integer id, Opinions opinion);

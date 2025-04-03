@@ -23,6 +23,11 @@ public class PaymentsServiceImpl implements PaymentsService {
     }
 
     @Override
+    public List<Payments> readAllOrderById() {
+        return paymentsRepository.findAllOrderById_payment();
+    }
+
+    @Override
     public Payments findById(Integer id) {
         if (paymentsRepository.findById(id).isPresent()){
             return paymentsRepository.findById(id).get();

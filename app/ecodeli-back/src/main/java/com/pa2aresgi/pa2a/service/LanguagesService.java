@@ -9,6 +9,9 @@ public interface LanguagesService {
     Languages create(Languages language);
 
     List<Languages> readAll();
+
+    List<Languages> readAllOrderById();
+
     Languages findById(Integer id);
 
     Languages update(Integer id, Languages language);

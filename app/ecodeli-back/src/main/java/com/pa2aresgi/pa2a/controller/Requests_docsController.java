@@ -21,7 +21,8 @@ public class Requests_docsController {
 
     @GetMapping("/read")
     public List<Requests_docs> readAll(){
-        return requests_docsService.readAll();
+        return requests_docsService.readAllOrderById();
+        //return requests_docsService.readAll();
     }
 
     @GetMapping("/read/{id}")

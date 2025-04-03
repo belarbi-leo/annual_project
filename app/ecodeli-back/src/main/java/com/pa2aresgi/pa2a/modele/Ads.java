@@ -31,9 +31,9 @@ public class Ads {
     @ManyToOne
     @JoinColumn(name="id_svc", nullable = false)
     private Services id_svc;
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name="id_sub", nullable = false)
-    private Subscriptions id_sub;
+    private Subscriptions id_sub;*/
     @Column
     @Enumerated(EnumType.STRING)
     private Status_ad_enum status_ad;

@@ -22,10 +22,18 @@ public class Subscriptions {
     private String name_sub;
     @Column
     private String description_sub;
+    @Column(columnDefinition="numeric(10,2)")
+    private Float price;
+    @Column(columnDefinition="numeric(10,2)")
+    private Float insurance;
+    @Column
+    private Integer shipping_reduction;
+    @Column
+    private Integer send_priority;
     @OneToMany(mappedBy = "id_subscription")
     @JsonIgnore
     private List<Users> users_list = new ArrayList<>();
-    @OneToMany(mappedBy = "id_sub")
+    /*@OneToMany(mappedBy = "id_sub")
     @JsonIgnore
-    private List<Ads> ads_list = new ArrayList<>();
+    private List<Ads> ads_list = new ArrayList<>();*/
 }

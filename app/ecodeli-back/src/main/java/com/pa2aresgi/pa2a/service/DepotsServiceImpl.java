@@ -24,6 +24,11 @@ public class DepotsServiceImpl implements DepotsService {
     }
 
     @Override
+    public List<Depots> readAllOrderById() {
+        return depotsRepository.findAllOrderById_depot();
+    }
+
+    @Override
     public Depots findById(Integer id) {
         if (depotsRepository.findById(id).isPresent()){
             return depotsRepository.findById(id).get();

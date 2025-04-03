@@ -21,7 +21,8 @@ public class ServicesController {
 
     @GetMapping("/read")
     public List<Services> readAll(){
-        return servicesService.readAll();
+        return servicesService.readAllOrderById();
+        //return servicesService.readAll();
     }
 
     @GetMapping("/read/{id}")

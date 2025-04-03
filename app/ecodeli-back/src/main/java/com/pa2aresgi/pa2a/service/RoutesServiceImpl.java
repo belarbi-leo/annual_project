@@ -23,6 +23,11 @@ public class RoutesServiceImpl implements RoutesService {
     }
 
     @Override
+    public List<Routes> readAllOrderById() {
+        return routesRepository.findAllOrderById_route();
+    }
+
+    @Override
     public Routes findById(Integer id) {
         if (routesRepository.findById(id).isPresent()){
             return routesRepository.findById(id).get();
@@ -44,8 +49,9 @@ public class RoutesServiceImpl implements RoutesService {
             rt.setStreet_end_route(route.getStreet_end_route());
             rt.setPostal_code_end_route(route.getPostal_code_end_route());
             rt.setCountry_end_route(route.getCountry_end_route());
-            rt.setDescription_route(route.getDescription_route());/*
-            rt.setAds_set(route.getAds_set());*/
+            rt.setDescription_route(route.getDescription_route());
+            rt.setStep_route(route.getStep_route());
+            //rt.setAds_set(route.getAds_set());
             return routesRepository.save(rt);
         }).orElseThrow(() -> new RuntimeException("Route not found !"));
     }

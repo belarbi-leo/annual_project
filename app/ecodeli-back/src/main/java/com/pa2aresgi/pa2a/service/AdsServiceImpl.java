@@ -25,6 +25,11 @@ public class AdsServiceImpl implements AdsService {
     }
 
     @Override
+    public List<Ads> readAllOrderById() {
+        return adsRepository.findAllOrderById_ad();
+    }
+
+    @Override
     public Ads findById(Integer id) {
         if (adsRepository.findById(id).isPresent()){
             return adsRepository.findById(id).get();
@@ -39,7 +44,7 @@ public class AdsServiceImpl implements AdsService {
             a.setId_user_creator(ad.getId_user_creator());
             a.setId_user_accept(ad.getId_user_accept());
             a.setId_svc(ad.getId_svc());
-            a.setId_sub(ad.getId_sub());
+            //a.setId_sub(ad.getId_sub());
             a.setStatus_ad(ad.getStatus_ad());
             a.setDate_creation_ad(ad.getDate_creation_ad());
             a.setDate_accept_ad(ad.getDate_accept_ad());

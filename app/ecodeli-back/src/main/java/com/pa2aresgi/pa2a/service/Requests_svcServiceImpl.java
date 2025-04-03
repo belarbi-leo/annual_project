@@ -23,6 +23,11 @@ public class Requests_svcServiceImpl implements Requests_svcService {
     }
 
     @Override
+    public List<Requests_svc> readAllOrderById() {
+        return requests_svcRepository.findAllOrderById_req_svc();
+    }
+
+    @Override
     public Requests_svc findById(Integer id) {
         if (requests_svcRepository.findById(id).isPresent()){
             return requests_svcRepository.findById(id).get();

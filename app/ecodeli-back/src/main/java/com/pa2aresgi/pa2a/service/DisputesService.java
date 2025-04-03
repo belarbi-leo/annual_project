@@ -8,6 +8,9 @@ public interface DisputesService {
     Disputes create(Disputes dispute);
 
     List<Disputes> readAll();
+
+    List<Disputes> readAllOrderById();
+
     Disputes findById(Integer id);
 
     Disputes update(Integer id, Disputes dispute);

@@ -21,7 +21,8 @@ public class AuthorizationsController {
 
     @GetMapping("/read")
     public List<Authorizations> readAll(){
-        return authorizationsService.readAll();
+        return authorizationsService.readAllOrderById();
+        //return authorizationsService.readAll();
     }
 
     @GetMapping("/read/{id}")

@@ -23,6 +23,11 @@ public class MaterielsServiceImpl implements MaterielsService {
     }
 
     @Override
+    public List<Materiels> readAllOrderById() {
+        return materielsRepository.findAllOrderById_mat();
+    }
+
+    @Override
     public Materiels findById(Integer id) {
         if (materielsRepository.findById(id).isPresent()){
             return materielsRepository.findById(id).get();

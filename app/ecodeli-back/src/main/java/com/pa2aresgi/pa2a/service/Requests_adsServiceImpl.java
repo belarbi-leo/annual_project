@@ -23,6 +23,11 @@ public class Requests_adsServiceImpl implements Requests_adsService {
     }
 
     @Override
+    public List<Requests_ads> readAllOrderById() {
+        return requests_adsRepository.findAllOrderById_req_annonce();
+    }
+
+    @Override
     public Requests_ads findById(Integer id) {
         if (requests_adsRepository.findById(id).isPresent()){
             return requests_adsRepository.findById(id).get();

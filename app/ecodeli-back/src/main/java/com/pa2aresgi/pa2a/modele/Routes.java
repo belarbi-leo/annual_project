@@ -42,6 +42,8 @@ public class Routes {
     private String country_end_route;
     @Column
     private String description_route;
+    @Column
+    private Integer step_route;
     @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable(name = "matches",
             joinColumns = @JoinColumn(name="id_route"),

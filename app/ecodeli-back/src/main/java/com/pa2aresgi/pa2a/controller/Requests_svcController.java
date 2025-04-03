@@ -21,7 +21,8 @@ public class Requests_svcController {
 
     @GetMapping("/read")
     public List<Requests_svc> readAll(){
-        return requests_svcService.readAll();
+        return requests_svcService.readAllOrderById();
+        //return requests_svcService.readAll();
     }
 
     @GetMapping("/read/{id}")

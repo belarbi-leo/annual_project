@@ -23,6 +23,11 @@ public class Requests_docsServiceImpl implements Requests_docsService {
     }
 
     @Override
+    public List<Requests_docs> readAllOrderById() {
+        return requests_docsRepository.findAllOrderById_doc_req();
+    }
+
+    @Override
     public Requests_docs findById(Integer id) {
         if (requests_docsRepository.findById(id).isPresent()){
             return requests_docsRepository.findById(id).get();

@@ -8,6 +8,9 @@ public interface MaterielsService {
     Materiels create(Materiels materiel);
 
     List<Materiels> readAll();
+
+    List<Materiels> readAllOrderById();
+
     Materiels findById(Integer id);
 
     Materiels update(Integer id, Materiels materiel);

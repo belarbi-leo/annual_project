@@ -8,6 +8,9 @@ public interface RoutesService {
     Routes create(Routes route);
 
     List<Routes> readAll();
+
+    List<Routes> readAllOrderById();
+
     Routes findById(Integer id);
 
     Routes update(Integer id, Routes route);

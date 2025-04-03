@@ -1,6 +1,7 @@
 package com.pa2aresgi.pa2a.service;
 
 
+import com.pa2aresgi.pa2a.enumeratation.Role_enum;
 import com.pa2aresgi.pa2a.modele.*;
 import com.pa2aresgi.pa2a.repository.UsersRepository;
 import lombok.AllArgsConstructor;
@@ -21,6 +22,21 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public List<Users> readAll() {
         return usersRepository.findAll();
+    }
+
+    @Override
+    public List<Users> readAllOrderById() {
+        return usersRepository.findAllOrderById_user();
+    }
+
+    @Override
+    public List<Users> readAllByRole(Role_enum role){
+        return usersRepository.findAllByRole(role);
+    }
+
+    @Override
+    public List<Users> readAllByRoleOrderById(Role_enum role){
+        return usersRepository.findAllByRoleOrderById_user(role);
     }
 
     @Override

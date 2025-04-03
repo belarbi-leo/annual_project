@@ -8,6 +8,9 @@ public interface AuthorizationsService {
     Authorizations create(Authorizations authorization);
 
     List<Authorizations> readAll();
+
+    List<Authorizations> readAllOrderById();
+
     Authorizations findById(Integer id);
 
     Authorizations update(Integer id, Authorizations authorization);

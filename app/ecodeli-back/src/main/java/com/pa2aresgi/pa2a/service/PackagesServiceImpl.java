@@ -23,6 +23,11 @@ public class PackagesServiceImpl implements PackagesService {
     }
 
     @Override
+    public List<Packages> readAllOrderById() {
+        return packagesRepository.findAllOrderById_pack();
+    }
+
+    @Override
     public Packages findById(Integer id) {
         if (packagesRepository.findById(id).isPresent()){
             return packagesRepository.findById(id).get();

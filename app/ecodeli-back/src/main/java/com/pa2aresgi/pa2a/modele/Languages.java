@@ -20,6 +20,8 @@ public class Languages {
     private Integer id_langue;
     @Column(length = 30)
     private String langue;
+    @Column(length = 2, unique = true, nullable = false)
+    private String iso;
     @OneToMany(mappedBy = "id_user")
     @JsonIgnore
     private List<Users> users_list = new ArrayList<>();

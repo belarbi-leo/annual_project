@@ -2,6 +2,7 @@ package com.pa2aresgi.pa2a.service;
 
 import com.pa2aresgi.pa2a.modele.Subscriptions;
 import com.pa2aresgi.pa2a.repository.SubscriptionsRepository;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,11 @@ public class SubscriptionsServiceImpl implements SubscriptionsService{
     }
 
     @Override
+    public List<Subscriptions> readAllOrderById() {
+        return subscriptionsRepository.findAllOrderById_sub();
+    }
+
+    @Override
     public Subscriptions findById(Integer id) {
         if (subscriptionsRepository.findById(id).isPresent()){
             return subscriptionsRepository.findById(id).get();
@@ -37,6 +43,10 @@ public class SubscriptionsServiceImpl implements SubscriptionsService{
         return subscriptionsRepository.findById(id).map(sub -> {
             sub.setName_sub(subscription.getName_sub());
             sub.setDescription_sub(subscription.getDescription_sub());
+            sub.setPrice(subscription.getPrice());
+            sub.setInsurance(subscription.getInsurance());
+            sub.setShipping_reduction(subscription.getShipping_reduction());
+            sub.setSend_priority(subscription.getSend_priority());
             return subscriptionsRepository.save(sub);
         }).orElseThrow(() -> new RuntimeException("Language not found !"));
     }

@@ -23,6 +23,11 @@ public class OpinionsServiceImpl implements OpinionsService {
     }
 
     @Override
+    public List<Opinions> readAllOrderById() {
+        return opinionsRepository.findAllOrderById_opinion();
+    }
+
+    @Override
     public Opinions findById(Integer id) {
         if (opinionsRepository.findById(id).isPresent()){
             return opinionsRepository.findById(id).get();

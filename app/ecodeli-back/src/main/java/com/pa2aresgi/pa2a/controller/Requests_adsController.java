@@ -21,7 +21,8 @@ public class Requests_adsController {
 
     @GetMapping("/read")
     public List<Requests_ads> readAll(){
-        return requests_adsService.readAll();
+        return requests_adsService.readAllOrderById();
+        //return requests_adsService.readAll();
     }
 
     @GetMapping("/read/{id}")

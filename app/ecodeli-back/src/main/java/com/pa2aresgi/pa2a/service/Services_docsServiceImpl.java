@@ -23,6 +23,11 @@ public class Services_docsServiceImpl implements Services_docsService {
     }
 
     @Override
+    public List<Services_docs> readAllOrderById() {
+        return services_docsRepository.findAllOrderById_doc_svc();
+    }
+
+    @Override
     public Services_docs findById(Integer id) {
         if (services_docsRepository.findById(id).isPresent()){
             return services_docsRepository.findById(id).get();

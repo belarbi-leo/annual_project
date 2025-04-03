@@ -21,7 +21,8 @@ public class DisputesController {
 
     @GetMapping("/read")
     public List<Disputes> readAll(){
-        return disputesService.readAll();
+        return disputesService.readAllOrderById();
+        //return disputesService.readAll();
     }
 
     @GetMapping("/read/{id}")

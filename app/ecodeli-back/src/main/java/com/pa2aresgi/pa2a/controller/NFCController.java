@@ -20,7 +20,8 @@ public class NFCController {
 
     @GetMapping("/read")
     public List<NFC> readAll(){
-        return nfcService.readAll();
+        return nfcService.readAllOrderById();
+        //return nfcService.readAll();
     }
 
     @GetMapping("/read/{id}")

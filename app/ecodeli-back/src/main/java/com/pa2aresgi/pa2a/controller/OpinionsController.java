@@ -21,7 +21,8 @@ public class OpinionsController {
 
     @GetMapping("/read")
     public List<Opinions> readAll(){
-        return opinionsService.readAll();
+        return opinionsService.readAllOrderById();
+        //return opinionsService.readAll();
     }
 
     @GetMapping("/read/{id}")

@@ -3,6 +3,7 @@ package com.pa2aresgi.pa2a.controller;
 import com.pa2aresgi.pa2a.modele.Subscriptions;
 import com.pa2aresgi.pa2a.service.SubscriptionsService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,9 +19,10 @@ public class SubscriptionsController {
         return subscriptionsService.create(subscription);
     }
 
-    @GetMapping("/read")
+    @GetMapping(value = "/read",  produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Subscriptions> readAll(){
-        return subscriptionsService.readAll();
+        return subscriptionsService.readAllOrderById();
+        //return subscriptionsService.readAll();
     }
 
     @GetMapping("/read/{id}")

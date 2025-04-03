@@ -24,6 +24,11 @@ public class DisputesServiceImpl implements DisputesService {
     }
 
     @Override
+    public List<Disputes> readAllOrderById() {
+        return disputesRepository.findAllOrderById_dispute();
+    }
+
+    @Override
     public Disputes findById(Integer id) {
         if (disputesRepository.findById(id).isPresent()){
             return disputesRepository.findById(id).get();

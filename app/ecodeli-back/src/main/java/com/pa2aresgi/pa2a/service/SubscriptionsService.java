@@ -8,6 +8,9 @@ public interface SubscriptionsService {
     Subscriptions create(Subscriptions subscription);
 
     List<Subscriptions> readAll();
+
+    List<Subscriptions> readAllOrderById();
+
     Subscriptions findById(Integer id);
 
     Subscriptions update(Integer id, Subscriptions subscription);

@@ -28,6 +28,11 @@ public class AuthorizationsServiceImpl implements AuthorizationsService {
     }
 
     @Override
+    public List<Authorizations> readAllOrderById() {
+        return authorizationsRepository.findAllOrderById_auth();
+    }
+
+    @Override
     public Authorizations findById(Integer id) {
         if (authorizationsRepository.findById(id).isPresent()){
             return authorizationsRepository.findById(id).get();

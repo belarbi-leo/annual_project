@@ -8,6 +8,9 @@ public interface Requests_docsService {
     Requests_docs create(Requests_docs request_doc);
 
     List<Requests_docs> readAll();
+
+    List<Requests_docs> readAllOrderById();
+
     Requests_docs findById(Integer id);
 
     Requests_docs update(Integer id, Requests_docs request_doc);

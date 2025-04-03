@@ -24,6 +24,11 @@ public class NFCServiceImpl implements NFCService {
     }
 
     @Override
+    public List<NFC> readAllOrderById() {
+        return nfcRepository.findAllOrderById_card_nfc();
+    }
+
+    @Override
     public NFC findById(Integer id) {
         if (nfcRepository.findById(id).isPresent()){
             return nfcRepository.findById(id).get();
