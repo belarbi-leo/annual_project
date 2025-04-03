@@ -1,36 +1,35 @@
-"use client";
-
+import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import clsx from "clsx";
 import {
   HomeIcon,
   UserIcon,
-  TruckIcon,
-  ClipboardIcon,
-  BriefcaseIcon,
   ExclamationCircleIcon,
-  CreditCardIcon,
-  NewspaperIcon, 
+  BriefcaseIcon,
+  ClipboardIcon,
   BuildingOfficeIcon,
-  ArrowLeftStartOnRectangleIcon,
+  TruckIcon,
+  CreditCardIcon,
+  NewspaperIcon,
   ChatBubbleLeftRightIcon,
+  ArrowLeftStartOnRectangleIcon,
 } from "@heroicons/react/24/outline";
-import clsx from "clsx";
 
 const links = [
-{ name: "Tableau de bord", href: "/admin", icon: HomeIcon },
-{ name: "Separator", href: "", icon: null },
-{ name: "Gestion des utilisateurs", href: "/admin/users", icon: UserIcon },
-{ name: "Gestion des litiges", href: "/admin/disputes", icon: ExclamationCircleIcon },
-{ name: "Gestion des prestations", href: "/admin/services", icon: BriefcaseIcon },
-{ name: "Gestion des livraisons", href: "/admin/deliveries", icon: ClipboardIcon },
-{ name: "Gestion des entrepôts", href: "/admin/warehouses", icon: BuildingOfficeIcon },
-{ name: "Suivi des colis", href: "/admin/tracking", icon: TruckIcon },
-{ name: "Paiements", href: "/admin/payments", icon: CreditCardIcon },
-{ name: "Abonnements", href: "/admin/subscriptions", icon: NewspaperIcon },
-{ name: "Messagerie", href: "/admin/messages", icon: ChatBubbleLeftRightIcon },
-{ name: "Separator", href: "", icon: null },
-{ name: 'Déconnexion', href: '/logout', icon: ArrowLeftStartOnRectangleIcon, isLogout: true },
+  { name: "dashboard", href: "/admin", icon: HomeIcon },
+  { name: "Separator", href: "", icon: null },
+  { name: "userManagement", href: "/admin/users", icon: UserIcon },
+  { name: "disputesManagement", href: "/admin/disputes", icon: ExclamationCircleIcon },
+  { name: "servicesManagement", href: "/admin/services", icon: BriefcaseIcon },
+  { name: "deliveriesManagement", href: "/admin/deliveries", icon: ClipboardIcon },
+  { name: "warehousesManagement", href: "/admin/warehouses", icon: BuildingOfficeIcon },
+  { name: "trackingManagement", href: "/admin/tracking", icon: TruckIcon },
+  { name: "paymentsManagement", href: "/admin/payments", icon: CreditCardIcon },
+  { name: "subscriptionsManagement", href: "/admin/subscriptions", icon: NewspaperIcon },
+  { name: "messages", href: "/admin/messages", icon: ChatBubbleLeftRightIcon },
+  { name: "Separator", href: "", icon: null },
+  { name: "logout", href: "/logout", icon: ArrowLeftStartOnRectangleIcon, isLogout: true },
 ];
 
 interface NavLinksProps {
@@ -40,31 +39,38 @@ interface NavLinksProps {
 
 export default function AdminNavLinks({ isCollapsed, onNavigate }: NavLinksProps) {
   const pathname = usePathname();
+  const t = useTranslations("Admin.Menu");
+
+  // Extraire la langue de l'URL (ex: "/fr/admin" → "fr")
+  const lang = pathname.split("/")[1];
 
   return (
     <nav className="mt-4 space-y-2">
-      {links.map((link, index) => { 
-        const LinkIcon = link.icon as React.ElementType;
+      {links.map((link, index) => {
         if (link.name === "Separator") {
-          return <hr key={index} className="my-2 border-gray-300 dark:border-gray-700" />;
+          return <hr key={`separator-${index}`} className="my-2 border-gray-300 dark:border-gray-700" />;
         }
+
+        const LinkIcon = link.icon as React.ElementType;
+        const linkHrefWithLang = `/${lang}${link.href}`; // Ajouter la langue à l'URL
+        const isActive = pathname === linkHrefWithLang;
+
         return (
           <Link
-            key={link.name}
-            href={link.href}
+            key={link.href}
+            href={linkHrefWithLang}
             className={clsx(
-                link.isLogout
-                ? 'text-sm text-red-600 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-800'
-                : 'text-sm text-gray-700 dark:text-gray-300',
-              "text-sm flex items-center gap-2 px-4 py-2 rounded-md text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700",
-              pathname === link.href && "bg-sky-100 text-green-600 dark:bg-green-900 dark:text-green-300"
+              "text-sm flex items-center gap-2 px-4 py-2 rounded-md",
+              "text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700",
+              link.isLogout
+                ? "text-red-600 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-800"
+                : "text-gray-700 dark:text-gray-300",
+              isActive && "bg-sky-100 text-green-600 dark:bg-green-900 dark:text-green-300"
             )}
-            onClick={() => {
-              if (onNavigate) onNavigate();
-            }}
+            onClick={onNavigate}
           >
-            <LinkIcon className="w-6 h-6" />
-            {!isCollapsed && <span>{link.name}</span>}
+            {LinkIcon && <LinkIcon className="w-6 h-6" />}
+            {!isCollapsed && <span>{t(link.name)}</span>}
           </Link>
         );
       })}

@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, use } from "react";
 import Image from "next/image";
+import {useTranslations} from 'next-intl';
 
 export default function LoginPage() {
+  const t = useTranslations('LoginPage');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -26,7 +28,7 @@ export default function LoginPage() {
           console.log("Email:", email, "Password:", password);
         }}>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium">Email</label>
+            <label htmlFor="email" className="block text-sm font-medium">{t('email')}</label>
             <input
               type="email"
               id="email"
@@ -37,7 +39,7 @@ export default function LoginPage() {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-sm font-medium">Mot de passe</label>
+            <label htmlFor="password" className="block text-sm font-medium">{t('password')}</label>
             <input
               type="password"
               id="password"
@@ -48,7 +50,7 @@ export default function LoginPage() {
             />
           </div>
           <button type="submit" className="w-full rounded-md bg-[#49cb5c] px-4 py-2 text-white font-semibold hover:bg-[#07b128] focus:outline-none">
-            Se connecter
+            {t('login')}
           </button>
         </form>
       </div>

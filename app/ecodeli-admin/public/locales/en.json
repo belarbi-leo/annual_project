@@ -1,0 +1,22 @@
+{
+  "LoginPage": {
+    "email": "E-mail",
+    "password": "Password",
+    "login": "Login"
+  },
+  "Admin": {
+    "Menu":{
+      "dashboard": "Dashboard",
+      "userManagement": "User management",
+      "disputesManagement": "Disputes",
+      "servicesManagement": "Services management",
+      "deliveriesManagement": "Deliveries management",
+      "warehousesManagement": "Warehouses management",
+      "trackingManagement": "Packages tracking",
+      "paymentsManagement": "Payments",
+      "subscriptionsManagement": "Subscriptions",
+      "messages": "Messages",
+      "logout": "Logout"
+    }
+  }
+}

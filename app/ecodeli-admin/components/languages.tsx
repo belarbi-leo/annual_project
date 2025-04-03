@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { LanguageIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 
@@ -13,7 +14,19 @@ const languages = [
 
 export default function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("fr");
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Détecter la langue actuelle depuis l'URL
+  const currentLang = pathname.split("/")[1]; 
+
+  const changeLanguage = (langCode: string) => {
+    setIsOpen(false);
+    if (currentLang !== langCode) {
+      const newPath = `/${langCode}${pathname.substring(currentLang.length + 1)}`;
+      router.push(newPath);
+    }
+  };
 
   return (
     <div className="relative">
@@ -31,13 +44,10 @@ export default function LanguageSelector() {
           {languages.map((lang) => (
             <button
               key={lang.code}
-              onClick={() => {
-                setSelectedLanguage(lang.code);
-                setIsOpen(false);
-              }}
+              onClick={() => changeLanguage(lang.code)}
               className={clsx(
                 "w-full px-4 py-2 text-left text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
-                { "font-semibold bg-gray-100 dark:bg-gray-700": selectedLanguage === lang.code }
+                { "font-semibold bg-gray-100 dark:bg-gray-700": currentLang === lang.code }
               )}
             >
               {lang.label}

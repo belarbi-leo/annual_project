@@ -1,0 +1,22 @@
+{
+  "LoginPage": {
+    "email": "E-mail",
+    "password": "Mot de Passe",
+    "login": "Connexion"
+  },
+  "Admin": {
+    "Menu":{
+      "dashboard": "Tableau de bord",
+      "userManagement": "Gestion des utilisateurs",
+      "disputesManagement": "Gestion des litiges",
+      "servicesManagement": "Gestion des prestations",
+      "deliveriesManagement": "Gestion des livraisons",
+      "warehousesManagement": "Gestion des entrepôts",
+      "trackingManagement": "Suivi des colis",
+      "paymentsManagement": "Paiements",
+      "subscriptionsManagement": "Abonnements",
+      "messages": "Messagerie",
+      "logout": "Déconnexion"
+    }
+  }
+}
