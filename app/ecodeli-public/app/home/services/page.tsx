@@ -90,10 +90,18 @@ export default function Prestations() {
         <input
           type="text"
           placeholder="Rechercher une prestation..."
-          className="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#49cb5c]"
+          className="w-[44%] px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#49cb5c]"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
+        <input
+          type="text"
+          placeholder="Rechercher une localisation..."
+          className="w-[44%] px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#49cb5c]"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <button className="w-[10%] px-4 py-2 bg-green-500 text-white rounded-lg flex items-center justify-center">Rechercher</button>
       </div>
 
       {/* Catégories */}
