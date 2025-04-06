@@ -1,4 +1,9 @@
 {
+  "Components": {
+    "SearchBar": {
+      "search":"Rechercher..."
+    }
+  },
   "LoginPage": {
     "email": "E-mail",
     "password": "Mot de Passe",
@@ -21,6 +26,7 @@
     },
     "UserManagement":{
       "userManagement": "Gestion des Utilisateurs",
+      "allUsers": "Tous",
       "privateUser": "Clients particuliers",
       "proUser": "Clients professionnels",
       "privateProvider": "Prestataires particuliers",
@@ -28,6 +34,7 @@
       "administrators": "Administrateurs",
       "awaitingValidation": "En attente de validation",
       "loading": "Chargement...",
+      "searchUser": "Rechercher un utilisateur...",
       "back": "Retour",
       "noUserFound": "Aucun utilisateur trouvé",
       "userDetails": "Détails de l'Utilisateur",
@@ -68,6 +75,7 @@
       "manageLanguages":"Gestion des Langues",
       "ManageLanguages": {
         "languagesManagement": "Gestion des langues",
+        "selectInput": "Sélectionner",
         "searchKey": "Rechercher une clé...",
         "noMatchFound": "Aucune correspondance trouvée",
         "save": "Enregistrer",

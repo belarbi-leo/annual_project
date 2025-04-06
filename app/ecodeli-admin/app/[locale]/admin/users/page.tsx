@@ -6,8 +6,10 @@ import Link from "next/link";
 import { fetchUsers } from "@/lib/users/fetchAllUsers";
 import { useTranslations } from "next-intl";
 import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
+import SearchBar from "@/components/searchbar"; // Assure-toi du bon chemin
 
 const userTypes = [
+  { label: "allUsers", value: "" },
   { label: "privateUser", value: "clients_particuliers" },
   { label: "proUser", value: "clients_professionnels" },
   { label: "privateProvider", value: "prestataires_particuliers" },
@@ -18,11 +20,13 @@ const userTypes = [
 
 export default function UsersManagementPage() {
   const t = useTranslations("Admin.UserManagement");
+  const tc = useTranslations("Components.SearchBar");
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
 
   const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(false);
   const [selectedType, setSelectedType] = useState<string | null>(searchParams.get("type"));
 
@@ -35,33 +39,41 @@ export default function UsersManagementPage() {
   }, [selectedType]);
 
   const handleFilterChange = (value: string) => {
-    setSelectedType(value); // Met à jour le type sélectionné sans recharger la page
-    router.replace(`${pathname}?type=${value}`, { scroll: false }); // Modifie l'URL sans rafraîchir
+    setSelectedType(value);
+    if (value === "") {
+      // Si "allUsers" est sélectionné, on enlève le paramètre "type"
+      router.replace(pathname, { scroll: false });
+    } else {
+      // Applique le filtre "type"
+      router.replace(`${pathname}?type=${value}`, { scroll: false });
+    }
   };
+
+  const filteredUsers = users.filter((user: any) =>
+    `${user.first_name} ${user.last_name} ${user.email}`
+      .toLowerCase()
+      .includes(search.toLowerCase())
+  );
 
   return (
     <div className="space-y-6 min-h-screen">
-      {/* Titre */}
       <div className="text-center max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold text-gray-800 my-5 dark:text-white">
           {t('userManagement')}
         </h2>
       </div>
 
-      {/* Séparateur */}
       <div className="w-full h-[2px] bg-gray-300 dark:bg-gray-600"></div>
 
-      {/* Filtres sous forme de texte cliquable */}
       <div className="flex flex-wrap gap-6 justify-center my-6">
         {userTypes.map(({ label, value }) => (
           <button
             key={value}
             onClick={() => handleFilterChange(value)}
             className={`cursor-pointer text-sm font-medium transition-all duration-300
-              ${
-                selectedType === value
-                  ? "text-green-600 font-semibold border-b-2 border-green-600"
-                  : "text-gray-700 dark:text-gray-300 hover:text-green-500 hover:border-b-2 hover:border-green-500"
+              ${selectedType === value
+                ? "text-green-600 font-semibold border-b-2 border-green-600"
+                : "text-gray-700 dark:text-gray-300 hover:text-green-500 hover:border-b-2 hover:border-green-500"
               }
             `}
           >
@@ -70,13 +82,21 @@ export default function UsersManagementPage() {
         ))}
       </div>
 
-      {/* Liste des utilisateurs */}
+      {/* SearchBar */}
+      <div className="max-w-md mx-auto">
+        <SearchBar
+          value={search}
+          onChange={setSearch}
+          placeholder={t('searchUser')}
+        />
+      </div>
+
       <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
         {loading ? (
           <p>{t("loading")}</p>
-        ) : users.length > 0 ? (
+        ) : filteredUsers.length > 0 ? (
           <ul>
-            {users.map((user: any) => (
+            {filteredUsers.map((user: any) => (
               <li
                 key={user.id_user}
                 className="py-2 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center"

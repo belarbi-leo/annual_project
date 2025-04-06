@@ -7,6 +7,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { fetchAllLanguages } from '@/lib/languages/fetchAllLanguages';
 import { useTranslations } from "next-intl";
+import SearchBar from "@/components/searchbar";
 
 type TranslationValue = string | { [key: string]: TranslationValue };
 
@@ -44,11 +45,11 @@ export default function LanguageSettingsPage() {
       const langs = await fetchAllLanguages();
       setLanguages(langs.map((lang) => ({
         iso: lang.iso.toLowerCase(),
-        label: lang.langue // <- ici on utilise la clé "langue" retournée par l'API
+        label: lang.langue
       })));
     }
     loadLanguages();
-  }, []);  
+  }, []);
 
   const toggle = (key: string) => {
     setOpenKeys((prev) =>
@@ -75,15 +76,15 @@ export default function LanguageSettingsPage() {
       const fullKey = parentKey ? `${parentKey}.${key}` : key;
       const isOpen = openKeys.includes(fullKey);
       const isObject = typeof value === 'object' && value !== null;
-  
+
       const matchesSearch = fullKey.toLowerCase().includes(searchTerm.toLowerCase());
-  
+
       if (isObject) {
         const nested = renderAccordion(value, fullKey);
         const hasNested = Array.isArray(nested) && nested.length > 0;
-  
-        if (!hasNested && searchTerm) return []; // Évite l'affichage des sections sans match
-  
+
+        if (!hasNested && searchTerm) return [];
+
         return (
           <div key={fullKey} className="rounded-lg my-2">
             <button
@@ -97,9 +98,9 @@ export default function LanguageSettingsPage() {
           </div>
         );
       }
-  
+
       if (!matchesSearch && searchTerm) return [];
-  
+
       return (
         <div key={fullKey} className="flex items-center gap-4 px-4 py-2 text-sm">
           <label className="font-medium min-w-[120px]">{key}:</label>
@@ -112,8 +113,7 @@ export default function LanguageSettingsPage() {
         </div>
       );
     });
-  
-    // Afficher un message si aucune clé ne correspond
+
     if (children.length === 0 && searchTerm) {
       return (
         <div className="italic text-gray-500 px-4 py-2">
@@ -121,21 +121,22 @@ export default function LanguageSettingsPage() {
         </div>
       );
     }
+
     return children;
-  };  
+  };
 
   return (
     <div className="space-y-6 min-h-screen">
       <h2 className="text-2xl font-semibold">{t('languagesManagement')}</h2>
 
-      {/* Dropdown */}
+      {/* Dropdown de sélection de langue */}
       <div className="inline-block w-full text-left">
         <Menu>
           <MenuButton className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 rounded-md shadow-sm flex justify-between items-center hover:bg-gray-300 dark:hover:bg-gray-700">
             <span>
               {
                 languages.find((lang) => lang.iso === selectedLang)?.label
-                || 'Sélectionner'
+                || t('selectInput')
               }
             </span>
             <ChevronDownIcon className="w-5 h-5" />
@@ -161,30 +162,18 @@ export default function LanguageSettingsPage() {
 
       {/* Séparateur */}
       <div className="w-full h-[2px] bg-gray-300 dark:bg-gray-600"></div>
-      
-      {/* Barre de recherche */}
-      <div className="relative mt-4 w-full">
-        <input
-          type="text"
-          placeholder={t('searchKey')}
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-4 pr-10 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-        />
-        {searchTerm && (
-          <button
-            onClick={() => setSearchTerm('')}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-800 dark:hover:text-white"
-          >
-            ✕
-          </button>
-        )}
-      </div>
 
-      {/* Accordéon récursif avec champs modifiables */}
+      {/* SearchBar intégrée */}
+      <SearchBar
+        value={searchTerm}
+        onChange={setSearchTerm}
+        placeholder={t('searchKey')}
+      />
+
+      {/* Contenu traduisible */}
       <div>{renderAccordion(editedTranslations)}</div>
 
-      {/* Bouton de sauvegarde */}
+      {/* Actions */}
       <div className="flex gap-4">
         <button
           onClick={() => console.log(editedTranslations)}
