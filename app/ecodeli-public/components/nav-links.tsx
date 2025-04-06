@@ -18,30 +18,17 @@ import clsx from "clsx";
 
 const links = [
   { name: "Accueil", href: "/home", icon: HomeIcon },
-  {
-    name: "Prestations",
-    href: "/home/prestations",
-    icon: WrenchScrewdriverIcon,
-  },
-  { name: "Mes livraisons", href: "/home/packages", icon: TruckIcon },
+  { name: "Prestations", href: "/home/services", icon: WrenchScrewdriverIcon },
+  { name: "Mes livraisons", href: "/home/deliveries", icon: TruckIcon },
   { name: "Mes litiges", href: "/home/dispute", icon: ExclamationCircleIcon },
   { name: "Mes paiements", href: "/home/payments", icon: CreditCardIcon },
   { name: "Messagerie", href: "/home/messages", icon: ChatBubbleLeftRightIcon },
   { name: "Compte", href: "/home/account", icon: CogIcon },
   { name: "Separator", href: "", icon: null },
   { name: "Espace livreur", href: "/home/trips", icon: MapIcon },
-  {
-    name: "Espace prestataire",
-    href: "/home/deliveries",
-    icon: ArchiveBoxIcon,
-  },
+  { name: "Espace prestataire", href: "/home/deliveries", icon: ArchiveBoxIcon },
   { name: "Separator", href: "", icon: null },
-  {
-    name: "Déconnexion",
-    href: "/logout",
-    icon: ArrowLeftStartOnRectangleIcon,
-    isLogout: true,
-  },
+  { name: "Déconnexion", href: "/logout", icon: ArrowLeftStartOnRectangleIcon, isLogout: true },
 ];
 
 interface NavLinksProps {
