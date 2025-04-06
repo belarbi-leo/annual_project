@@ -17,6 +17,18 @@
       "subscriptionsManagement": "Suscripciones",
       "messages": "Mensajes",
       "logout": "Cerrar sesión"
+    },
+    "UserManagement": {
+      "title": "Gestión de Usuarios",
+      "privateUser": "Clientes particulares",
+      "proUser": "Clientes profesionales",
+      "privateProvider": "Proveedores particulares",
+      "proProvider": "Proveedores profesionales",
+      "administrators": "Administradores",
+      "awaitingValidation": "En espera de validación",
+      "seeMore": "Más",
+      "loading": "Loading...",
+      "noUserFound": "Aucun utilisateur trouvé"
     }
   }
 }
