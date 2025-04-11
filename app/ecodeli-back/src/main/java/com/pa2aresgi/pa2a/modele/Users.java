@@ -68,9 +68,10 @@ public class Users {
     @OneToMany(mappedBy = "id_user")
     @JsonIgnore
     private List<Disputes> dipustes_list = new ArrayList<>();
+    /*
     @OneToMany(mappedBy = "id_user")
     @JsonIgnore
-    private List<Authorizations> authorizations_list = new ArrayList<>();
+    private List<Authorizations> authorizations_list = new ArrayList<>();*/
     @OneToMany(mappedBy = "id_admin_creator")
     @JsonIgnore
     private List<Services> services_list = new ArrayList<>();

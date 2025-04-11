@@ -1,6 +1,6 @@
 package com.pa2aresgi.pa2a.controller;
-
-import com.pa2aresgi.pa2a.modele.Authorizations;
+/*
+import com.pa2aresgi.pa2a.modele.intermediairesInutiles.Authorizations;
 import com.pa2aresgi.pa2a.service.AuthorizationsService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -41,3 +41,4 @@ public class AuthorizationsController {
         return authorizationsService.deleteById(id);
     }
 }
+*/

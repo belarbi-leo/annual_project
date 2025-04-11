@@ -1,13 +1,10 @@
 package com.pa2aresgi.pa2a.service;
-
-import com.pa2aresgi.pa2a.modele.Authorizations;
-import com.pa2aresgi.pa2a.modele.Services;
-import com.pa2aresgi.pa2a.modele.Users;
+/*
+import com.pa2aresgi.pa2a.modele.intermediairesInutiles.Authorizations;
 import com.pa2aresgi.pa2a.repository.AuthorizationsRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 
@@ -56,3 +53,4 @@ public class AuthorizationsServiceImpl implements AuthorizationsService {
         return "Authorization deleted!";
     }
 }
+*/

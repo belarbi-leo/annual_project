@@ -1,12 +1,14 @@
-package com.pa2aresgi.pa2a.modele;
+package com.pa2aresgi.pa2a.modele.intermediairesInutiles;
 
+import com.pa2aresgi.pa2a.modele.Services;
+import com.pa2aresgi.pa2a.modele.Users;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Timestamp;
-
+/*
 @Entity
 @Table(name="authorizations")
 @Getter
@@ -25,3 +27,4 @@ public class Authorizations {
     @Column
     private Timestamp date_granted;
 }
+*/

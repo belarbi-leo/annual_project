@@ -39,7 +39,7 @@ public class ServicesServiceImpl implements ServicesService {
     @Override
     public Services update(Integer id, Services service) {
         return servicesRepository.findById(id).map(svc -> {
-            svc.setId_admin_creator(service.getId_admin_creator());
+            //svc.setId_admin_creator(service.getId_admin_creator());
             svc.setDate_creation_svc(service.getDate_creation_svc());
             svc.setName_svc(service.getName_svc());
             svc.setCategory(service.getCategory());/*

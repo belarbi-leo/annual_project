@@ -1,6 +1,6 @@
 package com.pa2aresgi.pa2a.service;
-
-import com.pa2aresgi.pa2a.modele.Authorizations;
+/*
+import com.pa2aresgi.pa2a.modele.intermediairesInutiles.Authorizations;
 
 import java.util.List;
 
@@ -17,3 +17,4 @@ public interface AuthorizationsService {
 
     String deleteById(Integer id);
 }
+*/
