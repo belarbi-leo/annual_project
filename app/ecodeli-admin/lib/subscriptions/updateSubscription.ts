@@ -1,6 +1,7 @@
 import { API_BASE_URL, API_HEADERS } from "@/lib/config";
+import type { Subscription } from "@/lib/types";
 
-export async function updateSubscription(id: string, data: { name_sub: string; description_sub: string }) {
+export async function updateSubscription(id: string, data: Partial<Subscription>): Promise<{ status: number; data: any }> {
   try {
     const response = await fetch(`${API_BASE_URL}/subscriptions/update/${id}`, {
       method: "PUT",
@@ -11,18 +12,15 @@ export async function updateSubscription(id: string, data: { name_sub: string; d
       body: JSON.stringify(data),
     });
 
-    console.log("Response complète:", response);
-
     const responseData = await response.json();
-    console.log("Response JSON:", responseData);
 
     if (!response.ok) {
       throw new Error("Erreur lors de la mise à jour de l'abonnement");
     }
 
-    return { status: response.status, data: responseData }; // ✅ Retourne le statut + les données
+    return { status: response.status, data: responseData };
   } catch (error) {
     console.error(error);
-    return { status: 500, data: null }; // ✅ En cas d'erreur, renvoie 500 et null
+    return { status: 500, data: null };
   }
 }

@@ -5,10 +5,13 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { fetchSubscriptionByID } from "@/lib/subscriptions/fetchSubscriptionByID";
 import { updateSubscription } from "@/lib/subscriptions/updateSubscription";
+import {useTranslations} from 'next-intl';
+import type { Subscription } from "@/lib/types";
 
 export default function SubscriptionDetailPage() {
+  const t = useTranslations('Admin.SubscriptionsManagement');
   const params = useParams();
-  const [subscription, setSubscription] = useState<any>(null);
+  const [subscription, setSubscription] = useState<Subscription | null>(null);
   const [loading, setLoading] = useState(false);
   const [editing, setEditing] = useState(false);
   const [formData, setFormData] = useState({
@@ -22,14 +25,16 @@ export default function SubscriptionDetailPage() {
     if (!params?.id) return;
     setLoading(true);
     fetchSubscriptionByID(params.id as string).then((data) => {
-      setSubscription(data);
-      setFormData({
-        name_sub: data.name_sub,
-        description_sub: data.description_sub,
-      });
+      if (data) {
+        setSubscription(data);
+        setFormData({
+          name_sub: data.name_sub,
+          description_sub: data.description_sub,
+        });
+      }
       setLoading(false);
     });
-  }, [params?.id]);
+  }, [params?.id]);  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -68,7 +73,7 @@ export default function SubscriptionDetailPage() {
 
   return (
     <div className="">
-      <h2 className="text-2xl font-semibold mb-4">Détails de l'Abonnement</h2>
+      <h2 className="text-2xl font-semibold mb-4">{t('subscriptionDetails')}</h2>
 
       {/* Message de succès */}
       {successMessage && (
@@ -97,12 +102,12 @@ export default function SubscriptionDetailPage() {
       )}
 
       {loading ? (
-        <p>Chargement...</p>
+        <p>{t('loading')}</p>
       ) : subscription ? (
         <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
           {editing ? (
             <form onSubmit={handleSubmit}>
-              <label className="block mb-2">Nom de l'abonnement</label>
+              <label className="block mb-2">{t('subscriptionName')}</label>
               <input 
                 type="text" 
                 name="name_sub" 
@@ -110,7 +115,7 @@ export default function SubscriptionDetailPage() {
                 onChange={handleChange} 
                 className="w-full p-2 mb-4 border rounded" 
               />
-              <label className="block mb-2">Description</label>
+              <label className="block mb-2">{t('description')}</label>
               <textarea 
                 name="description_sub" 
                 value={formData.description_sub} 
@@ -122,40 +127,40 @@ export default function SubscriptionDetailPage() {
                   type="submit" 
                   className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600"
                 >
-                  Enregistrer
+                  {t('save')}
                 </button>
                 <button 
                   type="button"
                   onClick={handleCancel} 
                   className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600"
                 >
-                  Annuler
+                  {t('cancel')}
                 </button>
               </div>
             </form>
           ) : (
             <>
-              <p><strong>Nom:</strong> {subscription.name_sub}</p>
-              <p><strong>Description:</strong> {subscription.description_sub}</p>
+              <p><strong>{t('subscriptionName')} :</strong> {subscription.name_sub}</p>
+              <p><strong>{t('description')} :</strong> {subscription.description_sub}</p>
               <div className="mt-4 flex gap-4">
-                <Link 
-                  href="/admin/subscriptions" 
-                  className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600"
-                >
-                  Retour
-                </Link>
                 <button 
                   onClick={() => setEditing(true)} 
                   className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600"
                 >
-                  Modifier
+                  {t('modify')}
                 </button>
+                <Link 
+                  href="/admin/subscriptions" 
+                  className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600"
+                >
+                  {t('back')}
+                </Link>
               </div>
             </>
           )}
         </div>
       ) : (
-        <p>Abonnement introuvable.</p>
+        <p>{t('noSubscriptionFound')}</p>
       )}
     </div>
   );

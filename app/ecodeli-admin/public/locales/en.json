@@ -17,6 +17,18 @@
       "subscriptionsManagement": "Subscriptions",
       "messages": "Messages",
       "logout": "Logout"
+    },
+    "UserManagement": {
+      "title": "User Management",
+      "privateUser": "Private users",
+      "proUser": "Professional users",
+      "privateProvider": "Private providers",
+      "proProvider": "Professional providers",
+      "administrators": "Administrators",
+      "awaitingValidation": "Awaiting validation",
+      "seeMore": "More",
+      "loading": "Cargando...",
+      "noUserFound": "No se encontraron usuarios"
     }
   }
 }

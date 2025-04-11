@@ -1,4 +1,9 @@
 {
+  "Components": {
+    "SearchBar": {
+      "search":"Rechercher..."
+    }
+  },
   "LoginPage": {
     "email": "E-mail",
     "password": "Mot de Passe",
@@ -16,7 +21,66 @@
       "paymentsManagement": "Paiements",
       "subscriptionsManagement": "Abonnements",
       "messages": "Messagerie",
+      "websiteSettings": "Réglages du site",
       "logout": "Déconnexion"
+    },
+    "UserManagement":{
+      "userManagement": "Gestion des Utilisateurs",
+      "allUsers": "Tous",
+      "privateUser": "Clients particuliers",
+      "proUser": "Clients professionnels",
+      "privateProvider": "Prestataires particuliers",
+      "proProvider": "Prestataires professionnels",
+      "administrators": "Administrateurs",
+      "awaitingValidation": "En attente de validation",
+      "loading": "Chargement...",
+      "searchUser": "Rechercher un utilisateur...",
+      "back": "Retour",
+      "noUserFound": "Aucun utilisateur trouvé",
+      "userDetails": "Détails de l'Utilisateur",
+      "name": "Nom",
+      "email": "E-mail",
+      "role": "Rôle",
+      "accountStatus": "Statut du compte",
+      "registrationDate": "Date d'enregistrement",
+      "statusDate": "Date du statut",
+      "company": "Entreprise",
+      "bio": "Bio",
+      "siret": "SIRET",
+      "address": "Adresse",
+      "paymentCode": "Code de paiement",
+      "paymentExpiration": "Expiration du paiement",
+      "iban": "IBAN",
+      "subscription": "Abonnement",
+      "subscriptionDescription": "Description de l'abonnement",
+      "language": "Langue",
+      "unknownUser": "Utilisateur introuvable"
+    },
+    "SubscriptionsManagement":{
+      "search": "Rechercher...",
+      "subscriptionsManagement": "Gestion des Abonnements",
+      "subscriptionDetails": "Détails de l'abonnement",
+      "subscriptionName": "Nom de l'abonnement",
+      "description": "Description",
+      "seeMore": "Voir plus",
+      "back": "Retour",
+      "loading": "Chargement...",
+      "modify": "Modifier",
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "noSubscriptionFound": "Abonnement introuvable."
+    },
+    "WebsiteSettings": {
+      "websiteSettings": "Réglages du site",
+      "manageLanguages":"Gestion des Langues",
+      "ManageLanguages": {
+        "languagesManagement": "Gestion des langues",
+        "selectInput": "Sélectionner",
+        "searchKey": "Rechercher une clé...",
+        "noMatchFound": "Aucune correspondance trouvée",
+        "save": "Enregistrer",
+        "back": "Retour"
+      }
     }
   }
 }

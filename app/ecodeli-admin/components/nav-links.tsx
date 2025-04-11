@@ -14,6 +14,7 @@ import {
   NewspaperIcon,
   ChatBubbleLeftRightIcon,
   ArrowLeftStartOnRectangleIcon,
+  Cog6ToothIcon
 } from "@heroicons/react/24/outline";
 
 const links = [
@@ -28,6 +29,7 @@ const links = [
   { name: "paymentsManagement", href: "/admin/payments", icon: CreditCardIcon },
   { name: "subscriptionsManagement", href: "/admin/subscriptions", icon: NewspaperIcon },
   { name: "messages", href: "/admin/messages", icon: ChatBubbleLeftRightIcon },
+  { name: "websiteSettings", href: "/admin/settings", icon: Cog6ToothIcon },
   { name: "Separator", href: "", icon: null },
   { name: "logout", href: "/logout", icon: ArrowLeftStartOnRectangleIcon, isLogout: true },
 ];
