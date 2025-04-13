@@ -15,7 +15,7 @@ function AddressSelectionForm() {
     // Load Google Maps API script
     const loadGoogleMapsScript = () => {
       const googleMapsScript = document.createElement('script');
-      googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&libraries=places`;
+      googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyACrz4KyaCvUhjFMPfbEJiYPpiKuTnR8NQ&libraries=places`;
       googleMapsScript.async = true;
       googleMapsScript.defer = true;
       googleMapsScript.onload = initAutocomplete;
