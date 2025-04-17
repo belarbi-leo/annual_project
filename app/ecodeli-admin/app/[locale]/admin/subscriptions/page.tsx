@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { fetchAllSubscriptions } from '@/lib/subscriptions/fetchAllSubscriptions';
 import { useTranslations } from 'next-intl';
+import SearchBar from '@/components/searchbar';
 
 export default function SubscriptionsPage() {
   const t = useTranslations('Admin.SubscriptionsManagement');
@@ -39,17 +40,18 @@ export default function SubscriptionsPage() {
           {t("subscriptionsManagement")}
         </h2>
       </div>
+
       {/* Séparateur */}
       <div className="w-full h-[2px] bg-gray-300 dark:bg-gray-600"></div>
 
-      {/* Barre de recherche */}
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder={t('search') || 'Rechercher...'}
-        className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-      />
+      {/* SearchBar */}
+      <div className="mx-auto">
+        <SearchBar
+          value={searchTerm}
+          onChange={setSearchTerm}
+          placeholder={t('searchSubscription')}
+        />
+      </div>
 
       {loading ? (
         <p>{t('loading')}</p>

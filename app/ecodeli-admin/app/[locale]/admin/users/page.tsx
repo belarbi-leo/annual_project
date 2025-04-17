@@ -15,12 +15,12 @@ const userTypes = [
   { label: "privateProvider", value: "prestataires_particuliers" },
   { label: "proProvider", value: "prestataires_professionnels" },
   { label: "administrators", value: "admins" },
-  { label: "awaitingValidation", value: "validation_required" },
+  { label: "accountToValidate", value: "account_validation_required" },
+  { label: "serviceToValidate", value: "service_validation_required" },
 ];
 
 export default function UsersManagementPage() {
   const t = useTranslations("Admin.UserManagement");
-  const tc = useTranslations("Components.SearchBar");
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -83,7 +83,7 @@ export default function UsersManagementPage() {
       </div>
 
       {/* SearchBar */}
-      <div className="max-w-md mx-auto">
+      <div className="mx-auto">
         <SearchBar
           value={search}
           onChange={setSearch}
