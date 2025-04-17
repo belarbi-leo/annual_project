@@ -39,16 +39,16 @@ public class Users {
     private String email;
     @Column(length=255)
     private String password;
-    @Column
-    private Integer phone_number;
+    @Column(length=10)
+    private String phone_number;
     @Column(length=50)
     private String first_name;
     @Column(length=50)
     private String last_name;
     @Column(length=100)
     private String company_name;
-    @Column
-    private Long siret;
+    @Column(length=14)
+    private String siret;
     @Column
     private String photo_user;
     @Column(length=255)
