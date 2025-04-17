@@ -73,7 +73,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <LanguageSelector/>
           </div>
         </header>
-        <main className="flex-1 p-6 bg-gray-100 dark:bg-gray-900">{children}</main>
+        <main>{children}</main>
       </div>
     </div>
   );

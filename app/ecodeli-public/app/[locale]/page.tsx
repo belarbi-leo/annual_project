@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import LanguageSelector from "@/components/languages";
+import { useTranslations } from "next-intl";
 
-export default function Hero() {
+export default function Home() {
+  const t = useTranslations("Home");
+
   return (
     <div className="min-h-screen w-full overflow-hidden relative">
       {/* Effet de fond supérieur gauche */}
@@ -31,7 +35,7 @@ export default function Hero() {
           aria-label="Global"
           className="flex items-center justify-between p-6 lg:px-8"
         >
-          <div className="flex lg:flex-1">
+          <div className="flex justify-between lg:flex-1">
             <Link href="#" className="-m-1.5 p-1.5">
               <Image
                 src="/favicon.ico"
@@ -41,6 +45,7 @@ export default function Hero() {
                 className="h-8 w-auto"
               />
             </Link>
+            <LanguageSelector />
           </div>
         </nav>
       </header>
@@ -48,27 +53,26 @@ export default function Hero() {
       <div className="flex items-center justify-center h-screen px-6 sm:px-16 lg:px-24">
         <div className="text-center">
           <h1 className="mb-4 text-5xl font-semibold tracking-tight text-[#49cb5c] dark:text-[#36a84b] sm:text-7xl">
-            EcoDeli
+          {t("title")}
           </h1>
           <h1 className="text-3xl font-semibold tracking-tight text-[#49cb5c] dark:text-[#36a84b] sm:text-5xl">
-            La livraison repensée, solidaire et responsable.
+          {t("subtitle")}
           </h1>
           <p className="mt-8 text-lg font-medium text-gray-500 dark:text-gray-300 sm:text-xl">
-            Trouvez des prestataires qui partagent vos valeurs écologiques et
-            réduisez l'empreinte carbone de vos projets.
+          {t("description")}
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6 w-full">
             <Link
               href="auth"
               className="w-full sm:w-auto text-center rounded-md bg-[#49cb5c] dark:bg-[#36a84b] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#07b128] dark:hover:bg-[#2e8c40] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#09a66d]"
             >
-              Se connecter
+              {t("login")}
             </Link>
             <Link
               href="public/about"
               className="w-full sm:w-auto text-center text-sm font-semibold text-gray-900 dark:text-white"
             >
-              En savoir plus
+              {t("learnMore")}
             </Link>
           </div>
         </div>

@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { XMarkIcon, TrashIcon, CameraIcon, ExclamationCircleIcon } from "@heroicons/react/24/outline";
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
+import { XMarkIcon, TrashIcon, CameraIcon } from "@heroicons/react/24/outline";
 
 export default function NewDeliveryRequest() {
   const [isOpen, setIsOpen] = useState(false);

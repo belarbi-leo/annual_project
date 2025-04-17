@@ -1,0 +1,19 @@
+{
+  "Components": {
+    "SearchBar": {
+      "search":"Rechercher..."
+    }
+  },
+  "Home": {
+    "title": "EcoDeli",
+    "subtitle": "La livraison repensée, solidaire et responsable.",
+    "description": "Trouvez des prestataires qui partagent vos valeurs écologiques et réduisez l'empreinte carbone de vos projets.",
+    "login": "Se connecter",
+    "learnMore": "En savoir plus"
+  },
+  "Auth": {
+    "Sign": {
+      
+    }
+  }
+}

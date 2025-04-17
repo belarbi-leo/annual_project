@@ -1,113 +1,103 @@
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\config\CorsConfig.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\config\pageAndSort\SwaggerConfig.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\AdsController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\AuthorizationsController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\DepotsController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\DisputesController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\LanguagesController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\MaterielsController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\NFCController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\OpinionsController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\PackagesController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\PaymentsController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\Requests_adsController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\Requests_docsController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\Requests_svcController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\RoutesController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\Services_docsController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\ServicesController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\SubscriptionsController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\UsersController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\controller\UsersDTOController.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\DTO\create\UsersDTOCreate.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\DTO\read\UsersDTORead.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\enumeratation\Account_status_enum.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\enumeratation\Direction_payment_enum.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\enumeratation\Role_enum.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\enumeratation\Status_ad_enum.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\enumeratation\Status_dispute_enum.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\enumeratation\Status_payment_enum.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\enumeratation\Status_req_annonce_enum.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\enumeratation\Status_req_svc_enum.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\enumeratation\Svc_authorization.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\enumeratation\Svc_category.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\enumeratation\Type_pack_enum.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Ads.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Depots.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Disputes.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\intermediairesInutiles\Authorizations.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\intermediairesInutiles\Matches.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\intermediairesInutiles\Stock_control.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Languages.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Materiels.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\NFC.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Opinions.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Packages.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Payments.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Requests_ads.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Requests_docs.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Requests_svc.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Routes.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Services.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Services_docs.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Subscriptions.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modele\Users.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modelMapper\UsersMapper.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\modelMapper\UsersMapperImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\Pa2aApplication.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\AdsRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\AuthorizationsRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\DepotsRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\DisputesRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\LanguagesRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\MaterielsRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\NFCRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\OpinionsRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\PackagesRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\PaymentsRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\Requests_adsRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\Requests_docsRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\Requests_svcRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\RoutesRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\Services_docsRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\ServicesRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\SubscriptionsRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\repository\UsersRepository.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\AdsService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\AdsServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\AuthorizationsService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\AuthorizationsServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\DepotsService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\DepotsServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\DisputesService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\DisputesServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\LanguagesService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\LanguagesServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\MaterielsService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\MaterielsServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\NFCService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\NFCServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\OpinionsService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\OpinionsServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\PackagesService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\PackagesServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\PaymentsService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\PaymentsServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\Requests_adsService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\Requests_adsServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\Requests_docsService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\Requests_docsServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\Requests_svcService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\Requests_svcServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\RoutesService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\RoutesServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\Services_docsService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\Services_docsServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\ServicesService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\ServicesServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\SubscriptionsService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\SubscriptionsServiceImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\UsersService.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\UsersServiceDTO.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\UsersServiceDTOImpl.java
-C:\Users\monsi\Documents\ESGI\2eme année\Projet Annuel\ImplementationJavaAPI\code\pa2a\pa2a\src\main\java\com\pa2aresgi\pa2a\service\UsersServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/Pa2aApplication.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/config/CorsConfig.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/AdsController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/AuthorizationsController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/DepotsController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/DisputesController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/LanguagesController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/MaterielsController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/NFCController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/OpinionsController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/PackagesController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/PaymentsController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/Requests_adsController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/Requests_docsController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/Requests_svcController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/RoutesController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/ServicesController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/Services_docsController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/SubscriptionsController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/controller/UsersController.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/enumeratation/Account_status_enum.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/enumeratation/Direction_payment_enum.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/enumeratation/Role_enum.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/enumeratation/Status_ad_enum.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/enumeratation/Status_dispute_enum.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/enumeratation/Status_payment_enum.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/enumeratation/Status_req_annonce_enum.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/enumeratation/Status_req_svc_enum.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/enumeratation/Type_pack_enum.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Ads.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Authorizations.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Depots.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Disputes.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Languages.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Materiels.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/NFC.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Opinions.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Packages.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Payments.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Requests_ads.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Requests_docs.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Requests_svc.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Routes.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Services.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Services_docs.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Subscriptions.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/Users.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/intermediairesInutiles/Matches.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/modele/intermediairesInutiles/Stock_control.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/AdsRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/AuthorizationsRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/DepotsRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/DisputesRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/LanguagesRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/MaterielsRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/NFCRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/OpinionsRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/PackagesRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/PaymentsRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/Requests_adsRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/Requests_docsRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/Requests_svcRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/RoutesRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/ServicesRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/Services_docsRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/SubscriptionsRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/repository/UsersRepository.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/AdsService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/AdsServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/AuthorizationsService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/AuthorizationsServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/DepotsService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/DepotsServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/DisputesService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/DisputesServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/LanguagesService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/LanguagesServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/MaterielsService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/MaterielsServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/NFCService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/NFCServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/OpinionsService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/OpinionsServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/PackagesService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/PackagesServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/PaymentsService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/PaymentsServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/Requests_adsService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/Requests_adsServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/Requests_docsService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/Requests_docsServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/Requests_svcService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/Requests_svcServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/RoutesService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/RoutesServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/ServicesService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/ServicesServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/Services_docsService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/Services_docsServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/SubscriptionsService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/SubscriptionsServiceImpl.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/UsersService.java
+/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/src/main/java/com/pa2aresgi/pa2a/service/UsersServiceImpl.java

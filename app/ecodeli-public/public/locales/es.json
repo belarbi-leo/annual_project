@@ -1,0 +1,34 @@
+{
+  "LoginPage": {
+    "email": "E-mail",
+    "password": "Contraseña",
+    "login": "Conexión"
+  },
+  "Admin": {
+    "Menu":{
+      "dashboard": "Tablero",
+      "userManagement": "Gestión de usuarios",
+      "disputesManagement": "Disputas",
+      "servicesManagement": "Gestión de servicios",
+      "deliveriesManagement": "Gestión de entregas",
+      "warehousesManagement": "Gestión de almacenes",
+      "trackingManagement": "Seguimiento de paquetes",
+      "paymentsManagement": "Pagos",
+      "subscriptionsManagement": "Suscripciones",
+      "messages": "Mensajes",
+      "logout": "Cerrar sesión"
+    },
+    "UserManagement": {
+      "title": "Gestión de Usuarios",
+      "privateUser": "Clientes particulares",
+      "proUser": "Clientes profesionales",
+      "privateProvider": "Proveedores particulares",
+      "proProvider": "Proveedores profesionales",
+      "administrators": "Administradores",
+      "awaitingValidation": "En espera de validación",
+      "seeMore": "Más",
+      "loading": "Loading...",
+      "noUserFound": "Aucun utilisateur trouvé"
+    }
+  }
+}
