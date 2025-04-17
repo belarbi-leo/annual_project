@@ -48,6 +48,7 @@ public class DisputesServiceImpl implements DisputesService {
             disp.setDate_start_dispute(dispute.getDate_start_dispute());
             disp.setDate_end_dispute(dispute.getDate_end_dispute());
             disp.setPhoto_dispute(dispute.getPhoto_dispute());
+            disp.setResolution_text(dispute.getResolution_text());
             return disputesRepository.save(disp);
         }).orElseThrow(() -> new RuntimeException("Dispute not found !"));
     }

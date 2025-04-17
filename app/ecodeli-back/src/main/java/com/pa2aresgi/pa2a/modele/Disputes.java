@@ -36,4 +36,6 @@ public class Disputes {
     private Timestamp date_end_dispute;
     @Column
     private String photo_dispute;
+    @Column
+    private String resolution_text;
 }

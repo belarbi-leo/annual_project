@@ -28,9 +28,9 @@ public class Packages {
     private Integer quantity_pack;
     @Column(length = 255)
     private String details_pack;
-    @Column
+    /*@Column
     @Enumerated(EnumType.STRING)
-    private Type_pack_enum type_pack;
+    private Type_pack_enum type_pack;*/
     @Column(columnDefinition="numeric(10,2)")
     private Float weight_pack;
     @Column

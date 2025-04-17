@@ -40,8 +40,9 @@ public class Requests_docsServiceImpl implements Requests_docsService {
     public Requests_docs update(Integer id, Requests_docs request_doc) {
         return requests_docsRepository.findById(id).map(rq_doc -> {
             rq_doc.setId_req_svc(request_doc.getId_req_svc());
-            rq_doc.setDoc_type_req(request_doc.getDoc_type_req());
+            //rq_doc.setDoc_type_req(request_doc.getDoc_type_req());
             rq_doc.setDoc_req(request_doc.getDoc_req());
+            rq_doc.setComment(request_doc.getComment());
             return requests_docsRepository.save(rq_doc);
         }).orElseThrow(() -> new RuntimeException("Request_doc not found !"));
     }

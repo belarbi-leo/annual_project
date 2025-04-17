@@ -49,13 +49,21 @@ public class AdsServiceImpl implements AdsService {
             a.setDate_creation_ad(ad.getDate_creation_ad());
             a.setDate_accept_ad(ad.getDate_accept_ad());
             a.setDate_start_ad(ad.getDate_start_ad());
-            a.setStreet_start_ad(ad.getStreet_start_ad());
-            a.setPostal_code_start_ad(ad.getPostal_code_start_ad());
-            a.setCountry_start_ad(ad.getCountry_start_ad());
+            //a.setStreet_start_ad(ad.getStreet_start_ad());
+            a.setLocation_start(ad.getLocation_start());
+            a.setSuite_start(ad.getSuite_start());
+            a.setLocality_start(ad.getLocality_start());
+            a.setState_start(ad.getState_start());
+            a.setPostal_code_start(ad.getPostal_code_start());
+            a.setCountry_start(ad.getCountry_start());
             a.setDate_end_ad(ad.getDate_end_ad());
-            a.setStreet_end_ad(ad.getStreet_end_ad());
-            a.setPostal_code_end_ad(ad.getPostal_code_end_ad());
-            a.setCountry_end_ad(ad.getCountry_end_ad());
+            //a.setStreet_end_ad(ad.getStreet_end_ad());
+            a.setLocation_end(ad.getLocation_end());
+            a.setSuite_end(ad.getSuite_end());
+            a.setLocality_end(ad.getLocality_end());
+            a.setState_end(ad.getState_end());
+            a.setPostal_code_end(ad.getPostal_code_end());
+            a.setCountry_end(ad.getCountry_end());
             a.setDescription_ad(ad.getDescription_ad());
             a.setPrice_ad(ad.getPrice_ad());
             a.setPhoto_ad(ad.getPhoto_ad());/*

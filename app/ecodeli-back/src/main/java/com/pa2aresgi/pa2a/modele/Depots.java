@@ -20,8 +20,16 @@ public class Depots {
     private Integer id_depot;
     @Column
     private Integer storage_capacity_depot;
+    /*@Column(length = 255)
+    private String street_depot;*/
+    @Column(length=255)
+    private String location;
     @Column(length = 255)
-    private String street_depot;
+    private String suite;
+    @Column(length=255)
+    private String locality;
+    @Column(length = 255)
+    private String state;
     @Column(length = 20)    //pourquoi 20 si normalement c'est max 6 ?
     private String postal_code_depot;
     @Column(length = 100)

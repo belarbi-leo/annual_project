@@ -42,7 +42,8 @@ public class ServicesServiceImpl implements ServicesService {
             //svc.setId_admin_creator(service.getId_admin_creator());
             svc.setDate_creation_svc(service.getDate_creation_svc());
             svc.setName_svc(service.getName_svc());
-            svc.setCategory(service.getCategory());/*
+            svc.setCategory(service.getCategory());
+            svc.setAuth(service.getAuth());/*
             svc.setServices_docs_list(service.getServices_docs_list());
             svc.setMateriels_list(service.getMateriels_list());
             svc.setAuthorizations_list(service.getAuthorizations_list());

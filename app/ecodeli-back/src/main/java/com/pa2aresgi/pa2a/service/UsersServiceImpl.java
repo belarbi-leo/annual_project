@@ -57,20 +57,26 @@ public class UsersServiceImpl implements UsersService {
             usr.setDate_status(user.getDate_status());
             usr.setEmail(user.getEmail());
             usr.setPassword(user.getPassword());
+            usr.setPhone_number(user.getPhone_number());
             usr.setFirst_name(user.getFirst_name());
             usr.setLast_name(user.getLast_name());
             usr.setCompany_name(user.getCompany_name());
+            usr.setSiret(user.getSiret());
             usr.setPhoto_user(user.getPhoto_user());
             usr.setBio(user.getBio());
-            usr.setSiret(user.getSiret());
-            usr.setStreet(user.getStreet());
+            usr.setLocation(user.getLocation());
+            usr.setSuite(user.getSuite());
+            usr.setLocality(user.getLocality());
+            usr.setState(user.getState());
+            //usr.setStreet(user.getStreet());
             usr.setPostal_code(user.getPostal_code());
             usr.setCountry(user.getCountry());
+            /*
             usr.setCode_payment(user.getCode_payment());
             usr.setExpiration_payment(user.getExpiration_payment());
-            usr.setIban(user.getIban());
+            usr.setIban(user.getIban());*/
             usr.setId_subscription(user.getId_subscription());
-            usr.setId_langue(user.getId_langue());/*
+            usr.setId_language(user.getId_language());/*
             usr.setDipustes_list(user.getDipustes_list());
             usr.setAuthorizations_list(user.getAuthorizations_list());
             usr.setServices_list(user.getServices_list());

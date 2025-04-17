@@ -25,7 +25,7 @@ public class LanguagesServiceImpl implements LanguagesService {
 
     @Override
     public List<Languages> readAllOrderById() {
-        return languagesRepository.findAllOrderById_langue();
+        return languagesRepository.findAllOrderById_language();
     }
 
     @Override
@@ -40,7 +40,7 @@ public class LanguagesServiceImpl implements LanguagesService {
     @Override
     public Languages update(Integer id, Languages language) {
         return languagesRepository.findById(id).map(langue -> {
-            langue.setLangue(language.getLangue());
+            langue.setLanguage(language.getLanguage());
             langue.setIso(language.getIso());
             return languagesRepository.save(langue);
         }).orElseThrow(() -> new RuntimeException("Language not found !"));

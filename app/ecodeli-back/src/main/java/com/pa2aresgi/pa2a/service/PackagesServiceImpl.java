@@ -43,7 +43,7 @@ public class PackagesServiceImpl implements PackagesService {
             pack1.setContent_pack(pack.getContent_pack());
             pack1.setQuantity_pack(pack.getQuantity_pack());
             pack1.setDetails_pack(pack.getDetails_pack());
-            pack1.setType_pack(pack.getType_pack());
+            //pack1.setType_pack(pack.getType_pack());
             pack1.setWeight_pack(pack.getWeight_pack());
             pack1.setLength_pack(pack.getLength_pack());
             pack1.setWidth_pack(pack.getWidth_pack());

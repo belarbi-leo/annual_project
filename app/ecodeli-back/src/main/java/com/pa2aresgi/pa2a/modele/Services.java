@@ -32,8 +32,8 @@ public class Services {
     @Column
     @Enumerated(EnumType.STRING)
     private Svc_category category;
-    @Column(length=50)
-    private String subcategory;
+    /*@Column(length=50)
+    private String subcategory;*/
     @Column
     @Enumerated(EnumType.STRING)
     private Svc_authorization auth;

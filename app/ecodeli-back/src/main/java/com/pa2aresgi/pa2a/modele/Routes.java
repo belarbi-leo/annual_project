@@ -26,16 +26,32 @@ public class Routes {
     private Timestamp date_creation_route;
     @Column
     private Timestamp date_start_route;
+    /*@Column(length=255)
+    private String street_start_route;*/
     @Column(length=255)
-    private String street_start_route;
+    private String location_start_route;
+    @Column(length = 255)
+    private String suite_start_route;
+    @Column(length=255)
+    private String locality_start_route;
+    @Column(length = 255)
+    private String state_start_route;
     @Column(length=20)
     private String postal_code_start_route;
     @Column(length=100)
     private String country_start_route;
     @Column
     private Timestamp date_end_route;
+    /*@Column(length=255)
+    private String street_end_route;*/
     @Column(length=255)
-    private String street_end_route;
+    private String location_end_route;
+    @Column(length = 255)
+    private String suite_end_route;
+    @Column(length=255)
+    private String locality_end_route;
+    @Column(length = 255)
+    private String state_end_route;
     @Column(length=20)
     private String postal_code_end_route;
     @Column(length=100)

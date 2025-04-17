@@ -43,20 +43,36 @@ public class Ads {
     private Timestamp date_accept_ad;
     @Column
     private Timestamp date_start_ad;
+    /*@Column(length=255)
+    private String street_start_ad;*/
     @Column(length=255)
-    private String street_start_ad;
+    private String location_start;
+    @Column(length = 255)
+    private String suite_start;
+    @Column(length=255)
+    private String locality_start;
+    @Column(length = 255)
+    private String state_start;
     @Column(length=20)
-    private String postal_code_start_ad;
+    private String postal_code_start;
     @Column(length=100)
-    private String country_start_ad;
+    private String country_start;
     @Column
     private Timestamp date_end_ad;
+    /*@Column(length = 255)
+    private String street_end_ad;*/
+    @Column(length=255)
+    private String location_end;
     @Column(length = 255)
-    private String street_end_ad;
+    private String suite_end;
+    @Column(length=255)
+    private String locality_end;
+    @Column(length = 255)
+    private String state_end;
     @Column(length=20)
-    private String postal_code_end_ad;
+    private String postal_code_end;
     @Column(length=100)
-    private String country_end_ad;
+    private String country_end;
     @Column(length = 255)
     private String description_ad;
     @Column(columnDefinition="numeric(10,2)")

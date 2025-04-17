@@ -24,6 +24,10 @@ public class Users {
     @Column
     private Timestamp date_registration;
     @Column
+    private Timestamp date_accept_cgu;
+    @Column
+    private Timestamp date_accept_cgv;
+    @Column
     @Enumerated(EnumType.STRING)
     private Role_enum role;
     @Column
@@ -35,6 +39,8 @@ public class Users {
     private String email;
     @Column(length=255)
     private String password;
+    @Column
+    private Integer phone_number;
     @Column(length=50)
     private String first_name;
     @Column(length=50)
@@ -42,29 +48,38 @@ public class Users {
     @Column(length=100)
     private String company_name;
     @Column
+    private Long siret;
+    @Column
     private String photo_user;
     @Column(length=255)
     private String bio;
-    @Column
-    private long siret;
+    /*@Column(length=255)
+    private String street;*/
     @Column(length=255)
-    private String street;
+    private String location;
+    @Column(length = 255)
+    private String suite;
+    @Column(length=255)
+    private String locality;
+    @Column(length = 255)
+    private String state;
     @Column(length=20)
     private String postal_code;
     @Column(length=100)
     private String country;
+    /*
     @Column
     private String code_payment;
     @Column(length=7)
     private String expiration_payment;
     @Column(length=34)
-    private String iban;
+    private String iban;*/
     @ManyToOne
     @JoinColumn(name="id_subscription", nullable = false)
     private Subscriptions id_subscription;
     @ManyToOne
-    @JoinColumn(name="id_langue", nullable = false)
-    private Languages id_langue;
+    @JoinColumn(name="id_language", nullable = false)
+    private Languages id_language;
     @OneToMany(mappedBy = "id_user")
     @JsonIgnore
     private List<Disputes> dipustes_list = new ArrayList<>();

@@ -8,7 +8,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import java.util.List;
 
 public interface LanguagesRepository extends JpaRepository<Languages, Integer>/*, PagingAndSortingRepository<Languages, Integer> */{
-    @Query("select langue from Languages langue order by langue.id_langue")
-    List<Languages> findAllOrderById_langue();
+    @Query("select language from Languages language order by language.id_language")
+    List<Languages> findAllOrderById_language();
     //List<Languages> findAllOrderById_langueAndPaged(Integer id_langue, Pageable pageable);
 }

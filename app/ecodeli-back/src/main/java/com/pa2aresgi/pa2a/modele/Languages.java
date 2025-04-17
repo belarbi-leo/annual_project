@@ -17,9 +17,9 @@ import java.util.List;
 public class Languages {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_langue;
+    private Integer id_language;
     @Column(length = 30)
-    private String langue;
+    private String language;
     @Column(length = 2, unique = true, nullable = false)
     private String iso;
     @OneToMany(mappedBy = "id_user")

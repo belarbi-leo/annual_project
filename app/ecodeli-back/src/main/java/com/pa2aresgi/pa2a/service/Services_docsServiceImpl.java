@@ -39,7 +39,7 @@ public class Services_docsServiceImpl implements Services_docsService {
     @Override
     public Services_docs update(Integer id, Services_docs service_doc) {
         return services_docsRepository.findById(id).map(svc_doc -> {
-            svc_doc.setId_svc(service_doc.getId_svc());
+            //svc_doc.setId_svc(service_doc.getId_svc());
             svc_doc.setName_doc(service_doc.getName_doc());
             return services_docsRepository.save(svc_doc);
         }).orElseThrow(() -> new RuntimeException("Service_doc not found !"));
