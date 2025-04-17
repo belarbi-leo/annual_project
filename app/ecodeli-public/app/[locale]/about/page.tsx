@@ -1,206 +1,118 @@
-import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
-} from "@heroicons/react/24/outline";
-import { ServerIcon } from "@heroicons/react/20/solid";
-
-const features = [
-  {
-    name: "Trajets optimisés",
-    description:
-      "EcoDeli exploite les trajets déjà prévus par des particuliers et professionnels pour assurer vos livraisons, réduisant coûts et impact écologique.",
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: "Réseau de confiance",
-    description:
-      "Tous nos prestataires sont vérifiés et notés, garantissant un service fiable et sécurisé pour chaque mission.",
-    icon: LockClosedIcon,
-  },
-  {
-    name: "Services diversifiés",
-    description:
-      "Au-delà des livraisons, accédez à notre réseau pour le transport, l'installation, l'entretien et bien d'autres services du quotidien.",
-    icon: ArrowPathIcon,
-  },
-  {
-    name: "Impact positif",
-    description:
-      "En utilisant des trajets existants, chaque service via EcoDeli contribue activement à réduire les émissions de CO2 inutiles.",
-    icon: FingerPrintIcon,
-  },
-];
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
+import Header from "@/components/header";
+import Background from "@/components/background";
+import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from "@heroicons/react/24/outline";
 
 export default function About() {
+  const t = useTranslations("About");
+
+  const features = [
+    {
+      name: t("features.trust.name"),
+      description: t("features.trust.description"),
+      icon: LockClosedIcon,
+    },
+    {
+      name: t("features.optimized.name"),
+      description: t("features.optimized.description"),
+      icon: CloudArrowUpIcon,
+    },
+    {
+      name: t("features.services.name"),
+      description: t("features.services.description"),
+      icon: ArrowPathIcon,
+    },
+    {
+      name: t("features.environmental.name"),
+      description: t("features.environmental.description"),
+      icon: FingerPrintIcon,
+    },
+  ];
+
   return (
-    <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
-
-      {/* Effet de fond supérieur gauche */}
-      <div
-        aria-hidden="true"
-        className="absolute top-[-10%] left-[-10%] -z-10 transform-gpu blur-3xl opacity-50"
-      >
-        <div
-          className="h-100 w-100 bg-gradient-to-tr from-[#89c8fd] to-[#60b6ff] dark:from-[#245b90] dark:to-[#1a426a] rounded-full"
-          style={{ filter: "blur(100px)" }}
-        />
-      </div>
-
-      {/* Effet de fond inférieur droit */}
-      <div
-        aria-hidden="true"
-        className="absolute bottom-[-10%] right-[-10%] -z-10 transform-gpu blur-3xl opacity-50"
-      >
-        <div
-          className="h-100 w-100 bg-gradient-to-tr from-[#96d629] to-[#baeb6c] dark:from-[#3f7d1c] dark:to-[#67a731] rounded-full"
-          style={{ filter: "blur(100px)" }}
-        />
-      </div>
-
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-10">
-        <div className="mx-auto max-w-2xl lg:text-center">
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[#49cb5c] dark:text-[#36a84b] sm:text-5xl">
-            Connecter besoins et services pour un avenir durable
-          </h1>
-          <p className="mt-6 text-lg/8 text-gray-600">
-            EcoDeli met en relation clients et prestataires pour optimiser les
-            livraisons et services en exploitant les trajets déjà planifiés,
-            pour une économie plus collaborative et écologique.
-          </p>
+    <div className="min-h-screen w-full overflow-hidden relative px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+      <Background />
+      <Header />
+      {/* Hero Section */}
+      <div className="mx-auto max-w-7xl md:px-6 lg:px-8 mb-10">
+        <div className="mx-auto max-w-4xl text-center">
+          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-emerald-500 dark:text-emerald-300 mt-10">{t("title")}</h1>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-            {features.map((feature) => (
-              <div key={feature.name} className="relative pl-16">
-                <dt className="text-base/7 font-semibold text-gray-900">
-                  <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-[#49cb5c]">
-                    <feature.icon
-                      aria-hidden="true"
-                      className="size-6 text-white"
-                    />
+        <p className="md:text-2xl text-center text-gray-600 dark:text-gray-300 mt-20 lg:mt-30">{t("intro")}</p>
+      </div>
+
+      {/* Features Section */}
+      <div className="py-5 sm:py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="md:mt-10">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+              {features.map((feature) => (
+                <div key={feature.name} className="pt-6">
+                  <div className="flow-root rounded-lg bg-emerald-50 px-6 pb-8 h-full">
+                    <div className="-mt-6">
+                      <div>
+                        <span className="inline-flex items-center justify-center rounded-md bg-[#49cb5c] p-3 shadow-lg">
+                          <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                        </span>
+                      </div>
+                      <h3 className="mt-8 text-lg font-semibold leading-8 tracking-tight text-gray-900 text-center md:text-left">
+                        {feature.name}
+                      </h3>
+                      <p className="mt-5 text-base leading-7 text-gray-600 text-center md:text-left">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-                  {feature.name}
-                </dt>
-                <dd className="mt-2 text-base/7 text-gray-600">
-                  {feature.description}
-                </dd>
+                </div>
+              ))}
+            </div>
+          </div>
+          <h2 className="text-2xl md:text-3xl text-center font-bold text-emerald-500 dark:text-emerald-300 mt-25">{t("impact")}</h2>
+        </div>
+      </div>
+
+      {/* Values Section */}
+      <div className="py-10">
+        <div className="max-w-7xl mx-auto sm:px-4 lg:px-8">
+          <div className="flex justify-center">
+            <Image src="/favicon.ico" alt="Logo EcoDeli" height={240} width={240} className="h-22 w-22 hover:scale-110 hover:rotate-6"/>
+          </div>
+          <div className="text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-emerald-500 dark:text-emerald-300 mt-15">{t("connectionTitle")}</h2>
+            <p className="mt-10 max-w-4xl mx-auto text-lg text-gray-600 dark:text-white">{t("connectionText")}</p>
+          </div>
+
+          <div className="mt-10 sm:md-20 grid grid-cols-1 gap-6 sm:grid-cols-3">
+            {[1, 2, 3].map((value) => (
+              <div key={value} className="bg-emerald-50 rounded-lg shadow-sm p-6">
+                <h3 className="text-lg font-semibold text-center text-gray-900">{t(`values.${value}.title`)}</h3>
+                <p className="mt-4 text-center text-gray-600">{t(`values.${value}.text`)}</p>
               </div>
             ))}
-          </dl>
-        </div>
-      </div>
-      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
-        <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-          <div className="lg:pr-4">
-            <div className="lg:max-w-lg">
-              <p className="text-base/7 font-semibold text-green-600">
-                Économie collaborative
-              </p>
-              <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-                Une mise en relation intelligente
-              </h1>
-              <p className="mt-6 text-xl/8 text-gray-700">
-                Notre plateforme connecte ceux qui ont besoin d'un service avec
-                ceux qui effectuent déjà le trajet, créant un réseau d'entraide
-                efficace qui profite à tous et à la planète.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-          <img
-            alt="Capture d'écran de l'application EcoDeli"
-            src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
-            className="w-[48rem] max-w-none rounded-xl bg-gray-900 ring-1 shadow-xl ring-gray-400/10 sm:w-[57rem]"
-          />
-        </div>
-        <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-          <div className="lg:pr-4">
-            <div className="max-w-xl text-base/7 text-gray-700 lg:max-w-lg">
-              <p>
-                EcoDeli repense les services de proximité en tirant parti des
-                trajets déjà prévus. Notre plateforme identifie les prestataires
-                qui passent près de chez vous et peuvent effectuer votre
-                livraison ou service pendant leur déplacement habituel.
-              </p>
-              <ul role="list" className="mt-8 space-y-8 text-gray-600">
-                <li className="flex gap-x-3">
-                  <CloudArrowUpIcon
-                    aria-hidden="true"
-                    className="mt-1 size-5 flex-none text-green-600"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Économies substantielles.
-                    </strong>{" "}
-                    En exploitant les trajets existants, nous réduisons les
-                    coûts de 25 à 40% par rapport aux services traditionnels.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <LockClosedIcon
-                    aria-hidden="true"
-                    className="mt-1 size-5 flex-none text-green-600"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Multi-services.
-                    </strong>{" "}
-                    Des livraisons aux installations, en passant par les
-                    services d'entretien et le transport, trouvez le prestataire
-                    idéal pour chaque besoin.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <ServerIcon
-                    aria-hidden="true"
-                    className="mt-1 size-5 flex-none text-green-600"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Impact environnemental réduit.
-                    </strong>{" "}
-                    Chaque service via EcoDeli évite un déplacement
-                    supplémentaire, contribuant directement à la réduction des
-                    émissions de CO2.
-                  </span>
-                </li>
-              </ul>
-              <p className="mt-8">
-                Que vous soyez client à la recherche d'un service ou prestataire
-                souhaitant rentabiliser vos déplacements, EcoDeli vous connecte
-                au sein d'un écosystème vertueux et responsable.
-              </p>
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-                Rejoignez la communauté EcoDeli
-              </h2>
-              <p className="mt-6">
-                Inscrivez-vous en quelques minutes et découvrez comment notre
-                réseau peut vous faire économiser du temps, de l'argent et
-                participer à la construction d'un modèle de services plus
-                durable et plus humain.
-              </p>
-            </div>
           </div>
         </div>
       </div>
-      <div className="mt-8 flex justify-center">
-        <a
-        href="/signup"
-        className="inline-flex items-center justify-center rounded-md border border-transparent bg-[#49cb5c] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-[#36a84b]"
-        >
-        S'inscrire
-        </a>
-        <a
-        href="/login"
-        className="ml-4 inline-flex items-center justify-center rounded-md border border-transparent bg-gray-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-700"
-        >
-        Se connecter
-        </a>
+
+      {/* Community Section */}
+      <div className="py-10">
+        <div className="max-w-7xl mx-auto sm:px-4 lg:px-8">
+          <div className="flex justify-center">
+            <Image src="/favicon.ico" alt="Logo EcoDeli" height={240} width={240} className="h-22 w-22 hover:scale-110 hover:rotate-6"/>
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-emerald-500 dark:text-emerald-300 mt-15">{t("communityTitle")}</h2>
+          <p className="mt-5 max-w-4xl mx-auto text-lg text-center text-gray-600 dark:text-gray-300 dark:text-white">{t("communityText")}</p>
+          <div className="mt-15 flex justify-center">
+            <Link
+              href="auth"
+              className="w-full sm:w-auto text-center rounded-md bg-emerald-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+            >
+              {t("auth")}
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
-

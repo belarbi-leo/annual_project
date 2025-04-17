@@ -1,0 +1,259 @@
+{
+    "Home": {
+      "title": "ECODELI",
+      "subtitle": "Lieferung neu gedacht, solidarisch und verantwortungsbewusst.",
+      "description": "Finden Sie Dienstleister, die Ihre ökologischen Werte teilen und reduzieren Sie den CO2-Fußabdruck Ihrer Projekte.",
+      "auth": "Registrieren / Anmelden",
+      "learnMore": "Mehr erfahren"
+    },
+    "About": {
+        "title": "Bedürfnisse und Dienstleistungen für eine nachhaltige Zukunft verbinden",
+        "intro": "EcoDeli bringt Kunden und Dienstleister zusammen, um Lieferungen und Services zu optimieren – und schafft so ein effizientes Unterstützungsnetzwerk, das allen und dem Planeten zugutekommt.",
+        "impact": "Jeder über unsere Plattform abgewickelte Service trägt zu einer effizienteren Wirtschaft und einer gesünderen Umwelt bei. Gemeinsam schaffen wir ein Netzwerk verantwortungsvoller Dienstleistungen.",
+        "features": {
+            "optimized": {
+            "name": "Optimierte Routen",
+            "description": "EcoDeli nutzt bereits geplante Fahrten von Privatpersonen und Unternehmen, um Ihre Lieferungen durchzuführen – und reduziert so Kosten und ökologische Auswirkungen."
+            },
+            "trust": {
+            "name": "Vertrauenswürdiges Netzwerk",
+            "description": "Alle unsere Dienstleister sind geprüft und bewertet, was einen zuverlässigen und sicheren Service bei jeder Aufgabe garantiert."
+            },
+            "services": {
+            "name": "Vielfältige Dienstleistungen",
+            "description": "Neben Lieferungen bietet unser Netzwerk auch Transport, Installation, Wartung und viele weitere Alltagsdienste. Finden Sie den passenden Anbieter für jeden Bedarf."
+            },
+            "environmental": {
+            "name": "Reduzierte Umweltbelastung",
+            "description": "Durch die Nutzung bestehender Fahrten vermeidet jeder EcoDeli-Service zusätzliche Wege und trägt direkt zur Reduktion von CO₂-Emissionen bei."
+            }
+        },
+        "connectionTitle": "Lokale Dienstleistungen neu denken – für eine kollaborativere und umweltfreundlichere Wirtschaft",
+        "connectionText": "Ob Sie Kunde mit einem Bedarf oder Dienstleister mit einer Route sind – wir vernetzen Sie in einem verantwortungsbewussten und zukunftsorientierten Ökosystem. EcoDeli basiert auf grundlegenden Werten, die all unser Handeln und unsere Weiterentwicklung leiten.",
+        "values": {
+            "1": {
+            "title": "Nachhaltigkeit",
+            "text": "Ökologie steht im Zentrum unseres Modells: Wir maximieren den Einsatz vorhandener Ressourcen und minimieren den CO₂-Fußabdruck jeder Dienstleistung."
+            },
+            "2": {
+            "title": "Gemeinschaft",
+            "text": "Wir glauben an die Kraft lokaler Verbindungen, um ein menschlicheres und widerstandsfähigeres Dienstleistungsnetzwerk zu schaffen."
+            },
+            "3": {
+            "title": "Innovation",
+            "text": "Wir entwickeln unsere Lösungen ständig weiter, um Serviceabläufe zu optimieren und den zukünftigen Anforderungen in einer sich wandelnden Welt gerecht zu werden."
+            }
+        },
+        "communityTitle": "Werden Sie Teil der Community",
+        "communityText": "Registrieren Sie sich in wenigen Minuten und entdecken Sie, wie unser Netzwerk Ihnen Zeit und Geld spart – und gleichzeitig den Aufbau eines nachhaltigeren, menschlicheren Dienstleistungsmodells unterstützt.",
+        "auth": "Registrieren / Anmelden"
+    },
+    "Contact": {},
+    "CGU": {
+        "title": "Allgemeine Nutzungsbedingungen (AGB)",
+        "effective": "Gültig ab 15.04.2025",
+        "preamble": {
+            "title": "Präambel",
+            "content1": "Die vorliegenden Allgemeinen Nutzungsbedingungen (nachfolgend 'AGB' genannt) haben zum Ziel, die rechtlichen Rahmenbedingungen für die Bereitstellung der Ecodeli-Anwendung und der angebotenen Dienste festzulegen sowie die Bedingungen für den Zugang und die Nutzung der Dienste durch den Nutzer zu definieren.",
+            "content2": "Jede Registrierung oder Nutzung der Anwendung setzt die vorbehaltlose Annahme dieser AGB voraus."
+        },
+        "art1": {
+            "title": "ARTIKEL 1: Rechtliche Hinweise",
+            "content1": "Die Ecodeli-Anwendung wird von der Gesellschaft XXXXXX mit einem Kapital von XXXXXX herausgegeben, eingetragen im Handelsregister von XXXXXX unter der Nummer XXXXXX, mit Hauptsitz in XXXXXX.",
+            "content2": "E-Mail-Adresse: XXXXXXXXXXXXXX",
+            "content3": "Herausgeber: XXXXXX",
+            "content4": "Das Hosting der Anwendung wird von XXXXXX mit Sitz in XXXXXX bereitgestellt, was die Einhaltung der europäischen DSGVO-Verordnung gewährleistet."
+        },
+        "art2": {
+            "title": "ARTIKEL 2: Zugang und Nutzung der Dienste",
+            "content1": "Ecodeli ist eine Plattform zur Vermittlung zwischen Kunden (Privatpersonen oder Gewerbetreibenden) und Dienstleistern. Ziel ist es, bestehende Wege für verantwortungsvolle Lieferungen zu optimieren oder gelegentliche Dienstleistungen anzubieten.",
+            "content2": "Der Nutzer verpflichtet sich, die Anwendung ausschließlich in einem streng legalen Rahmen und für persönliche oder berufliche Zwecke im Zusammenhang mit der Art der angebotenen Dienste zu nutzen.",
+            "content3": "Ecodeli behält sich das Recht vor, den Zugang zu seinen Diensten für jeden Nutzer zu sperren oder einzuschränken, der gegen diese AGB verstößt."
+        },  
+        "art2_1": {
+            "title": "ARTIKEL 2.1: Kontoerstellung",
+            "content1": "Die Registrierung bei Ecodeli ist kostenlos, aber für den Zugriff auf bestimmte Dienste erforderlich. Die angeforderten Informationen umfassen:",
+            "info1": "Vor- und Nachname für Privatpersonen oder Firmenname und SIRET-Nummer für Gewerbetreibende",
+            "info2": "E-Mail-Adresse",
+            "info3": "Telefonnummer",
+            "info4": "Postanschrift für Gewerbetreibende",
+            "info5": "Passwort (der Nutzer ist für die Vertraulichkeit seiner Zugangsdaten und übermittelten Informationen verantwortlich)"
+        },  
+        "art2_2": {
+            "title": "ARTIKEL 2.2: Verpflichtungen der Nutzer",
+            "content": "Der Nutzer verpflichtet sich:",
+            "obligation1": "Genaue und aktuelle Informationen anzugeben",
+            "obligation2": "Die über die Plattform eingegangenen Verpflichtungen einzuhalten (Lieferungen, Dienstleistungen, Termine usw.)",
+            "obligation3": "Den internen Nachrichtendienst respektvoll und professionell zu nutzen",
+            "obligation4": "Die Plattform nicht für Transaktionen außerhalb des vorgesehenen Rahmens zu umgehen"
+        },  
+        "art2_3": {
+            "title": "ARTIKEL 2.3: Abmeldung",
+            "content": "Der Nutzer kann jederzeit die Löschung seines Kontos beantragen, entweder direkt über die Benutzeroberfläche oder per E-Mail an: XXXXXXXXXXXXXX. Die Daten werden gemäß der Datenschutzrichtlinie und der DSGVO gelöscht."
+        },  
+        "art3": {
+            "title": "ARTIKEL 3: Personenbezogene Daten",
+            "content1": "Ecodeli verpflichtet sich, die Vertraulichkeit und Sicherheit der Daten seiner Nutzer gemäß der DSGVO und dem französischen Datenschutzgesetz vom 6. Januar 1978 zu gewährleisten.",
+            "content2": "Jeder Nutzer hat das Recht auf Zugriff, Änderung, Widerspruch und Löschung seiner Daten. Diese Rechte können unter folgender Adresse ausgeübt werden: XXXXXXXXXXXXXX."
+        },  
+        "art4": {
+            "title": "ARTIKEL 4: Geistiges Eigentum",
+            "content": "Die auf Ecodeli vorhandenen Inhalte (Logos, Texte, Bilder, Datenbank usw.) sind durch das Gesetz zum Schutz des geistigen Eigentums geschützt. Jede Reproduktion, Verbreitung oder Nutzung ohne vorherige Genehmigung ist untersagt."
+        },  
+        "art5": {
+            "title": "ARTIKEL 5: Haftung",
+            "content1": "Ecodeli fungiert als technischer Vermittler zwischen den Parteien. Es kann nicht für Mängel bei der Ausführung einer Lieferung oder eines Dienstes oder für indirekte Schäden, die dem Nutzer entstehen, haftbar gemacht werden.",
+            "content2": "Jede Partei bleibt für ihre Verpflichtungen und die Konsequenzen bei Nichteinhaltung verantwortlich.",
+            "content3": "Ecodeli behält sich das Recht vor, den Zugang zu seinen Diensten vorübergehend für Wartungsarbeiten oder höhere Gewalt zu sperren."
+        },  
+        "art6": {
+            "title": "ARTIKEL 6: Hyperlinks",
+            "content": "Die Anwendung kann Links zu Drittseiten enthalten. Ecodeli übernimmt keine Verantwortung für den Inhalt oder die Funktionsweise dieser Websites."
+        },  
+        "art7": {
+            "title": "ARTIKEL 7: Gültigkeit der AGB",
+            "content": "Sollte eine Bestimmung dieser AGB für nichtig erklärt werden, hat dies keine Auswirkungen auf die anderen Klauseln, die weiterhin uneingeschränkt gelten."
+        },  
+        "art8": {
+            "title": "ARTIKEL 8: Änderung der AGB",
+            "content": "Ecodeli kann diese AGB jederzeit ändern, insbesondere um sich an rechtliche Entwicklungen anzupassen. Die Nutzer werden per Benachrichtigung oder E-Mail über Änderungen informiert."
+        },  
+        "art9": {
+            "title": "ARTIKEL 9: Anwendbares Recht und zuständiger Gerichtsstand",
+            "content": "Diese AGB unterliegen französischem Recht. Im Streitfall und nach Versuch einer gütlichen Einigung sind die französischen Gerichte zuständig."
+        }
+    },
+    "CGV": {
+        "title": "Allgemeine Verkaufsbedingungen (AVB)",
+        "effective": "Gültig ab 15.04.2025",
+        "introduction": "Die vorliegenden Allgemeinen Verkaufsbedingungen (AVB) regeln die Geschäftsbeziehungen zwischen der Gesellschaft Ecodeli (nachfolgend 'die Plattform' oder 'Ecodeli') und ihren Nutzern (Kunden und Dienstleistern) im Rahmen der Vermittlung für die Erbringung von Dienstleistungen.",
+        "art1": {
+            "title": "ARTIKEL 1 – Gegenstand",
+            "content": "Ecodeli ist eine Anwendung, die die Vermittlung zwischen Privatpersonen und Gewerbetreibenden für die Ausführung von Dienstleistungen erleichtert, insbesondere in den Bereichen Transport, Lieferung, Wartung, Installation usw. Die Plattform ermöglicht insbesondere die Optimierung der Transportlogistik durch Bündelung von Lieferanfragen mit bereits geplanten Fahrten (von Privatpersonen oder Gewerbetreibenden), wodurch Kosten und Umweltauswirkungen reduziert werden."
+        },
+        "art2": {
+            "title": "ARTIKEL 2 – Identifikation",
+            "company": "Firmenname",
+            "headquarters": "Hauptsitz"
+        },
+        "art3": {
+            "title": "ARTIKEL 3 – Angebotene Dienste",
+            "intro": "Ecodeli bietet:",
+            "service1": "Zugang zur Plattform, um Dienstleistungen einzusehen oder anzubieten;",
+            "service2": "Die Vermittlung zwischen Kunden und Dienstleistern;",
+            "service3": "Ein sicheres Zahlungssystem (falls zutreffend);",
+            "service4": "Ein System zur Bewertung nach der Leistungserbringung;",
+            "service5": "Weitere Funktionen im Zusammenhang mit umweltbewusster Logistik (Routenbündelung, Optimierung...).",
+            "disclaimer": "Ecodeli ist nicht der endgültige Dienstleister. Es fungiert ausschließlich als technischer Vermittler."
+        },
+        "art4": {
+            "title": "ARTIKEL 4 – Preisgestaltung",
+            "free": {
+                "title": "Kostenlose Registrierung",
+                "content": "Die Registrierung bei Ecodeli ist für alle Nutzer (Kunden und Dienstleister) kostenlos."
+            },
+            "fees": {
+                "title": "Servicegebühren / Provision",
+                "content1": "Ecodeli kann Servicegebühren oder Provisionen für bestimmte Transaktionen erheben, die über die Plattform abgewickelt werden.",
+                "content2": "Die Beträge werden zum Zeitpunkt der Bestätigung der Leistung angegeben. Ecodeli behält sich das Recht vor, seine Tarife zu ändern. Änderungen werden den Nutzern innerhalb einer angemessenen Frist mitgeteilt."
+            },
+            "payment": {
+                "title": "Zahlungsmodalitäten",
+                "content1": "Die Zahlungen (wenn sie über die Plattform abgewickelt werden) werden von einem sicheren Drittanbieter durchgeführt.",
+                "content2": "Ecodeli hat keinen Zugriff auf die Bankdaten der Nutzer."
+            },
+            "invoice": {
+                "title": "Rechnungsstellung",
+                "content": "Für jede über die Plattform erbrachte Leistung wird eine Rechnung erstellt und an den Kunden und den Dienstleister übermittelt."
+            }
+        },
+        "art5": {
+            "title": "ARTIKEL 5 – Pflichten der Parteien",
+            "client": {
+                "title": "Pflichten des Kunden",
+                "intro": "Der Kunde verpflichtet sich:",
+                "obligation1": "genaue Informationen bezüglich seiner Anfrage zu liefern;",
+                "obligation2": "die mit dem Dienstleister vereinbarten Bedingungen einzuhalten (Zeitplan, Ort, Zahlung usw.);",
+                "obligation3": "die Leistung gemäß den angegebenen Modalitäten zu bezahlen."
+            },
+            "provider": {
+                "title": "Pflichten des Dienstleisters",
+                "intro": "Der Dienstleister verpflichtet sich:",
+                "obligation1": "eine der Beschreibung entsprechende Leistung zu erbringen;",
+                "obligation2": "die Sicherheits-, Hygiene- und Pünktlichkeitsstandards einzuhalten;",
+                "obligation3": "seine Einnahmen gemäß den geltenden Steuervorschriften zu deklarieren."
+            },
+            "ecodeli": {
+                "title": "Verantwortung von Ecodeli",
+                "intro": "Ecodeli fungiert als Vermittler. Es kann nicht verantwortlich gemacht werden für:",
+                "limit1": "die Qualität oder Durchführung der Leistungen;",
+                "limit2": "Verspätungen, Stornierungen oder Streitigkeiten zwischen den Nutzern.",
+                "role": "Ecodeli greift nur ein, um den Austausch zu erleichtern und die Vermittlung zu optimieren."
+            }
+            },
+            "art6": {
+                "title": "ARTIKEL 6 – Stornierung & Rückerstattung",
+                "content1": "Jede Leistung kann gemäß den in der Benutzeroberfläche angegebenen Bedingungen storniert werden (Frist, eventuelle Strafen...).",
+                "content2": "Die Bedingungen für die Rückerstattung werden vor der Auftragsbestätigung deutlich angezeigt.",
+                "content3": "Ecodeli behält sich das Recht vor, bei missbräuchlicher oder verspäteter Stornierung die Servicegebühren ganz oder teilweise einzubehalten."
+            },
+        "art7": {
+            "title": "ARTIKEL 7 – Reklamationen",
+            "content1": "Jede Reklamation bezüglich einer Leistung muss innerhalb von 72 Stunden nach ihrer Durchführung über die Plattform eingereicht werden.",
+            "content2": "Ecodeli kann in einer Vermittlerrolle die Fakten analysieren, garantiert jedoch keine automatische Rückerstattung, außer im Falle eines nachgewiesenen Fehlers."
+        },
+        "art8": {
+            "title": "ARTIKEL 8 – Geistiges Eigentum",
+            "content": "Alle Elemente der Plattform (Texte, Bilder, Benutzeroberfläche...) sind ausschließliches Eigentum von Ecodeli. Jede nicht autorisierte Reproduktion, Verbreitung oder Nutzung ist strengstens untersagt."
+        },
+        "art9": {
+            "title": "ARTIKEL 9 – Personenbezogene Daten",
+            "content1": "Die von Ecodeli erfassten Daten werden unter Einhaltung der DSGVO verarbeitet.",
+            "content2": "Jeder Nutzer kann jederzeit auf seine personenbezogenen Daten zugreifen, sie berichtigen oder löschen.",
+            "content3": "Siehe unsere Datenschutzrichtlinie."
+        },
+        "art10": {
+            "title": "ARTIKEL 10 – Anwendbares Recht",
+            "content1": "Diese AVB unterliegen französischem Recht.",
+            "content2": "Im Streitfall werden die Parteien eine gütliche Einigung anstreben. Andernfalls sind die Gerichte am Sitz von Ecodeli zuständig."
+        }
+    },
+    "Auth": {
+        "email": "E-Mail",
+        "password": "Passwort",
+        "submit": "Anmelden",
+        "submitting": "Anmeldung läuft...",
+        "noAccount": "Noch kein Konto? ",
+        "signin": "Registrieren Sie sich",
+        "forgot": "Passwort vergessen? ",
+        "reset": "Zurücksetzen",
+        "errors": {
+            "emailRequired": "E-Mail ist erforderlich",
+            "emailInvalid": "Ungültiges E-Mail-Format",
+            "passwordRequired": "Passwort ist erforderlich",
+            "connectionError": "Bei der Anmeldung ist ein Fehler aufgetreten",
+            "form": "Beim Absenden des Formulars ist ein Fehler aufgetreten."
+        },
+        "Signin": {},
+        "Forgot": {
+            "title": "Passwort vergessen",
+            "instructions": "Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen Link zum Zurücksetzen Ihres Passworts.",
+            "email": "E-Mail",
+            "submit": "Link zum Zurücksetzen senden",
+            "submitting": "Wird gesendet...",
+            "noAccount": "Noch kein Konto? ",
+            "signin": "Registrieren Sie sich",
+            "backToLogin": "Zurück zur Anmeldung",
+            "successTitle": "E-Mail gesendet",
+            "successMessage": "Wenn ein Konto mit der Adresse {email} existiert, erhalten Sie eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts.",
+            "tryAnotherEmail": "Versuchen Sie eine andere E-Mail-Adresse",
+            "errors": {
+                "emailRequired": "E-Mail ist erforderlich",
+                "emailInvalid": "Ungültiges E-Mail-Format",
+                "sendError": "Fehler beim Senden des Zurücksetzungslinks",
+                "form": "Beim Absenden des Formulars ist ein Fehler aufgetreten."
+            }
+        }
+    },
+    "Components": {}
+}

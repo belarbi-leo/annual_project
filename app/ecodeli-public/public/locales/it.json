@@ -1,0 +1,259 @@
+{
+  "Home": {
+    "title": "ECODELI",
+    "subtitle": "Consegna ripensata, con un senso di solidarietà e responsabilità.",
+    "description": "Trovate fornitori di servizi che condividano i vostri valori ecologici e riducete l'impronta di carbonio dei vostri progetti.",
+    "auth": "Registrazione / Login",
+    "learnMore": "Per saperne di più"
+  },
+  "About": {
+    "title": "Collegare bisogni e servizi per un futuro sostenibile",
+    "intro": "EcoDeli mette in contatto clienti e fornitori per ottimizzare consegne e servizi, creando una rete di supporto efficiente che beneficia tutti e il pianeta.",
+    "impact": "Ogni servizio realizzato tramite la nostra piattaforma contribuisce a rendere l’economia più efficiente e il pianeta più sano. Insieme, creiamo una rete di servizi responsabili.",
+    "features": {
+      "optimized": {
+        "name": "Percorsi ottimizzati",
+        "description": "EcoDeli sfrutta i tragitti già programmati da privati e professionisti per effettuare le tue consegne, riducendo costi e impatto ambientale."
+      },
+      "trust": {
+        "name": "Rete di fiducia",
+        "description": "Tutti i nostri fornitori sono verificati e valutati, garantendo un servizio affidabile e sicuro per ogni incarico."
+      },
+      "services": {
+        "name": "Servizi diversificati",
+        "description": "Oltre alle consegne, accedi alla nostra rete per trasporto, installazione, manutenzione e molti altri servizi quotidiani. Trova il fornitore ideale per ogni esigenza."
+      },
+      "environmental": {
+        "name": "Impatto ambientale ridotto",
+        "description": "Utilizzando tragitti già esistenti, ogni servizio tramite EcoDeli evita un viaggio supplementare e contribuisce direttamente alla riduzione delle emissioni di CO₂."
+      }
+    },
+    "connectionTitle": "Ripensare i servizi locali per un'economia più collaborativa ed ecologica",
+    "connectionText": "Che tu sia un cliente alla ricerca di un servizio o un fornitore desideroso di ottimizzare i propri spostamenti, ti colleghiamo a un ecosistema virtuoso e responsabile. Costruiamo EcoDeli su valori fondamentali che guidano tutte le nostre azioni e sviluppi.",
+    "values": {
+      "1": {
+        "title": "Sostenibilità",
+        "text": "Poniamo l’ecologia al centro del nostro modello massimizzando l’uso delle risorse esistenti e minimizzando l’impronta di carbonio di ogni servizio."
+      },
+      "2": {
+        "title": "Comunità",
+        "text": "Crediamo nella forza del collettivo e delle connessioni locali per creare un ecosistema di servizi più umano e resiliente."
+      },
+      "3": {
+        "title": "Innovazione",
+        "text": "Reinventiamo costantemente le nostre soluzioni per ottimizzare i flussi di servizi e anticipare i bisogni di domani in un mondo in continuo cambiamento."
+      }
+    },
+    "communityTitle": "Unisciti alla comunità",
+    "communityText": "Iscriviti in pochi minuti e scopri come la nostra rete può aiutarti a risparmiare tempo, denaro e contribuire a costruire un modello di servizi più sostenibile e umano.",
+    "auth": "Registrazione / Login"
+  },
+  "Contact": {},
+  "CGU": {
+    "title": "Condizioni Generali di Utilizzo (CGU)",
+    "effective": "In vigore dal 15/04/2025",
+    "preamble": {
+      "title": "Preambolo",
+      "content1": "Le presenti Condizioni Generali di Utilizzo (dette \"CGU\") hanno lo scopo di inquadrare giuridicamente le modalità di messa a disposizione dell'applicazione Ecodeli e dei servizi proposti, e di definire le condizioni di accesso e di utilizzo dei servizi da parte dell'Utente.",
+      "content2": "Qualsiasi registrazione o utilizzo dell'applicazione implica l'accettazione senza riserve delle presenti CGU."
+    },
+    "art1": {
+      "title": "ARTICOLO 1: Informazioni legali",
+      "content1": "L'applicazione Ecodeli è pubblicata dalla società XXXXXX, con capitale di XXXXXX, iscritta al RCS di XXXXXX con il numero XXXXXX, la cui sede legale è situata in XXXXXX.",
+      "content2": "Indirizzo e-mail: XXXXXXXXXXXXXX",
+      "content3": "Direttore della pubblicazione: XXXXXX",
+      "content4": "L'hosting dell'applicazione è fornito da XXXXXX, situato a XXXXXX, garantendo la conformità con il regolamento europeo GDPR."
+    },
+    "art2": {
+      "title": "ARTICOLO 2: Accesso e utilizzo dei servizi",
+      "content1": "Ecodeli è una piattaforma di intermediazione tra clienti (privati o professionisti) e fornitori di servizi. L'obiettivo è ottimizzare i percorsi esistenti per consegne responsabili, o proporre prestazioni di servizi occasionali.",
+      "content2": "L'utente si impegna a utilizzare l'applicazione in un contesto strettamente legale, e per fini personali o professionali legati alla natura dei servizi proposti.",
+      "content3": "Ecodeli si riserva il diritto di sospendere o limitare l'accesso ai suoi servizi a qualsiasi Utente che contravvenga alle presenti CGU."
+    },
+    "art2_1": {
+      "title": "ARTICOLO 2.1: Creazione dell'account",
+      "content1": "La registrazione a Ecodeli è gratuita ma è obbligatoria per accedere a certi servizi. Le informazioni richieste includono:",
+      "info1": "Nome e cognome per i privati o Nome dell'azienda e numero SIRET per i professionisti",
+      "info2": "Indirizzo e-mail",
+      "info3": "Numero di telefono",
+      "info4": "Indirizzo postale per i professionisti",
+      "info5": "Password (l'utente è responsabile della riservatezza dei suoi identificativi e delle informazioni trasmesse)"
+    },
+    "art2_2": {
+      "title": "ARTICOLO 2.2: Obblighi degli Utenti",
+      "content": "L'Utente si impegna a:",
+      "obligation1": "Fornire informazioni esatte e aggiornate",
+      "obligation2": "Rispettare gli impegni presi tramite la piattaforma (consegne, prestazioni, orari, ecc.)",
+      "obligation3": "Utilizzare il sistema di messaggistica interno in modo rispettoso e professionale",
+      "obligation4": "Non aggirare la piattaforma per transazioni al di fuori del quadro previsto"
+    },
+    "art2_3": {
+      "title": "ARTICOLO 2.3: Cancellazione",
+      "content": "L'Utente può richiedere in qualsiasi momento la cancellazione del suo account, direttamente dall'interfaccia o via e-mail a: XXXXXXXXXXXXXX. I dati saranno cancellati in conformità con la politica sulla privacy e il GDPR."
+    },
+    "art3": {
+      "title": "ARTICOLO 3: Dati personali",
+      "content1": "Ecodeli si impegna ad assicurare la riservatezza e la sicurezza dei dati dei suoi utenti, in conformità con il GDPR e la legge Informatica e Libertà del 6 gennaio 1978.",
+      "content2": "Ogni Utente dispone di un diritto di accesso, modifica, opposizione e cancellazione dei dati che lo riguardano. Questi diritti possono essere esercitati al seguente indirizzo: XXXXXXXXXXXXXX."
+    },
+    "art4": {
+      "title": "ARTICOLO 4: Proprietà intellettuale",
+      "content": "I contenuti presenti su Ecodeli (loghi, testi, immagini, database, ecc.) sono protetti dal Codice della proprietà intellettuale. Qualsiasi riproduzione, diffusione o sfruttamento senza autorizzazione preventiva è vietato."
+    },
+    "art5": {
+      "title": "ARTICOLO 5: Responsabilità",
+      "content1": "Ecodeli agisce come intermediario tecnico tra le parti. Non potrà essere ritenuta responsabile delle mancanze nell'esecuzione di una consegna o di un servizio, né dei danni indiretti subiti dall'Utente.",
+      "content2": "Ogni parte rimane responsabile dei propri impegni e delle conseguenze in caso di mancato rispetto.",
+      "content3": "Ecodeli si riserva il diritto di sospendere temporaneamente l'accesso ai suoi servizi per manutenzione o casi di forza maggiore."
+    },
+    "art6": {
+      "title": "ARTICOLO 6: Collegamenti ipertestuali",
+      "content": "L'applicazione può contenere collegamenti verso siti terzi. Ecodeli declina ogni responsabilità quanto al contenuto o funzionamento di questi siti."
+    },
+    "art7": {
+      "title": "ARTICOLO 7: Validità delle CGU",
+      "content": "Se una disposizione delle presenti CGU è dichiarata nulla, ciò non influirà sulle altre clausole, che continueranno ad applicarsi pienamente."
+    },
+    "art8": {
+      "title": "ARTICOLO 8: Modifica delle CGU",
+      "content": "Ecodeli può modificare le presenti CGU in qualsiasi momento, in particolare per adattarsi alle evoluzioni legali. Gli Utenti saranno informati delle modifiche tramite notifica o e-mail."
+    },
+    "art9": {
+      "title": "ARTICOLO 9: Diritto applicabile e giurisdizione competente",
+      "content": "Le presenti CGU sono soggette alla legge francese. In caso di controversia, e dopo tentativo di risoluzione amichevole, la competenza è attribuita ai tribunali francesi."
+    }
+  },
+  "CGV": {
+    "title": "Condizioni Generali di Vendita (CGV)",
+    "effective": "In vigore dal 15/04/2025",
+    "introduction": "Le presenti Condizioni Generali di Vendita (CGV) regolano i rapporti commerciali tra la società Ecodeli (di seguito \"la Piattaforma\" o \"Ecodeli\") e i suoi Utenti (clienti e fornitori), nel quadro dell'intermediazione per la realizzazione di prestazioni di servizi.",
+    "art1": {
+      "title": "ARTICOLO 1 – Oggetto",
+      "content": "Ecodeli è un'applicazione che facilita l'intermediazione tra privati e professionisti per l'esecuzione di prestazioni di servizi, in particolare nel campo del trasporto, della consegna, della manutenzione, dell'installazione, ecc. La Piattaforma permette in particolare di ottimizzare la logistica dei percorsi raggruppando le richieste di consegna con percorsi già previsti (da privati o professionisti), riducendo così i costi e l'impatto ambientale."
+    },
+    "art2": {
+      "title": "ARTICOLO 2 – Identificazione",
+      "company": "Ragione sociale",
+      "headquarters": "Sede legale"
+    },
+    "art3": {
+      "title": "ARTICOLO 3 – Servizi proposti",
+      "intro": "Ecodeli propone:",
+      "service1": "Un accesso alla piattaforma per consultare o proporre prestazioni;",
+      "service2": "L'intermediazione tra clienti e fornitori;",
+      "service3": "Un sistema di pagamento sicuro (se applicabile);",
+      "service4": "Un sistema di recensioni e valutazioni post-prestazione;",
+      "service5": "Altre funzionalità legate alla logistica eco-responsabile (raggruppamento di percorsi, ottimizzazione...).",
+      "disclaimer": "Ecodeli non è il fornitore di servizio finale. Agisce unicamente come intermediario tecnico."
+    },
+    "art4": {
+      "title": "ARTICOLO 4 – Tariffazione",
+      "free": {
+        "title": "Gratuità dell'iscrizione",
+        "content": "L'iscrizione su Ecodeli è gratuita per tutti gli utenti (clienti e fornitori)."
+      },
+      "fees": {
+        "title": "Spese di servizio / commissione",
+        "content1": "Ecodeli può percepire spese di servizio o commissioni su alcune transazioni realizzate tramite la piattaforma.",
+        "content2": "Gli importi sono indicati al momento della convalida della prestazione. Ecodeli si riserva il diritto di far evolvere le sue tariffe. Qualsiasi modifica sarà notificata agli utenti entro un termine ragionevole."
+      },
+      "payment": {
+        "title": "Modalità di pagamento",
+        "content1": "I pagamenti (quando sono operati tramite la piattaforma) sono realizzati da un fornitore di pagamento terzo sicuro.",
+        "content2": "Ecodeli non ha accesso ai dati bancari degli utenti."
+      },
+      "invoice": {
+        "title": "Fatturazione",
+        "content": "Una fattura è generata per ogni prestazione realizzata tramite la piattaforma e trasmessa al cliente e al fornitore."
+      }
+    },
+    "art5": {
+      "title": "ARTICOLO 5 – Obblighi delle parti",
+      "client": {
+        "title": "Obblighi del cliente",
+        "intro": "Il cliente si impegna a:",
+        "obligation1": "fornire informazioni esatte riguardanti la sua richiesta;",
+        "obligation2": "rispettare le condizioni concordate con il fornitore (orario, luogo, pagamento, ecc.);",
+        "obligation3": "pagare la prestazione secondo le modalità indicate."
+      },
+      "provider": {
+        "title": "Obblighi del fornitore",
+        "intro": "Il fornitore si impegna a:",
+        "obligation1": "fornire una prestazione conforme alla descrizione;",
+        "obligation2": "rispettare le norme di sicurezza, igiene e puntualità;",
+        "obligation3": "dichiarare i propri redditi conformemente alla regolamentazione fiscale applicabile."
+      },
+      "ecodeli": {
+        "title": "Responsabilità di Ecodeli",
+        "intro": "Ecodeli agisce in qualità di intermediario. Non potrà essere ritenuta responsabile:",
+        "limit1": "della qualità o della realizzazione delle prestazioni;",
+        "limit2": "dei ritardi, cancellazioni o controversie tra gli utenti.",
+        "role": "Ecodeli interviene unicamente per facilitare gli scambi e ottimizzare le intermediazioni."
+      }
+    },
+    "art6": {
+      "title": "ARTICOLO 6 – Cancellazione & rimborso",
+      "content1": "Ogni prestazione può essere annullata secondo le condizioni indicate nell'interfaccia (termini, eventuali penalità...).",
+      "content2": "Le condizioni di rimborso sono chiaramente visualizzate prima della conferma dell'ordine.",
+      "content3": "Ecodeli si riserva il diritto di trattenere tutto o parte delle spese di servizio in caso di cancellazione abusiva o tardiva."
+    },
+    "art7": {
+      "title": "ARTICOLO 7 – Reclami",
+      "content1": "Qualsiasi reclamo relativo a una prestazione deve essere indirizzato tramite la piattaforma entro 72 ore dalla sua realizzazione.",
+      "content2": "Ecodeli potrà, in un ruolo di mediazione, analizzare i fatti, ma non garantisce alcun rimborso automatico salvo in caso di colpa accertata."
+    },
+    "art8": {
+      "title": "ARTICOLO 8 – Proprietà intellettuale",
+      "content": "Tutti gli elementi della piattaforma (testi, visuali, interfaccia...) sono proprietà esclusiva di Ecodeli. Qualsiasi riproduzione, diffusione o utilizzo non autorizzato è strettamente vietato."
+    },
+    "art9": {
+      "title": "ARTICOLO 9 – Dati personali",
+      "content1": "I dati raccolti da Ecodeli sono trattati nel rispetto del GDPR.",
+      "content2": "Ogni utente può in qualsiasi momento accedere, rettificare o eliminare i propri dati personali.",
+      "content3": "Vedere la nostra Politica sulla privacy."
+    },
+    "art10": {
+      "title": "ARTICOLO 10 – Diritto applicabile",
+      "content1": "Le presenti CGV sono soggette al diritto francese.",
+      "content2": "In caso di controversia, le parti tenteranno una risoluzione amichevole. In mancanza, i tribunali competenti saranno quelli della giurisdizione della sede di Ecodeli."
+    }
+  },
+  "Auth": {
+    "email": "Email",
+    "password": "Password",
+    "submit": "Accedi",
+    "submitting": "Accesso in corso...",
+    "noAccount": "Non hai ancora un account? ",
+    "signin": "Registrati",
+    "forgot": "Password dimenticata? ",
+    "reset": "Reimpostala",
+    "errors": {
+      "emailRequired": "L'email è obbligatoria",
+      "emailInvalid": "Formato email non valido",
+      "passwordRequired": "La password è obbligatoria",
+      "connectionError": "Si è verificato un errore durante la connessione",
+      "form": "Si è verificato un errore durante l'invio del modulo."
+    },
+    "Signin": {},
+    "Forgot": {
+      "title": "Password dimenticata",
+      "instructions": "Inserisci il tuo indirizzo email e ti invieremo un link per reimpostare la tua password.",
+      "email": "Email",
+      "submit": "Invia il link di reimpostazione",
+      "submitting": "Invio in corso...",
+      "noAccount": "Non hai ancora un account? ",
+      "signin": "Registrati",
+      "backToLogin": "Torna al login",
+      "successTitle": "Email inviata",
+      "successMessage": "Se esiste un account con l'indirizzo {email}, riceverai un'email con le istruzioni per reimpostare la tua password.",
+      "tryAnotherEmail": "Prova un altro indirizzo email",
+      "errors": {
+        "emailRequired": "L'email è obbligatoria",
+        "emailInvalid": "Formato email non valido",
+        "sendError": "Errore durante l'invio del link di reimpostazione",
+        "form": "Si è verificato un errore durante l'invio del modulo."
+      }
+    }
+  },
+  "Components": {}
+}

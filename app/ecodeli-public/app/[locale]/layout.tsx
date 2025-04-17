@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
-import {NextIntlClientProvider, hasLocale} from 'next-intl';
-import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
+
 import "./globals.css";
+
+import { Roboto } from "next/font/google";
+import { Roboto_Slab } from "next/font/google";
 
 const roboto = Roboto({
   subsets: ["latin"],
+  weight: ["400"],
+  variable: '--font-body',
+});
+
+const robotoSlab = Roboto_Slab({
+  subsets: ['latin'],
+  weight: ['800'],
+  variable: '--font-title',
 });
 
 export const metadata: Metadata = {
@@ -14,27 +25,29 @@ export const metadata: Metadata = {
   description: "La livraison repensée, solidaire et responsable.",
 };
 
-export default async function RootLayout({
+export default async function App({
   children,
-  params
+  params,
 }: {
-  children: React.ReactNode
-  params: Promise<{locale: string}>;
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
 
-  const {locale} = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${roboto.variable} ${robotoSlab.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
-  )
+  );
 }

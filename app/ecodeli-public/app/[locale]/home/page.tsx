@@ -55,7 +55,7 @@ const prestations = {
   "Organisateur d'événements": [{ name: "EventMaster", price: "500€", rating: 4.9 }],
 };
 
-export default function HomePage() {
+export default function Connected() {
   // États pour les prestations
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);

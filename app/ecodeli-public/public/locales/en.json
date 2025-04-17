@@ -1,34 +1,259 @@
 {
-  "LoginPage": {
-    "email": "E-mail",
-    "password": "Password",
-    "login": "Login"
+  "Home": {
+    "title": "ECODELI",
+    "subtitle": "Delivery rethought, with a sense of solidarity and responsibility.",
+    "description": "Find service providers who share your ecological values and reduce the carbon footprint of your projects.",
+    "auth": "Registration / Login",
+    "learnMore": "Find out more"
   },
-  "Admin": {
-    "Menu":{
-      "dashboard": "Dashboard",
-      "userManagement": "User management",
-      "disputesManagement": "Disputes",
-      "servicesManagement": "Services management",
-      "deliveriesManagement": "Deliveries management",
-      "warehousesManagement": "Warehouses management",
-      "trackingManagement": "Packages tracking",
-      "paymentsManagement": "Payments",
-      "subscriptionsManagement": "Subscriptions",
-      "messages": "Messages",
-      "logout": "Logout"
+  "About": {
+    "title": "Connecting needs and services for a sustainable future",
+    "intro": "EcoDeli connects clients and providers to optimize deliveries and services by creating an efficient support network that benefits everyone and the planet.",
+    "impact": "Every service completed through our platform contributes to a more efficient economy and a healthier planet. Together, let’s create a network of responsible services.",
+    "features": {
+      "optimized": {
+        "name": "Optimized routes",
+        "description": "EcoDeli leverages already planned trips by individuals and professionals to handle your deliveries, reducing costs and environmental impact."
+      },
+      "trust": {
+        "name": "Trusted network",
+        "description": "All our providers are verified and rated, ensuring reliable and secure service for every task."
+      },
+      "services": {
+        "name": "Diverse services",
+        "description": "Beyond deliveries, access our network for transport, installation, maintenance, and many other daily services. Find the right provider for every need."
+      },
+      "environmental": {
+        "name": "Reduced environmental impact",
+        "description": "By using existing trips, every service through EcoDeli avoids an extra journey and directly helps reduce CO₂ emissions."
+      }
     },
-    "UserManagement": {
-      "title": "User Management",
-      "privateUser": "Private users",
-      "proUser": "Professional users",
-      "privateProvider": "Private providers",
-      "proProvider": "Professional providers",
-      "administrators": "Administrators",
-      "awaitingValidation": "Awaiting validation",
-      "seeMore": "More",
-      "loading": "Cargando...",
-      "noUserFound": "No se encontraron usuarios"
+    "connectionTitle": "Rethinking local services for a more collaborative and ecological economy",
+    "connectionText": "Whether you're a client in need of a service or a provider looking to make the most of your trips, we connect you within a responsible and virtuous ecosystem. EcoDeli is built on core values that guide all our actions and development.",
+    "values": {
+      "1": {
+        "title": "Sustainability",
+        "text": "We put ecology at the heart of our model by maximizing the use of existing resources and minimizing the carbon footprint of every service."
+      },
+      "2": {
+        "title": "Community",
+        "text": "We believe in the power of community and local connections to create a more human and resilient service ecosystem."
+      },
+      "3": {
+        "title": "Innovation",
+        "text": "We constantly reinvent our solutions to optimize service flows and anticipate tomorrow’s needs in a changing world."
+      }
+    },
+    "communityTitle": "Join the community",
+    "communityText": "Sign up in just a few minutes and discover how our network can save you time, money, and help build a more sustainable and human service model.",
+    "auth": "Registration / Login"
+  },
+  "Contact": {},
+  "CGU": {
+    "title": "Terms of Use",
+    "effective": "Effective as of 04/15/2025",
+    "preamble": {
+      "title": "Preamble",
+      "content1": "These Terms of Use (hereinafter referred to as the “ToU”) aim to legally define the terms and conditions for the provision of the Ecodeli application and services, as well as the conditions of access and use by the User.",
+      "content2": "Any registration or use of the application implies full and unconditional acceptance of these ToU."
+    },
+    "art1": {
+      "title": "ARTICLE 1: Legal Notice",
+      "content1": "The Ecodeli application is published by the company XXXXXX, with a capital of XXXXXX, registered with the RCS of XXXXXX under number XXXXXX, and whose registered office is located at XXXXXX.",
+      "content2": "Email address: XXXXXXXXXXXXXX",
+      "content3": "Publication director: XXXXXX",
+      "content4": "The application is hosted by XXXXXX, located at XXXXXX, ensuring compliance with the European GDPR regulations."
+    },
+    "art2": {
+      "title": "ARTICLE 2: Access and Use of Services",
+      "content1": "Ecodeli is a matchmaking platform between clients (individuals or professionals) and service providers. The goal is to optimize existing trips for responsible deliveries or to offer one-time service provisions.",
+      "content2": "The user agrees to use the application strictly within the bounds of the law, for personal or professional purposes related to the services offered.",
+      "content3": "Ecodeli reserves the right to suspend or restrict access to its services for any User who violates these ToU."
+    },
+    "art2_1": {
+      "title": "ARTICLE 2.1: Account Creation",
+      "content1": "Registration to Ecodeli is free but mandatory to access certain services. Required information includes:",
+      "info1": "First and last name for individuals or company name and SIRET number for professionals",
+      "info2": "Email address",
+      "info3": "Phone number",
+      "info4": "Postal address for professionals",
+      "info5": "Password (the user is responsible for keeping their credentials and provided information confidential)"
+    },
+    "art2_2": {
+      "title": "ARTICLE 2.2: User Obligations",
+      "content": "The User agrees to:",
+      "obligation1": "Provide accurate and up-to-date information",
+      "obligation2": "Honor commitments made through the platform (deliveries, services, schedules, etc.)",
+      "obligation3": "Use the internal messaging system respectfully and professionally",
+      "obligation4": "Not bypass the platform for off-platform transactions"
+    },
+    "art2_3": {
+      "title": "ARTICLE 2.3: Unsubscribing",
+      "content": "The User can request the deletion of their account at any time, directly from the interface or by email at: XXXXXXXXXXXXXX. Data will be deleted in accordance with the privacy policy and GDPR."
+    },
+    "art3": {
+      "title": "ARTICLE 3: Personal Data",
+      "content1": "Ecodeli is committed to ensuring the confidentiality and security of its users’ data, in accordance with the GDPR and the French Data Protection Act of January 6, 1978.",
+      "content2": "Each User has the right to access, modify, oppose, and delete their personal data. These rights can be exercised at the following address: XXXXXXXXXXXXXX."
+    },
+    "art4": {
+      "title": "ARTICLE 4: Intellectual Property",
+      "content": "The content available on Ecodeli (logos, texts, images, databases, etc.) is protected by the Intellectual Property Code. Any reproduction, distribution, or use without prior authorization is prohibited."
+    },
+    "art5": {
+      "title": "ARTICLE 5: Responsibilities",
+      "content1": "Ecodeli acts as a technical intermediary between the parties. It cannot be held liable for failures in the execution of a delivery or service, nor for indirect damages suffered by the User.",
+      "content2": "Each party remains responsible for fulfilling its commitments and any consequences of non-compliance.",
+      "content3": "Ecodeli reserves the right to temporarily suspend access to its services for maintenance or in cases of force majeure."
+    },
+    "art6": {
+      "title": "ARTICLE 6: Hyperlinks",
+      "content": "The application may contain links to third-party websites. Ecodeli disclaims all responsibility for the content or operation of such websites."
+    },
+    "art7": {
+      "title": "ARTICLE 7: Validity of the ToU",
+      "content": "If any provision of these ToU is declared null and void, it shall not affect the validity of the other provisions, which shall remain fully applicable."
+    },
+    "art8": {
+      "title": "ARTICLE 8: Modification of the ToU",
+      "content": "Ecodeli may modify these ToU at any time, particularly to comply with legal changes. Users will be informed of any changes via notification or email."
+    },
+    "art9": {
+      "title": "ARTICLE 9: Governing Law and Jurisdiction",
+      "content": "These ToU are governed by French law. In case of a dispute, and after attempting an amicable resolution, jurisdiction is assigned to the French courts."
     }
-  }
+  },
+  "CGV": {
+    "title": "Terms of Sale",
+    "effective": "Effective as of 04/15/2025",
+    "introduction": "These Terms of Sale (ToS) govern the commercial relationship between the company Ecodeli (hereinafter referred to as “the Platform” or “Ecodeli”) and its Users (clients and providers), in the context of service provision matchmaking.",
+    "art1": {
+      "title": "ARTICLE 1 – Purpose",
+      "content": "Ecodeli is an application that facilitates connections between individuals and professionals for service execution, particularly in the fields of transport, delivery, maintenance, installation, etc. The Platform helps optimize logistics by grouping delivery requests with already planned trips (by individuals or professionals), thus reducing costs and environmental impact."
+    },
+    "art2": {
+      "title": "ARTICLE 2 – Identification",
+      "company": "Company name",
+      "headquarters": "Head office"
+    },
+    "art3": {
+      "title": "ARTICLE 3 – Services Offered",
+      "intro": "Ecodeli offers:",
+      "service1": "Access to the platform to browse or offer services;",
+      "service2": "Matchmaking between clients and service providers;",
+      "service3": "A secure payment system (if applicable);",
+      "service4": "A rating and review system after service completion;",
+      "service5": "Other features related to eco-friendly logistics (trip grouping, optimization...).",
+      "disclaimer": "Ecodeli is not the final service provider. It acts solely as a technical intermediary."
+    },
+    "art4": {
+      "title": "ARTICLE 4 – Pricing",
+      "free": {
+        "title": "Free Registration",
+        "content": "Registration on Ecodeli is free for all users (clients and providers)."
+      },
+      "fees": {
+        "title": "Service Fees / Commission",
+        "content1": "Ecodeli may charge service fees or commissions on certain transactions made via the platform.",
+        "content2": "Amounts are displayed at the time of service confirmation. Ecodeli reserves the right to adjust its rates. Any changes will be communicated to users in due time."
+      },
+      "payment": {
+        "title": "Payment Terms",
+        "content1": "Payments (when made through the platform) are processed by a secure third-party payment provider.",
+        "content2": "Ecodeli does not have access to users’ banking information."
+      },
+      "invoice": {
+        "title": "Invoicing",
+        "content": "An invoice is generated for each service completed via the platform and sent to both the client and the provider."
+      }
+    },
+    "art5": {
+      "title": "ARTICLE 5 – Parties’ Obligations",
+      "client": {
+        "title": "Client Obligations",
+        "intro": "The client agrees to:",
+        "obligation1": "Provide accurate information about their request;",
+        "obligation2": "Respect the agreed conditions with the provider (schedule, location, payment, etc.);",
+        "obligation3": "Pay for the service according to the stated terms."
+      },
+      "provider": {
+        "title": "Provider Obligations",
+        "intro": "The provider agrees to:",
+        "obligation1": "Deliver a service that matches the description;",
+        "obligation2": "Comply with safety, hygiene, and punctuality standards;",
+        "obligation3": "Report income in accordance with applicable tax regulations."
+      },
+      "ecodeli": {
+        "title": "Ecodeli’s Responsibility",
+        "intro": "Ecodeli acts as an intermediary. It cannot be held liable:",
+        "limit1": "For the quality or execution of services;",
+        "limit2": "For delays, cancellations, or disputes between users.",
+        "role": "Ecodeli’s role is solely to facilitate interactions and optimize matchmaking."
+      }
+    },
+    "art6": {
+      "title": "ARTICLE 6 – Cancellation & Refunds",
+      "content1": "Each service may be canceled under the conditions specified in the interface (timeframes, potential penalties...).",
+      "content2": "Refund conditions are clearly displayed before order confirmation.",
+      "content3": "Ecodeli reserves the right to retain all or part of the service fees in the event of abusive or late cancellations."
+    },
+    "art7": {
+      "title": "ARTICLE 7 – Complaints",
+      "content1": "Any complaint regarding a service must be submitted via the platform within 72 hours of completion.",
+      "content2": "Ecodeli may, in a mediation role, analyze the situation, but does not guarantee any automatic refund unless a proven fault is established."
+    },
+    "art8": {
+      "title": "ARTICLE 8 – Intellectual Property",
+      "content": "All elements of the platform (texts, visuals, interface...) are the exclusive property of Ecodeli. Any unauthorized reproduction, distribution, or use is strictly prohibited."
+    },
+    "art9": {
+      "title": "ARTICLE 9 – Personal Data",
+      "content1": "Data collected by Ecodeli is processed in compliance with the GDPR.",
+      "content2": "Users may access, correct, or delete their personal data at any time.",
+      "content3": "See our Privacy Policy."
+    },
+    "art10": {
+      "title": "ARTICLE 10 – Governing Law",
+      "content1": "These ToS are governed by French law.",
+      "content2": "In case of dispute, the parties will attempt an amicable resolution. If not possible, jurisdiction falls to the courts within the jurisdiction of Ecodeli’s headquarters."
+    }
+  },
+  "Auth": {
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "submitting": "Signing in...",
+    "noAccount": "Don't have an account yet?",
+    "signin": "Sign up",
+    "forgot": "Forgot your password?",
+    "reset": "Reset it",
+    "errors": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email format",
+      "passwordRequired": "Password is required",
+      "connectionError": "An error occurred while connecting",
+      "form": "An error occurred while submitting the form."
+    },
+    "Signin": {},
+    "Forgot": {
+      "title": "Forgot Password",
+      "instructions": "Enter your email address and we'll send you a link to reset your password.",
+      "email": "Email",
+      "submit": "Send Reset Link",
+      "submitting": "Sending...",
+      "noAccount": "Don't have an account yet? ",
+      "signin": "Sign up",
+      "backToLogin": "Back to Login",
+      "successTitle": "Email Sent",
+      "successMessage": "If an account exists with the address {email}, you will receive an email with instructions to reset your password.",
+      "tryAnotherEmail": "Try another email address",
+      "errors": {
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email format",
+        "sendError": "Error sending reset link",
+        "form": "An error occurred while submitting the form."
+      }
+    }
+  },
+  "Components": {}
 }
