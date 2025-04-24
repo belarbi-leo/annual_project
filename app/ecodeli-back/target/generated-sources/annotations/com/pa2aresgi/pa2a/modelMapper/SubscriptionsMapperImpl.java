@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-24T16:10:09+0200",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 22.0.2 (Oracle Corporation)"
+    date = "2025-04-24T16:32:19+0200",
+    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
 )
 @Component
 public class SubscriptionsMapperImpl implements SubscriptionsMapper {
@@ -22,13 +22,13 @@ public class SubscriptionsMapperImpl implements SubscriptionsMapper {
 
         SubscriptionsDTORead subscriptionsDTORead = new SubscriptionsDTORead();
 
-        subscriptionsDTORead.setIdSubscription( subscription.getIdSubscription() );
-        subscriptionsDTORead.setNameSub( subscription.getNameSub() );
         subscriptionsDTORead.setDescriptionSub( subscription.getDescriptionSub() );
-        subscriptionsDTORead.setPrice( subscription.getPrice() );
+        subscriptionsDTORead.setIdSubscription( subscription.getIdSubscription() );
         subscriptionsDTORead.setInsurance( subscription.getInsurance() );
-        subscriptionsDTORead.setShippingReduction( subscription.getShippingReduction() );
+        subscriptionsDTORead.setNameSub( subscription.getNameSub() );
+        subscriptionsDTORead.setPrice( subscription.getPrice() );
         subscriptionsDTORead.setSendPriority( subscription.getSendPriority() );
+        subscriptionsDTORead.setShippingReduction( subscription.getShippingReduction() );
 
         return subscriptionsDTORead;
     }
@@ -41,12 +41,12 @@ public class SubscriptionsMapperImpl implements SubscriptionsMapper {
 
         Subscriptions subscriptions = new Subscriptions();
 
-        subscriptions.setNameSub( subscriptionDtoCreate.getNameSub() );
         subscriptions.setDescriptionSub( subscriptionDtoCreate.getDescriptionSub() );
-        subscriptions.setPrice( subscriptionDtoCreate.getPrice() );
         subscriptions.setInsurance( subscriptionDtoCreate.getInsurance() );
-        subscriptions.setShippingReduction( subscriptionDtoCreate.getShippingReduction() );
+        subscriptions.setNameSub( subscriptionDtoCreate.getNameSub() );
+        subscriptions.setPrice( subscriptionDtoCreate.getPrice() );
         subscriptions.setSendPriority( subscriptionDtoCreate.getSendPriority() );
+        subscriptions.setShippingReduction( subscriptionDtoCreate.getShippingReduction() );
 
         return subscriptions;
     }

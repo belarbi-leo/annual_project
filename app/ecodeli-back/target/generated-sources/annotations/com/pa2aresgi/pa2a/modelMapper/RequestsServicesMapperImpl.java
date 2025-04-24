@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-24T16:10:09+0200",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 22.0.2 (Oracle Corporation)"
+    date = "2025-04-24T16:32:19+0200",
+    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
 )
 @Component
 public class RequestsServicesMapperImpl implements RequestsServicesMapper {
@@ -22,14 +22,14 @@ public class RequestsServicesMapperImpl implements RequestsServicesMapper {
 
         RequestsServicesDTORead requestsServicesDTORead = new RequestsServicesDTORead();
 
-        requestsServicesDTORead.setIdReqSvc( requestService.getIdReqSvc() );
-        requestsServicesDTORead.setUserReq( requestService.getUserReq() );
         requestsServicesDTORead.setAdminRes( requestService.getAdminRes() );
-        requestsServicesDTORead.setSvc( requestService.getSvc() );
-        requestsServicesDTORead.setStatusReq( requestService.getStatusReq() );
         requestsServicesDTORead.setDateReq( requestService.getDateReq() );
         requestsServicesDTORead.setDateRes( requestService.getDateRes() );
+        requestsServicesDTORead.setIdReqSvc( requestService.getIdReqSvc() );
         requestsServicesDTORead.setReasonRes( requestService.getReasonRes() );
+        requestsServicesDTORead.setStatusReq( requestService.getStatusReq() );
+        requestsServicesDTORead.setSvc( requestService.getSvc() );
+        requestsServicesDTORead.setUserReq( requestService.getUserReq() );
 
         return requestsServicesDTORead;
     }
@@ -42,13 +42,13 @@ public class RequestsServicesMapperImpl implements RequestsServicesMapper {
 
         RequestsServices requestsServices = new RequestsServices();
 
-        requestsServices.setUserReq( requestServiceDtoCreate.getUserReq() );
         requestsServices.setAdminRes( requestServiceDtoCreate.getAdminRes() );
-        requestsServices.setSvc( requestServiceDtoCreate.getSvc() );
-        requestsServices.setStatusReq( requestServiceDtoCreate.getStatusReq() );
         requestsServices.setDateReq( requestServiceDtoCreate.getDateReq() );
         requestsServices.setDateRes( requestServiceDtoCreate.getDateRes() );
         requestsServices.setReasonRes( requestServiceDtoCreate.getReasonRes() );
+        requestsServices.setStatusReq( requestServiceDtoCreate.getStatusReq() );
+        requestsServices.setSvc( requestServiceDtoCreate.getSvc() );
+        requestsServices.setUserReq( requestServiceDtoCreate.getUserReq() );
 
         return requestsServices;
     }

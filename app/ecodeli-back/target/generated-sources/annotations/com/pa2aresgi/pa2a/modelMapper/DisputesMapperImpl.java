@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-24T16:10:09+0200",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 22.0.2 (Oracle Corporation)"
+    date = "2025-04-24T16:32:19+0200",
+    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
 )
 @Component
 public class DisputesMapperImpl implements DisputesMapper {
@@ -22,15 +22,15 @@ public class DisputesMapperImpl implements DisputesMapper {
 
         DisputesDTORead disputesDTORead = new DisputesDTORead();
 
-        disputesDTORead.setIdDispute( dispute.getIdDispute() );
         disputesDTORead.setAd( dispute.getAd() );
-        disputesDTORead.setUser( dispute.getUser() );
-        disputesDTORead.setDateStatusDispute( dispute.getDateStatusDispute() );
-        disputesDTORead.setStatusDispute( dispute.getStatusDispute() );
-        disputesDTORead.setDescriptionDispute( dispute.getDescriptionDispute() );
         disputesDTORead.setDateEndDispute( dispute.getDateEndDispute() );
+        disputesDTORead.setDateStatusDispute( dispute.getDateStatusDispute() );
+        disputesDTORead.setDescriptionDispute( dispute.getDescriptionDispute() );
+        disputesDTORead.setIdDispute( dispute.getIdDispute() );
         disputesDTORead.setPhotoDispute( dispute.getPhotoDispute() );
         disputesDTORead.setResolutionText( dispute.getResolutionText() );
+        disputesDTORead.setStatusDispute( dispute.getStatusDispute() );
+        disputesDTORead.setUser( dispute.getUser() );
 
         return disputesDTORead;
     }
@@ -44,13 +44,13 @@ public class DisputesMapperImpl implements DisputesMapper {
         Disputes disputes = new Disputes();
 
         disputes.setAd( disputeDtoCreate.getAd() );
-        disputes.setUser( disputeDtoCreate.getUser() );
-        disputes.setDateStatusDispute( disputeDtoCreate.getDateStatusDispute() );
-        disputes.setStatusDispute( disputeDtoCreate.getStatusDispute() );
-        disputes.setDescriptionDispute( disputeDtoCreate.getDescriptionDispute() );
         disputes.setDateEndDispute( disputeDtoCreate.getDateEndDispute() );
+        disputes.setDateStatusDispute( disputeDtoCreate.getDateStatusDispute() );
+        disputes.setDescriptionDispute( disputeDtoCreate.getDescriptionDispute() );
         disputes.setPhotoDispute( disputeDtoCreate.getPhotoDispute() );
         disputes.setResolutionText( disputeDtoCreate.getResolutionText() );
+        disputes.setStatusDispute( disputeDtoCreate.getStatusDispute() );
+        disputes.setUser( disputeDtoCreate.getUser() );
 
         return disputes;
     }

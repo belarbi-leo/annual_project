@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-24T16:10:10+0200",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 22.0.2 (Oracle Corporation)"
+    date = "2025-04-24T16:32:19+0200",
+    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
 )
 @Component
 public class PaymentsMapperImpl implements PaymentsMapper {
@@ -22,12 +22,12 @@ public class PaymentsMapperImpl implements PaymentsMapper {
 
         PaymentsDTORead paymentsDTORead = new PaymentsDTORead();
 
-        paymentsDTORead.setIdPayment( payment.getIdPayment() );
         paymentsDTORead.setAd( payment.getAd() );
-        paymentsDTORead.setDirectionPayment( payment.getDirectionPayment() );
-        paymentsDTORead.setStatusPayment( payment.getStatusPayment() );
-        paymentsDTORead.setDatePayment( payment.getDatePayment() );
         paymentsDTORead.setBillPayment( payment.getBillPayment() );
+        paymentsDTORead.setDatePayment( payment.getDatePayment() );
+        paymentsDTORead.setDirectionPayment( payment.getDirectionPayment() );
+        paymentsDTORead.setIdPayment( payment.getIdPayment() );
+        paymentsDTORead.setStatusPayment( payment.getStatusPayment() );
 
         return paymentsDTORead;
     }
@@ -41,10 +41,10 @@ public class PaymentsMapperImpl implements PaymentsMapper {
         Payments payments = new Payments();
 
         payments.setAd( paymentDtoCreate.getAd() );
+        payments.setBillPayment( paymentDtoCreate.getBillPayment() );
+        payments.setDatePayment( paymentDtoCreate.getDatePayment() );
         payments.setDirectionPayment( paymentDtoCreate.getDirectionPayment() );
         payments.setStatusPayment( paymentDtoCreate.getStatusPayment() );
-        payments.setDatePayment( paymentDtoCreate.getDatePayment() );
-        payments.setBillPayment( paymentDtoCreate.getBillPayment() );
 
         return payments;
     }
