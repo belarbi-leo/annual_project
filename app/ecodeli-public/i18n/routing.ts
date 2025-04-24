@@ -1,16 +1,12 @@
 import {defineRouting} from 'next-intl/routing';
-import { fetchAllLanguages } from "@/lib/languages/fetchAllLanguages";
+import { fetchAllLanguages } from "@/lib/languages/fetch-all-languages";
 
 async function getLocales() {
   const languages = await fetchAllLanguages();
-  return languages.map((lang: { iso: string }) => lang.iso.toLowerCase()); // Extrait et met en minuscules
+  return languages.map((lang: { iso: string }) => lang.iso.toLowerCase());
 }
  
 export const routing = defineRouting({
-  // A list of all locales that are supported
   locales: await getLocales(),
- 
-  // Used when no locale matches
   defaultLocale: 'fr',
-  
 });

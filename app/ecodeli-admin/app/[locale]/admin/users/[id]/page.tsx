@@ -143,7 +143,7 @@ export default function UserDetailPage() {
     setEditing(false);
     if (!user) return;
     setFormData({
-      id_langue: user.id_langue?.id_langue,
+      id_langue: user.id_language?.id_langue,
       id_subscription: user.id_subscription?.id_sub,
       photo_user: user.photo_user || "",
       first_name: user.first_name,

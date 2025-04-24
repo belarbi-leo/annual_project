@@ -58,14 +58,14 @@ export default function LanguageSelector() {
         >
           {languages.map((lang) => (
             <button
-              key={lang.id_langue}  // Utilisation de id_langue comme clé unique
+              key={lang.id_language}  // Utilisation de id_langue comme clé unique
               onClick={() => changeLanguage(lang.iso)}  // Utilisation de iso pour changer la langue
               className={clsx(
                 "w-full px-4 py-2 text-left text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
                 {"font-semibold bg-gray-100 dark:bg-gray-700": currentLang.toLowerCase() === lang.iso.toLowerCase()}
               )}
             >
-              {lang.langue}  {/* Affichage de la langue avec le nom stocké dans 'langue' */}
+              {lang.language}  {/* Affichage de la langue avec le nom stocké dans 'langue' */}
             </button>
           ))}
         </div>

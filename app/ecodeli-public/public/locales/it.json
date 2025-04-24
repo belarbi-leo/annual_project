@@ -1,5 +1,5 @@
 {
-  "Home": {
+  "Index": {
     "title": "ECODELI",
     "subtitle": "Consegna ripensata, con un senso di solidarietà e responsabilità.",
     "description": "Trovate fornitori di servizi che condividano i vostri valori ecologici e riducete l'impronta di carbonio dei vostri progetti.",
@@ -237,7 +237,6 @@
     "Signin": {},
     "Forgot": {
       "title": "Password dimenticata",
-      "instructions": "Inserisci il tuo indirizzo email e ti invieremo un link per reimpostare la tua password.",
       "email": "Email",
       "submit": "Invia il link di reimpostazione",
       "submitting": "Invio in corso...",

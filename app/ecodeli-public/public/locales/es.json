@@ -1,5 +1,5 @@
 {
-  "Home": {
+  "Index": {
     "title": "ECODELI",
     "subtitle": "Entrega repensada, con sentido de la solidaridad y la responsabilidad.",
     "description": "Encuentre proveedores de servicios que compartan sus valores ecológicos y reduzca la huella de carbono de sus proyectos.",
@@ -237,7 +237,6 @@
     "Signin": {},
     "Forgot": {
       "title": "Contraseña olvidada",
-      "instructions": "Introduzca su dirección de correo electrónico y le enviaremos un enlace para restablecer su contraseña.",
       "email": "Correo electrónico",
       "submit": "Enviar enlace de restablecimiento",
       "submitting": "Envío en curso...",

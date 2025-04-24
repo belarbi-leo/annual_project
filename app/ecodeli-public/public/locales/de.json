@@ -1,5 +1,5 @@
 {
-    "Home": {
+    "Index": {
       "title": "ECODELI",
       "subtitle": "Lieferung neu gedacht, solidarisch und verantwortungsbewusst.",
       "description": "Finden Sie Dienstleister, die Ihre ökologischen Werte teilen und reduzieren Sie den CO2-Fußabdruck Ihrer Projekte.",
@@ -237,7 +237,6 @@
         "Signin": {},
         "Forgot": {
             "title": "Passwort vergessen",
-            "instructions": "Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen Link zum Zurücksetzen Ihres Passworts.",
             "email": "E-Mail",
             "submit": "Link zum Zurücksetzen senden",
             "submitting": "Wird gesendet...",

@@ -1,5 +1,5 @@
 {
-  "Home": {
+  "Index": {
     "title": "ECODELI",
     "subtitle": "Delivery rethought, with a sense of solidarity and responsibility.",
     "description": "Find service providers who share your ecological values and reduce the carbon footprint of your projects.",
@@ -237,7 +237,6 @@
     "Signin": {},
     "Forgot": {
       "title": "Forgot Password",
-      "instructions": "Enter your email address and we'll send you a link to reset your password.",
       "email": "Email",
       "submit": "Send Reset Link",
       "submitting": "Sending...",

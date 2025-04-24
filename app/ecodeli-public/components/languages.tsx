@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { clsx } from "clsx";
 import { LanguageIcon } from "@heroicons/react/24/outline";
-import { fetchAllLanguages } from "@/lib/languages/fetchAllLanguages";
+import { fetchAllLanguages } from "@/lib/languages/fetch-all-languages";
 import { Language } from "@/lib/types";
 
 export default function LanguageSelector() {
@@ -48,14 +48,14 @@ export default function LanguageSelector() {
         <div ref={dropdownRef} className="absolute z-50 right-0 mt-2 w-36 bg-white dark:bg-gray-800 shadow-lg rounded-md overflow-hidden border border-gray-300 dark:border-gray-600" >
           {languages.map((lang) => (
             <button
-              key={lang.id_langue}
+              key={lang.id_language}
               onClick={() => changeLanguage(lang.iso)}
               className={clsx(
                 "w-full px-4 py-2 text-left text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
                 { "font-semibold bg-gray-100 dark:bg-gray-700": currentLang.toLowerCase() === lang.iso.toLowerCase() }
               )}
             >
-              {lang.langue}
+              {lang.language}
             </button>
           ))}
         </div>

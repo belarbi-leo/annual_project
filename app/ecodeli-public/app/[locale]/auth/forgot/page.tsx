@@ -60,16 +60,11 @@ export default function Forgot() {
           <>
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
-              <div className="border-b border-gray-300 dark:border-gray-600 my-3">
-                <p className="text-center text-sm font-semibold text-emerald-500 my-5">
-                  {t("instructions")}
-                </p>
-              </div>
                 <label htmlFor="email" className="block text-sm font-medium">{t("email")}</label>
                 <input
                   type="email"
                   id="email"
-                  className={`mt-1 block w-full border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.email ? "border-red-500 dark:border-red-900" : "border-gray-300 dark:border-gray-600"}`}
+                  className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.email ? "border-red-500 dark:border-red-900" : "border-gray-300 dark:border-gray-600"}`}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />

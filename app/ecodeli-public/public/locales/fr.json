@@ -1,10 +1,14 @@
 {
   "Index": {
-    "title": "ECODELI",
-    "subtitle": "La livraison repensée, solidaire et responsable.",
-    "description": "Trouvez des prestataires qui partagent vos valeurs écologiques et réduisez l'empreinte carbone de vos projets.",
-    "auth": "Inscription / Connexion",
-    "learnMore": "En savoir plus"
+    "badge": "Nouveau",
+    "title": "EcoDeli",
+    "subtitle": "Livraison écologique",
+    "description": "Profitez de livraisons rapides et respectueuses de l'environnement pour tous vos achats en ligne. Notre service combine commodité et conscience écologique.",
+    "auth": "Commencer",
+    "learnMore": "En savoir plus",
+    "feature1": "Livraison 100% écologique",
+    "feature2": "Emballages biodégradables",
+    "feature3": "Impact carbone réduit"
   },
   "About": {
     "title": "Connecter besoins et services pour un avenir durable",
@@ -237,7 +241,6 @@
     "Signin": {},
     "Forgot": {
       "title": "Mot de passe oublié",
-      "instructions": "Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
       "email": "Email",
       "submit": "Envoyer le lien de réinitialisation",
       "submitting": "Envoi en cours...",

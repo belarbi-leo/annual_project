@@ -50,9 +50,8 @@ export default function Auth() {
     <div className="min-h-screen flex items-center justify-center px-6 overflow-hidden relative">
       <Background />
       <Header />
-
+      
       <div className="w-full max-w-md p-8 space-y-6 rounded-2xl shadow-lg bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white">
-    
         {errors.form && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative dark:bg-red-900 dark:border-red-800 dark:text-red-100" role="alert">
             <span className="block sm:inline">{errors.form}</span>
@@ -65,7 +64,7 @@ export default function Auth() {
             <input
               type="email"
               id="email"
-              className={`mt-1 block w-full border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.email ? "border-red-500 dark:border-red-900" : "border-gray-300 dark:border-gray-600"}`}
+              className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.email ? "border-red-500 dark:border-red-900" : "border-gray-300 dark:border-gray-600"}`}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />

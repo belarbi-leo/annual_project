@@ -1,32 +1,33 @@
-// Type pour les utilisateurs récupérées via l'API /users/read
 export interface User {
-id_user: number;
-first_name: string;
-last_name: string;
-email: string;
-role: string;
-account_status: string;
-date_registration: string; // ISO string ou Date
-date_status: string;       // Idem
-company_name: string;
-bio: string;
-siret: string;
-street: string;
-postal_code: string;
-country: string;
-code_payment: string;
-expiration_payment: string;
-iban: string;
-photo_user: string;
-
-id_subscription?: Subscription; // relation possible
-id_langue?: Language; // relation possible
-}
+    id_user: number;
+    date_registration: string;
+    date_acceptCGU: string;
+    role: string;
+    account_status: string;
+    date_status: string;
+    first_name: string;
+    last_name: string;
+    company_name: string;
+    siret: string;
+    email: string;
+    password: string;
+    phone_number: string;
+    photo_user: File | string;
+    bio: string;
+    location: string;
+    suite: string;
+    locality: string;
+    state: string;
+    postal_code: string;
+    country: string;
+    id_subscription?: Subscription; 
+    id_language?: Language;
+    }
 
 // Type pour les langues récupérées via l'API /languages/read
 export interface Language {
-    id_langue: number;
-    langue: string;
+    id_language: number;
+    language: string;
     iso: string;
 }
   

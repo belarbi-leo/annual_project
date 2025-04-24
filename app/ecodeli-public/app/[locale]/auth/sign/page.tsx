@@ -1,27 +1,56 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from 'next/navigation';
-import { useTranslations } from "next-intl";
-import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import Header from "@/components/header";
 import Background from "@/components/background";
-import type { User, Service } from '@/lib/types';
-import { fetchAllServices } from "@/lib/services/fetch-all-services";
-type FormUser = Omit<User, 'id_user' | 'date_registration' | 'account_status' | 'date_status'> & {
-  password_confirm: string;
-};
+import InputAddress from "@/components/input-address";
+import Dropdown from "@/components/ui/dropdown";
+import type { UserSign, Service } from '@/lib/types';
+import { insertUser } from "@/lib/users/insert-users";
+import { insertRequestService } from "@/lib/services/insert-requests-services";
+import { fetchServicesByAuth } from "@/lib/services/fetch-services-by-auth";
+import { fetchAllLanguages } from "@/lib/languages/fetch-all-languages";
+
 
 export default function Sign() {
+  const t = useTranslations('Sign');
+  const locale = useLocale();
   const router = useRouter();
-  const locationInputRef = useRef(null);
   const [etape, setEtape] = useState<1 | 2 | 3 | 4>(1);
-  const [formData, setFormData] = useState<FormUser>({role: '',first_name: '',last_name: '',company_name: '',siret: '',email: '',password: '',password_confirm: '',phone_number: '',photo_user: '',bio: '',location: '',suite: '',locality: '',state: '',postal_code: '',country: '',date_acceptCGU: '',});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [services, setServices] = useState<Service[]>([]);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const [formData, setFormData] = useState<UserSign>({
+    role: '',
+    wantsPresta: false,
+    first_name: '',
+    last_name: '',
+    company_name: '',
+    siret: '',
+    email: '',
+    password: '',
+    password_confirm: '',
+    phone_number: '',
+    photo_user: '',
+    bio: '',
+    date_accept_cgu: false,
+    date_accept_cgv: false,
+    location: '',
+    suite: '',
+    locality: '',
+    state: '',
+    postal_code: '',
+    country: '',
+    latitude: '',
+    longitude: '',
+    isValidSelection: false,
+    id_svc: undefined,
+    id_language: undefined
+  });
+  
   const change = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type, files } = e.target as HTMLInputElement;
     const checked = (e.target as HTMLInputElement).checked;
@@ -29,6 +58,13 @@ export default function Sign() {
       ...formData,
       [name]: type === 'checkbox' ? checked : type === 'file' && files ? files[0] : value
     });
+  };
+  
+  const updateAddress = (addressData: Partial<UserSign>) => {
+    setFormData(prev => ({
+      ...prev,
+      ...addressData
+    }));
   };
 
   const previous = () => {
@@ -42,28 +78,26 @@ export default function Sign() {
     if (Object.keys(erreurs).length === 0) {
       setEtape((etape + 1) as 1 | 2 | 3 | 4);
     }
-  };
+  }; 
 
   const validate = (etapeActuelle: 1 | 2 | 3 | 4) => {
     let erreurs: Record<string, string> = {};
     
     switch (etapeActuelle) {
       case 1:
-        if (!formData.role) {
-          erreurs.role = "Veuillez sélectionner votre type de compte";
-        }
+        if (!formData.role) erreurs.role = "Veuillez sélectionner votre type de compte";
         break;
       case 2:
         if (formData.role === 'part') {
-            if (!formData.first_name.trim()) erreurs.first_name = "Le nom est requis";
-            if (!formData.last_name.trim()) erreurs.last_name = "Le prénom est requis";
+          if (!formData.first_name.trim()) erreurs.first_name = "Le nom est requis";
+          if (!formData.last_name.trim()) erreurs.last_name = "Le prénom est requis";
         } else {
-            if (!formData.company_name.trim()) erreurs.company_name = "Le nom de l'entreprise est requis";
-            if (!formData.siret.trim()) {
-              erreurs.siret = "Le numéro SIRET est requis";
-            } else if (!/^\d{14}$/.test(formData.siret)) {
-              erreurs.siret = "Le numéro SIRET doit contenir 14 chiffres";
-            }
+          if (!formData.company_name.trim()) erreurs.company_name = "Le nom de l'entreprise est requis";
+          if (!formData.siret.trim()) {
+            erreurs.siret = "Le numéro SIRET est requis";
+          } else if (!/^\d{14}$/.test(formData.siret)) {
+            erreurs.siret = "Le numéro SIRET doit contenir 14 chiffres";
+          }
         }
         if (!formData.email.trim()) {
           erreurs.email = "L'email est requis";
@@ -74,30 +108,28 @@ export default function Sign() {
           erreurs.password = "Le mot de passe est requis";
         } else if (formData.password.length < 12) {
           erreurs.password = "Le mot de passe doit contenir au moins 12 caractères";
+        } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(formData.password)) {
+          erreurs.password = "Le mot de passe doit contenir au moins une majuscule, une minuscule et un chiffre";
         }
         if (formData.password !== formData.password_confirm) {
           erreurs.password_confirm = "Les mots de passe ne correspondent pas";
         }
         if (!formData.phone_number.trim()) {
-            erreurs.phone_number = "Le numéro de téléphone est requis";
+          erreurs.phone_number = "Le numéro de téléphone est requis";
         } else if (!/^\d+$/.test(formData.phone_number)) {
-        erreurs.phone_number = "Le numéro de téléphone doit contenir uniquement des chiffres";
+          erreurs.phone_number = "Le numéro de téléphone doit contenir uniquement des chiffres";
         }
         break;
       case 3:
-        if (formData.role === 'pro') {
-          if (!formData.location.trim()) erreurs.location = "L'adresse est requise";
-          if (!formData.locality.trim()) erreurs.locality = "La ville est requise";
-          if (!formData.state.trim()) erreurs.state = "L'état/région est requis";
-          if (!formData.postal_code.trim()) {
-            erreurs.postal_code = "Le code postal est requis";
-          } else if (!/^\d{5}$/.test(formData.postal_code)) {
-            erreurs.postal_code = "Le code postal doit contenir 5 chiffres";
-          }
-          if (!formData.country.trim()) erreurs.country = "Le pays est requis";
+        if (!formData.location) {
+          erreurs.address = "L'adresse est requise";
+        } else if (!formData.isValidSelection) {
+          erreurs.address = "Veuillez sélectionner une adresse dans la liste";
         }
+        if (formData.suite && formData.suite.trim().length > 500) erreurs.suite = "Votre complément d'addresse ne doit pas dépasser 500 caractères";
+        if (formData.bio && formData.bio.trim().length > 1000) erreurs.bio = "Votre biographie ne doit pas dépasser 1000 caractères";
         if (formData.photo_user instanceof File) {
-          const fileSize = formData.photo_user.size / 1024 / 1024; // Taille en MB
+          const fileSize = formData.photo_user.size / 1024 / 1024;
           const fileType = formData.photo_user.type;
           if (fileSize > 5) {
             erreurs.photo_user = "La taille de l'image ne doit pas dépasser 5MB";
@@ -105,28 +137,11 @@ export default function Sign() {
             erreurs.photo_user = "Seuls les formats JPG et PNG sont acceptés";
           }
         } 
-        if (formData.bio && formData.bio.trim()) {
-          if (formData.bio.trim().length < 50) {
-            erreurs.bio = "Votre biographie doit contenir au moins 50 caractères";
-          } else if (formData.bio.trim().length > 1000) {
-            erreurs.bio = "Votre biographie ne doit pas dépasser 1000 caractères";
-          }
-        }
         break;
       case 4:
-        // if (formData.estPrestataire && !formData.typePrestation) {
-        //   erreurs.typePrestation = "Veuillez sélectionner un type de prestation";
-        // }
-        // if (formData.estPrestataire && !formData.documentIdentite) {
-        //   erreurs.documentIdentite = "Une pièce d'identité est requise pour les prestataires";
-        // }
-        // if (formData.estPrestataire && !formData.documentQualification && 
-        //     formData.role === 'pro') {
-        //   erreurs.documentQualification = "Un document de qualification est requis";
-        // }
-        // if (!formData.acceptCGU) {
-        //   erreurs.acceptCGU = "Vous devez accepter les conditions générales d'utilisation";
-        // }
+        if ((formData.role === 'pro'|| formData.wantsPresta) && !formData.id_svc) erreurs.id_svc = "Veuillez sélectionner un type de prestation";
+        if (!formData.date_accept_cgu) erreurs.date_accept_cgu = "Vous devez accepter les conditions générales d'utilisation";
+        if (!formData.date_accept_cgv) erreurs.date_accept_cgv = "Vous devez accepter les conditions générales de ventes";
         break;
     }
     
@@ -142,23 +157,71 @@ export default function Sign() {
       setIsSubmitting(true);
 
       try {
-        const formDataToSend = new FormData();
-        
-        Object.keys(formData).forEach(key => {
-            formDataToSend.append(key, formData[key as keyof FormUser] as string);
-        });
-        
-        const response = await fetch('/api/inscription', { // Chemin ???
-          method: 'POST',
-          body: formDataToSend,
-        });
-        
-        if (response.ok) {
-          const result = await response.json();
-          router.push('../home');
+        const user = new FormData();
+        const req_svc = new FormData();
+
+        if (formData.role === 'part') {
+          user.append('first_name', formData.first_name);
+          user.append('last_name', formData.last_name);
         } else {
-          const errorData = await response.json();
-          setErrors({ submit: errorData.message || "Une erreur s'est produite lors de l'inscription" });
+          user.append('company_name', formData.company_name);
+          user.append('siret', formData.siret);
+        }
+        user.append('role', formData.role);
+        user.append('email', formData.email);
+        user.append('password', formData.password);
+        user.append('phone_number', formData.phone_number);
+        user.append('date_accept_cgu', new Date().toISOString());
+        user.append('date_accept_cgv', new Date().toISOString());
+        user.append('address.location', formData.location);
+        user.append('address.suite', formData.suite || '');
+        user.append('address.locality', formData.locality);
+        user.append('address.state', formData.state);
+        user.append('address.postal_code', formData.postal_code);
+        user.append('address.country', formData.country);
+        user.append('address.latitude', formData.latitude);
+        user.append('address.longitude', formData.longitude);
+        if (formData.bio) user.append('bio', formData.bio);
+        if (formData.photo_user instanceof File) user.append('photo_user', formData.photo_user);
+        user.append('account_status', 'pending');
+        user.append("id_language", locale);
+
+        if ((formData.role === 'pro' || formData.wantsPresta) && formData.id_svc) {
+          req_svc.append('id_svc', formData.id_svc.toString());
+        }
+        // id_req_svc auto 
+        // id_user_req auto ?
+        // id_admin_res ""
+        // id_service id_svc
+        // status_req auto ?
+        // date_req auto ? 
+        // date_res ""
+        // reason_res ""
+        
+        // TEST 
+
+        Object.keys(formData).forEach(key => {
+            const value = formData[key as keyof UserSign];
+            user.append(key, value instanceof File ? value : String(value || ''));
+            req_svc.append(key, value instanceof File ? value : String(value || ''));
+        });
+        
+        console.log(user);
+        console.log(req_svc);
+        
+        const res_user = await insertUser(user); // les donneées non definis dans le form ? statut etc 
+        // onnlay cree fonction pour changeer a la deconnexion le status account 
+        // Subsripttion par defaut puis dans le tuto overlays mettre sub et page d'acceuil mettre sub aussi 
+        // 200 201 204 404 400 500 
+        if (res_user.status === 200) {
+          const res_req_svc = await insertRequestService(req_svc);
+          if (res_user.status === 200) {
+            router.push('../home');
+          } else {
+            setErrors({ submit: res_req_svc.data?.message || "Erreur lors de la création de la demande de service" });
+          }
+        } else {
+          setErrors({ submit: res_user.data?.message || "Erreur lors de la création de l'utilisateur" });
         }
       } catch (error) {
         setErrors({ submit: "Erreur de connexion au serveur" });
@@ -167,112 +230,15 @@ export default function Sign() {
       }
     }
   };
-
-  useEffect(() => {
-    const loadGoogleMapsScript = () => {
-      if (window.google && window.google.maps && window.google.maps.places) {
-        initAutocomplete();
-        return;
-      }
-
-      const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-      const googleMapsScript = document.createElement('script');
-      googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
-      googleMapsScript.async = true;
-      googleMapsScript.defer = true;
-      googleMapsScript.onload = initAutocomplete;
-      document.head.appendChild(googleMapsScript);
-    };
-
-    if (etape === 3) {
-      loadGoogleMapsScript();
-    }
-  }, [etape]);
-
-  const initAutocomplete = () => {
-    if (!window.google || !window.google.maps || !window.google.maps.places) {
-      console.error("L'API Google Maps n'est pas correctement chargée");
-      return;
-    }
-    
-    if (!locationInputRef.current) {
-      console.error("La référence de l'input d'adresse est null");
-      return;
-    }
-  
-    try {
-      const autocomplete = new window.google.maps.places.Autocomplete(locationInputRef.current, {
-        fields: ['address_components', 'geometry', 'name'],
-        types: ['address'],
-      });
-  
-      autocomplete.addListener('place_changed', () => {
-        const place = autocomplete.getPlace();
-        
-        if (!place.geometry) {
-          console.warn(`Aucun détail disponible pour cette adresse: '${place.name}'`);
-          return;
-        }
-  
-        fillInAddress(place);
-      });
-    } catch (error) {
-      console.error("Erreur lors de l'initialisation de l'autocomplétion:", error);
-    }
-  };
-
-  const fillInAddress = (place: google.maps.places.PlaceResult) => {
-    const addressData = {location: '',locality: '',state: '',postal_code: '',country: ''};
-    const getComponentName = (componentType: string) => {
-      for (const component of place.address_components || []) {
-        if (component.types.includes(componentType)) {
-          return ['street_number', 'state', 'postal_code'].includes(componentType) ?
-            component.short_name : component.long_name;
-        }
-      }
-      return '';
-    };
-
-    const streetNumber = getComponentName('street_number');
-    const route = getComponentName('route');
-    addressData.location = `${streetNumber} ${route}`.trim();
-    addressData.locality = getComponentName('locality');
-    addressData.state = getComponentName('state');
-    addressData.postal_code = getComponentName('postal_code');
-    addressData.country = getComponentName('country');
-
-    setFormData(prevData => ({
-      ...prevData,
-      ...addressData
-    }));
-  };
   
   useEffect(() => {
-    const chargerServices = async () => {
-      const type = formData.role === 'part' ? 'particuliers' : formData.role === 'pro' ? 'professionnels' : null;
-      const data = await fetchAllServices(type);
+    const loadServices = async () => {
+      const type = formData.role === 'part' ? 'all' : 'pro';
+      const data = await fetchServicesByAuth(type);
       setServices(data);
     };
-  
-    if (etape === 4 && formData.role === 'pro') {
-      chargerServices();
-    }
+    if (etape === 4) loadServices();
   }, [etape, formData.role]);
-  
-  const optionsPrestation = services.map((service: any) => ({
-    value: service.nom,
-    label: service.nom,
-  }));
-  // Options de prestation selon le type d'utilisateur
-  // const optionsPrestation = formData.role === 'part' 
-  /*   ? [{ value: 'livraison', label: 'Livraison de colis' }]*/
-  //   : [
-  //       { value: 'livraison', label: 'Livraison de colis' },
-  //       { value: 'transport', label: 'Transport de personnes' },
-  //       { value: 'restauration', label: 'Service de restauration' },
-  //       { value: 'bricolage', label: 'Services de bricolage' },
-  //       { value: 'autre', label: 'Autre prestation' }
-  //     ];
 
   return (
     <>
@@ -372,7 +338,7 @@ export default function Sign() {
                       id="first_name"
                       value={formData.first_name}
                       onChange={change}
-                      className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.first_name && "border-red-500 dark:border-red-900"}`}
+                      className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.first_name && "border-red-500 dark:border-red-900"}`}
                       required={formData.role === 'part'}
                       />
                       {errors.first_name && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.first_name}</span>}
@@ -387,7 +353,7 @@ export default function Sign() {
                         id="last_name"
                         value={formData.last_name}
                         onChange={change}
-                        className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.last_name && "border-red-500 dark:border-red-900"}`}
+                        className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.last_name && "border-red-500 dark:border-red-900"}`}
                         required={formData.role === 'part'}
                         />
                         {errors.last_name && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.last_name}</span>}
@@ -405,7 +371,7 @@ export default function Sign() {
                       id="company_name"
                       value={formData.company_name}
                       onChange={change}
-                      className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.company_name && "border-red-500 dark:border-red-900"}`}
+                      className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.company_name && "border-red-500 dark:border-red-900"}`}
                       required={formData.role === 'pro'}
                       />
                       {errors.company_name && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.company_name}</span>}
@@ -421,7 +387,7 @@ export default function Sign() {
                         value={formData.siret}
                         onChange={change}
                         maxLength={14}
-                        className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.siret && "border-red-500 dark:border-red-900"}`}
+                        className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.siret && "border-red-500 dark:border-red-900"}`}
                         required={formData.role === 'pro'}
                         />
                         {errors.siret && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.siret}</span>}
@@ -438,7 +404,7 @@ export default function Sign() {
                     id="email"
                     value={formData.email}
                     onChange={change}
-                    className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.email && "border-red-500 dark:border-red-900"}`}
+                    className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.email && "border-red-500 dark:border-red-900"}`}
                     required
                   />
                   {errors.email && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email}</span>}
@@ -453,7 +419,7 @@ export default function Sign() {
                     id="phone_number"
                     value={formData.phone_number}
                     onChange={change}
-                    className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.phone_number && "border-red-500 dark:border-red-900"}`}
+                    className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.phone_number && "border-red-500 dark:border-red-900"}`}
                     required
                   />
                   {errors.phone_number && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.phone_number}</span>}
@@ -468,7 +434,7 @@ export default function Sign() {
                     id="password"
                     value={formData.password}
                     onChange={change}
-                    className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.password && "border-red-500 dark:border-red-900"}`}
+                    className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.password && "border-red-500 dark:border-red-900"}`}
                     required
                   />
                   {errors.password && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.password}</span>}
@@ -483,436 +449,198 @@ export default function Sign() {
                     id="password_confirm"
                     value={formData.password_confirm}
                     onChange={change}
-                    className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.password_confirm && "border-red-500 dark:border-red-900"}`}
+                    className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.password_confirm && "border-red-500 dark:border-red-900"}`}
                     required
                   />
                   {errors.password_confirm && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.password_confirm}</span>}
                 </div>
-              </div>
+              </div> 
             )}
-            {/* Étape 2: Informations complémentaires */}
+            {/* Étape 3: Informations complémentaires */}
             {etape === 3 && (
               <div className="space-y-4">
-
-                {/* Adresse */}
-                  {formData.role === 'pro' ? (
+                {formData.role === 'pro' && (
                     <div className="bg-emerald-50 p-2 rounded-md mt-10">
-                      <p className="text-xs text-center text-emerald-700 font-medium italic">
-                        L'adresse de l'entreprise est obligatoire pour valider votre inscription et garantir la transparence auprès des clients.
-                      </p>
+                    <p className="text-xs text-center text-emerald-700 font-medium italic">
+                        Une photo professionnelle renforce votre crédibilité auprès des clients
+                    </p>
                     </div>
-                  ) : (
-                      <div className="bg-emerald-50 p-2 rounded-md mt-10">
-                        <p className="text-xs text-center text-emerald-700 font-medium italic">
-                        Fournir votre adresse vous permettras de recevoir des recommandations plus pertinentes !
-                      </p>
-                    </div>
-                  )}            
-                  <div>
-                    <label htmlFor="location" className="block text-sm font-medium text-gray-700">
-                      Adresse
-                    </label>
-                    <input
-                      ref={locationInputRef}
-                      type="text"
-                      name="location"
-                      id="location"
-                      value={formData.location}
-                      onChange={change}
-                      placeholder=''
-                      className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.location && "border-red-500 dark:border-red-900"}`}
-                      required={formData.role === 'pro'}
-                    />
-                    {errors.location && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.location}</span>}
-                  </div>
-                  <div>
-                    <label htmlFor="suite" className="block text-sm font-medium text-gray-700">
-                      Informations complémentaires
-                    </label>
-                    <input
-                      type="text"
-                      name="suite"
-                      id="suite"
-                      value={formData.suite}
-                      onChange={change}
-                      className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.suite && "border-red-500 dark:border-red-900"}`}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="locality" className="block text-sm font-medium text-gray-700">
-                      Ville
-                    </label>
-                    <input
-                      type="text"
-                      name="locality"
-                      id="locality"
-                      value={formData.locality}
-                      onChange={change}
-                      className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.locality && "border-red-500 dark:border-red-900"}`}
-                      required={formData.role === 'pro'}
-                    />
-                    {errors.locality && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.locality}</span>}
-                  </div>           
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="state" className="block text-sm font-medium text-gray-700">
-                        État
-                      </label>
-                      <input
-                        type="text"
-                        name="state"
-                        id="state"
-                        value={formData.state}
-                        onChange={change}
-                        className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.state && "border-red-500 dark:border-red-900"}`}
-                        required={formData.role === 'pro'}
-                      />
-                      {errors.state && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.state}</span>}
-                    </div>
-                    <div>
-                      <label htmlFor="postal_code" className="block text-sm font-medium text-gray-700">
-                        Code postal
-                      </label>
-                      <input
-                        type="text"
-                        name="postal_code"
-                        id="postal_code"
-                        value={formData.postal_code}
-                        maxLength={5}
-                        onChange={change}
-                        className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.postal_code && "border-red-500 dark:border-red-900"}`}
-                        required={formData.role === 'pro'}
-                      />
-                      {errors.postal_code && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.postal_code}</span>}
-                    </div>
-                  </div>
-                  <div className="mt-4">
-                    <label htmlFor="country" className="block text-sm font-medium text-gray-700">
-                      Pays
-                    </label>
-                    <input
-                      name="country"
-                      id="country"
-                      value={formData.country}
-                      onChange={change}
-                      className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${errors.country && "border-red-500 dark:border-red-900"}`}
-                      required={formData.role === 'pro'}
-                    />
-                    {errors.country && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.country}</span>}
-                  </div>
-                  
-                  {/* Photo de profil */}
-                  {formData.role === 'pro' && (
-                      <div className="bg-emerald-50 p-2 rounded-md mt-10">
-                        <p className="text-xs text-center text-emerald-700 font-medium italic">
-                          Une photo professionnelle renforce votre crédibilité auprès des clients
-                        </p>
-                      </div>
-                    )}
-                  <div className="mb-6">
+                )}
+                <div className="mb-6">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Photo de profil {errors.photo_user && <span className="mt-1 text-sm text-red-600 dark:text-red-400">: {errors.photo_user}</span>}
+                    Photo de profil {errors.photo_user && <span className="mt-1 text-sm text-red-600 dark:text-red-400">: {errors.photo_user}</span>}
                     </label>
                     <div className="mt-4 flex flex-col items-center">
-                      {formData.photo_user ? (
+                    {formData.photo_user ? (
                         <div className="relative">
-                          <img
+                        <img
                             src={formData.photo_user instanceof File ? URL.createObjectURL(formData.photo_user) : ''}
                             alt="Aperçu du profil"
                             className="h-32 w-32 rounded-full object-cover"
-                          />
-                          <button
+                        />
+                        <button
                             type="button"
                             onClick={() => setFormData({...formData, photo_user: ''})}
                             className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 hover:bg-red-600"
-                          >
+                        >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg>
-                          </button>
+                        </button>
                         </div>
-                      ) : (
+                    ) : (
                         <div className="flex justify-center items-center w-32 h-32 bg-gray-100 rounded-full border-2 border-dashed border-gray-300">
-                          <label htmlFor="photo_user" className="cursor-pointer text-center p-2">
+                        <label htmlFor="photo_user" className="cursor-pointer text-center p-2">
                             <svg className="mx-auto h-8 w-8 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M8 12h.01M12 12h.01M16 12h.01M20 12h.01" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M8 12h.01M12 12h.01M16 12h.01M20 12h.01" />
                             </svg>
                             <p className="text-xs text-gray-500 mt-1">Cliquez pour ajouter</p>
-                          </label>
-                          <input
+                        </label>
+                        <input
                             id="photo_user"
                             name="photo_user"
                             type="file"
                             accept="image/*"
                             className="sr-only"
                             onChange={change}
-                          />
+                        />
                         </div>
-                      )}
-                      <p className="text-xs text-gray-500 mt-2">
-                        Format JPG ou PNG, 5MB max
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Biographie */}
-                  {formData.role === 'pro' && (
-                      <div className="bg-emerald-50 p-2 rounded-md mt-10">
-                        <p className="text-xs text-center text-emerald-700 font-medium italic">
-                          Une biographie détaillée augmente vos chances d'être sélectionné pour des missions
-                        </p>
-                      </div>
                     )}
-                  <div className="mb-6">
-                    <label htmlFor="bio" className="block text-sm font-medium text-gray-700 mb-1">
-                      Biographie {errors.bio && <span className="mt-1 text-sm text-red-600 dark:text-red-400">: {errors.bio}</span>}               
-                    </label>
-                    <textarea
-                      id="bio"
-                      name="bio"
-                      rows={3}
-                      value={formData.bio}
-                      onChange={change}
-                      placeholder={
-                        formData.role === 'pro'
-                          ? "Présentez votre parcours, vos compétences et votre expertise..."
-                          : "Parlez de vous, de vos passions et de ce qui vous motive..."
-                      }                      
-                      className="mt-4 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 placeholder:text-sm"
-                    />
-                  </div>
+                    <p className="text-xs text-gray-500 mt-2">
+                        Format JPG ou PNG, 5MB max
+                    </p>
+                    </div>
+                </div>
+                {formData.role === 'pro' && (
+                    <div className="bg-emerald-50 p-2 rounded-md mt-10">
+                    <p className="text-xs text-center text-emerald-700 font-medium italic">
+                        Une biographie détaillée augmente vos chances d'être sélectionné pour des missions
+                    </p>
+                    </div>
+                )}
+                <div className="mb-6">
+                <label htmlFor="bio" className="block text-sm font-medium text-gray-700 mb-1">
+                    Biographie {errors.bio && <span className="mt-1 text-sm text-red-600 dark:text-red-400">: {errors.bio}</span>}               
+                </label>
+                <textarea
+                    id="bio"
+                    name="bio"
+                    rows={3}
+                    value={formData.bio}
+                    onChange={change}
+                    placeholder={
+                    formData.role === 'pro'
+                        ? "Présentez votre parcours, vos compétences et votre expertise..."
+                        : "Parlez de vous, de vos passions et de ce qui vous motive..."
+                    }                      
+                    className={`mt-4 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white placeholder:text-sm ${errors.bio && "border-red-500 dark:border-red-900"}`}
+                />
+                </div>
+                <div className="bg-emerald-50 p-2 rounded-md mt-10">
+                    <p className="text-xs text-center text-emerald-700 font-medium italic">
+                        {formData.role === 'pro' 
+                        ? "L'adresse de l'entreprise est obligatoire pour valider votre inscription et garantir la transparence auprès des clients."
+                        : "L'adresse est obligatoire pour valider votre inscription et recevoir des recommandations pertinentes."}
+                    </p>
+                </div>    
+                <InputAddress
+                  value={formData}
+                  onChange={updateAddress}
+                  required={true}
+                  error={errors.address}
+                  suiteError={errors.suite}
+                  label="Adresse"
+                  placeholder="Saisissez votre adresse"
+                  suiteLabel="Complément d'adresse"
+                  suitePlaceholder="Appartement, bâtiment, étage..."
+                />
               </div>
             )}          
             {/* Étape 4: Choix des services et finalisation */}
             {etape === 4 && (
               <div className="space-y-6">
-                <div>
-                  <div className="flex items-center">
-                    <input
-                      type="checkbox"
-                      name="estPrestataire"
-                      id="estPrestataire"
-                      checked={formData.estPrestataire}
-                      onChange={change}
-                      className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                    />
-                    <label htmlFor="estPrestataire" className="ml-2 block text-sm font-medium text-gray-700">
-                      Je souhaite également proposer des prestations de services
-                    </label>
-                  </div>
-                  <p className="mt-1 text-xs text-gray-500">Ce choix peut être modifié ultérieurement.</p>
-                </div>
-                
-                {formData.estPrestataire && (
-                  <div className="space-y-4">
-                    <div>
-                      <label htmlFor="typePrestation" className="block text-sm font-medium text-gray-700">
-                        Type de prestation
-                      </label>
-                      <select
-                        name="typePrestation"
-                        id="typePrestation"
-                        value={formData.typePrestation}
+                {formData.role === 'part' ? (
+                  <div>
+                    <div className="flex items-center">
+                      <input
+                        id="wantsPresta"
+                        name="wantsPresta"
+                        type="checkbox"
+                        checked={formData.wantsPresta}
                         onChange={change}
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                      >
-                        <option value="">Sélectionnez un type de prestation</option>
-                        {optionsPrestation.map((option) => (
-                          <option key={option.value} value={option.value}>
-                            {option.label}
-                          </option>
-                        ))}
-                      </select>
-                      {errors.typePrestation && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.typePrestation}</p>}
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700">
-                        Pièce d'identité (obligatoire pour les prestataires)
+                        className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                      />
+                      <label htmlFor="wantsPresta" className="ml-2 block text-sm font-medium text-gray-700">
+                        Je souhaite également proposer des prestations de services
                       </label>
-                      <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                        <div className="space-y-1 text-center">
-                          <svg
-                            className="mx-auto h-12 w-12 text-gray-400"
-                            stroke="currentColor"
-                            fill="none"
-                            viewBox="0 0 48 48"
-                            aria-hidden="true"
-                          >
-                            <path
-                              d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                              strokeWidth={2}
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          <div className="flex text-sm text-gray-600">
-                            <label
-                              htmlFor="documentIdentite"
-                              className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
-                            >
-                              <span>Télécharger un fichier</span>
-                              <input
-                                id="documentIdentite"
-                                name="documentIdentite"
-                                type="file"
-                                className="sr-only"
-                                onChange={change}
-                              />
-                            </label>
-                            <p className="pl-1">ou glisser-déposer</p>
-                          </div>
-                          <p className="text-xs text-gray-500">
-                            PNG, JPG, PDF jusqu'à 10MB
-                          </p>
-                        </div>
-                      </div>
-                      {formData.documentIdentite && (
-                        <p className="mt-2 text-sm text-green-600">
-                          Fichier sélectionné: {formData.documentIdentite.name}
-                        </p>
-                      )}
-                      {errors.documentIdentite && (
-                        <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.documentIdentite}</p>
-                      )}
                     </div>
-                    
-                    {formData.role === 'pro' && (
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700">
-                          Document de qualification (obligatoire pour les professionnels)
-                        </label>
-                        <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                          <div className="space-y-1 text-center">
-                            <svg
-                              className="mx-auto h-12 w-12 text-gray-400"
-                              stroke="currentColor"
-                              fill="none"
-                              viewBox="0 0 48 48"
-                              aria-hidden="true"
-                            >
-                              <path
-                                d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                                strokeWidth={2}
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                            <div className="flex text-sm text-gray-600">
-                              <label
-                                htmlFor="documentQualification"
-                                className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
-                              >
-                                <span>Télécharger un fichier</span>
-                                <input
-                                  id="documentQualification"
-                                  name="documentQualification"
-                                  type="file"
-                                  className="sr-only"
-                                  onChange={change}
-                                />
-                              </label>
-                              <p className="pl-1">ou glisser-déposer</p>
-                            </div>
-                            <p className="text-xs text-gray-500">
-                              PNG, JPG, PDF jusqu'à 10MB
-                            </p>
-                          </div>
+                    <p className="mt-1 text-xs text-gray-500">Ce choix peut être modifié ultérieurement.</p>
+                      {formData.wantsPresta && (
+                        <div className="mt-4">
+                          <Dropdown
+                            label="Type de prestation"
+                            options={services.map(service => ({
+                              id: service.id_svc,
+                              name: service.name_svc,
+                            }))}
+                            selected={formData.id_svc}
+                            onChange={(value) => setFormData(prev => ({ ...prev, id_svc: value }))}
+                          />
+                        {errors.id_svc && <p className="mt-1 text-sm text-red-600">{errors.id_svc}</p>}                          
                         </div>
-                        {formData.documentQualification && (
-                          <p className="mt-2 text-sm text-green-600">
-                            Fichier sélectionné: {formData.documentQualification.name}
-                          </p>
-                        )}
-                        {errors.documentQualification && (
-                          <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.documentQualification}</p>
-                        )}
-                      </div>
-                    )}
+                      )}
+                  </div>
+                ) : (
+                  <div>
+                    <Dropdown
+                      label="Type de prestation"
+                      options={services.map(service => ({
+                        id: service.id_svc,
+                        name: service.name_svc,
+                      }))}
+                      selected={formData.id_svc}
+                      onChange={(value) => setFormData(prev => ({ ...prev, id_svc: value }))}
+                    />
+                    {errors.id_svc && <p className="mt-1 text-sm text-red-600">{errors.id_svc}</p>}
                   </div>
                 )}
-                
-                {/* <div className="mt-6">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Pièce d'identité
-                        <span className="text-indigo-600 ml-1">*</span>
-                      </label>
-                      <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                        <div className="space-y-1 text-center">
-                          {formData.documentIdentite ? (
-                            <div>
-                              <p className="text-sm text-green-600 font-medium">
-                                ✓ Document sélectionné
-                              </p>
-                              <button
-                                type="button"
-                                onClick={() => setFormData({...formData, documentIdentite: null})}
-                                className="mt-2 inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-red-700 bg-red-100 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-                              >
-                                Supprimer
-                              </button>
-                            </div>
-                          ) : (
-                            <>
-                              <svg
-                                className="mx-auto h-12 w-12 text-gray-400"
-                                stroke="currentColor"
-                                fill="none"
-                                viewBox="0 0 48 48"
-                                aria-hidden="true"
-                              >
-                                <path
-                                  d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                                  strokeWidth={2}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                              </svg>
-                              <div className="flex text-sm text-gray-600 justify-center">
-                                <label
-                                  htmlFor="documentIdentite"
-                                  className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
-                                >
-                                  <span>Télécharger un fichier</span>
-                                  <input
-                                    id="documentIdentite"
-                                    name="documentIdentite"
-                                    type="file"
-                                    className="sr-only"
-                                    onChange={change}
-                                    accept=".jpg,.jpeg,.png,.pdf"
-                                    required
-                                  />
-                                </label>
-                                <p className="pl-1">ou glisser-déposer</p>
-                              </div>
-                              <p className="text-xs text-gray-500">
-                                PNG, JPG, PDF jusqu'à 10MB
-                              </p>
-                            </>
-                          )}
-                        </div>
-                      </div>
-                      {errors.documentIdentite && (
-                        <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.documentIdentite}</p>
-                      )}
-                    </div> */}
 
-                <div className="flex items-center">
+                <div className="flex items-center mb-0">
                   <input
-                    id="acceptCGU"
-                    name="acceptCGU"
+                    id="date_accept_cgu"
+                    name="date_accept_cgu"
                     type="checkbox"
-                    checked={formData.acceptCGU}
+                    checked={formData.date_accept_cgu}
                     onChange={change}
                     className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
                   />
-                  <label htmlFor="acceptCGU" className="ml-2 block text-sm text-gray-900">
-                    J'accepte les <a href="/cgu" className="text-indigo-600 hover:text-indigo-500">conditions générales d'utilisation</a>
+                  <label htmlFor="date_accept_cgu" className="ml-2 block text-sm text-gray-900">
+                    J'accepte les <a href="../legal/cgu" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-500">conditions générales d'utilisation</a>
                   </label>
                 </div>
-                {errors.acceptCGU && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.acceptCGU}</p>}
-                
+                <div className="flex items-center">
+                  <input
+                    id="date_accept_cgv"
+                    name="date_accept_cgv"
+                    type="checkbox"
+                    checked={formData.date_accept_cgv}
+                    onChange={change}
+                    className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                  />
+                  <label htmlFor="date_accept_cgv" className="ml-2 block text-sm text-gray-900">
+                    J'accepte les <a href="../legal/cgu" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-500">conditions générales de ventes</a>
+                  </label>
+                </div>
+                {errors.date_accept_cgu && (
+                  <div className="mt-5 mb-1 p-2 rounded-md bg-red-100 text-red-600 dark:text-red-300 dark:bg-red-900 flex items-center justify-center text-sm">
+                    {errors.date_accept_cgu}
+                  </div>
+                )}
+                {errors.date_accept_cgv && (
+                  <div className="p-2 rounded-md bg-red-100 text-red-600 dark:text-red-300 dark:bg-red-900 flex items-center justify-center text-sm">
+                    {errors.date_accept_cgv}
+                  </div>
+                )}
                 {errors.submit && (
                   <div className="rounded-md bg-red-50 p-4">
                     <div className="flex">
@@ -938,8 +666,8 @@ export default function Sign() {
                   >
                     Suivant
                   </button>
-                  <p className="text-center text-sm pt-5">
-                    <Link href="./" className="text-[#49cb5c] hover:underline">Retour à la connexion</Link>
+                  <p className="text-center text-sm mt-3">
+                    <Link href="../auth" className="text-emerald-500 hover:underline">Retour à la connexion</Link>
                   </p>
                 </div>
               )}
