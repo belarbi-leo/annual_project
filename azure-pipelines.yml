@@ -1,0 +1,54 @@
+trigger:
+  branches:
+    include:
+      - ecodeli-web
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  NODE_VERSION: '18.x'
+  JAVA_HOME: '/usr/lib/jvm/java-17-openjdk-amd64'
+
+jobs:
+  - job: Build_Backend
+    displayName: 'Build App Back-End Java Spring Boot'
+    steps:
+      - task: JavaToolInstaller@0
+        inputs:
+          versionSpec: '17'
+          jdkArchitecture: 'x64'
+
+      - task: Maven@3
+        inputs:
+          mavenPomFile: 'app/ecodeli-back/pom.xml'
+          goals: 'clean package'
+          publishJUnitResults: true
+          testResultsFiles: '**/surefire-reports/TEST-*.xml'
+
+  - job: Build_Front_Public
+    displayName: 'Build App Front-End Public Next.js'
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '$(NODE_VERSION)'
+
+      - script: |
+          cd app/ecodeli-public
+          npm install
+          npm run build
+        displayName: 'Install & Build Front Public'
+
+  - job: Build_Front_Backoffice
+    displayName: 'Build App Front-End Backoffice Next.js'
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '$(NODE_VERSION)'
+
+      - script: |
+          cd app/ecodeli-admin
+          npm install
+          npm run build
+        displayName: 'Install & Build Front Backoffice'
+
