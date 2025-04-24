@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface DepotsRepository extends JpaRepository<Depots, Integer> {
-    @Query("select dep from Depots dep order by dep.id_depot")
+    @Query("select dep from Depots dep order by dep.idDepot")
     List<Depots> findAllOrderById_depot();
 }

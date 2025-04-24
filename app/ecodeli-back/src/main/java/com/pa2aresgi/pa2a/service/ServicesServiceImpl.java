@@ -1,5 +1,6 @@
 package com.pa2aresgi.pa2a.service;
 
+import com.pa2aresgi.pa2a.enumeratation.AuthorizationSvcEnum;
 import com.pa2aresgi.pa2a.modele.*;
 import com.pa2aresgi.pa2a.repository.ServicesRepository;
 import lombok.AllArgsConstructor;
@@ -28,6 +29,16 @@ public class ServicesServiceImpl implements ServicesService {
     }
 
     @Override
+    public List<Services> readAllByAuth(AuthorizationSvcEnum auth){
+        return servicesRepository.findAllByAuth(auth);
+    }
+
+    @Override
+    public List<Services> readAllByAuthOrderById(AuthorizationSvcEnum auth){
+        return servicesRepository.findAllByRoleOrderById_svc(auth);
+    }
+
+    @Override
     public Services findById(Integer id) {
         if (servicesRepository.findById(id).isPresent()){
             return servicesRepository.findById(id).get();
@@ -40,8 +51,8 @@ public class ServicesServiceImpl implements ServicesService {
     public Services update(Integer id, Services service) {
         return servicesRepository.findById(id).map(svc -> {
             //svc.setId_admin_creator(service.getId_admin_creator());
-            svc.setDate_creation_svc(service.getDate_creation_svc());
-            svc.setName_svc(service.getName_svc());
+            svc.setDateCreationSvc(service.getDateCreationSvc());
+            svc.setNameSvc(service.getNameSvc());
             svc.setCategory(service.getCategory());
             svc.setAuth(service.getAuth());/*
             svc.setServices_docs_list(service.getServices_docs_list());

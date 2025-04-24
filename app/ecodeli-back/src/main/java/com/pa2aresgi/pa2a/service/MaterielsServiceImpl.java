@@ -39,9 +39,9 @@ public class MaterielsServiceImpl implements MaterielsService {
     @Override
     public Materiels update(Integer id, Materiels materiel) {    //Pas correct pour nfc, rien à modifier
         return materielsRepository.findById(id).map(mat -> {
-            mat.setId_svc(materiel.getId_svc());
-            mat.setName_mat(materiel.getName_mat());
-            mat.setDescription_mat(materiel.getDescription_mat());
+            mat.setSvc(materiel.getSvc());
+            mat.setNameMateriel(materiel.getNameMateriel());
+            mat.setDescriptionMateriel(materiel.getDescriptionMateriel());
             return materielsRepository.save(mat);
         }).orElseThrow(() -> new RuntimeException("Materiel not found !"));
     }

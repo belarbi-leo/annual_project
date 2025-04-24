@@ -1,12 +1,15 @@
 package com.pa2aresgi.pa2a.controller;
 
+import com.pa2aresgi.pa2a.enumeratation.AuthorizationSvcEnum;
 import com.pa2aresgi.pa2a.modele.Services;
 import com.pa2aresgi.pa2a.service.ServicesService;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Profile("dev")
 @RestController
 @RequestMapping("/services")
 @AllArgsConstructor
@@ -20,7 +23,8 @@ public class ServicesController {
     }
 
     @GetMapping("/read")
-    public List<Services> readAll(){
+    public List<Services> readAll(@RequestParam(name = "auth", required = false) AuthorizationSvcEnum auth){
+        if (auth!=null) return servicesService.readAllByAuthOrderById(auth);
         return servicesService.readAllOrderById();
         //return servicesService.readAll();
     }

@@ -8,7 +8,7 @@ public class Pa2aApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Pa2aApplication.class, args);
-		System.out.println("Hello World");
+		System.out.println("Application started !");
 	}
 
 }

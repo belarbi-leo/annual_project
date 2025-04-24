@@ -15,16 +15,17 @@ import java.sql.Timestamp;
 public class Opinions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_opinion;
+    @Column(name="id_opinion")
+    private Integer idOpinion;
     @ManyToOne
     @JoinColumn(name="id_ad", nullable = false)
-    private Ads id_ad;
-    @Column
-    private short note_opinion;
-    @Column(length = 255)
-    private String title_opinion;
-    @Column
-    private String description_opinion;
-    @Column
-    private Timestamp date_opinion;
+    private Ads ad;
+    @Column(name="note_opinion")
+    private short noteOpinion;
+    @Column(name="title_opinion", length = 255)
+    private String titleOpinion;
+    @Column(name="description_opinion", columnDefinition="text")
+    private String descriptionOpinion;
+    @Column(name="date_opinion")
+    private Timestamp dateOpinion;
 }

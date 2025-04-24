@@ -41,14 +41,14 @@ public class SubscriptionsServiceImpl implements SubscriptionsService{
     @Override
     public Subscriptions update(Integer id, Subscriptions subscription) {
         return subscriptionsRepository.findById(id).map(sub -> {
-            sub.setName_sub(subscription.getName_sub());
-            sub.setDescription_sub(subscription.getDescription_sub());
+            sub.setNameSub(subscription.getNameSub());
+            sub.setDescriptionSub(subscription.getDescriptionSub());
             sub.setPrice(subscription.getPrice());
             sub.setInsurance(subscription.getInsurance());
-            sub.setShipping_reduction(subscription.getShipping_reduction());
-            sub.setSend_priority(subscription.getSend_priority());
+            sub.setShippingReduction(subscription.getShippingReduction());
+            sub.setSendPriority(subscription.getSendPriority());
             return subscriptionsRepository.save(sub);
-        }).orElseThrow(() -> new RuntimeException("Language not found !"));
+        }).orElseThrow(() -> new RuntimeException("Subscription not found !"));
     }
 
     @Override

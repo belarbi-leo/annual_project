@@ -39,16 +39,16 @@ public class PackagesServiceImpl implements PackagesService {
     @Override
     public Packages update(Integer id, Packages pack) {
         return packagesRepository.findById(id).map(pack1 -> {
-            pack1.setId_ad(pack.getId_ad());
-            pack1.setContent_pack(pack.getContent_pack());
-            pack1.setQuantity_pack(pack.getQuantity_pack());
-            pack1.setDetails_pack(pack.getDetails_pack());
+            pack1.setAd(pack.getAd());
+            pack1.setContentPack(pack.getContentPack());
+            pack1.setQuantityPack(pack.getQuantityPack());
+            pack1.setDetailsPack(pack.getDetailsPack());
             //pack1.setType_pack(pack.getType_pack());
-            pack1.setWeight_pack(pack.getWeight_pack());
-            pack1.setLength_pack(pack.getLength_pack());
-            pack1.setWidth_pack(pack.getWidth_pack());
-            pack1.setHeight_pack(pack.getHeight_pack());
-            pack1.setPhoto_pack(pack.getPhoto_pack());
+            pack1.setWeightPack(pack.getWeightPack());
+            pack1.setLengthPack(pack.getLengthPack());
+            pack1.setWidthPack(pack.getWidthPack());
+            pack1.setHeightPack(pack.getHeightPack());
+            pack1.setPhotoPack(pack.getPhotoPack());
             pack1.setFragile(pack.getFragile());/*
             pack1.setDepots_set(pack.getDepots_set());*/
             return packagesRepository.save(pack1);

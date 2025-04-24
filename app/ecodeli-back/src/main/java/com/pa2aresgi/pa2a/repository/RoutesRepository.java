@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface RoutesRepository extends JpaRepository<Routes, Integer> {
-    @Query("select route from Routes route order by route.id_route")
+    @Query("select route from Routes route order by route.idRoute")
     List<Routes> findAllOrderById_route();
 }

@@ -13,8 +13,9 @@ import lombok.Setter;
 public class NFC {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_card_nfc;
+    @Column(name="id_card_nfc")
+    private Integer idCard;
     @OneToOne
     @JoinColumn(name="id_user")
-    private Users id_user;
+    private Users user;
 }

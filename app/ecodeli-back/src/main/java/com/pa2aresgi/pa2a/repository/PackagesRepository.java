@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface PackagesRepository extends JpaRepository<Packages,Integer> {
-    @Query("select pack from Packages pack order by pack.id_pack")
+    @Query("select pack from Packages pack order by pack.idPack")
     List<Packages> findAllOrderById_pack();
 }

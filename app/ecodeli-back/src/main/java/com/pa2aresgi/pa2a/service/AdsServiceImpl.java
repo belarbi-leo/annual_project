@@ -41,32 +41,36 @@ public class AdsServiceImpl implements AdsService {
     @Override
     public Ads update(Integer id, Ads ad) {
         return adsRepository.findById(id).map(a -> {
-            a.setId_user_creator(ad.getId_user_creator());
-            a.setId_user_accept(ad.getId_user_accept());
-            a.setId_svc(ad.getId_svc());
+            a.setUserCreator(ad.getUserCreator());
+            a.setUserAccept(ad.getUserAccept());
+            a.setSvc(ad.getSvc());
             //a.setId_sub(ad.getId_sub());
-            a.setStatus_ad(ad.getStatus_ad());
-            a.setDate_creation_ad(ad.getDate_creation_ad());
-            a.setDate_accept_ad(ad.getDate_accept_ad());
-            a.setDate_start_ad(ad.getDate_start_ad());
+            a.setStatusAd(ad.getStatusAd());
+            a.setDateCreationAd(ad.getDateCreationAd());
+            a.setDateAcceptAd(ad.getDateAcceptAd());
+            a.setDateStartAd(ad.getDateStartAd());
             //a.setStreet_start_ad(ad.getStreet_start_ad());
-            a.setLocation_start(ad.getLocation_start());
-            a.setSuite_start(ad.getSuite_start());
-            a.setLocality_start(ad.getLocality_start());
-            a.setState_start(ad.getState_start());
-            a.setPostal_code_start(ad.getPostal_code_start());
-            a.setCountry_start(ad.getCountry_start());
-            a.setDate_end_ad(ad.getDate_end_ad());
+            a.setLocationStart(ad.getLocationStart());
+            a.setSuiteStart(ad.getSuiteStart());
+            a.setLocalityStart(ad.getLocalityStart());
+            a.setStateStart(ad.getStateStart());
+            a.setPostalCodeStart(ad.getPostalCodeStart());
+            a.setCountryStart(ad.getCountryStart());
+            a.setLatitudeStart(ad.getLatitudeStart());
+            a.setLongitudeStart(ad.getLongitudeStart());
+            a.setDateEndAd(ad.getDateEndAd());
             //a.setStreet_end_ad(ad.getStreet_end_ad());
-            a.setLocation_end(ad.getLocation_end());
-            a.setSuite_end(ad.getSuite_end());
-            a.setLocality_end(ad.getLocality_end());
-            a.setState_end(ad.getState_end());
-            a.setPostal_code_end(ad.getPostal_code_end());
-            a.setCountry_end(ad.getCountry_end());
-            a.setDescription_ad(ad.getDescription_ad());
-            a.setPrice_ad(ad.getPrice_ad());
-            a.setPhoto_ad(ad.getPhoto_ad());/*
+            a.setLocationEnd(ad.getLocationEnd());
+            a.setSuiteEnd(ad.getSuiteEnd());
+            a.setLocalityEnd(ad.getLocalityEnd());
+            a.setStateEnd(ad.getStateEnd());
+            a.setPostalCodeEnd(ad.getPostalCodeEnd());
+            a.setCountryEnd(ad.getCountryEnd());
+            a.setLatitudeEnd(ad.getLatitudeEnd());
+            a.setLongitudeEnd(ad.getLongitudeEnd());
+            a.setDescriptionAd(ad.getDescriptionAd());
+            a.setPriceAd(ad.getPriceAd());
+            a.setPhotoAd(ad.getPhotoAd());/*
             a.setRequests_ads_list(ad.getRequests_ads_list());
             a.setPackages_list(ad.getPackages_list());
             a.setOpinions_list(ad.getOpinions_list());

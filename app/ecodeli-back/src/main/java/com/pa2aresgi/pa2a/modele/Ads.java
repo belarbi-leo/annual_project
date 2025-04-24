@@ -1,7 +1,7 @@
 package com.pa2aresgi.pa2a.modele;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.pa2aresgi.pa2a.enumeratation.Status_ad_enum;
+import com.pa2aresgi.pa2a.enumeratation.StatusAdEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,80 +21,89 @@ import java.util.Set;
 public class Ads {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_ad;
+    @Column(name="id_ad")
+    private Integer idAd;
     @ManyToOne
     @JoinColumn(name="id_user_creator", nullable = false)
-    private Users id_user_creator;
+    private Users userCreator;
     @ManyToOne
     @JoinColumn(name="id_user_accept")
-    private Users id_user_accept;
+    private Users userAccept;
     @ManyToOne
     @JoinColumn(name="id_svc", nullable = false)
-    private Services id_svc;
+    private Services svc;
     /*@ManyToOne
     @JoinColumn(name="id_sub", nullable = false)
     private Subscriptions id_sub;*/
-    @Column
+    @Column(name="status_ad")
     @Enumerated(EnumType.STRING)
-    private Status_ad_enum status_ad;
-    @Column
-    private Timestamp date_creation_ad;
-    @Column
-    private Timestamp date_accept_ad;
-    @Column
-    private Timestamp date_start_ad;
+    private StatusAdEnum statusAd;
+    @Column(name="date_creation_ad")
+    private Timestamp dateCreationAd;
+    @Column(name="date_accept_ad")
+    private Timestamp dateAcceptAd;
+    @Column(name="date_start_ad")
+    private Timestamp dateStartAd;
     /*@Column(length=255)
     private String street_start_ad;*/
-    @Column(length=255)
-    private String location_start;
-    @Column(length = 255)
-    private String suite_start;
-    @Column(length=255)
-    private String locality_start;
-    @Column(length = 255)
-    private String state_start;
-    @Column(length=20)
-    private String postal_code_start;
-    @Column(length=100)
-    private String country_start;
-    @Column
-    private Timestamp date_end_ad;
+    @Column(name="location_start", length=255)
+    private String locationStart;
+    @Column(name="suite_start", length = 255)
+    private String suiteStart;
+    @Column(name="locality_start", length=255)
+    private String localityStart;
+    @Column(name="state_start", length = 255)
+    private String stateStart;
+    @Column(name="postal_code_start", length=20)
+    private String postalCodeStart;
+    @Column(name="country_start", length=100)
+    private String countryStart;
+    @Column(name="latitude_start", columnDefinition = "decimal(9,6)")
+    private Float latitudeStart;
+    @Column(name="longitude_start", columnDefinition = "decimal(9,6)")
+    private Float longitudeStart;
+    @Column(name="date_end_ad")
+    private Timestamp dateEndAd;
     /*@Column(length = 255)
     private String street_end_ad;*/
-    @Column(length=255)
-    private String location_end;
-    @Column(length = 255)
-    private String suite_end;
-    @Column(length=255)
-    private String locality_end;
-    @Column(length = 255)
-    private String state_end;
-    @Column(length=20)
-    private String postal_code_end;
-    @Column(length=100)
-    private String country_end;
-    @Column(length = 255)
-    private String description_ad;
-    @Column(columnDefinition="numeric(10,2)")
-    private Float price_ad;
-    @Column
-    private String photo_ad;
-    @OneToMany(mappedBy = "id_ad")
+    @Column(name="location_end", length=255)
+    private String locationEnd;
+    @Column(name="suite_end", length = 255)
+    private String suiteEnd;
+    @Column(name="locality_end", length=255)
+    private String localityEnd;
+    @Column(name="state_end", length = 255)
+    private String stateEnd;
+    @Column(name="postal_code_end", length=20)
+    private String postalCodeEnd;
+    @Column(name="country_end", length=100)
+    private String countryEnd;
+    @Column(name="latitude_end", columnDefinition = "decimal(9,6)")
+    private Float latitudeEnd;
+    @Column(name="longitude_end", columnDefinition = "decimal(9,6)")
+    private Float longitudeEnd;
+    @Column(name="descrpition_ad", length = 255)
+    private String descriptionAd;
+    @Column(name="price_ad", columnDefinition="decimal(10,2)")
+    private Float priceAd;
+    @Column(name="photo_ad", columnDefinition="text")
+    private String photoAd;
+    @OneToMany(mappedBy = "ad")
     @JsonIgnore
-    private List<Requests_ads> requests_ads_list = new ArrayList<>();
-    @OneToMany(mappedBy = "id_ad")
+    private List<RequestsAds> requestsAdsList = new ArrayList<>();
+    @OneToMany(mappedBy = "ad")
     @JsonIgnore
-    private List<Packages> packages_list = new ArrayList<>();
-    @OneToMany(mappedBy = "id_ad")
+    private List<Packages> packagesList = new ArrayList<>();
+    @OneToMany(mappedBy = "ad")
     @JsonIgnore
-    private List<Opinions> opinions_list = new ArrayList<>();
-    @OneToMany(mappedBy = "id_ad")
+    private List<Opinions> opinionsList = new ArrayList<>();
+    @OneToMany(mappedBy = "ad")
     @JsonIgnore
-    private List<Payments> payments_list = new ArrayList<>();
-    @OneToMany(mappedBy = "id_ad")
+    private List<Payments> paymentsList = new ArrayList<>();
+    @OneToMany(mappedBy = "ad")
     @JsonIgnore
-    private List<Disputes> disputes_list = new ArrayList<>();
-    @ManyToMany(mappedBy="ads_set")
+    private List<Disputes> disputesList = new ArrayList<>();
+    @ManyToMany(mappedBy="adsSet")
     @JsonIgnore
-    private Set<Routes> routes_set = new HashSet<>();
+    private Set<Routes> routesSet = new HashSet<>();
 }

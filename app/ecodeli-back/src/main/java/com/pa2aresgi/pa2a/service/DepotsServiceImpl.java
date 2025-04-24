@@ -40,14 +40,16 @@ public class DepotsServiceImpl implements DepotsService {
     @Override
     public Depots update(Integer id, Depots depot) {
         return depotsRepository.findById(id).map(dep -> {
-            dep.setStorage_capacity_depot(depot.getStorage_capacity_depot());
+            dep.setStorageCapacityDepot(depot.getStorageCapacityDepot());
             //dep.setStreet_depot(depot.getStreet_depot());
             dep.setLocation(depot.getLocation());
             dep.setSuite(depot.getSuite());
             dep.setLocality(depot.getLocality());
             dep.setState(depot.getState());
-            dep.setPostal_code_depot(depot.getPostal_code_depot());
-            dep.setCountry_depot(depot.getCountry_depot());
+            dep.setPostalCode(depot.getPostalCode());
+            dep.setCountry(depot.getCountry());
+            dep.setLatitude(depot.getLatitude());
+            dep.setLongitude(depot.getLongitude());
             return depotsRepository.save(dep);
         }).orElseThrow(() -> new RuntimeException("Depot not found !"));
     }

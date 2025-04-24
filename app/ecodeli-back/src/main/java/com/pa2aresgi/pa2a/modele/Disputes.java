@@ -1,6 +1,6 @@
 package com.pa2aresgi.pa2a.modele;
 
-import com.pa2aresgi.pa2a.enumeratation.Status_dispute_enum;
+import com.pa2aresgi.pa2a.enumeratation.StatusDisputeEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,26 +16,27 @@ import java.sql.Timestamp;
 public class Disputes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_dispute;
+    @Column(name="id_dispute")
+    private Integer idDispute;
     @ManyToOne
     @JoinColumn(name="id_ad", nullable = false)
-    private Ads id_ad;
+    private Ads ad;
     @ManyToOne
     @JoinColumn(name="id_user", nullable = false)
-    private Users id_user;
-    @Column
-    private Timestamp date_status_dispute;
-    @Column
+    private Users user;
+    @Column(name="date_status_dispute")
+    private Timestamp dateStatusDispute;
+    @Column(name="status_dispute")
     @Enumerated(EnumType.STRING)
-    private Status_dispute_enum status_dispute;
-    @Column
-    private String description_dispute;
-    @Column
-    private Timestamp date_start_dispute;
-    @Column
-    private Timestamp date_end_dispute;
-    @Column
-    private String photo_dispute;
-    @Column
-    private String resolution_text;
+    private StatusDisputeEnum statusDispute;
+    @Column(name="description_dispute", columnDefinition="text")
+    private String descriptionDispute;
+    @Column(name="date_start_dispute")
+    private Timestamp dateStartDispute;
+    @Column(name="date_end_dispute")
+    private Timestamp dateEndDispute;
+    @Column(name="photo_dispute", columnDefinition="text")
+    private String photoDispute;
+    @Column(name="resolution_text", columnDefinition="text")
+    private String resolutionText;
 }

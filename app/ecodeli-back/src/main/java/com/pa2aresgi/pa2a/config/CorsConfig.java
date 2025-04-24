@@ -18,7 +18,7 @@ public class CorsConfig {
         config.setAllowedOrigins(List.of("http://localhost:3000/")); // Remplace par l'URL de ton front
 
         // Autoriser ces méthodes HTTP
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
 
         // Autoriser ces en-têtes
         config.setAllowedHeaders(List.of("Authorization", "Content-Type"));

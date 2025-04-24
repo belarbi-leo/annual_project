@@ -1,7 +1,7 @@
 package com.pa2aresgi.pa2a.service;
 
 
-import com.pa2aresgi.pa2a.enumeratation.Role_enum;
+import com.pa2aresgi.pa2a.enumeratation.RoleEnum;
 import com.pa2aresgi.pa2a.modele.*;
 import com.pa2aresgi.pa2a.repository.UsersRepository;
 import lombok.AllArgsConstructor;
@@ -30,12 +30,12 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public List<Users> readAllByRole(Role_enum role){
+    public List<Users> readAllByRole(RoleEnum role){
         return usersRepository.findAllByRole(role);
     }
 
     @Override
-    public List<Users> readAllByRoleOrderById(Role_enum role){
+    public List<Users> readAllByRoleOrderById(RoleEnum role){
         return usersRepository.findAllByRoleOrderById_user(role);
     }
 
@@ -51,32 +51,34 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public Users update(Integer id, Users user) {
         return usersRepository.findById(id).map(usr -> {
-            usr.setDate_registration(user.getDate_registration());
+            usr.setDateRegistration(user.getDateRegistration());
             usr.setRole(user.getRole());
-            usr.setAccount_status(user.getAccount_status());
-            usr.setDate_status(user.getDate_status());
+            usr.setAccountStatus(user.getAccountStatus());
+            usr.setDateStatus(user.getDateStatus());
             usr.setEmail(user.getEmail());
             usr.setPassword(user.getPassword());
-            usr.setPhone_number(user.getPhone_number());
-            usr.setFirst_name(user.getFirst_name());
-            usr.setLast_name(user.getLast_name());
-            usr.setCompany_name(user.getCompany_name());
+            usr.setPhoneNumber(user.getPhoneNumber());
+            usr.setFirstName(user.getFirstName());
+            usr.setLastName(user.getLastName());
+            usr.setCompanyName(user.getCompanyName());
             usr.setSiret(user.getSiret());
-            usr.setPhoto_user(user.getPhoto_user());
+            usr.setPhotoUser(user.getPhotoUser());
             usr.setBio(user.getBio());
             usr.setLocation(user.getLocation());
             usr.setSuite(user.getSuite());
             usr.setLocality(user.getLocality());
             usr.setState(user.getState());
             //usr.setStreet(user.getStreet());
-            usr.setPostal_code(user.getPostal_code());
+            usr.setPostalCode(user.getPostalCode());
             usr.setCountry(user.getCountry());
+            usr.setLatitude(user.getLatitude());
+            usr.setLongitude(user.getLongitude());
             /*
             usr.setCode_payment(user.getCode_payment());
             usr.setExpiration_payment(user.getExpiration_payment());
             usr.setIban(user.getIban());*/
-            usr.setId_subscription(user.getId_subscription());
-            usr.setId_language(user.getId_language());/*
+            usr.setSubscription(user.getSubscription());
+            usr.setLanguage(user.getLanguage());/*
             usr.setDipustes_list(user.getDipustes_list());
             usr.setAuthorizations_list(user.getAuthorizations_list());
             usr.setServices_list(user.getServices_list());

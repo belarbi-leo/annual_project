@@ -1,6 +1,5 @@
 package com.pa2aresgi.pa2a.service;
 
-import com.pa2aresgi.pa2a.modele.Languages;
 import com.pa2aresgi.pa2a.modele.NFC;
 import com.pa2aresgi.pa2a.repository.NFCRepository;
 import lombok.AllArgsConstructor;
@@ -40,7 +39,7 @@ public class NFCServiceImpl implements NFCService {
     @Override
     public NFC update(Integer id, NFC nfc) {
         return nfcRepository.findById(id).map(nfc1 -> {
-            nfc1.setId_user(nfc.getId_user());
+            nfc1.setUser(nfc.getUser());
             return nfcRepository.save(nfc1);
         }).orElseThrow(() -> new RuntimeException("NFC not found !"));
     }

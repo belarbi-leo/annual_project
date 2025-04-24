@@ -17,12 +17,15 @@ import java.util.List;
 public class Languages {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_language;
-    @Column(length = 30)
-    private String language;
-    @Column(length = 2, unique = true, nullable = false)
+    @Column(name="id_language")
+    private Integer idLanguage;
+    @Column(name="name", length = 30)
+    private String name;
+    @Column(name="iso", length = 2, unique = true, nullable = false)
     private String iso;
-    @OneToMany(mappedBy = "id_user")
+    @Column(name="available")
+    private Boolean available;
+    @OneToMany(mappedBy = "language")
     @JsonIgnore
-    private List<Users> users_list = new ArrayList<>();
+    private List<Users> usersList = new ArrayList<>();
 }

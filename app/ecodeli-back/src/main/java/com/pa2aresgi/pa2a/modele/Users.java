@@ -1,8 +1,8 @@
 package com.pa2aresgi.pa2a.modele;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.pa2aresgi.pa2a.enumeratation.Account_status_enum;
-import com.pa2aresgi.pa2a.enumeratation.Role_enum;
+import com.pa2aresgi.pa2a.enumeratation.AccountStatusEnum;
+import com.pa2aresgi.pa2a.enumeratation.RoleEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,53 +20,58 @@ import java.util.List;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_user;
-    @Column
-    private Timestamp date_registration;
-    @Column
-    private Timestamp date_accept_cgu;
-    @Column
-    private Timestamp date_accept_cgv;
-    @Column
+    @Column(name="id_user")
+    private Integer idUser;
+    @Column(name="date_registration")
+    private Timestamp dateRegistration;
+    @Column(name="date_accept_cgu")
+    private Timestamp dateAcceptCgu;
+    @Column(name="date_accept_cgv")
+    private Timestamp dateAcceptCgv;
+    @Column(name="role")
     @Enumerated(EnumType.STRING)
-    private Role_enum role;
-    @Column
+    private RoleEnum role;
+    @Column(name="account_status")
     @Enumerated(EnumType.STRING)
-    private Account_status_enum account_status;
-    @Column
-    private Timestamp date_status;
-    @Column
+    private AccountStatusEnum accountStatus;
+    @Column(name="date_status")
+    private Timestamp dateStatus;
+    @Column(name="email",length=255)
     private String email;
-    @Column(length=255)
+    @Column(name="password", length=255)
     private String password;
-    @Column(length=10)
-    private String phone_number;
-    @Column(length=50)
-    private String first_name;
-    @Column(length=50)
-    private String last_name;
-    @Column(length=100)
-    private String company_name;
-    @Column(length=14)
+    @Column(name="phone_number", length=10)
+    private String phoneNumber;
+    @Column(name="first_name", length=50)
+    private String firstName;
+    @Column(name="last_name", length=50)
+    private String lastName;
+    @Column(name="company_name", length=100)
+    private String companyName;
+    @Column(name="siret", length=14)
     private String siret;
-    @Column
-    private String photo_user;
-    @Column(length=255)
+    @Column(name="photo_user", columnDefinition="text")
+    private String photoUser;
+    @Column(name="bio", length=255)
     private String bio;
     /*@Column(length=255)
     private String street;*/
-    @Column(length=255)
+    @Column(name="location", length=255)
     private String location;
-    @Column(length = 255)
+    @Column(name="suite", length = 255)
     private String suite;
-    @Column(length=255)
+    @Column(name="locality", length=255)
     private String locality;
-    @Column(length = 255)
+    @Column(name="state", length = 255)
     private String state;
-    @Column(length=20)
-    private String postal_code;
-    @Column(length=100)
+    @Column(name="postal_code", length=20)
+    private String postalCode;
+    @Column(name="country", length=100)
     private String country;
+    @Column(name="latitude", columnDefinition = "decimal(9,6)")
+    private Float latitude;
+    @Column(name="longitude", columnDefinition = "decimal(9,6)")
+    private Float longitude;
     /*
     @Column
     private String code_payment;
@@ -76,33 +81,63 @@ public class Users {
     private String iban;*/
     @ManyToOne
     @JoinColumn(name="id_subscription", nullable = false)
-    private Subscriptions id_subscription;
+    private Subscriptions subscription;
     @ManyToOne
     @JoinColumn(name="id_language", nullable = false)
-    private Languages id_language;
-    @OneToMany(mappedBy = "id_user")
+    private Languages language;
+    @OneToMany(mappedBy = "user")
     @JsonIgnore
-    private List<Disputes> dipustes_list = new ArrayList<>();
+    private List<Disputes> dipustesList = new ArrayList<>();
     /*
     @OneToMany(mappedBy = "id_user")
     @JsonIgnore
     private List<Authorizations> authorizations_list = new ArrayList<>();*/
-    @OneToMany(mappedBy = "id_admin_creator")
+    @OneToMany(mappedBy = "adminCreator")
     @JsonIgnore
-    private List<Services> services_list = new ArrayList<>();
-    @OneToMany(mappedBy = "id_user")
+    private List<Services> servicesList = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
     @JsonIgnore
-    private List<Routes> routes_list = new ArrayList<>();
-    @OneToMany(mappedBy = "id_user_req")
+    private List<Routes> routesList = new ArrayList<>();
+    @OneToMany(mappedBy = "userReq")
     @JsonIgnore
-    private List<Requests_svc> requests_svc_user_req_list = new ArrayList<>();
-    @OneToMany(mappedBy = "id_admin_res")
+    private List<RequestsServices> requestsServicesUserReqList = new ArrayList<>();
+    @OneToMany(mappedBy = "adminRes")
     @JsonIgnore
-    private List<Requests_svc> requests_svc_admin_res_list = new ArrayList<>();
-    @OneToMany(mappedBy = "id_user_creator")
+    private List<RequestsServices> requestsServicesAdminResList = new ArrayList<>();
+    @OneToMany(mappedBy = "userCreator")
     @JsonIgnore
-    private List<Ads> ads_user_creator_list = new ArrayList<>();
-    @OneToMany(mappedBy = "id_user_accept")
+    private List<Ads> adsUserCreatorList = new ArrayList<>();
+    @OneToMany(mappedBy = "userAccept")
     @JsonIgnore
-    private List<Ads> ads_user_accept_list = new ArrayList<>();
+    private List<Ads> adsUserAcceptList = new ArrayList<>();
+
+    public void afficher() {
+        System.out.println("===== USERS ENTITY =====");
+        System.out.println("idUser: " + idUser);
+        System.out.println("dateRegistration: " + dateRegistration);
+        System.out.println("dateAcceptCgu: " + dateAcceptCgu);
+        System.out.println("dateAcceptCgv: " + dateAcceptCgv);
+        System.out.println("role: " + role);
+        System.out.println("accountStatus: " + accountStatus);
+        System.out.println("dateStatus: " + dateStatus);
+        System.out.println("email: " + email);
+        System.out.println("password: " + password);
+        System.out.println("phoneNumber: " + phoneNumber);
+        System.out.println("firstName: " + firstName);
+        System.out.println("lastName: " + lastName);
+        System.out.println("companyName: " + companyName);
+        System.out.println("siret: " + siret);
+        System.out.println("photoUser: " + photoUser);
+        System.out.println("bio: " + bio);
+        System.out.println("location: " + location);
+        System.out.println("suite: " + suite);
+        System.out.println("locality: " + locality);
+        System.out.println("state: " + state);
+        System.out.println("postalCode: " + postalCode);
+        System.out.println("country: " + country);
+        System.out.println("subscription: " + (subscription != null ? subscription.getIdSubscription() : null));
+        System.out.println("language: " + (language != null ? language.getIdLanguage() : null));
+    }
+
+
 }

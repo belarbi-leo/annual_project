@@ -13,12 +13,13 @@ import lombok.Setter;
 public class Materiels {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_mat;
+    @Column(name="id_mat")
+    private Integer idMateriel;
     @ManyToOne
     @JoinColumn(name="id_svc", nullable = false)
-    private Services id_svc;
-    @Column(length=100)
-    private String name_mat;
-    @Column
-    private String description_mat;
+    private Services svc;
+    @Column(name="name_mat", length=100)
+    private String nameMateriel;
+    @Column(name="description_mat", columnDefinition="text")
+    private String descriptionMateriel;
 }

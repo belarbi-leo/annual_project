@@ -1,13 +1,15 @@
 package com.pa2aresgi.pa2a.controller;
 
-import com.pa2aresgi.pa2a.enumeratation.Role_enum;
+import com.pa2aresgi.pa2a.enumeratation.RoleEnum;
 import com.pa2aresgi.pa2a.modele.Users;
 import com.pa2aresgi.pa2a.service.UsersService;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Profile("dev")
 @RestController
 @RequestMapping("/users")
 @AllArgsConstructor
@@ -20,7 +22,7 @@ public class UsersController {
     }
 
     @GetMapping("/read")
-    public List<Users> readAll(@RequestParam(name = "role", required = false) Role_enum role){
+    public List<Users> readAll(@RequestParam(name = "role", required = false) RoleEnum role){
         if (role!=null) return usersService.readAllByRoleOrderById(role);
         return usersService.readAllOrderById();
         /*if (role!=null) return usersService.readAllByRole(role);

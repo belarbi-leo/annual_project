@@ -17,22 +17,23 @@ import java.util.List;
 public class Subscriptions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_sub;
-    @Column(length = 50)
-    private String name_sub;
-    @Column
-    private String description_sub;
-    @Column(columnDefinition="numeric(10,2)")
+    @Column(name="id_sub")
+    private Integer idSubscription;
+    @Column(name="name_sub", length = 50)
+    private String nameSub;
+    @Column(name="description_sub", columnDefinition="text")
+    private String descriptionSub;
+    @Column(name="price", columnDefinition="decimal(10,2)")
     private Float price;
-    @Column(columnDefinition="numeric(10,2)")
+    @Column(name="insurance", columnDefinition="decimal(10,2)")
     private Float insurance;
-    @Column
-    private Integer shipping_reduction;
-    @Column
-    private Integer send_priority;
-    @OneToMany(mappedBy = "id_subscription")
+    @Column(name="shipping_reduction")
+    private Integer shippingReduction;
+    @Column(name="send_priority")
+    private Integer sendPriority;
+    @OneToMany(mappedBy = "subscription")
     @JsonIgnore
-    private List<Users> users_list = new ArrayList<>();
+    private List<Users> usersList = new ArrayList<>();
     /*@OneToMany(mappedBy = "id_sub")
     @JsonIgnore
     private List<Ads> ads_list = new ArrayList<>();*/

@@ -40,15 +40,15 @@ public class DisputesServiceImpl implements DisputesService {
     @Override
     public Disputes update(Integer id, Disputes dispute) {
         return disputesRepository.findById(id).map(disp -> {
-            disp.setId_ad(dispute.getId_ad());
-            disp.setId_user(dispute.getId_user());
-            disp.setDate_status_dispute(dispute.getDate_status_dispute());
-            disp.setStatus_dispute(dispute.getStatus_dispute());
-            disp.setDescription_dispute(dispute.getDescription_dispute());
-            disp.setDate_start_dispute(dispute.getDate_start_dispute());
-            disp.setDate_end_dispute(dispute.getDate_end_dispute());
-            disp.setPhoto_dispute(dispute.getPhoto_dispute());
-            disp.setResolution_text(dispute.getResolution_text());
+            disp.setAd(dispute.getAd());
+            disp.setUser(dispute.getUser());
+            disp.setDateStatusDispute(dispute.getDateStatusDispute());
+            disp.setStatusDispute(dispute.getStatusDispute());
+            disp.setDescriptionDispute(dispute.getDescriptionDispute());
+            disp.setDateStartDispute(dispute.getDateStartDispute());
+            disp.setDateEndDispute(dispute.getDateEndDispute());
+            disp.setPhotoDispute(dispute.getPhotoDispute());
+            disp.setResolutionText(dispute.getResolutionText());
             return disputesRepository.save(disp);
         }).orElseThrow(() -> new RuntimeException("Dispute not found !"));
     }

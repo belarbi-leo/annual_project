@@ -1,7 +1,7 @@
 package com.pa2aresgi.pa2a.DTO.read;
 
-import com.pa2aresgi.pa2a.enumeratation.Account_status_enum;
-import com.pa2aresgi.pa2a.enumeratation.Role_enum;
+import com.pa2aresgi.pa2a.enumeratation.AccountStatusEnum;
+import com.pa2aresgi.pa2a.enumeratation.RoleEnum;
 import com.pa2aresgi.pa2a.modele.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,28 +13,30 @@ import java.sql.Timestamp;
 @Setter
 @NoArgsConstructor
 public class UsersDTORead {
-    private Integer id_user;
-    private Timestamp date_registration;
-    private Timestamp date_accept_cgu;
-    private Timestamp date_accept_cgv;
-    private Role_enum role;
-    private Account_status_enum account_status;
-    private Timestamp date_status;
+    private Integer idUser;
+    private Timestamp dateRegistration;
+    private Timestamp dateAcceptCgu;
+    private Timestamp dateAcceptCgv;
+    private RoleEnum role;
+    private AccountStatusEnum accountStatus;
+    private Timestamp dateStatus;
     private String email;
     //private String password;
-    private Integer phone_number;
-    private String first_name;
-    private String last_name;
-    private String company_name;
-    private Long siret;
-    private String photo_user;
+    private String phoneNumber;
+    private String firstName;
+    private String lastName;
+    private String companyName;
+    private String siret;
+    private String photoUser;
     private String bio;
     private String location;
     private String suite;
     private String locality;
     private String state;
-    private String postal_code;
+    private String postalCode;
     private String country;
-    private Subscriptions id_subscription;
-    private Languages id_langue;
+    private Float latitude;
+    private Float longitude;
+    private Subscriptions subscription;
+    private Languages language;
 }

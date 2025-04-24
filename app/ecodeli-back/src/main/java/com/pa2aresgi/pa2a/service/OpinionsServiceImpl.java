@@ -39,11 +39,11 @@ public class OpinionsServiceImpl implements OpinionsService {
     @Override
     public Opinions update(Integer id, Opinions opinion) {
         return opinionsRepository.findById(id).map(op -> {
-            op.setId_ad(opinion.getId_ad());
-            op.setNote_opinion(opinion.getNote_opinion());
-            op.setTitle_opinion(opinion.getTitle_opinion());
-            op.setDescription_opinion(opinion.getDescription_opinion());
-            op.setDate_opinion(opinion.getDate_opinion());
+            op.setAd(opinion.getAd());
+            op.setNoteOpinion(opinion.getNoteOpinion());
+            op.setTitleOpinion(opinion.getTitleOpinion());
+            op.setDescriptionOpinion(opinion.getDescriptionOpinion());
+            op.setDateOpinion(opinion.getDateOpinion());
             return opinionsRepository.save(op);
         }).orElseThrow(() -> new RuntimeException("Opinion not found !"));
     }

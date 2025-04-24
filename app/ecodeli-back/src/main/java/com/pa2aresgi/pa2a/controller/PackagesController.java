@@ -3,10 +3,12 @@ package com.pa2aresgi.pa2a.controller;
 import com.pa2aresgi.pa2a.modele.Packages;
 import com.pa2aresgi.pa2a.service.PackagesService;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Profile("dev")
 @RestController
 @RequestMapping("/packages")
 @AllArgsConstructor

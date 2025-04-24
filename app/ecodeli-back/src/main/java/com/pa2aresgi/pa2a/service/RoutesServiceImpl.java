@@ -39,26 +39,30 @@ public class RoutesServiceImpl implements RoutesService {
     @Override
     public Routes update(Integer id, Routes route) {
         return routesRepository.findById(id).map(rt -> {
-            rt.setId_user(route.getId_user());
-            rt.setDate_creation_route(route.getDate_creation_route());
-            rt.setDate_start_route(route.getDate_start_route());
+            rt.setUser(route.getUser());
+            rt.setDateCreationRoute(route.getDateCreationRoute());
+            rt.setDateStartRoute(route.getDateStartRoute());
             //rt.setStreet_start_route(route.getStreet_start_route());
-            rt.setLocation_start_route(route.getLocation_start_route());
-            rt.setSuite_start_route(route.getSuite_start_route());
-            rt.setLocality_start_route(route.getLocality_start_route());
-            rt.setState_start_route(route.getState_start_route());
-            rt.setPostal_code_start_route(route.getPostal_code_start_route());
-            rt.setCountry_start_route(route.getCountry_start_route());
-            rt.setDate_end_route(route.getDate_end_route());
+            rt.setLocationStartRoute(route.getLocationStartRoute());
+            rt.setSuiteStartRoute(route.getSuiteStartRoute());
+            rt.setLocalityStartRoute(route.getLocalityStartRoute());
+            rt.setStateStartRoute(route.getStateStartRoute());
+            rt.setPostalCodeStartRoute(route.getPostalCodeStartRoute());
+            rt.setCountryStartRoute(route.getCountryStartRoute());
+            rt.setLatitudeStartRoute(route.getLatitudeStartRoute());
+            rt.setLongitudeStartRoute(route.getLongitudeStartRoute());
+            rt.setDateEndRoute(route.getDateEndRoute());
             //rt.setStreet_end_route(route.getStreet_end_route());
-            rt.setLocation_end_route(route.getLocation_end_route());
-            rt.setSuite_end_route(route.getSuite_end_route());
-            rt.setLocality_end_route(route.getLocality_end_route());
-            rt.setState_end_route(route.getState_end_route());
-            rt.setPostal_code_end_route(route.getPostal_code_end_route());
-            rt.setCountry_end_route(route.getCountry_end_route());
-            rt.setDescription_route(route.getDescription_route());
-            rt.setStep_route(route.getStep_route());
+            rt.setLocationEndRoute(route.getLocationEndRoute());
+            rt.setSuiteEndRoute(route.getSuiteEndRoute());
+            rt.setLocalityEndRoute(route.getLocalityEndRoute());
+            rt.setStateEndRoute(route.getStateEndRoute());
+            rt.setPostalCodeEndRoute(route.getPostalCodeEndRoute());
+            rt.setCountryEndRoute(route.getCountryEndRoute());
+            rt.setLatitudeEndRoute(route.getLatitudeEndRoute());
+            rt.setLongitudeEndRoute(route.getLongitudeEndRoute());
+            rt.setDescriptionRoute(route.getDescriptionRoute());
+            rt.setStepRoute(route.getStepRoute());
             //rt.setAds_set(route.getAds_set());
             return routesRepository.save(rt);
         }).orElseThrow(() -> new RuntimeException("Route not found !"));

@@ -1,8 +1,8 @@
 package com.pa2aresgi.pa2a.modele;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.pa2aresgi.pa2a.enumeratation.Svc_authorization;
-import com.pa2aresgi.pa2a.enumeratation.Svc_category;
+import com.pa2aresgi.pa2a.enumeratation.AuthorizationSvcEnum;
+import com.pa2aresgi.pa2a.enumeratation.CategorySvcEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,37 +20,38 @@ import java.util.List;
 public class Services {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_svc;
-    @JsonIgnore
+    @Column(name="id_svc")
+    private Integer idSvc;
     @ManyToOne
     @JoinColumn(name="id_admin_creator", nullable = false)
-    private Users id_admin_creator;
-    @Column
-    private Timestamp date_creation_svc;
-    @Column(length=100)
-    private String name_svc;
-    @Column
+    @JsonIgnore
+    private Users adminCreator;
+    @Column(name="date_creatin_svc")
+    private Timestamp dateCreationSvc;
+    @Column(name="name_svc", length=100)
+    private String nameSvc;
+    @Column(name="category")
     @Enumerated(EnumType.STRING)
-    private Svc_category category;
+    private CategorySvcEnum category;
     /*@Column(length=50)
     private String subcategory;*/
-    @Column
+    @Column(name="auth")
     @Enumerated(EnumType.STRING)
-    private Svc_authorization auth;
-    @OneToMany(mappedBy = "id_svc")
+    private AuthorizationSvcEnum auth;
+    @OneToMany(mappedBy = "svc")
     @JsonIgnore
-    private List<Services_docs> services_docs_list = new ArrayList<>();
-    @OneToMany(mappedBy = "id_svc")
+    private List<ServicesDocs> servicesDocsList = new ArrayList<>();
+    @OneToMany(mappedBy = "svc")
     @JsonIgnore
-    private List<Materiels> materiels_list = new ArrayList<>();
+    private List<Materiels> materielsList = new ArrayList<>();
     /*
     @OneToMany(mappedBy = "id_svc")
     @JsonIgnore
     private List<Authorizations> authorizations_list = new ArrayList<>();*/
-    @OneToMany(mappedBy = "id_svc")
+    @OneToMany(mappedBy = "svc")
     @JsonIgnore
-    private List<Requests_svc> requests_svc_list = new ArrayList<>();
-    @OneToMany(mappedBy = "id_svc")
+    private List<RequestsServices> requestsServicesList = new ArrayList<>();
+    @OneToMany(mappedBy = "svc")
     @JsonIgnore
-    private List<Ads> ads_list = new ArrayList<>();
+    private List<Ads> adsList = new ArrayList<>();
 }

@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface NFCRepository extends JpaRepository<NFC, Integer> {
-    @Query("select nfc from NFC nfc order by nfc.id_card_nfc")
+    @Query("select nfc from NFC nfc order by nfc.idCard")
     List<NFC> findAllOrderById_card_nfc();
 }

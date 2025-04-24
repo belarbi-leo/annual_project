@@ -1,7 +1,6 @@
 package com.pa2aresgi.pa2a.modele;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.pa2aresgi.pa2a.enumeratation.Type_pack_enum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,32 +17,33 @@ import java.util.Set;
 public class Packages {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_pack;
+    @Column(name="id_pack")
+    private Integer idPack;
     @ManyToOne
     @JoinColumn(name="id_ad", nullable = false)
-    private Ads id_ad;
-    @Column
-    private String content_pack;
-    @Column
-    private Integer quantity_pack;
-    @Column(length = 255)
-    private String details_pack;
+    private Ads ad;
+    @Column(name="content_pack", columnDefinition="text")
+    private String contentPack;
+    @Column(name="quantity_pack")
+    private Integer quantityPack;
+    @Column(name="details_pack", length = 255)
+    private String detailsPack;
     /*@Column
     @Enumerated(EnumType.STRING)
     private Type_pack_enum type_pack;*/
-    @Column(columnDefinition="numeric(10,2)")
-    private Float weight_pack;
-    @Column
-    private Integer length_pack;
-    @Column
-    private Integer width_pack;
-    @Column
-    private Integer height_pack;
-    @Column
-    private String photo_pack;
-    @Column
+    @Column(name="weight_pack", columnDefinition="decimal(10,2)")
+    private Float weightPack;
+    @Column(name="length_pack")
+    private Integer lengthPack;
+    @Column(name="width_pack")
+    private Integer widthPack;
+    @Column(name="height_pack")
+    private Integer heightPack;
+    @Column(name="photo_pack", columnDefinition="text")
+    private String photoPack;
+    @Column(name="fragile")
     private Boolean fragile;
-    @ManyToMany(mappedBy="packages_set")
+    @ManyToMany(mappedBy="packagesSet")
     @JsonIgnore
-    private Set<Depots> depots_set = new HashSet<>();
+    private Set<Depots> depotsSet = new HashSet<>();
 }

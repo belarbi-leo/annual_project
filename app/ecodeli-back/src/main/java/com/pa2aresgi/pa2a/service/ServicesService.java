@@ -1,5 +1,6 @@
 package com.pa2aresgi.pa2a.service;
 
+import com.pa2aresgi.pa2a.enumeratation.AuthorizationSvcEnum;
 import com.pa2aresgi.pa2a.modele.Services;
 
 import java.util.List;
@@ -10,6 +11,10 @@ public interface ServicesService {
     List<Services> readAll();
 
     List<Services> readAllOrderById();
+
+    List<Services> readAllByAuth(AuthorizationSvcEnum auth);
+
+    public List<Services> readAllByAuthOrderById(AuthorizationSvcEnum auth);
 
     Services findById(Integer id);
 

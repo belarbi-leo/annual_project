@@ -1,7 +1,7 @@
 package com.pa2aresgi.pa2a.modele;
 
-import com.pa2aresgi.pa2a.enumeratation.Direction_payment_enum;
-import com.pa2aresgi.pa2a.enumeratation.Status_payment_enum;
+import com.pa2aresgi.pa2a.enumeratation.DirectionPaymentEnum;
+import com.pa2aresgi.pa2a.enumeratation.StatusPaymentEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,18 +17,19 @@ import java.sql.Timestamp;
 public class Payments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_payment;
+    @Column(name="id_payment")
+    private Integer idPayment;
     @ManyToOne
     @JoinColumn(name="id_ad", nullable = false)
-    private Ads id_ad;
-    @Column
+    private Ads ad;
+    @Column(name="direction_payment")
     @Enumerated(EnumType.STRING)
-    private Direction_payment_enum direction_payment;
-    @Column
+    private DirectionPaymentEnum directionPayment;
+    @Column(name="status_payment")
     @Enumerated(EnumType.STRING)
-    private Status_payment_enum status_payment;
-    @Column
-    private Timestamp date_payment;
-    @Column
-    private String bill_payment;
+    private StatusPaymentEnum statusPayment;
+    @Column(name="date_payment")
+    private Timestamp datePayment;
+    @Column(name="bill_payment", columnDefinition="text")
+    private String billPayment;
 }

@@ -39,11 +39,11 @@ public class PaymentsServiceImpl implements PaymentsService {
     @Override
     public Payments update(Integer id, Payments payment) {
         return paymentsRepository.findById(id).map(pay -> {
-            pay.setId_ad(payment.getId_ad());
-            pay.setDirection_payment(payment.getDirection_payment());
-            pay.setStatus_payment(payment.getStatus_payment());
-            pay.setDate_payment(payment.getDate_payment());
-            pay.setBill_payment(payment.getBill_payment());
+            pay.setAd(payment.getAd());
+            pay.setDirectionPayment(payment.getDirectionPayment());
+            pay.setStatusPayment(payment.getStatusPayment());
+            pay.setDatePayment(payment.getDatePayment());
+            pay.setBillPayment(payment.getBillPayment());
             return paymentsRepository.save(pay);
         }).orElseThrow(() -> new RuntimeException("Payment not found !"));
     }
