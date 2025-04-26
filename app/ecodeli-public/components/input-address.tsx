@@ -11,9 +11,9 @@ interface SearchResult {
     town?: string;
     village?: string;
     hamlet?: string;
-    state?: string;
     postcode?: string;
     country?: string;
+    region?: string;
   };
   lat: string;
   lon: string;
@@ -144,8 +144,6 @@ const InputAddress: React.FC<InputAddressProps> = ({
     const input: string = e.target.value;
     setInputValue(input);
     setIsValidSelection(false);
-    
-    // Mettre à jour l'adresse avec les nouvelles valeurs
     updateAddress({
       location: input,
       isValidSelection: false,
@@ -155,21 +153,18 @@ const InputAddress: React.FC<InputAddressProps> = ({
   const handleSuiteChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const input: string = e.target.value;
     setSuiteValue(input);
-    
-    // Mettre à jour l'adresse avec la nouvelle valeur de suite
     updateAddress({
       suite: input,
     });
   };
   
-  // Fonction utilitaire pour mettre à jour l'adresse
   const updateAddress = (newValues: Partial<Address>) => {
     const updatedAddress: Address = {
       location: newValues.location !== undefined ? newValues.location : value?.location || "",
       suite: newValues.suite !== undefined ? newValues.suite : value?.suite || "",
       locality: newValues.locality !== undefined ? newValues.locality : value?.locality || "",
       state: newValues.state !== undefined ? newValues.state : value?.state || "",
-      postal_code: newValues.postal_code !== undefined ? newValues.postal_code : value?.postal_code || "",
+      postalCode: newValues.postalCode !== undefined ? newValues.postalCode : value?.postalCode || "",
       country: newValues.country !== undefined ? newValues.country : value?.country || "",
       latitude: newValues.latitude !== undefined ? newValues.latitude : value?.latitude || "",
       longitude: newValues.longitude !== undefined ? newValues.longitude : value?.longitude || "",
@@ -185,19 +180,17 @@ const InputAddress: React.FC<InputAddressProps> = ({
     
     setInputValue(formattedAddress);
     setSearchError(null);
-    
-    // Mettre à jour l'adresse avec les valeurs sélectionnées
     updateAddress({
       location: formattedAddress,
       locality: address.city || address.town || address.village || address.hamlet || "",
-      state: address.state || "",
-      postal_code: address.postcode || "",
+      state: address.region || "",
+      postalCode: address.postcode || "",
       country: address.country || "",
       latitude: lat,
       longitude: lon,
       isValidSelection: true,
     });
-    
+
     setShowResults(false);
     setIsValidSelection(true);
   };
@@ -302,8 +295,6 @@ const InputAddress: React.FC<InputAddressProps> = ({
           </p>
         )}
       </div>
-      
-      {/* Champ "Complément d'adresse" intégré */}
       <div>
         <label
           htmlFor="address-suite"

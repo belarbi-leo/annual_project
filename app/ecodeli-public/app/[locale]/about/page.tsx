@@ -1,12 +1,18 @@
+"use client";
+
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/header";
 import Background from "@/components/background";
+import SearchBar from "@/components/search-services";
 import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from "@heroicons/react/24/outline";
 
 export default function About() {
   const t = useTranslations("About");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [locationQuery, setLocationQuery] = useState("");
 
   const features = [
     {
@@ -36,11 +42,11 @@ export default function About() {
       <Background />
       <Header />
       {/* Hero Section */}
-      <div className="mx-auto max-w-7xl md:px-6 lg:px-8 mb-10">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-emerald-500 dark:text-emerald-300 mt-10">{t("title")}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-emerald-500 dark:text-emerald-300 mt-10">{t("title")}</h1>
+          <p className="mt-10 text-lg md:text-xl text-gray-600 dark:text-gray-300">{t("intro")}</p>
         </div>
-        <p className="md:text-2xl text-center text-gray-600 dark:text-gray-300 mt-20 lg:mt-30">{t("intro")}</p>
       </div>
 
       {/* Features Section */}
@@ -50,7 +56,7 @@ export default function About() {
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
               {features.map((feature) => (
                 <div key={feature.name} className="pt-6">
-                  <div className="flow-root rounded-lg bg-emerald-50 px-6 pb-8 h-full">
+                  <div className="flow-root rounded-lg bg-emerald-50 px-6 pb-8 h-full hover:shadow-lg transition-all">
                     <div className="-mt-6">
                       <div>
                         <span className="inline-flex items-center justify-center rounded-md bg-[#49cb5c] p-3 shadow-lg">
@@ -69,24 +75,19 @@ export default function About() {
               ))}
             </div>
           </div>
-          <h2 className="text-2xl md:text-3xl text-center font-bold text-emerald-500 dark:text-emerald-300 mt-25">{t("impact")}</h2>
         </div>
       </div>
 
-      {/* Values Section */}
       <div className="py-10">
         <div className="max-w-7xl mx-auto sm:px-4 lg:px-8">
-          <div className="flex justify-center">
-            <Image src="/favicon.ico" alt="Logo EcoDeli" height={240} width={240} className="h-22 w-22"/>
-          </div>
           <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-emerald-500 dark:text-emerald-300 mt-15">{t("connectionTitle")}</h2>
-            <p className="mt-10 max-w-4xl mx-auto text-lg text-gray-600 dark:text-white">{t("connectionText")}</p>
+            <p className="mt-10 max-w-4xl mx-auto text-lg text-gray-600 dark:text-white">{t("connectionTitle")}</p>
+            <p className="mt-5 max-w-4xl mx-auto text-lg text-gray-600 dark:text-white">{t("connectionText")}</p>
           </div>
 
-          <div className="mt-10 sm:md-20 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div className="mt-25 sm:md-20 grid grid-cols-1 gap-6 sm:grid-cols-3">
             {[1, 2, 3].map((value) => (
-              <div key={value} className="bg-emerald-50 rounded-lg shadow-sm p-6">
+              <div key={value} className="bg-emerald-50 rounded-lg shadow-sm p-6 hover:shadow-lg transition-all">
                 <h3 className="text-lg font-semibold text-center text-gray-900">{t(`values.${value}.title`)}</h3>
                 <p className="mt-4 text-center text-gray-600">{t(`values.${value}.text`)}</p>
               </div>
@@ -94,15 +95,16 @@ export default function About() {
           </div>
         </div>
       </div>
+      <SearchBar useImpactTitle={true} t={t} />
+
 
       {/* Community Section */}
-      <div className="py-10">
         <div className="max-w-7xl mx-auto sm:px-4 lg:px-8">
-          <div className="flex justify-center">
+        <div className="flex justify-center">
             <Image src="/favicon.ico" alt="Logo EcoDeli" height={240} width={240} className="h-22 w-22"/>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-emerald-500 dark:text-emerald-300 mt-15">{t("communityTitle")}</h2>
-          <p className="mt-5 max-w-4xl mx-auto text-lg text-center text-gray-600 dark:text-gray-300 dark:text-white">{t("communityText")}</p>
+          <h2 className="mt-15 text-3xl font-bold text-center text-emerald-500 dark:text-emerald-300">{t("communityTitle")}</h2>
+          <p className="mt-10 max-w-4xl mx-auto text-lg text-center text-gray-600 dark:text-gray-300 dark:text-white">{t("communityText")}</p>
           <div className="mt-15 flex justify-center">
             <Link
               href="auth"
@@ -112,7 +114,6 @@ export default function About() {
             </Link>
           </div>
         </div>
-      </div>
     </div>
   );
 }

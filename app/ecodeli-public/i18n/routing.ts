@@ -1,5 +1,5 @@
 import {defineRouting} from 'next-intl/routing';
-import { fetchAllLanguages } from "@/lib/languages/fetch-all-languages";
+import { fetchAllLanguages } from "@/lib/languages/fetchAllLanguages";
 
 async function getLocales() {
   const languages = await fetchAllLanguages();

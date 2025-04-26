@@ -1,82 +1,102 @@
-// Dans votre fichier de types (par exemple @/lib/types.ts)
-export interface UserSign {
+export interface Languages {
+    idLanguage: number;
+    name: string;
+    iso: string;
+    available: string;
+}
+export interface Subscriptions {
+    idSub: number;
+    nameSub: string;
+    descriptionSub: string;
+}
+export interface Services {
+    idSvc?: number;
+    idAdminCreator?: number;
+    dateCreationSvc?: string;
+    nameSvc: string;
+    category: 'sp' | 'tl' | 'tr' | 'id' | 'el';
+    auth: 'part' | 'pro' | 'all';
+}
+export interface ReqServices {
+    reqSvc?: number;
+    userReq: number;
+    adminRes?: number | null;
+    svc: number;
+    statusReq?: 'pending' | 'accept' | 'refused';
+    dateReq?: string;
+    dateRes?: string | null;
+    reasonRes?: string | null;
+}
+export type Users = {
+    idUser?: number;
+    dateRegistration?: string;
+    dateAcceptCgu: string;
+    dateAcceptCgv: string;
+    role: 'admin' | 'part' | 'pro';
+    accountStatus?: 'active' | 'suspended' | 'banned' | 'overlays' | 'pro_pending';
+    dateStatus?: string;
+    email: string;
+    password: string;
+    phoneNumber: string;
+    firstName?: string | null;
+    lastName?: string | null;
+    companyName?: string | null;
+    siret?: string | null;
+    photoUser?: string | null;
+    bio?: string | null;
+    location: string;
+    suite?: string | null;
+    locality: string;
+    state: string;
+    postalCode: string;
+    country: string;
+    latitude: number;
+    longitude: number;
+    language: string;
+    subscription?: number;
+}
+export interface UserForm {
     role: string;
     wantsPresta: boolean;
-    first_name: string;
-    last_name: string;
-    company_name: string;
+    firstName: string;
+    lastName: string;
+    companyName: string;
     siret: string;
     email: string;
     password: string;
-    password_confirm: string;
-    phone_number: string;
-    photo_user: File | string;
+    passwordConfirm: string;
+    phoneNumber: string;
+    photoUser: File | string;
     bio: string;
-    date_accept_cgu: boolean;
-    date_accept_cgv: boolean;
+    acceptCgu: boolean;
+    acceptCgv: boolean;
+    dateAcceptCgu: string;
+    dateAcceptCgv: string;
     location: string;
     suite: string;
     locality: string;
     state: string;
-    postal_code: string;
+    postalCode: string;
     country: string;
     latitude: string;
     longitude: string;
     isValidSelection: boolean;
-    id_svc?: number;
-    id_language?: number;
+    idSvc?: number;
+    language?: number;
 }
 
-export interface User {
-    id_user: number;
-    date_registration: string;
-    date_accept_cgu: boolean;
-    date_accept_cgv: boolean;
-    role: string;
-    account_status: string;
-    date_status: string;
-    first_name: string;
-    last_name: string;
-    company_name: string;
-    siret: string;
-    email: string;
-    password: string;
-    phone_number: string;
-    photo_user: File | string;
-    bio: string;
-    address: Address;
-    id_subscription?: Subscription; 
-    id_language?: Language;
-    }
+
+
+
 export interface Address {
     location: string;
     suite: string;
     locality: string;
     state: string;
-    postal_code: string;
+    postalCode: string;
     country: string;
     latitude: string;
     longitude: string;
     isValidSelection: boolean;
     };
     
-export interface Service {
-    id_svc: number;
-    id_admin_creator: number;
-    date_creation_svc: string;
-    name_svc: string;
-    category: string;
-    auth: string;
-}
-
-export interface Language {
-    id_language: number;
-    language: string;
-    iso: string;
-}
-  
-export interface Subscription {
-    id_sub: number;
-    name_sub: string;
-    description_sub: string;
-}

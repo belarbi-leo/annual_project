@@ -41,15 +41,12 @@ export default function Index() {
             <h1 className="mb-4 text-5xl font-bold tracking-tight text-emerald-500 dark:text-emerald-300 sm:text-7xl [font-family:var(--font-title)]">
               {t("title")}
             </h1>
-            
             <h2 className="text-3xl font-semibold tracking-tight text-emerald-500 dark:text-emerald-300 sm:text-5xl mb-6">
               {t("subtitle")}
             </h2>
-            
             <p className="mt-4 text-lg font-medium text-gray-600 dark:text-gray-300 sm:text-xl max-w-xl">
               {t("description")}
             </p>
-            
             <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6">
               <Link
                 href="auth"
@@ -57,7 +54,6 @@ export default function Index() {
               >
                 {t("auth")} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-              
               <Link
                 href="about"
                 className="w-full sm:w-auto flex items-center justify-center rounded-lg border border-emerald-200 dark:border-emerald-800 px-5 py-3 text-base font-semibold text-gray-900 dark:text-white hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-all duration-300"
@@ -65,7 +61,6 @@ export default function Index() {
                 {t("learnMore")}
               </Link>
             </div>
-            
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center p-4 rounded-lg bg-white/80 dark:bg-gray-800/50 backdrop-blur-sm shadow-sm">
@@ -75,7 +70,6 @@ export default function Index() {
               ))}
             </div>
           </div>
-          
           <div className={`hidden md:flex w-full lg:w-1/2 mt-12 lg:mt-0 justify-center items-center transform transition-all duration-1000 ${animate ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
             <div className="relative">
                 <Image 

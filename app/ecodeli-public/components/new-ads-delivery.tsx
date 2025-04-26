@@ -362,7 +362,7 @@ export default function NewDeliveryRequest() {
                   >
                     {index + 1}
                   </div>
-                  <span className="ml-2 hidden md:inline">{step}</span>
+                  {/* <span className="texte-sm ml-2 hidden md:inline">{step}</span> */}
                 </div>
               ))}
               <button 

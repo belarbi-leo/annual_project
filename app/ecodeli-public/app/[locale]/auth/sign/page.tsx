@@ -6,13 +6,16 @@ import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import Header from "@/components/header";
 import Background from "@/components/background";
-import InputAddress from "@/components/input-address";
+import Error from "@/components/ui/error";
 import Dropdown from "@/components/ui/dropdown";
-import type { UserSign, Service } from '@/lib/types';
-import { insertUser } from "@/lib/users/insert-users";
-import { insertRequestService } from "@/lib/services/insert-requests-services";
-import { fetchServicesByAuth } from "@/lib/services/fetch-services-by-auth";
-import { fetchAllLanguages } from "@/lib/languages/fetch-all-languages";
+import PhotoUpload from "@/components/ui/imageUser";
+import InputAddress from "@/components/input-address";
+import type { Users, Services, ReqServices, UserForm } from '@/lib/types';
+import extractErrorMessage from '@lib/func';
+import { insertUser } from "@/lib/users/insertUsers";
+import { insertReqService } from "@/lib/services/insertReqServices";
+import { fetchServicesByAuth } from "@/lib/services/fetchServicesByAuth";
+import { fetchAllLanguages } from "@/lib/languages/fetchAllLanguages";
 
 
 export default function Sign() {
@@ -22,45 +25,62 @@ export default function Sign() {
   const [etape, setEtape] = useState<1 | 2 | 3 | 4>(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [services, setServices] = useState<Service[]>([]);
-  const [formData, setFormData] = useState<UserSign>({
+  const [services, setServices] = useState<Services[]>([]);
+  const [formData, setFormData] = useState<UserForm>({
     role: '',
     wantsPresta: false,
-    first_name: '',
-    last_name: '',
-    company_name: '',
+    firstName: '',
+    lastName: '',
+    companyName: '',
     siret: '',
     email: '',
     password: '',
-    password_confirm: '',
-    phone_number: '',
-    photo_user: '',
+    passwordConfirm: '',
+    phoneNumber: '',
+    photoUser: '',
     bio: '',
-    date_accept_cgu: false,
-    date_accept_cgv: false,
+    acceptCgu: false,
+    acceptCgv: false,
+    dateAcceptCgu: '',
+    dateAcceptCgv: '',
     location: '',
     suite: '',
     locality: '',
     state: '',
-    postal_code: '',
+    postalCode: '',
     country: '',
     latitude: '',
     longitude: '',
     isValidSelection: false,
-    id_svc: undefined,
-    id_language: undefined
+    idSvc: undefined,
+    language: undefined
   });
-  
+
   const change = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type, files } = e.target as HTMLInputElement;
     const checked = (e.target as HTMLInputElement).checked;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : type === 'file' && files ? files[0] : value
-    });
+    
+    if (name === 'acceptCgu' && checked) {
+      setFormData({
+        ...formData,
+        [name]: checked,
+        dateAcceptCgu: new Date().toISOString()
+      });
+    } else if (name === 'acceptCgv' && checked) {
+      setFormData({
+        ...formData,
+        [name]: checked,
+        dateAcceptCgv: new Date().toISOString()
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: type === 'checkbox' ? checked : type === 'file' && files ? files[0] : value
+      });
+    }
   };
   
-  const updateAddress = (addressData: Partial<UserSign>) => {
+  const updateAddress = (addressData: Partial<UserForm>) => {
     setFormData(prev => ({
       ...prev,
       ...addressData
@@ -89,10 +109,10 @@ export default function Sign() {
         break;
       case 2:
         if (formData.role === 'part') {
-          if (!formData.first_name.trim()) erreurs.first_name = "Le nom est requis";
-          if (!formData.last_name.trim()) erreurs.last_name = "Le prénom est requis";
+          if (!formData.firstName.trim()) erreurs.firstName = "Le nom est requis";
+          if (!formData.lastName.trim()) erreurs.lastName = "Le prénom est requis";
         } else {
-          if (!formData.company_name.trim()) erreurs.company_name = "Le nom de l'entreprise est requis";
+          if (!formData.companyName.trim()) erreurs.companyName = "Le nom de l'entreprise est requis";
           if (!formData.siret.trim()) {
             erreurs.siret = "Le numéro SIRET est requis";
           } else if (!/^\d{14}$/.test(formData.siret)) {
@@ -111,13 +131,13 @@ export default function Sign() {
         } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(formData.password)) {
           erreurs.password = "Le mot de passe doit contenir au moins une majuscule, une minuscule et un chiffre";
         }
-        if (formData.password !== formData.password_confirm) {
-          erreurs.password_confirm = "Les mots de passe ne correspondent pas";
+        if (formData.password !== formData.passwordConfirm) {
+          erreurs.passwordConfirm = "Les mots de passe ne correspondent pas";
         }
-        if (!formData.phone_number.trim()) {
-          erreurs.phone_number = "Le numéro de téléphone est requis";
-        } else if (!/^\d+$/.test(formData.phone_number)) {
-          erreurs.phone_number = "Le numéro de téléphone doit contenir uniquement des chiffres";
+        if (!formData.phoneNumber.trim()) {
+          erreurs.phoneNumber = "Le numéro de téléphone est requis";
+        } else if (!/^\d+$/.test(formData.phoneNumber)) {
+          erreurs.phoneNumber = "Le numéro de téléphone doit contenir uniquement des chiffres";
         }
         break;
       case 3:
@@ -128,20 +148,20 @@ export default function Sign() {
         }
         if (formData.suite && formData.suite.trim().length > 500) erreurs.suite = "Votre complément d'addresse ne doit pas dépasser 500 caractères";
         if (formData.bio && formData.bio.trim().length > 1000) erreurs.bio = "Votre biographie ne doit pas dépasser 1000 caractères";
-        if (formData.photo_user instanceof File) {
-          const fileSize = formData.photo_user.size / 1024 / 1024;
-          const fileType = formData.photo_user.type;
+        if (formData.photoUser instanceof File) {
+          const fileSize = formData.photoUser.size / 1024 / 1024;
+          const fileType = formData.photoUser.type;
           if (fileSize > 5) {
-            erreurs.photo_user = "La taille de l'image ne doit pas dépasser 5MB";
+            erreurs.photoUser = "La taille de l'image ne doit pas dépasser 5MB";
           } else if (!['image/jpeg', 'image/jpg', 'image/png'].includes(fileType)) {
-            erreurs.photo_user = "Seuls les formats JPG et PNG sont acceptés";
+            erreurs.photoUser = "Seuls les formats JPG et PNG sont acceptés";
           }
         } 
         break;
       case 4:
-        if ((formData.role === 'pro'|| formData.wantsPresta) && !formData.id_svc) erreurs.id_svc = "Veuillez sélectionner un type de prestation";
-        if (!formData.date_accept_cgu) erreurs.date_accept_cgu = "Vous devez accepter les conditions générales d'utilisation";
-        if (!formData.date_accept_cgv) erreurs.date_accept_cgv = "Vous devez accepter les conditions générales de ventes";
+        if ((formData.role === 'pro'|| formData.wantsPresta) && !formData.idSvc) erreurs.idSvc = "Veuillez sélectionner un type de prestation";
+        if (!formData.acceptCgu) erreurs.acceptCgu = "Vous devez accepter les conditions générales d'utilisation";
+        if (!formData.acceptCgv) erreurs.acceptCgv = "Vous devez accepter les conditions générales de ventes";
         break;
     }
     
@@ -157,74 +177,64 @@ export default function Sign() {
       setIsSubmitting(true);
 
       try {
-        const user = new FormData();
-        const req_svc = new FormData();
+        const user: Users = {
+          role: formData.role as "part" | "pro" | "admin",
+          email: formData.email,
+          password: formData.password,
+          phoneNumber: formData.phoneNumber,
+          dateAcceptCgu: formData.dateAcceptCgu,
+          dateAcceptCgv: formData.dateAcceptCgv,
+          location: formData.location,
+          suite: formData.suite || null,
+          locality: formData.locality,
+          state: formData.state,
+          postalCode: formData.postalCode,
+          country: formData.country,
+          latitude: parseFloat(formData.latitude),  
+          longitude: parseFloat(formData.longitude),
+          language: locale
+        };
 
-        if (formData.role === 'part') {
-          user.append('first_name', formData.first_name);
-          user.append('last_name', formData.last_name);
+        if (formData.role === 'pro') {
+          user.firstName = null;
+          user.lastName = null;
+          user.companyName = formData.companyName;
+          user.siret = formData.siret;
+          user.accountStatus = 'pro_pending';
         } else {
-          user.append('company_name', formData.company_name);
-          user.append('siret', formData.siret);
+          user.firstName = formData.firstName;
+          user.lastName = formData.lastName;
+          user.companyName = null;
+          user.siret = null;
+          user.accountStatus = 'overlays';
         }
-        user.append('role', formData.role);
-        user.append('email', formData.email);
-        user.append('password', formData.password);
-        user.append('phone_number', formData.phone_number);
-        user.append('date_accept_cgu', new Date().toISOString());
-        user.append('date_accept_cgv', new Date().toISOString());
-        user.append('address.location', formData.location);
-        user.append('address.suite', formData.suite || '');
-        user.append('address.locality', formData.locality);
-        user.append('address.state', formData.state);
-        user.append('address.postal_code', formData.postal_code);
-        user.append('address.country', formData.country);
-        user.append('address.latitude', formData.latitude);
-        user.append('address.longitude', formData.longitude);
-        if (formData.bio) user.append('bio', formData.bio);
-        if (formData.photo_user instanceof File) user.append('photo_user', formData.photo_user);
-        user.append('account_status', 'pending');
-        user.append("id_language", locale);
+        if (formData.bio) user.bio = formData.bio;
+        // Pour la photo, vous devrez peut-être utiliser une requête séparée ou base64
 
-        if ((formData.role === 'pro' || formData.wantsPresta) && formData.id_svc) {
-          req_svc.append('id_svc', formData.id_svc.toString());
-        }
-        // id_req_svc auto 
-        // id_user_req auto ?
-        // id_admin_res ""
-        // id_service id_svc
-        // status_req auto ?
-        // date_req auto ? 
-        // date_res ""
-        // reason_res ""
-        
-        // TEST 
-
-        Object.keys(formData).forEach(key => {
-            const value = formData[key as keyof UserSign];
-            user.append(key, value instanceof File ? value : String(value || ''));
-            req_svc.append(key, value instanceof File ? value : String(value || ''));
-        });
-        
-        console.log(user);
-        console.log(req_svc);
-        
-        const res_user = await insertUser(user); // les donneées non definis dans le form ? statut etc 
-        // onnlay cree fonction pour changeer a la deconnexion le status account 
-        // Subsripttion par defaut puis dans le tuto overlays mettre sub et page d'acceuil mettre sub aussi 
-        // 200 201 204 404 400 500 
-        if (res_user.status === 200) {
-          const res_req_svc = await insertRequestService(req_svc);
-          if (res_user.status === 200) {
-            router.push('../home');
-          } else {
-            setErrors({ submit: res_req_svc.data?.message || "Erreur lors de la création de la demande de service" });
+        const res_user = await insertUser(user);   
+        if (res_user.status === 201) {
+          if ((formData.role === 'pro' || formData.wantsPresta) && formData.idSvc) {
+            try {
+              const reqSvc: ReqServices = {
+                userReq: res_user.data.idUser,
+                svc: formData.idSvc
+              };
+              const res_reqSvc = await insertReqService(reqSvc);
+              if (res_reqSvc.status !== 201) {  
+                let msg = extractErrorMessage(res_reqSvc.data.errors);
+                setErrors({ submit: `Application error: ${msg}` });
+              }
+            } catch (error) {
+              setErrors({ submit: "Erreur serveur, veuillez réessayer plus tard." });
+            }
           }
+          // router.push('../home');
         } else {
-          setErrors({ submit: res_user.data?.message || "Erreur lors de la création de l'utilisateur" });
+          let msg = extractErrorMessage(res_user.data.errors);
+          setErrors({ submit: `Application error: ${msg}` });
         }
       } catch (error) {
-        setErrors({ submit: "Erreur de connexion au serveur" });
+        setErrors({ submit: "Erreur serveur, veuillez réessayer plus tard." });
       } finally {
         setIsSubmitting(false);
       }
@@ -233,10 +243,12 @@ export default function Sign() {
   
   useEffect(() => {
     const loadServices = async () => {
-      const type = formData.role === 'part' ? 'all' : 'pro';
-      const data = await fetchServicesByAuth(type);
+      const role = formData.role === 'part' || formData.role === 'pro' ? formData.role : 'pro';
+      const val: ("part" | "pro" | "all")[] = role === 'part' ? ['part', 'all'] : ['pro', 'all'];
+      const data = await fetchServicesByAuth(val);
       setServices(data);
     };
+  
     if (etape === 4) loadServices();
   }, [etape, formData.role]);
 
@@ -312,7 +324,6 @@ export default function Sign() {
                       </div>
                     </div>
                   </div>
-                  
                   {errors.role && (
                     <div className="mt-5 p-2 rounded-md bg-red-100 text-red-600 dark:text-red-300 dark:bg-red-900 flex items-center justify-center text-sm">
                       {errors.role}
@@ -329,52 +340,52 @@ export default function Sign() {
                 {formData.role === 'part' ? (
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="first_name" className="block text-sm font-medium text-gray-700 dark:text-white">
+                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-white">
                         Nom
                       </label>
                       <input
                       type="text"
-                      name="first_name"
-                      id="first_name"
-                      value={formData.first_name}
+                      name="firstName"
+                      id="firstName"
+                      value={formData.firstName}
                       onChange={change}
-                      className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.first_name && "border-red-500 dark:border-red-900"}`}
+                      className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.firstName && "border-red-500 dark:border-red-900"}`}
                       required={formData.role === 'part'}
                       />
-                      {errors.first_name && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.first_name}</span>}
+                      {errors.firstName && <Error message={errors.firstName} />}
                     </div>
                     <div>
-                        <label htmlFor="last_name" className="block text-sm font-medium text-gray-700 dark:text-white">
+                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-white">
                           Prénom
                         </label>
                         <input
                         type="text"
-                        name="last_name"
-                        id="last_name"
-                        value={formData.last_name}
+                        name="lastName"
+                        id="lastName"
+                        value={formData.lastName}
                         onChange={change}
-                        className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.last_name && "border-red-500 dark:border-red-900"}`}
+                        className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.lastName && "border-red-500 dark:border-red-900"}`}
                         required={formData.role === 'part'}
                         />
-                        {errors.last_name && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.last_name}</span>}
+                        {errors.lastName && <Error message={errors.lastName} />}
                     </div>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="company_name" className="block text-sm font-medium text-gray-700 dark:text-white">
+                      <label htmlFor="companyName" className="block text-sm font-medium text-gray-700 dark:text-white">
                         Nom de l'entreprise
                       </label>
                       <input
                       type="text"
-                      name="company_name"
-                      id="company_name"
-                      value={formData.company_name}
+                      name="companyName"
+                      id="companyName"
+                      value={formData.companyName}
                       onChange={change}
-                      className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.company_name && "border-red-500 dark:border-red-900"}`}
+                      className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.companyName && "border-red-500 dark:border-red-900"}`}
                       required={formData.role === 'pro'}
                       />
-                      {errors.company_name && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.company_name}</span>}
+                      {errors.companyName && <Error message={errors.companyName} />}
                     </div>
                     <div>
                         <label htmlFor="siret" className="block text-sm font-medium text-gray-700 dark:text-white">
@@ -390,7 +401,7 @@ export default function Sign() {
                         className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.siret && "border-red-500 dark:border-red-900"}`}
                         required={formData.role === 'pro'}
                         />
-                        {errors.siret && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.siret}</span>}
+                        {errors.siret && <Error message={errors.siret} />}
                     </div>
                   </div>
                 )}
@@ -407,22 +418,22 @@ export default function Sign() {
                     className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.email && "border-red-500 dark:border-red-900"}`}
                     required
                   />
-                  {errors.email && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email}</span>}
+                  {errors.email && <Error message={errors.email} />}
                 </div>           
                 <div>
-                  <label htmlFor="phone_number" className="block text-sm font-medium text-gray-700 dark:text-white">
+                  <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 dark:text-white">
                     Numéro de téléphone
                   </label>
                   <input
                     type="tel"
-                    name="phone_number"
-                    id="phone_number"
-                    value={formData.phone_number}
+                    name="phoneNumber"
+                    id="phoneNumber"
+                    value={formData.phoneNumber}
                     onChange={change}
-                    className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.phone_number && "border-red-500 dark:border-red-900"}`}
+                    className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.phoneNumber && "border-red-500 dark:border-red-900"}`}
                     required
                   />
-                  {errors.phone_number && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.phone_number}</span>}
+                  {errors.phoneNumber && <Error message={errors.phoneNumber} />}
                 </div>  
                 <div>
                   <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-white">
@@ -437,22 +448,22 @@ export default function Sign() {
                     className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.password && "border-red-500 dark:border-red-900"}`}
                     required
                   />
-                  {errors.password && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.password}</span>}
+                  {errors.password && <Error message={errors.password} />}
                 </div>             
                 <div>
-                  <label htmlFor="password_confirm" className="block text-sm font-medium text-gray-700 dark:text-white">
+                  <label htmlFor="passwordConfirm" className="block text-sm font-medium text-gray-700 dark:text-white">
                     Confirmer le mot de passe
                   </label>
                   <input
                     type="password"
-                    name="password_confirm"
-                    id="password_confirm"
-                    value={formData.password_confirm}
+                    name="passwordConfirm"
+                    id="passwordConfirm"
+                    value={formData.passwordConfirm}
                     onChange={change}
-                    className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.password_confirm && "border-red-500 dark:border-red-900"}`}
+                    className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.passwordConfirm && "border-red-500 dark:border-red-900"}`}
                     required
                   />
-                  {errors.password_confirm && <span className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.password_confirm}</span>}
+                  {errors.passwordConfirm && <Error message={errors.passwordConfirm} />}
                 </div>
               </div> 
             )}
@@ -467,62 +478,59 @@ export default function Sign() {
                     </div>
                 )}
                 <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Photo de profil {errors.photo_user && <span className="mt-1 text-sm text-red-600 dark:text-red-400">: {errors.photo_user}</span>}
-                    </label>
-                    <div className="mt-4 flex flex-col items-center">
-                    {formData.photo_user ? (
-                        <div className="relative">
+                  <label className="block text-sm font-medium text-gray-700 mb-2 dark:text-white">
+                    Photo de profil : {errors.photoUser && <Error message={errors.photoUser} />}
+                  </label>
+                  <PhotoUpload
+                    currentPhoto={formData.photoUser}
+                    onChange={change}
+                    error={errors.photoUser}
+                    label="Photo de profil"
+                  />
+                  // components pour tout les form  ? ou le miens pour les form user et un autre pour les form image services ou colis ? 
+                  // drag n drop comme 
+                  <div className="mt-4 flex flex-col items-center">
+                    {formData.photoUser ? (
+                      <div className="relative">
                         <img
-                            src={formData.photo_user instanceof File ? URL.createObjectURL(formData.photo_user) : ''}
-                            alt="Aperçu du profil"
-                            className="h-32 w-32 rounded-full object-cover"
+                          src={formData.photoUser instanceof File ? URL.createObjectURL(formData.photoUser) : ''}
+                          alt="Aperçu du profil"
+                          className="h-32 w-32 rounded-full object-cover"
                         />
                         <button
-                            type="button"
-                            onClick={() => setFormData({...formData, photo_user: ''})}
-                            className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 hover:bg-red-600"
+                          type="button"
+                          onClick={() => setFormData({...formData, photoUser: ''})}
+                          className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 hover:bg-red-600"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
+                          </svg>
                         </button>
-                        </div>
+                      </div>
                     ) : (
-                        <div className="flex justify-center items-center w-32 h-32 bg-gray-100 rounded-full border-2 border-dashed border-gray-300">
-                        <label htmlFor="photo_user" className="cursor-pointer text-center p-2">
+                      <div className="flex justify-center items-center w-32 h-32 bg-gray-100 rounded-full border-2 border-dashed border-gray-300">
+                        <label htmlFor="photoUser" className="cursor-pointer text-center p-2">
                             <svg className="mx-auto h-8 w-8 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M8 12h.01M12 12h.01M16 12h.01M20 12h.01" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M8 12h.01M12 12h.01M16 12h.01M20 12h.01" />
                             </svg>
                             <p className="text-xs text-gray-500 mt-1">Cliquez pour ajouter</p>
                         </label>
-                        <input
-                            id="photo_user"
-                            name="photo_user"
-                            type="file"
-                            accept="image/*"
-                            className="sr-only"
-                            onChange={change}
-                        />
-                        </div>
+                        <input id="photoUser" name="photoUser" type="file" accept="image/*" className="sr-only" onChange={change}/>
+                      </div>
                     )}
-                    <p className="text-xs text-gray-500 mt-2">
-                        Format JPG ou PNG, 5MB max
-                    </p>
-                    </div>
+                    <p className="text-xs text-gray-500 mt-2">Format JPG ou PNG, 5MB max</p>
+                  </div>
                 </div>
                 {formData.role === 'pro' && (
-                    <div className="bg-emerald-50 p-2 rounded-md mt-10">
-                    <p className="text-xs text-center text-emerald-700 font-medium italic">
-                        Une biographie détaillée augmente vos chances d'être sélectionné pour des missions
-                    </p>
-                    </div>
+                  <div className="bg-emerald-50 p-2 rounded-md mt-10">
+                    <p className="text-xs text-center text-emerald-700 font-medium italic">Une biographie détaillée augmente vos chances d'être sélectionné pour des missions</p>
+                  </div>
                 )}
                 <div className="mb-6">
-                <label htmlFor="bio" className="block text-sm font-medium text-gray-700 mb-1">
-                    Biographie {errors.bio && <span className="mt-1 text-sm text-red-600 dark:text-red-400">: {errors.bio}</span>}               
-                </label>
-                <textarea
+                  <label htmlFor="bio" className="block text-sm font-medium text-gray-700 mb-1 dark:text-white">
+                      Biographie : {errors.bio && <Error message={errors.bio} />}
+                  </label>
+                  <textarea
                     id="bio"
                     name="bio"
                     rows={3}
@@ -534,14 +542,14 @@ export default function Sign() {
                         : "Parlez de vous, de vos passions et de ce qui vous motive..."
                     }                      
                     className={`mt-4 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white placeholder:text-sm ${errors.bio && "border-red-500 dark:border-red-900"}`}
-                />
+                  />
                 </div>
                 <div className="bg-emerald-50 p-2 rounded-md mt-10">
-                    <p className="text-xs text-center text-emerald-700 font-medium italic">
-                        {formData.role === 'pro' 
-                        ? "L'adresse de l'entreprise est obligatoire pour valider votre inscription et garantir la transparence auprès des clients."
-                        : "L'adresse est obligatoire pour valider votre inscription et recevoir des recommandations pertinentes."}
-                    </p>
+                  <p className="text-xs text-center text-emerald-700 font-medium italic">
+                    {formData.role === 'pro' 
+                    ? "L'adresse de l'entreprise est obligatoire pour valider votre inscription et garantir la transparence auprès des clients."
+                    : "L'adresse est obligatoire pour valider votre inscription et recevoir des recommandations pertinentes."}
+                  </p>
                 </div>    
                 <InputAddress
                   value={formData}
@@ -580,13 +588,13 @@ export default function Sign() {
                           <Dropdown
                             label="Type de prestation"
                             options={services.map(service => ({
-                              id: service.id_svc,
-                              name: service.name_svc,
+                              id: service.idSvc,
+                              name: service.nameSvc,
                             }))}
-                            selected={formData.id_svc}
-                            onChange={(value) => setFormData(prev => ({ ...prev, id_svc: value }))}
+                            selected={formData.idSvc}
+                            onChange={(value) => setFormData(prev => ({ ...prev, idSvc: value }))}
                           />
-                        {errors.id_svc && <p className="mt-1 text-sm text-red-600">{errors.id_svc}</p>}                          
+                          {errors.idSvc && <Error message={errors.idSvc} />}                       
                         </div>
                       )}
                   </div>
@@ -595,64 +603,47 @@ export default function Sign() {
                     <Dropdown
                       label="Type de prestation"
                       options={services.map(service => ({
-                        id: service.id_svc,
-                        name: service.name_svc,
+                        id: service.idSvc,
+                        name: service.nameSvc,
                       }))}
-                      selected={formData.id_svc}
-                      onChange={(value) => setFormData(prev => ({ ...prev, id_svc: value }))}
+                      selected={formData.idSvc}
+                      onChange={(value) => setFormData(prev => ({ ...prev, idSvc: value }))}
                     />
-                    {errors.id_svc && <p className="mt-1 text-sm text-red-600">{errors.id_svc}</p>}
+                    {errors.idSvc && <Error message={errors.idSvc} />}
                   </div>
                 )}
 
                 <div className="flex items-center mb-0">
                   <input
-                    id="date_accept_cgu"
-                    name="date_accept_cgu"
+                    id="acceptCgu"
+                    name="acceptCgu"
                     type="checkbox"
-                    checked={formData.date_accept_cgu}
+                    checked={formData.acceptCgu}
                     onChange={change}
                     className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
                   />
-                  <label htmlFor="date_accept_cgu" className="ml-2 block text-sm text-gray-900">
+                  <label htmlFor="acceptCgu" className="ml-2 block text-sm text-gray-900">
                     J'accepte les <a href="../legal/cgu" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-500">conditions générales d'utilisation</a>
                   </label>
                 </div>
-                <div className="flex items-center">
+                {errors.acceptCgu && <Error message={errors.acceptCgu} />}
+
+                <div className="flex items-center mb-0">
                   <input
-                    id="date_accept_cgv"
-                    name="date_accept_cgv"
+                    id="acceptCgv"
+                    name="acceptCgv"
                     type="checkbox"
-                    checked={formData.date_accept_cgv}
+                    checked={formData.acceptCgv}
                     onChange={change}
                     className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
                   />
-                  <label htmlFor="date_accept_cgv" className="ml-2 block text-sm text-gray-900">
+                  <label htmlFor="acceptCgv" className="ml-2 block text-sm text-gray-900">
                     J'accepte les <a href="../legal/cgu" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-500">conditions générales de ventes</a>
                   </label>
                 </div>
-                {errors.date_accept_cgu && (
-                  <div className="mt-5 mb-1 p-2 rounded-md bg-red-100 text-red-600 dark:text-red-300 dark:bg-red-900 flex items-center justify-center text-sm">
-                    {errors.date_accept_cgu}
-                  </div>
-                )}
-                {errors.date_accept_cgv && (
-                  <div className="p-2 rounded-md bg-red-100 text-red-600 dark:text-red-300 dark:bg-red-900 flex items-center justify-center text-sm">
-                    {errors.date_accept_cgv}
-                  </div>
-                )}
-                {errors.submit && (
-                  <div className="rounded-md bg-red-50 p-4">
-                    <div className="flex">
-                      <div className="ml-3">
-                        <h3 className="text-sm font-medium text-red-800">Erreur lors de l'inscription</h3>
-                        <div className="mt-2 text-sm text-red-700">
-                          <p>{errors.submit}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                {errors.acceptCgv && <Error message={errors.acceptCgv} />}
+                {/* juste pour dev */}
+                {errors.submit && <Error message={errors.submit} />}
               </div>
             )}
             {/* Boutons de navigation */}

@@ -1,8 +1,8 @@
 import { API_BASE_URL, API_HEADERS } from "@/lib/config";
-import type { Language } from '@/lib/types';
+import type { Languages } from '@/lib/types';
 
 
-export async function fetchAllLanguages(): Promise<Language[]> {
+export async function fetchAllLanguages(): Promise<Languages[]> {
   try {
     const res = await fetch(`${API_BASE_URL}/languages/read`, {
       method: "GET",
@@ -13,9 +13,9 @@ export async function fetchAllLanguages(): Promise<Language[]> {
       throw new Error("Erreur lors de la récupération des langues");
     }
 
-    return await res.json(); // Retourne le JSON complet
+    return await res.json();
   } catch (error) {
     console.error(error);
-    return []; // Retourne un tableau vide en cas d'erreur
+    return []; 
   }
 }

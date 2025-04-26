@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { clsx } from "clsx";
 import { LanguageIcon } from "@heroicons/react/24/outline";
-import { fetchAllLanguages } from "@/lib/languages/fetch-all-languages";
+import { fetchAllLanguages } from "@/lib/languages/fetchAllLanguages";
 import { Language } from "@/lib/types";
 
 export default function LanguageSelector() {
