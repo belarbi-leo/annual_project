@@ -11,7 +11,7 @@ import Dropdown from "@/components/ui/dropdown";
 import PhotoUpload from "@/components/ui/imageUser";
 import InputAddress from "@/components/input-address";
 import type { Users, Services, ReqServices, UserForm } from '@/lib/types';
-import extractErrorMessage from '@lib/func';
+import { extractErrorMessage } from '@/lib/func';
 import { insertUser } from "@/lib/users/insertUsers";
 import { insertReqService } from "@/lib/services/insertReqServices";
 import { fetchServicesByAuth } from "@/lib/services/fetchServicesByAuth";

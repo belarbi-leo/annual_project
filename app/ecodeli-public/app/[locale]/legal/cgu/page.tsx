@@ -101,9 +101,7 @@ export default function CGU() {
   };
 
   return (
-    <div className="min-h-screen w-full overflow-hidden relative px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
-      <Background />
-      <Header />
+    <main className="px-6 py-24 sm:py-32 lg:px-0">
       <div className="mx-auto max-w-7xl md:px-6 lg:px-8 mb-10">
         <div className="mx-auto max-w-3xl mb-12 text-center">
           <h1 className="mb-4 text-4xl font-semibold tracking-tight text-emerald-500 dark:text-emerald-300 sm:text-5xl">
@@ -127,6 +125,6 @@ export default function CGU() {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }

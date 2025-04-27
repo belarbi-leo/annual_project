@@ -1,4 +1,4 @@
-function extractErrorMessage(errors: any): string {
+export function extractErrorMessage(errors: any): string {
     let msg = "";
     if (errors && typeof errors === 'object') {
       for (const field in errors) {

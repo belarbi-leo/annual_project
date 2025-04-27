@@ -1,5 +1,5 @@
 CREATE TYPE user_role AS ENUM ('admin', 'part', 'pro');
-CREATE TYPE account_status AS ENUM ('active','suspended','banned','overlays','pro_pending');
+CREATE TYPE account_status AS ENUM ('active','suspended','banned','overlays','pro_prending');
 CREATE TYPE request_status AS ENUM ('pending', 'approved', 'rejected', 'cancelled');
 CREATE TYPE ad_status AS ENUM ('active', 'completed', 'cancelled', 'accepted', 'pending');
 CREATE TYPE dispute_status AS ENUM ('pending', 'finished');
@@ -12,29 +12,27 @@ CREATE TYPE svc_authorization AS ENUM ('part', 'pro', 'all');
 CREATE TABLE "users" (
   "id_user" serial PRIMARY KEY,
   "date_registration" timestamp DEFAULT 'now()',
-  "date_accept_cgu" timestamp, 
-  "date_accept_cgv" timestamp, 
+  "date_accept_CGU" timestamp, /**/
+  "date_accept_CGV" timestamp, /**/
   "role" user_role DEFAULT 'part',
   "account_status" account_status,
   "date_status" timestamp DEFAULT 'now()',
   "email" varchar UNIQUE,
   "password" varchar(255),
-  "phone_number" varchar(10),
+  "phone_number" integer,
   "first_name" varchar(50),
   "last_name" varchar(50),
   "company_name" varchar(100),
-  "siret" varchar(14) DEFAULT NULL, 
+  "siret" integer(14) DEFAULT NULL, /**/
   "photo_user" text,
   "bio" varchar(255),
-  "location" varchar(255), 
-  "suite" varchar(255), 
-  "locality" varchar(255),   
-  "state" varchar(255), 
-  "postal_code" varchar(20), 
-  "country" varchar(255), 
-  "latitude" decimal(9,6),
-  "longitude" decimal(9,6),
-  "id_language" integer NOT NULL,
+  "location" varchar(255), /**/
+  "suite" varchar(255), /**/
+  "locality" varchar(255),   /**/
+  "state" varchar(255), /**/
+  "postal_code" varchar(255), /**/
+  "country" varchar(255), /**/
+  "id_langue" integer NOT NULL,
   "id_subscription" integer DEFAULT 1
 );
 
@@ -44,6 +42,7 @@ CREATE TABLE "services" (
   "date_creation_svc" timestamp DEFAULT 'now()',
   "name_svc" varchar(100) UNIQUE,
   "category" svc_category,
+  /*"subcategory" varchar(50),*/
   "auth" svc_authorization DEFAULT 'pro'
 );
 
@@ -56,22 +55,20 @@ CREATE TABLE "services_docs" (
 CREATE TABLE "depots" (
   "id_depot" serial PRIMARY KEY,
   "storage_capacity_depot" integer,
-  "location" varchar(255), 
-  "suite" varchar(255), 
-  "locality" varchar(255),   
-  "state" varchar(255), 
-  "postal_code" varchar(20), 
-  "country" varchar(255),
-  "latitude" decimal(9,6),
-  "longitude" decimal(9,6)
+  "location" varchar(255), /**/
+  "suite" varchar(255), /**/
+  "locality" varchar(255),   /**/
+  "state" varchar(255), /**/
+  "postal_code" varchar(255), /**/
+  "country" varchar(255) /**/
 );
 
 CREATE TABLE "requests_services" (
-  "id_req_svc" serial PRIMARY KEY, 
+  "id_req_svc" serial PRIMARY KEY, /**/
   "id_user_req" integer NOT NULL,
   "id_admin_res" integer,
-  "id_svc" integer NOT NULL,
-  "status_req" request_status DEFAULT 'pending',
+  "id_service" integer NOT NULL,
+  "status_req" DEFAULT 'pending',
   "date_req" timestamp DEFAULT 'now()',
   "date_res" timestamp,
   "reason_res" varchar(255)
@@ -79,9 +76,9 @@ CREATE TABLE "requests_services" (
 
 CREATE TABLE "requests_docs" (
   "id_doc_req" serial PRIMARY KEY,
-  "id_req_svc" integer NOT NULL, 
+  "id_req_svc" integer NOT NULL, /**/
   "doc_req" text,
-  "comment" varchar(255) 
+  "comment" varchar(255) /**/
 );
 
 CREATE TABLE "materials" (
@@ -105,33 +102,28 @@ CREATE TABLE "ads" (
   "date_creation_ad" timestamp DEFAULT 'now()',
   "date_accept_ad" timestamp,
   "date_start_ad" timestamp,
-  "location_start" varchar(255), 
-  "suite_start" varchar(255), 
-  "locality_start" varchar(255),   
-  "state_start" varchar(255), 
-  "postal_code_start" varchar(255), 
-  "country_start" varchar(255), 
-  "latitude_start" decimal(9,6),
-  "longitude_start" decimal(9,6),
+  "location_start" varchar(255), /**/
+  "suite_start" varchar(255), /**/
+  "locality_start" varchar(255),   /**/
+  "state_start" varchar(255), /**/
+  "postal_code_start" varchar(255), /**/
+  "country_start" varchar(255), /**/
   "date_end_ad" timestamp,
-  "location_end" varchar(255), 
-  "suite_end" varchar(255), 
-  "locality_end" varchar(255),   
-  "state_end" varchar(255), 
-  "postal_code_end" varchar(20), 
-  "country_end" varchar(255), 
-  "latitude_end" decimal(9,6),
-  "longitude_end" decimal(9,6),
+  "location_end" varchar(255), /**/
+  "suite_end" varchar(255), /**/
+  "locality_end" varchar(255),   /**/
+  "state_end" varchar(255), /**/
+  "postal_code_end" varchar(255), /**/
+  "country_end" varchar(255), /**/
   "description_ad" varchar(255),
   "price_ad" decimal(10,2),
   "photo_ad" text
 );
 
 CREATE TABLE "languages" (
-  "id_language" serial PRIMARY KEY,
-  "name" varchar(30) UNIQUE,
-  "iso" varchar(2) UNIQUE NOT NULL,
-  "available" boolean DEFAULT false
+  "id_langue" serial PRIMARY KEY,
+  "langue" varchar UNIQUE,
+  "iso" varchar(2) UNIQUE NOT NULL
 );
 
 CREATE TABLE "nfc" (
@@ -151,32 +143,28 @@ CREATE TABLE "subscriptions" (
 );
 
 CREATE TABLE "requests_ads" (
-  "id_req_ad" serial PRIMARY KEY, 
+  "id_req_ad" serial PRIMARY KEY, /**/
   "id_user" integer NOT NULL,
   "id_ad" integer NOT NULL,
-  "status_req_ad" request_ad_status DEFAULT 'pending', 
-  "date_creation_req_ad" timestamp DEFAULT 'now()', 
-  "date_accept_req_ad" timestamp, 
-  "date_start_req_ad" timestamp, 
-  "location_start_req_ad" varchar(255), 
-  "suite_start_req_ad" varchar(255), 
-  "locality_start_req_ad" varchar(255),   
-  "state_start_req_ad" varchar(255), 
-  "postal_code_start_req_ad" varchar(255), 
-  "country_start_req_ad" varchar(255), 
-  "latitude_start_req_ad" decimal(9,6),
-  "longitude_start_req_ad" decimal(9,6),
-  "date_end_req_ad" timestamp, 
-  "location_end_req_ad" varchar(255), 
-  "suite_end_req_ad" varchar(255), 
-  "locality_end_req_ad" varchar(255),   
-  "state_end_req_ad" varchar(255), 
-  "postal_code_end_req_ad" varchar(20), 
-  "country_end_req_ad" varchar(255), 
-  "latitude_end_req_ad" decimal(9,6),
-  "longitude_end_req_ad" decimal(9,6),
-  "message_req_ad" varchar(255), 
-  "price_req_ad" decimal(10,2) 
+  "status_req_ad" request_ad_status DEFAULT 'pending', /**/
+  "date_creation_req_ad" timestamp DEFAULT 'now()', /**/
+  "date_accept_req_ad" timestamp, /**/
+  "date_start_req_ad" timestamp, /**/
+  "location_start_req_ad" varchar(255), /**/
+  "suite_start_req_ad" varchar(255), /**/
+  "locality_start_req_ad" varchar(255),   /**/
+  "state_start_req_ad" varchar(255), /**/
+  "postal_code_start_req_ad" varchar(255), /**/
+  "country_start_req_ad" varchar(255), /**/
+  "date_end_req_ad" timestamp, /**/
+  "location_end_req_ad" varchar(255), /**/
+  "suite_end_req_ad" varchar(255), /**/
+  "locality_end_req_ad" varchar(255),   /**/
+  "state_end_req_ad" varchar(255), /**/
+  "postal_code_end_req_ad" varchar(255), /**/
+  "country_end_req_ad" varchar(255), /**/
+  "message_req_ad" varchar(255), /**/
+  "price_req_ad" decimal(10,2) /**/
 );
   
 CREATE TABLE "routes" (
@@ -184,23 +172,19 @@ CREATE TABLE "routes" (
   "id_user" integer NOT NULL,
   "date_creation_route" timestamp DEFAULT 'now()',
   "date_start_route" timestamp,
-  "location_start_route" varchar(255), 
-  "suite_start_route" varchar(255), 
-  "locality_start_route" varchar(255),   
-  "state_start_route" varchar(255), 
-  "postal_code_start_route" varchar(255), 
-  "country_start_route" varchar(255), 
-  "latitude_start_route" decimal(9,6),
-  "longitude_start_route" decimal(9,6),
+  "location_start_route" varchar(255), /**/
+  "suite_start_route" varchar(255), /**/
+  "locality_start_route" varchar(255),   /**/
+  "state_start_route" varchar(255), /**/
+  "postal_code_start_route" varchar(255), /**/
+  "country_start_route" varchar(255), /**/
   "date_end_route" timestamp,
-  "location_end_route" varchar(255), 
-  "suite_end_route" varchar(255), 
-  "locality_end_route" varchar(255),   
-  "state_end_route" varchar(255), 
-  "postal_code_end_route" varchar(20), 
-  "country_end_route" varchar(255), 
-  "latitude_end_route" decimal(9,6),
-  "longitude_end_route" decimal(9,6),
+  "location_end_route" varchar(255), /**/
+  "suite_end_route" varchar(255), /**/
+  "locality_end_route" varchar(255),   /**/
+  "state_end_route" varchar(255), /**/
+  "postal_code_end_route" varchar(255), /**/
+  "country_end_route" varchar(255), /**/
   "description_route" text,
   "step_route" integer
 );
@@ -255,7 +239,7 @@ CREATE TABLE "matches" (
   "id_ad" integer NOT NULL
 );
 
-ALTER TABLE "users" ADD FOREIGN KEY ("id_language") REFERENCES "languages" ("id_language");
+ALTER TABLE "users" ADD FOREIGN KEY ("id_langue") REFERENCES "languages" ("id_langue");
 
 ALTER TABLE "users" ADD FOREIGN KEY ("id_subscription") REFERENCES "subscriptions" ("id_sub");
 
@@ -267,9 +251,9 @@ ALTER TABLE "requests_services" ADD FOREIGN KEY ("id_user_req") REFERENCES "user
 
 ALTER TABLE "requests_services" ADD FOREIGN KEY ("id_admin_res") REFERENCES "users" ("id_user");
 
-ALTER TABLE "requests_services" ADD FOREIGN KEY ("id_svc") REFERENCES "services" ("id_svc");
+ALTER TABLE "requests_services" ADD FOREIGN KEY ("id_service") REFERENCES "services" ("id_svc");
 
-ALTER TABLE "requests_docs" ADD FOREIGN KEY ("id_req_svc") REFERENCES "requests_services" ("id_req_svc");
+ALTER TABLE "requests_docs" ADD FOREIGN KEY ("id_req") REFERENCES "requests_services" ("id_req_svc");
 
 ALTER TABLE "materials" ADD FOREIGN KEY ("id_svc") REFERENCES "services" ("id_svc");
 

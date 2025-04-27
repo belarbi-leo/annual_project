@@ -1,16 +1,13 @@
 package com.pa2aresgi.pa2a.service;
 
-<<<<<<< HEAD
 import com.pa2aresgi.pa2a.enumeratation.AuthorizationSvcEnum;
-=======
-import com.pa2aresgi.pa2a.enumeratation.Svc_authorization;
->>>>>>> d76060e (feat: signin)
 import com.pa2aresgi.pa2a.modele.*;
 import com.pa2aresgi.pa2a.repository.ServicesRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @AllArgsConstructor
@@ -33,21 +30,18 @@ public class ServicesServiceImpl implements ServicesService {
     }
 
     @Override
-<<<<<<< HEAD
     public List<Services> readAllByAuth(AuthorizationSvcEnum auth){
-=======
-    public List<Services> readAllByAuth(Svc_authorization auth){
->>>>>>> d76060e (feat: signin)
         return servicesRepository.findAllByAuth(auth);
     }
 
     @Override
-<<<<<<< HEAD
+    public List<Services> readAllByAuthIn(Set<AuthorizationSvcEnum> auths){
+        return servicesRepository.findAllByAuthIn(auths);
+    }
+
+    @Override
     public List<Services> readAllByAuthOrderById(AuthorizationSvcEnum auth){
-=======
-    public List<Services> readAllByAuthOrderById(Svc_authorization auth){
->>>>>>> d76060e (feat: signin)
-        return servicesRepository.findAllByRoleOrderById_svc(auth);
+        return servicesRepository.findAllByAuthOrderById_svc(auth);
     }
 
     @Override

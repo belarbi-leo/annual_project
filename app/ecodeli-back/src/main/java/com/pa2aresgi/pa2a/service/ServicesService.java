@@ -1,13 +1,10 @@
 package com.pa2aresgi.pa2a.service;
 
-<<<<<<< HEAD
 import com.pa2aresgi.pa2a.enumeratation.AuthorizationSvcEnum;
-=======
-import com.pa2aresgi.pa2a.enumeratation.Svc_authorization;
->>>>>>> d76060e (feat: signin)
 import com.pa2aresgi.pa2a.modele.Services;
 
 import java.util.List;
+import java.util.Set;
 
 public interface ServicesService {
     Services create(Services service);
@@ -16,15 +13,11 @@ public interface ServicesService {
 
     List<Services> readAllOrderById();
 
-<<<<<<< HEAD
     List<Services> readAllByAuth(AuthorizationSvcEnum auth);
 
-    public List<Services> readAllByAuthOrderById(AuthorizationSvcEnum auth);
-=======
-    List<Services> readAllByAuth(Svc_authorization auth);
+    List<Services> readAllByAuthIn(Set<AuthorizationSvcEnum> auth);
 
-    public List<Services> readAllByAuthOrderById(Svc_authorization auth);
->>>>>>> d76060e (feat: signin)
+    public List<Services> readAllByAuthOrderById(AuthorizationSvcEnum auths);
 
     Services findById(Integer id);
 

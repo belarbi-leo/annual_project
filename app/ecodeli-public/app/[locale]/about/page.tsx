@@ -38,18 +38,13 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen w-full overflow-hidden relative px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
-      <Background />
-      <Header />
-      {/* Hero Section */}
+    <main className="px-6 py-24 sm:py-32 lg:px-0">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-emerald-500 dark:text-emerald-300 mt-10">{t("title")}</h1>
           <p className="mt-10 text-lg md:text-xl text-gray-600 dark:text-gray-300">{t("intro")}</p>
         </div>
       </div>
-
-      {/* Features Section */}
       <div className="py-5 sm:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="md:mt-10">
@@ -77,7 +72,6 @@ export default function About() {
           </div>
         </div>
       </div>
-
       <div className="py-10">
         <div className="max-w-7xl mx-auto sm:px-4 lg:px-8">
           <div className="text-center">
@@ -96,25 +90,22 @@ export default function About() {
         </div>
       </div>
       <SearchBar useImpactTitle={true} t={t} />
-
-
-      {/* Community Section */}
-        <div className="max-w-7xl mx-auto sm:px-4 lg:px-8">
+      <div className="max-w-7xl mx-auto sm:px-4 lg:px-8">
         <div className="flex justify-center">
-            <Image src="/favicon.ico" alt="Logo EcoDeli" height={240} width={240} className="h-22 w-22"/>
-          </div>
-          <h2 className="mt-15 text-3xl font-bold text-center text-emerald-500 dark:text-emerald-300">{t("communityTitle")}</h2>
-          <p className="mt-10 max-w-4xl mx-auto text-lg text-center text-gray-600 dark:text-gray-300 dark:text-white">{t("communityText")}</p>
-          <div className="mt-15 flex justify-center">
-            <Link
-              href="auth"
-              className="w-full sm:w-auto text-center rounded-md bg-emerald-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
-            >
-              {t("auth")}
-            </Link>
-          </div>
+          <Image src="/favicon.ico" alt="Logo EcoDeli" height={240} width={240} className="h-22 w-22"/>
         </div>
-    </div>
+        <h2 className="mt-15 text-3xl font-bold text-center text-emerald-500 dark:text-emerald-300">{t("communityTitle")}</h2>
+        <p className="mt-10 max-w-4xl mx-auto text-lg text-center text-gray-600 dark:text-gray-300 dark:text-white">{t("communityText")}</p>
+        <div className="mt-15 flex justify-center">
+          <Link
+            href="auth"
+            className="w-full sm:w-auto text-center rounded-md bg-emerald-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+          >
+            {t("auth")}
+          </Link>
+        </div>
+      </div>
+    </main>
   );
 }
 

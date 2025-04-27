@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import Header from "@/components/header";
-import Background from "@/components/background";
 import { ArrowRight, Leaf, ShoppingBag, Heart } from "lucide-react";
 
 export default function Index() {
@@ -31,23 +29,19 @@ export default function Index() {
   ];
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden relative">
-      <Background />
-      <Header />
-
-      <main className="relative py-12 px-4 sm:px-6 lg:px-8 ">
-        <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto px-6 sm:px-16 lg:px-24 min-h-screen">
-          <div className={`w-full lg:w-1/2 text-center lg:text-left transform transition-all duration-1000 ${animate ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>            
+      <main className="py-12 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col xl:flex-row items-center justify-between max-w-7xl mx-auto px-6 sm:px-16 xl:px-24 min-h-screen">
+          <div className={`w-full xl:w-1/2 text-center xl:text-left transform transition-all duration-1000 ${animate ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>            
             <h1 className="mb-4 text-5xl font-bold tracking-tight text-emerald-500 dark:text-emerald-300 sm:text-7xl [font-family:var(--font-title)]">
               {t("title")}
             </h1>
             <h2 className="text-3xl font-semibold tracking-tight text-emerald-500 dark:text-emerald-300 sm:text-5xl mb-6">
               {t("subtitle")}
             </h2>
-            <p className="mt-4 text-lg font-medium text-gray-600 dark:text-gray-300 sm:text-xl max-w-xl">
+            <p className="mt-10 text-lg font-medium text-gray-600 dark:text-gray-300 sm:text-xl -xl:max-w-xl">
               {t("description")}
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6">
+            <div className="mt-10 flex flex-col sm:flex-row xl:justify-start justify-center items-center gap-4 sm:gap-x-6">
               <Link
                 href="auth"
                 className="w-full sm:w-auto flex items-center justify-center rounded-lg bg-emerald-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-all duration-300 hover:scale-105"
@@ -70,7 +64,7 @@ export default function Index() {
               ))}
             </div>
           </div>
-          <div className={`hidden md:flex w-full lg:w-1/2 mt-12 lg:mt-0 justify-center items-center transform transition-all duration-1000 ${animate ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
+          <div className={`flex w-full lg:w-1/2 mt-12 xl:mt-10 justify-center items-center transform transition-all duration-1000 ${animate ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
             <div className="relative">
                 <Image 
                   src="/favicon.ico" 
@@ -84,6 +78,5 @@ export default function Index() {
           </div>
         </div>
       </main>
-    </div>
   );
 }

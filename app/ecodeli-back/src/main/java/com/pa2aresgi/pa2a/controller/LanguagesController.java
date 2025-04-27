@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Profile("dev")
+@Profile({"dev", "prod"})
 @RestController
 @RequestMapping("/languages")
 @AllArgsConstructor

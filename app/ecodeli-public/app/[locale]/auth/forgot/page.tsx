@@ -44,27 +44,22 @@ export default function Forgot() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 overflow-hidden relative">
-      <Background />
-      <Header />
-
-      <div className="w-full max-w-md p-8 space-y-6 rounded-2xl shadow-lg bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white">
-      
+    <main className=" min-h-screen flex items-center justify-center px-6">
+      <div className="w-full max-w-md p-8 space-y-6 rounded-2xl shadow-lg bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white"> 
         {errors.form && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative dark:bg-red-900 dark:border-red-800 dark:text-red-100" role="alert">
             <span className="block sm:inline">{errors.form}</span>
           </div>
         )}
-        
         {!submitted ? (
           <>
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium">{t("email")}</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-white">{t("email")}</label>
                 <input
                   type="email"
                   id="email"
-                  className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.email ? "border-red-500 dark:border-red-900" : "border-gray-300 dark:border-gray-600"}`}
+                  className={`mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-emerald-500 bg-white text-black dark:bg-gray-700 dark:text-white ${errors.email && "border-red-500 dark:border-red-900"}`}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -72,7 +67,7 @@ export default function Forgot() {
               </div>
               <button 
                 type="submit" 
-                className="w-full text-center rounded-md bg-emerald-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50"
+                className="w-full ml-auto bg-emerald-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? t("submitting") : t("submit")}
@@ -94,12 +89,12 @@ export default function Forgot() {
                 </svg>
               </div>
             </div>
-            <p className="text-center">
+            <p className="block text-sm text-center font-semibold text-gray-700 dark:text-white">
               {t("successMessage", { email })}
             </p>
             <button 
               onClick={() => setSubmitted(false)} 
-              className="w-full text-center rounded-md bg-emerald-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50"
+              className="w-full ml-auto bg-emerald-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               {t("tryAnotherEmail")}
             </button>
@@ -109,6 +104,6 @@ export default function Forgot() {
           </div>
         )}
       </div>
-    </div>
+    </main>
   );
 }

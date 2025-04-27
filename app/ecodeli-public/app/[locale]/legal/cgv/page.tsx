@@ -1,11 +1,9 @@
 import { useTranslations } from "next-intl";
-import Header from "@/components/header";
-import Background from "@/components/background";
 
 export default function CGV() {
   const t = useTranslations("CGV");
   
-  const art_struct = [
+  const structArticle = [
     {
       key: "art1",
       hasSubArt: false
@@ -114,9 +112,7 @@ export default function CGV() {
   };
 
   return (
-    <div className="min-h-screen w-full overflow-hidden relative px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
-      <Background />
-      <Header />
+    <main className="px-6 py-24 sm:py-32 lg:px-0">
       <div className="mx-auto max-w-7xl md:px-6 lg:px-8 mb-10">
         <div className="mx-auto max-w-3xl mb-12 text-center">
           <h1 className="mb-4 text-4xl font-semibold tracking-tight text-emerald-500 dark:text-emerald-300 sm:text-5xl">{t("title")}</h1>
@@ -126,7 +122,7 @@ export default function CGV() {
         <div className="prose prose-lg prose-emerald mx-auto dark:prose-invert">
           <p className="text-gray-700 text-center dark:text-gray-300 mb-8">{t("introduction")}</p>
           
-          {art_struct.map(art => (
+          {structArticle.map(art => (
             <div key={art.key}>
               {renderArticle(art.key)}              
               {art.hasSubArt && art.subArt && art.subArt.map(subArt => (
@@ -138,6 +134,6 @@ export default function CGV() {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }

@@ -1,10 +1,6 @@
 package com.pa2aresgi.pa2a.controller;
 
-<<<<<<< HEAD
 import com.pa2aresgi.pa2a.enumeratation.AuthorizationSvcEnum;
-=======
-import com.pa2aresgi.pa2a.enumeratation.Svc_authorization;
->>>>>>> d76060e (feat: signin)
 import com.pa2aresgi.pa2a.modele.Services;
 import com.pa2aresgi.pa2a.service.ServicesService;
 import lombok.AllArgsConstructor;
@@ -12,8 +8,9 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
-@Profile("dev")
+@Profile({"dev", "prod"})
 @RestController
 @RequestMapping("/services")
 @AllArgsConstructor
@@ -27,12 +24,8 @@ public class ServicesController {
     }
 
     @GetMapping("/read")
-<<<<<<< HEAD
-    public List<Services> readAll(@RequestParam(name = "auth", required = false) AuthorizationSvcEnum auth){
-=======
-    public List<Services> readAll(@RequestParam(name = "auth", required = false) Svc_authorization auth){
->>>>>>> d76060e (feat: signin)
-        if (auth!=null) return servicesService.readAllByAuthOrderById(auth);
+    public List<Services> readAll(@RequestParam(name = "auth", required = false) Set<AuthorizationSvcEnum> auth){
+        if (auth!=null && !auth.isEmpty()) return servicesService.readAllByAuthIn(auth);
         return servicesService.readAllOrderById();
         //return servicesService.readAll();
     }
@@ -41,6 +34,7 @@ public class ServicesController {
     public Services findById(@PathVariable Integer id){
         return servicesService.findById(id);
     }
+
 
     @PutMapping("/update/{id}")
     public Services update(@PathVariable Integer id, @RequestBody Services service) {
