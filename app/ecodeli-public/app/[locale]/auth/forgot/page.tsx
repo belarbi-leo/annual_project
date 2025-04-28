@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import Header from "@/components/header";
-import Background from "@/components/background";
+import Header from "@/components/headerNotCo";
+import Background from "@/components/backgroundNotCo";
 
 export default function Forgot() {
   const t = useTranslations("Auth.Forgot");

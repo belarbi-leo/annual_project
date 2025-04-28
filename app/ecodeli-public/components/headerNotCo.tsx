@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import LanguageSelector from "@/components/languages";
+import LanguageSelector from "@/components/languagesSelector";
 
 export default function Header() {
   const pathname = usePathname();

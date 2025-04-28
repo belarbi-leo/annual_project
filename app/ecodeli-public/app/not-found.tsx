@@ -1,25 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftCircle, Home, RefreshCw } from "lucide-react";
 
 export default function NotFound() {
-  const [animate, setAnimate] = useState(false);
-  const [rotation, setRotation] = useState(0);
-
-  useEffect(() => {
-    setAnimate(true);
-    
-    // Create a gentle rotation animation for the icon
-    const interval = setInterval(() => {
-      setRotation(prev => (prev + 1) % 360);
-    }, 50);
-    
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-emerald-50 dark:from-gray-900 dark:to-gray-800">
       <div className="w-full max-w-4xl mx-auto text-center">
@@ -39,33 +24,30 @@ export default function NotFound() {
           </h1>
           
           <p className="mt-6 text-xl font-medium text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Vous faites face à une erreur serveur ou la page que vous recherchez n'existe pas ou a été déplacée.
+            Server error or the page you're looking for doesn't exist or has been moved.
           </p>
           
           <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-x-6">
             <Link
               href="/"
-              className="w-full sm:w-auto flex items-center justify-center rounded-lg bg-emerald-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-all duration-300 hover:scale-105"
+              className="w-[120px] flex items-center justify-center rounded-lg bg-emerald-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-all duration-300 hover:scale-105"
             >
               <Home className="mr-2 h-5 w-5" />
-              {/* {t("home") || "Retour à l'accueil"} */}
-              Retour à l'accueil
+              Home
             </Link>
             <button
               onClick={() => window.history.back()}
-              className="w-full sm:w-auto flex items-center justify-center rounded-lg border border-emerald-200 dark:border-emerald-800 px-5 py-3 text-base font-semibold text-gray-900 dark:text-white hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-all duration-300"
+              className="w-[120px] flex items-center justify-center rounded-lg border border-emerald-200 dark:border-emerald-800 px-5 py-3 text-base font-semibold text-gray-900 dark:text-white hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-all duration-300"
             >
               <ArrowLeftCircle className="mr-2 h-5 w-5" />
-              {/* {t("back") || "Page précédente"} */}
-              Page précédente
+              Return
             </button>
             <button
               onClick={() => window.location.reload()}
-              className="w-full sm:w-auto flex items-center justify-center rounded-lg border border-emerald-200 dark:border-emerald-800 px-5 py-3 text-base font-semibold text-gray-900 dark:text-white hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-all duration-300"
+              className="w-[120px] flex items-center justify-center rounded-lg border border-emerald-200 dark:border-emerald-800 px-5 py-3 text-base font-semibold text-gray-900 dark:text-white hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-all duration-300"
             >
               <RefreshCw className="mr-2 h-5 w-5" />
-              {/* {t("refresh") || "Rafraîchir"} */}
-              Rafraîchir
+              Refresh
             </button>
           </div>
         </div>

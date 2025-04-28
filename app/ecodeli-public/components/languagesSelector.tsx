@@ -1,53 +1,34 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { notFound, usePathname, useRouter } from "next/navigation";
 import { clsx } from "clsx";
 import type { Languages } from "@/lib/types";
 import { fetchAllLanguages } from "@/lib/languages/fetchAllLanguages";
 import { LanguageIcon } from "@heroicons/react/24/outline";
-import { notFound } from 'next/navigation';
 
 export default function LanguageSelector() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const currentLang = pathname.split("/")[1];
   const [isOpen, setIsOpen] = useState(false);
   const [languages, setLanguages] = useState<Languages[]>([]);
-  const [error, setError] = useState<string | null>(null);
-
-  const pathname = usePathname();
-  const router = useRouter();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-
-  const currentLang = pathname.split("/")[1];
 
   useEffect(() => {
     const fetchLanguages = async () => {
       try {
-        const response = await fetchAllLanguages();
-
-        // Vérifier le code de réponse
-        if (!response || response.status !== 201) {
-          const errorMsg = response?.data?.message || "Erreur lors du chargement des langues";
-          setError(errorMsg);
-          // Rediriger vers la page 404 avec le message d'erreur
-          router.push(`/404?error=${encodeURIComponent(errorMsg)}`);
-          return;
-        }
-        
-        setLanguages(response.data || []);
+        const languages = await fetchAllLanguages();
+        setLanguages(languages || []);
       } catch (err) {
-        const errorMsg = "Erreur serveur, veuillez réessayer plus tard.";
-        setError(errorMsg);
-        // Rediriger vers la page 404 avec le message d'erreur
-        router.push(`/404?error=${encodeURIComponent(errorMsg)}`);
+        notFound();
       }
     };
-
     fetchLanguages();
 
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
-      
       if (
         dropdownRef.current && !dropdownRef.current.contains(target) &&
         buttonRef.current && !buttonRef.current.contains(target)
@@ -68,8 +49,6 @@ export default function LanguageSelector() {
     }
   };
 
-  // Si une erreur a été définie, ne pas rendre le composant
-  if (error) return null;
 
   return (
     <div className="relative">

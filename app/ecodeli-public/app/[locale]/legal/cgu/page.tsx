@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
-import Header from "@/components/header";
-import Background from "@/components/background";
+import Header from "@/components/headerNotCo";
+import Background from "@/components/backgroundNotCo";
 
 export default function CGU() {
   const t = useTranslations("CGU");

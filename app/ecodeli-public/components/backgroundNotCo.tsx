@@ -1,4 +1,4 @@
-export default function Background() {
+export default function backgroundNotCo() {
     return (
       <>
         <div aria-hidden="true" className="absolute top-[-10%] left-[-10%] -z-10 transform-gpu blur-3xl opacity-50">
