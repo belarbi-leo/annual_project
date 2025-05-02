@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-27T21:40:52+0200",
-    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
+    date = "2025-04-28T23:10:07+0200",
+    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
 )
 @Component
 public class AdsMapperImpl implements AdsMapper {
@@ -22,18 +22,18 @@ public class AdsMapperImpl implements AdsMapper {
 
         AdsDTORead adsDTORead = new AdsDTORead();
 
-        adsDTORead.setDateAcceptAd( ad.getDateAcceptAd() );
-        adsDTORead.setDateCreationAd( ad.getDateCreationAd() );
-        adsDTORead.setDateEndAd( ad.getDateEndAd() );
-        adsDTORead.setDateStartAd( ad.getDateStartAd() );
-        adsDTORead.setDescriptionAd( ad.getDescriptionAd() );
         adsDTORead.setIdAd( ad.getIdAd() );
-        adsDTORead.setPhotoAd( ad.getPhotoAd() );
-        adsDTORead.setPriceAd( ad.getPriceAd() );
-        adsDTORead.setStatusAd( ad.getStatusAd() );
-        adsDTORead.setSvc( ad.getSvc() );
-        adsDTORead.setUserAccept( ad.getUserAccept() );
         adsDTORead.setUserCreator( ad.getUserCreator() );
+        adsDTORead.setUserAccept( ad.getUserAccept() );
+        adsDTORead.setSvc( ad.getSvc() );
+        adsDTORead.setStatusAd( ad.getStatusAd() );
+        adsDTORead.setDateCreationAd( ad.getDateCreationAd() );
+        adsDTORead.setDateAcceptAd( ad.getDateAcceptAd() );
+        adsDTORead.setDateStartAd( ad.getDateStartAd() );
+        adsDTORead.setDateEndAd( ad.getDateEndAd() );
+        adsDTORead.setDescriptionAd( ad.getDescriptionAd() );
+        adsDTORead.setPriceAd( ad.getPriceAd() );
+        adsDTORead.setPhotoAd( ad.getPhotoAd() );
 
         return adsDTORead;
     }
@@ -46,17 +46,17 @@ public class AdsMapperImpl implements AdsMapper {
 
         Ads ads = new Ads();
 
-        ads.setDateAcceptAd( adDtoCreate.getDateAcceptAd() );
-        ads.setDateCreationAd( adDtoCreate.getDateCreationAd() );
-        ads.setDateEndAd( adDtoCreate.getDateEndAd() );
-        ads.setDateStartAd( adDtoCreate.getDateStartAd() );
-        ads.setDescriptionAd( adDtoCreate.getDescriptionAd() );
-        ads.setPhotoAd( adDtoCreate.getPhotoAd() );
-        ads.setPriceAd( adDtoCreate.getPriceAd() );
-        ads.setStatusAd( adDtoCreate.getStatusAd() );
-        ads.setSvc( adDtoCreate.getSvc() );
-        ads.setUserAccept( adDtoCreate.getUserAccept() );
         ads.setUserCreator( adDtoCreate.getUserCreator() );
+        ads.setUserAccept( adDtoCreate.getUserAccept() );
+        ads.setSvc( adDtoCreate.getSvc() );
+        ads.setStatusAd( adDtoCreate.getStatusAd() );
+        ads.setDateCreationAd( adDtoCreate.getDateCreationAd() );
+        ads.setDateAcceptAd( adDtoCreate.getDateAcceptAd() );
+        ads.setDateStartAd( adDtoCreate.getDateStartAd() );
+        ads.setDateEndAd( adDtoCreate.getDateEndAd() );
+        ads.setDescriptionAd( adDtoCreate.getDescriptionAd() );
+        ads.setPriceAd( adDtoCreate.getPriceAd() );
+        ads.setPhotoAd( adDtoCreate.getPhotoAd() );
 
         return ads;
     }

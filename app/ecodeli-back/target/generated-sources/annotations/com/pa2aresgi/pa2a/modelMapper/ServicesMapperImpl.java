@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-27T21:40:52+0200",
-    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
+    date = "2025-04-28T23:10:07+0200",
+    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
 )
 @Component
 public class ServicesMapperImpl implements ServicesMapper {
@@ -22,12 +22,12 @@ public class ServicesMapperImpl implements ServicesMapper {
 
         ServicesDTORead servicesDTORead = new ServicesDTORead();
 
-        servicesDTORead.setAdminCreator( service.getAdminCreator() );
-        servicesDTORead.setAuth( service.getAuth() );
-        servicesDTORead.setCategory( service.getCategory() );
-        servicesDTORead.setDateCreationSvc( service.getDateCreationSvc() );
         servicesDTORead.setIdSvc( service.getIdSvc() );
+        servicesDTORead.setAdminCreator( service.getAdminCreator() );
+        servicesDTORead.setDateCreationSvc( service.getDateCreationSvc() );
         servicesDTORead.setNameSvc( service.getNameSvc() );
+        servicesDTORead.setCategory( service.getCategory() );
+        servicesDTORead.setAuth( service.getAuth() );
 
         return servicesDTORead;
     }
@@ -41,10 +41,10 @@ public class ServicesMapperImpl implements ServicesMapper {
         Services services = new Services();
 
         services.setAdminCreator( serviceDtoCreate.getAdminCreator() );
-        services.setAuth( serviceDtoCreate.getAuth() );
-        services.setCategory( serviceDtoCreate.getCategory() );
         services.setDateCreationSvc( serviceDtoCreate.getDateCreationSvc() );
         services.setNameSvc( serviceDtoCreate.getNameSvc() );
+        services.setCategory( serviceDtoCreate.getCategory() );
+        services.setAuth( serviceDtoCreate.getAuth() );
 
         return services;
     }

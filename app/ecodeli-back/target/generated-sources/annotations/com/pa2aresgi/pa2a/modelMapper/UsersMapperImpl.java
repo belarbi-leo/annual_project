@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-27T21:40:52+0200",
-    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
+    date = "2025-04-28T23:10:07+0200",
+    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
 )
 @Component
 public class UsersMapperImpl implements UsersMapper {
@@ -22,31 +22,31 @@ public class UsersMapperImpl implements UsersMapper {
 
         UsersDTORead usersDTORead = new UsersDTORead();
 
-        usersDTORead.setAccountStatus( user.getAccountStatus() );
-        usersDTORead.setBio( user.getBio() );
-        usersDTORead.setCompanyName( user.getCompanyName() );
-        usersDTORead.setCountry( user.getCountry() );
+        usersDTORead.setIdUser( user.getIdUser() );
+        usersDTORead.setDateRegistration( user.getDateRegistration() );
         usersDTORead.setDateAcceptCgu( user.getDateAcceptCgu() );
         usersDTORead.setDateAcceptCgv( user.getDateAcceptCgv() );
-        usersDTORead.setDateRegistration( user.getDateRegistration() );
+        usersDTORead.setRole( user.getRole() );
+        usersDTORead.setAccountStatus( user.getAccountStatus() );
         usersDTORead.setDateStatus( user.getDateStatus() );
         usersDTORead.setEmail( user.getEmail() );
-        usersDTORead.setFirstName( user.getFirstName() );
-        usersDTORead.setIdUser( user.getIdUser() );
-        usersDTORead.setLanguage( user.getLanguage() );
-        usersDTORead.setLastName( user.getLastName() );
-        usersDTORead.setLatitude( user.getLatitude() );
-        usersDTORead.setLocality( user.getLocality() );
-        usersDTORead.setLocation( user.getLocation() );
-        usersDTORead.setLongitude( user.getLongitude() );
         usersDTORead.setPhoneNumber( user.getPhoneNumber() );
-        usersDTORead.setPhotoUser( user.getPhotoUser() );
-        usersDTORead.setPostalCode( user.getPostalCode() );
-        usersDTORead.setRole( user.getRole() );
+        usersDTORead.setFirstName( user.getFirstName() );
+        usersDTORead.setLastName( user.getLastName() );
+        usersDTORead.setCompanyName( user.getCompanyName() );
         usersDTORead.setSiret( user.getSiret() );
-        usersDTORead.setState( user.getState() );
-        usersDTORead.setSubscription( user.getSubscription() );
+        usersDTORead.setPhotoUser( user.getPhotoUser() );
+        usersDTORead.setBio( user.getBio() );
+        usersDTORead.setLocation( user.getLocation() );
         usersDTORead.setSuite( user.getSuite() );
+        usersDTORead.setLocality( user.getLocality() );
+        usersDTORead.setState( user.getState() );
+        usersDTORead.setPostalCode( user.getPostalCode() );
+        usersDTORead.setCountry( user.getCountry() );
+        usersDTORead.setLatitude( user.getLatitude() );
+        usersDTORead.setLongitude( user.getLongitude() );
+        usersDTORead.setSubscription( user.getSubscription() );
+        usersDTORead.setLanguage( user.getLanguage() );
 
         return usersDTORead;
     }
@@ -59,29 +59,29 @@ public class UsersMapperImpl implements UsersMapper {
 
         Users users = new Users();
 
-        users.setAccountStatus( userDtoCreate.getAccountStatus() );
-        users.setBio( userDtoCreate.getBio() );
-        users.setCompanyName( userDtoCreate.getCompanyName() );
-        users.setCountry( userDtoCreate.getCountry() );
+        users.setDateRegistration( userDtoCreate.getDateRegistration() );
         users.setDateAcceptCgu( userDtoCreate.getDateAcceptCgu() );
         users.setDateAcceptCgv( userDtoCreate.getDateAcceptCgv() );
-        users.setDateRegistration( userDtoCreate.getDateRegistration() );
+        users.setRole( userDtoCreate.getRole() );
+        users.setAccountStatus( userDtoCreate.getAccountStatus() );
         users.setDateStatus( userDtoCreate.getDateStatus() );
         users.setEmail( userDtoCreate.getEmail() );
-        users.setFirstName( userDtoCreate.getFirstName() );
-        users.setLastName( userDtoCreate.getLastName() );
-        users.setLatitude( userDtoCreate.getLatitude() );
-        users.setLocality( userDtoCreate.getLocality() );
-        users.setLocation( userDtoCreate.getLocation() );
-        users.setLongitude( userDtoCreate.getLongitude() );
         users.setPassword( userDtoCreate.getPassword() );
         users.setPhoneNumber( userDtoCreate.getPhoneNumber() );
-        users.setPhotoUser( userDtoCreate.getPhotoUser() );
-        users.setPostalCode( userDtoCreate.getPostalCode() );
-        users.setRole( userDtoCreate.getRole() );
+        users.setFirstName( userDtoCreate.getFirstName() );
+        users.setLastName( userDtoCreate.getLastName() );
+        users.setCompanyName( userDtoCreate.getCompanyName() );
         users.setSiret( userDtoCreate.getSiret() );
-        users.setState( userDtoCreate.getState() );
+        users.setPhotoUser( userDtoCreate.getPhotoUser() );
+        users.setBio( userDtoCreate.getBio() );
+        users.setLocation( userDtoCreate.getLocation() );
         users.setSuite( userDtoCreate.getSuite() );
+        users.setLocality( userDtoCreate.getLocality() );
+        users.setState( userDtoCreate.getState() );
+        users.setPostalCode( userDtoCreate.getPostalCode() );
+        users.setCountry( userDtoCreate.getCountry() );
+        users.setLatitude( userDtoCreate.getLatitude() );
+        users.setLongitude( userDtoCreate.getLongitude() );
 
         return users;
     }
@@ -92,17 +92,8 @@ public class UsersMapperImpl implements UsersMapper {
             return user;
         }
 
-        if ( userDtoCreate.getAccountStatus() != null ) {
-            user.setAccountStatus( userDtoCreate.getAccountStatus() );
-        }
-        if ( userDtoCreate.getBio() != null ) {
-            user.setBio( userDtoCreate.getBio() );
-        }
-        if ( userDtoCreate.getCompanyName() != null ) {
-            user.setCompanyName( userDtoCreate.getCompanyName() );
-        }
-        if ( userDtoCreate.getCountry() != null ) {
-            user.setCountry( userDtoCreate.getCountry() );
+        if ( userDtoCreate.getDateRegistration() != null ) {
+            user.setDateRegistration( userDtoCreate.getDateRegistration() );
         }
         if ( userDtoCreate.getDateAcceptCgu() != null ) {
             user.setDateAcceptCgu( userDtoCreate.getDateAcceptCgu() );
@@ -110,8 +101,11 @@ public class UsersMapperImpl implements UsersMapper {
         if ( userDtoCreate.getDateAcceptCgv() != null ) {
             user.setDateAcceptCgv( userDtoCreate.getDateAcceptCgv() );
         }
-        if ( userDtoCreate.getDateRegistration() != null ) {
-            user.setDateRegistration( userDtoCreate.getDateRegistration() );
+        if ( userDtoCreate.getRole() != null ) {
+            user.setRole( userDtoCreate.getRole() );
+        }
+        if ( userDtoCreate.getAccountStatus() != null ) {
+            user.setAccountStatus( userDtoCreate.getAccountStatus() );
         }
         if ( userDtoCreate.getDateStatus() != null ) {
             user.setDateStatus( userDtoCreate.getDateStatus() );
@@ -119,47 +113,53 @@ public class UsersMapperImpl implements UsersMapper {
         if ( userDtoCreate.getEmail() != null ) {
             user.setEmail( userDtoCreate.getEmail() );
         }
-        if ( userDtoCreate.getFirstName() != null ) {
-            user.setFirstName( userDtoCreate.getFirstName() );
-        }
-        if ( userDtoCreate.getLastName() != null ) {
-            user.setLastName( userDtoCreate.getLastName() );
-        }
-        if ( userDtoCreate.getLatitude() != null ) {
-            user.setLatitude( userDtoCreate.getLatitude() );
-        }
-        if ( userDtoCreate.getLocality() != null ) {
-            user.setLocality( userDtoCreate.getLocality() );
-        }
-        if ( userDtoCreate.getLocation() != null ) {
-            user.setLocation( userDtoCreate.getLocation() );
-        }
-        if ( userDtoCreate.getLongitude() != null ) {
-            user.setLongitude( userDtoCreate.getLongitude() );
-        }
         if ( userDtoCreate.getPassword() != null ) {
             user.setPassword( userDtoCreate.getPassword() );
         }
         if ( userDtoCreate.getPhoneNumber() != null ) {
             user.setPhoneNumber( userDtoCreate.getPhoneNumber() );
         }
-        if ( userDtoCreate.getPhotoUser() != null ) {
-            user.setPhotoUser( userDtoCreate.getPhotoUser() );
+        if ( userDtoCreate.getFirstName() != null ) {
+            user.setFirstName( userDtoCreate.getFirstName() );
         }
-        if ( userDtoCreate.getPostalCode() != null ) {
-            user.setPostalCode( userDtoCreate.getPostalCode() );
+        if ( userDtoCreate.getLastName() != null ) {
+            user.setLastName( userDtoCreate.getLastName() );
         }
-        if ( userDtoCreate.getRole() != null ) {
-            user.setRole( userDtoCreate.getRole() );
+        if ( userDtoCreate.getCompanyName() != null ) {
+            user.setCompanyName( userDtoCreate.getCompanyName() );
         }
         if ( userDtoCreate.getSiret() != null ) {
             user.setSiret( userDtoCreate.getSiret() );
         }
-        if ( userDtoCreate.getState() != null ) {
-            user.setState( userDtoCreate.getState() );
+        if ( userDtoCreate.getPhotoUser() != null ) {
+            user.setPhotoUser( userDtoCreate.getPhotoUser() );
+        }
+        if ( userDtoCreate.getBio() != null ) {
+            user.setBio( userDtoCreate.getBio() );
+        }
+        if ( userDtoCreate.getLocation() != null ) {
+            user.setLocation( userDtoCreate.getLocation() );
         }
         if ( userDtoCreate.getSuite() != null ) {
             user.setSuite( userDtoCreate.getSuite() );
+        }
+        if ( userDtoCreate.getLocality() != null ) {
+            user.setLocality( userDtoCreate.getLocality() );
+        }
+        if ( userDtoCreate.getState() != null ) {
+            user.setState( userDtoCreate.getState() );
+        }
+        if ( userDtoCreate.getPostalCode() != null ) {
+            user.setPostalCode( userDtoCreate.getPostalCode() );
+        }
+        if ( userDtoCreate.getCountry() != null ) {
+            user.setCountry( userDtoCreate.getCountry() );
+        }
+        if ( userDtoCreate.getLatitude() != null ) {
+            user.setLatitude( userDtoCreate.getLatitude() );
+        }
+        if ( userDtoCreate.getLongitude() != null ) {
+            user.setLongitude( userDtoCreate.getLongitude() );
         }
 
         return user;

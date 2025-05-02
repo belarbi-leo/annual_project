@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-27T21:40:52+0200",
-    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
+    date = "2025-04-28T23:10:07+0200",
+    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
 )
 @Component
 public class OpinionsMapperImpl implements OpinionsMapper {
@@ -22,12 +22,12 @@ public class OpinionsMapperImpl implements OpinionsMapper {
 
         OpinionsDTORead opinionsDTORead = new OpinionsDTORead();
 
-        opinionsDTORead.setAd( opinion.getAd() );
-        opinionsDTORead.setDateOpinion( opinion.getDateOpinion() );
-        opinionsDTORead.setDescriptionOpinion( opinion.getDescriptionOpinion() );
         opinionsDTORead.setIdOpinion( opinion.getIdOpinion() );
+        opinionsDTORead.setAd( opinion.getAd() );
         opinionsDTORead.setNoteOpinion( opinion.getNoteOpinion() );
         opinionsDTORead.setTitleOpinion( opinion.getTitleOpinion() );
+        opinionsDTORead.setDescriptionOpinion( opinion.getDescriptionOpinion() );
+        opinionsDTORead.setDateOpinion( opinion.getDateOpinion() );
 
         return opinionsDTORead;
     }
@@ -41,10 +41,10 @@ public class OpinionsMapperImpl implements OpinionsMapper {
         Opinions opinions = new Opinions();
 
         opinions.setAd( opinionDtoCreate.getAd() );
-        opinions.setDateOpinion( opinionDtoCreate.getDateOpinion() );
-        opinions.setDescriptionOpinion( opinionDtoCreate.getDescriptionOpinion() );
         opinions.setNoteOpinion( opinionDtoCreate.getNoteOpinion() );
         opinions.setTitleOpinion( opinionDtoCreate.getTitleOpinion() );
+        opinions.setDescriptionOpinion( opinionDtoCreate.getDescriptionOpinion() );
+        opinions.setDateOpinion( opinionDtoCreate.getDateOpinion() );
 
         return opinions;
     }

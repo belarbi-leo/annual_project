@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-27T21:40:52+0200",
-    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
+    date = "2025-04-28T23:10:07+0200",
+    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
 )
 @Component
 public class MaterielsMapperImpl implements MaterielsMapper {
@@ -22,10 +22,10 @@ public class MaterielsMapperImpl implements MaterielsMapper {
 
         MaterielsDTORead materielsDTORead = new MaterielsDTORead();
 
-        materielsDTORead.setDescriptionMateriel( materiel.getDescriptionMateriel() );
         materielsDTORead.setIdMateriel( materiel.getIdMateriel() );
-        materielsDTORead.setNameMateriel( materiel.getNameMateriel() );
         materielsDTORead.setSvc( materiel.getSvc() );
+        materielsDTORead.setNameMateriel( materiel.getNameMateriel() );
+        materielsDTORead.setDescriptionMateriel( materiel.getDescriptionMateriel() );
 
         return materielsDTORead;
     }
@@ -38,9 +38,9 @@ public class MaterielsMapperImpl implements MaterielsMapper {
 
         Materiels materiels = new Materiels();
 
-        materiels.setDescriptionMateriel( materielDtoCreate.getDescriptionMateriel() );
-        materiels.setNameMateriel( materielDtoCreate.getNameMateriel() );
         materiels.setSvc( materielDtoCreate.getSvc() );
+        materiels.setNameMateriel( materielDtoCreate.getNameMateriel() );
+        materiels.setDescriptionMateriel( materielDtoCreate.getDescriptionMateriel() );
 
         return materiels;
     }

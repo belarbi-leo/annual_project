@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-27T21:40:52+0200",
-    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
+    date = "2025-04-28T23:10:07+0200",
+    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
 )
 @Component
 public class PackagesMapperImpl implements PackagesMapper {
@@ -22,17 +22,17 @@ public class PackagesMapperImpl implements PackagesMapper {
 
         PackagesDTORead packagesDTORead = new PackagesDTORead();
 
+        packagesDTORead.setIdPack( pack.getIdPack() );
         packagesDTORead.setAd( pack.getAd() );
         packagesDTORead.setContentPack( pack.getContentPack() );
-        packagesDTORead.setDetailsPack( pack.getDetailsPack() );
-        packagesDTORead.setFragile( pack.getFragile() );
-        packagesDTORead.setHeightPack( pack.getHeightPack() );
-        packagesDTORead.setIdPack( pack.getIdPack() );
-        packagesDTORead.setLengthPack( pack.getLengthPack() );
-        packagesDTORead.setPhotoPack( pack.getPhotoPack() );
         packagesDTORead.setQuantityPack( pack.getQuantityPack() );
+        packagesDTORead.setDetailsPack( pack.getDetailsPack() );
         packagesDTORead.setWeightPack( pack.getWeightPack() );
+        packagesDTORead.setLengthPack( pack.getLengthPack() );
         packagesDTORead.setWidthPack( pack.getWidthPack() );
+        packagesDTORead.setHeightPack( pack.getHeightPack() );
+        packagesDTORead.setPhotoPack( pack.getPhotoPack() );
+        packagesDTORead.setFragile( pack.getFragile() );
 
         return packagesDTORead;
     }
@@ -47,14 +47,14 @@ public class PackagesMapperImpl implements PackagesMapper {
 
         packages.setAd( packageDtoCreate.getAd() );
         packages.setContentPack( packageDtoCreate.getContentPack() );
-        packages.setDetailsPack( packageDtoCreate.getDetailsPack() );
-        packages.setFragile( packageDtoCreate.getFragile() );
-        packages.setHeightPack( packageDtoCreate.getHeightPack() );
-        packages.setLengthPack( packageDtoCreate.getLengthPack() );
-        packages.setPhotoPack( packageDtoCreate.getPhotoPack() );
         packages.setQuantityPack( packageDtoCreate.getQuantityPack() );
+        packages.setDetailsPack( packageDtoCreate.getDetailsPack() );
         packages.setWeightPack( packageDtoCreate.getWeightPack() );
+        packages.setLengthPack( packageDtoCreate.getLengthPack() );
         packages.setWidthPack( packageDtoCreate.getWidthPack() );
+        packages.setHeightPack( packageDtoCreate.getHeightPack() );
+        packages.setPhotoPack( packageDtoCreate.getPhotoPack() );
+        packages.setFragile( packageDtoCreate.getFragile() );
 
         return packages;
     }

@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-27T21:40:52+0200",
-    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
+    date = "2025-04-28T23:10:07+0200",
+    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
 )
 @Component
 public class RequestsAdsMapperImpl implements RequestsAdsMapper {
@@ -22,32 +22,32 @@ public class RequestsAdsMapperImpl implements RequestsAdsMapper {
 
         RequestsAdsDTORead requestsAdsDTORead = new RequestsAdsDTORead();
 
-        requestsAdsDTORead.setAd( requestAd.getAd() );
-        requestsAdsDTORead.setCountryEndReqAd( requestAd.getCountryEndReqAd() );
-        requestsAdsDTORead.setCountryStartReqAd( requestAd.getCountryStartReqAd() );
-        requestsAdsDTORead.setDateAcceptReqAd( requestAd.getDateAcceptReqAd() );
-        requestsAdsDTORead.setDateCreationReqAd( requestAd.getDateCreationReqAd() );
-        requestsAdsDTORead.setDateEndReqAd( requestAd.getDateEndReqAd() );
-        requestsAdsDTORead.setDateStartReqAd( requestAd.getDateStartReqAd() );
         requestsAdsDTORead.setIdReqAd( requestAd.getIdReqAd() );
-        requestsAdsDTORead.setLatitudeEndReqAd( requestAd.getLatitudeEndReqAd() );
-        requestsAdsDTORead.setLatitudeStartReqAd( requestAd.getLatitudeStartReqAd() );
-        requestsAdsDTORead.setLocalityEndReqAd( requestAd.getLocalityEndReqAd() );
-        requestsAdsDTORead.setLocalityStartReqAd( requestAd.getLocalityStartReqAd() );
-        requestsAdsDTORead.setLocationEndReqAd( requestAd.getLocationEndReqAd() );
-        requestsAdsDTORead.setLocationStartReqAd( requestAd.getLocationStartReqAd() );
-        requestsAdsDTORead.setLongitudeEndReqAd( requestAd.getLongitudeEndReqAd() );
-        requestsAdsDTORead.setLongitudeStartReqAd( requestAd.getLongitudeStartReqAd() );
-        requestsAdsDTORead.setMessageReqAd( requestAd.getMessageReqAd() );
-        requestsAdsDTORead.setPostalCodeEndReqAd( requestAd.getPostalCodeEndReqAd() );
-        requestsAdsDTORead.setPostalCodeStartReqAd( requestAd.getPostalCodeStartReqAd() );
-        requestsAdsDTORead.setPriceReqAd( requestAd.getPriceReqAd() );
-        requestsAdsDTORead.setStateEndReqAd( requestAd.getStateEndReqAd() );
-        requestsAdsDTORead.setStateStartReqAd( requestAd.getStateStartReqAd() );
-        requestsAdsDTORead.setStatusReqAd( requestAd.getStatusReqAd() );
-        requestsAdsDTORead.setSuiteEndReqAd( requestAd.getSuiteEndReqAd() );
-        requestsAdsDTORead.setSuiteStartReqAd( requestAd.getSuiteStartReqAd() );
         requestsAdsDTORead.setUser( requestAd.getUser() );
+        requestsAdsDTORead.setAd( requestAd.getAd() );
+        requestsAdsDTORead.setStatusReqAd( requestAd.getStatusReqAd() );
+        requestsAdsDTORead.setDateCreationReqAd( requestAd.getDateCreationReqAd() );
+        requestsAdsDTORead.setDateAcceptReqAd( requestAd.getDateAcceptReqAd() );
+        requestsAdsDTORead.setDateStartReqAd( requestAd.getDateStartReqAd() );
+        requestsAdsDTORead.setLocationStartReqAd( requestAd.getLocationStartReqAd() );
+        requestsAdsDTORead.setSuiteStartReqAd( requestAd.getSuiteStartReqAd() );
+        requestsAdsDTORead.setLocalityStartReqAd( requestAd.getLocalityStartReqAd() );
+        requestsAdsDTORead.setStateStartReqAd( requestAd.getStateStartReqAd() );
+        requestsAdsDTORead.setPostalCodeStartReqAd( requestAd.getPostalCodeStartReqAd() );
+        requestsAdsDTORead.setCountryStartReqAd( requestAd.getCountryStartReqAd() );
+        requestsAdsDTORead.setLatitudeStartReqAd( requestAd.getLatitudeStartReqAd() );
+        requestsAdsDTORead.setLongitudeStartReqAd( requestAd.getLongitudeStartReqAd() );
+        requestsAdsDTORead.setDateEndReqAd( requestAd.getDateEndReqAd() );
+        requestsAdsDTORead.setLocationEndReqAd( requestAd.getLocationEndReqAd() );
+        requestsAdsDTORead.setSuiteEndReqAd( requestAd.getSuiteEndReqAd() );
+        requestsAdsDTORead.setLocalityEndReqAd( requestAd.getLocalityEndReqAd() );
+        requestsAdsDTORead.setStateEndReqAd( requestAd.getStateEndReqAd() );
+        requestsAdsDTORead.setPostalCodeEndReqAd( requestAd.getPostalCodeEndReqAd() );
+        requestsAdsDTORead.setCountryEndReqAd( requestAd.getCountryEndReqAd() );
+        requestsAdsDTORead.setLatitudeEndReqAd( requestAd.getLatitudeEndReqAd() );
+        requestsAdsDTORead.setLongitudeEndReqAd( requestAd.getLongitudeEndReqAd() );
+        requestsAdsDTORead.setMessageReqAd( requestAd.getMessageReqAd() );
+        requestsAdsDTORead.setPriceReqAd( requestAd.getPriceReqAd() );
 
         return requestsAdsDTORead;
     }
@@ -60,31 +60,31 @@ public class RequestsAdsMapperImpl implements RequestsAdsMapper {
 
         RequestsAds requestsAds = new RequestsAds();
 
-        requestsAds.setAd( requestAdDtoCreate.getAd() );
-        requestsAds.setCountryEndReqAd( requestAdDtoCreate.getCountryEndReqAd() );
-        requestsAds.setCountryStartReqAd( requestAdDtoCreate.getCountryStartReqAd() );
-        requestsAds.setDateAcceptReqAd( requestAdDtoCreate.getDateAcceptReqAd() );
-        requestsAds.setDateCreationReqAd( requestAdDtoCreate.getDateCreationReqAd() );
-        requestsAds.setDateEndReqAd( requestAdDtoCreate.getDateEndReqAd() );
-        requestsAds.setDateStartReqAd( requestAdDtoCreate.getDateStartReqAd() );
-        requestsAds.setLatitudeEndReqAd( requestAdDtoCreate.getLatitudeEndReqAd() );
-        requestsAds.setLatitudeStartReqAd( requestAdDtoCreate.getLatitudeStartReqAd() );
-        requestsAds.setLocalityEndReqAd( requestAdDtoCreate.getLocalityEndReqAd() );
-        requestsAds.setLocalityStartReqAd( requestAdDtoCreate.getLocalityStartReqAd() );
-        requestsAds.setLocationEndReqAd( requestAdDtoCreate.getLocationEndReqAd() );
-        requestsAds.setLocationStartReqAd( requestAdDtoCreate.getLocationStartReqAd() );
-        requestsAds.setLongitudeEndReqAd( requestAdDtoCreate.getLongitudeEndReqAd() );
-        requestsAds.setLongitudeStartReqAd( requestAdDtoCreate.getLongitudeStartReqAd() );
-        requestsAds.setMessageReqAd( requestAdDtoCreate.getMessageReqAd() );
-        requestsAds.setPostalCodeEndReqAd( requestAdDtoCreate.getPostalCodeEndReqAd() );
-        requestsAds.setPostalCodeStartReqAd( requestAdDtoCreate.getPostalCodeStartReqAd() );
-        requestsAds.setPriceReqAd( requestAdDtoCreate.getPriceReqAd() );
-        requestsAds.setStateEndReqAd( requestAdDtoCreate.getStateEndReqAd() );
-        requestsAds.setStateStartReqAd( requestAdDtoCreate.getStateStartReqAd() );
-        requestsAds.setStatusReqAd( requestAdDtoCreate.getStatusReqAd() );
-        requestsAds.setSuiteEndReqAd( requestAdDtoCreate.getSuiteEndReqAd() );
-        requestsAds.setSuiteStartReqAd( requestAdDtoCreate.getSuiteStartReqAd() );
         requestsAds.setUser( requestAdDtoCreate.getUser() );
+        requestsAds.setAd( requestAdDtoCreate.getAd() );
+        requestsAds.setStatusReqAd( requestAdDtoCreate.getStatusReqAd() );
+        requestsAds.setDateCreationReqAd( requestAdDtoCreate.getDateCreationReqAd() );
+        requestsAds.setDateAcceptReqAd( requestAdDtoCreate.getDateAcceptReqAd() );
+        requestsAds.setDateStartReqAd( requestAdDtoCreate.getDateStartReqAd() );
+        requestsAds.setLocationStartReqAd( requestAdDtoCreate.getLocationStartReqAd() );
+        requestsAds.setSuiteStartReqAd( requestAdDtoCreate.getSuiteStartReqAd() );
+        requestsAds.setLocalityStartReqAd( requestAdDtoCreate.getLocalityStartReqAd() );
+        requestsAds.setStateStartReqAd( requestAdDtoCreate.getStateStartReqAd() );
+        requestsAds.setPostalCodeStartReqAd( requestAdDtoCreate.getPostalCodeStartReqAd() );
+        requestsAds.setCountryStartReqAd( requestAdDtoCreate.getCountryStartReqAd() );
+        requestsAds.setLatitudeStartReqAd( requestAdDtoCreate.getLatitudeStartReqAd() );
+        requestsAds.setLongitudeStartReqAd( requestAdDtoCreate.getLongitudeStartReqAd() );
+        requestsAds.setDateEndReqAd( requestAdDtoCreate.getDateEndReqAd() );
+        requestsAds.setLocationEndReqAd( requestAdDtoCreate.getLocationEndReqAd() );
+        requestsAds.setSuiteEndReqAd( requestAdDtoCreate.getSuiteEndReqAd() );
+        requestsAds.setLocalityEndReqAd( requestAdDtoCreate.getLocalityEndReqAd() );
+        requestsAds.setStateEndReqAd( requestAdDtoCreate.getStateEndReqAd() );
+        requestsAds.setPostalCodeEndReqAd( requestAdDtoCreate.getPostalCodeEndReqAd() );
+        requestsAds.setCountryEndReqAd( requestAdDtoCreate.getCountryEndReqAd() );
+        requestsAds.setLatitudeEndReqAd( requestAdDtoCreate.getLatitudeEndReqAd() );
+        requestsAds.setLongitudeEndReqAd( requestAdDtoCreate.getLongitudeEndReqAd() );
+        requestsAds.setMessageReqAd( requestAdDtoCreate.getMessageReqAd() );
+        requestsAds.setPriceReqAd( requestAdDtoCreate.getPriceReqAd() );
 
         return requestsAds;
     }
