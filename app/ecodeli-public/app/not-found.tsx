@@ -29,7 +29,7 @@ export default function NotFound() {
           
           <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-x-6">
             <Link
-              href="/"
+              href="/public"
               className="w-[120px] flex items-center justify-center rounded-lg bg-emerald-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-all duration-300 hover:scale-105"
             >
               <Home className="mr-2 h-5 w-5" />

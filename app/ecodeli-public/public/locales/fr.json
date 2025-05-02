@@ -1,4 +1,5 @@
 {
+  "Components": {},
   "Index": {
     "badge": "Nouveau",
     "title": "EcoDeli",
@@ -50,9 +51,27 @@
     },
     "communityTitle": "Rejoignez la communauté",
     "communityText": "Inscrivez-vous en quelques minutes et découvrez comment notre réseau peut vous faire économiser du temps, de l'argent et participer à la construction d'un modèle de services plus durable et plus humain.",
-    "auth": "Inscription / Connexion"
+    "auth": "Inscription"
   },
-  "Contact": {},
+  "Contact": {
+    "title": "Contactez-nous",
+    "name": "Nom",
+    "email": "Adresse e-mail",
+    "subject": "Sujet",
+    "message": "Message",
+    "send": "Envoyer",
+    "sending": "Envoi en cours...",
+    "successMessage": "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.",
+    "returnHome": "Retour à l'accueil",
+    "errors": {
+      "nameRequired": "Veuillez entrer votre nom",
+      "emailRequired": "Veuillez entrer votre adresse e-mail",
+      "emailInvalid": "Veuillez entrer une adresse e-mail valide",
+      "subjectRequired": "Veuillez entrer un sujet",
+      "messageRequired": "Veuillez entrer votre message",
+      "sendingError": "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer."
+    }
+  },
   "CGU": {
     "title": "Conditions Générales d'Utilisation (CGU)",
     "effective": "En vigueur au 15/04/2025",
@@ -237,27 +256,117 @@
       "passwordRequired": "Le mot de passe est requis",
       "connectionError": "Une erreur est survenue lors de la connexion",
       "form": "Une erreur est survenue lors de l'envoi du formulaire."
-    },
-    "Signin": {},
-    "Forgot": {
-      "title": "Mot de passe oublié",
-      "email": "Email",
-      "submit": "Envoyer le lien de réinitialisation",
-      "submitting": "Envoi en cours...",
-      "noAccount": "Pas encore de compte ? ",
-      "signin": "Inscrivez-vous",
-      "backToLogin": "Retour à la connexion",
-      "successTitle": "Email envoyé",
-      "successMessage": "Si un compte existe avec l'adresse {email}, vous recevrez un email avec les instructions pour réinitialiser votre mot de passe.",
-      "tryAnotherEmail": "Essayer une autre adresse email",
-      "errors": {
-        "emailRequired": "L'email est requis",
-        "emailInvalid": "Format d'email invalide",
-        "sendError": "Erreur lors de l'envoi du lien de réinitialisation",
-        "form": "Une erreur est survenue lors de l'envoi du formulaire."
-      }
     }
   },
-  "Home":{},
-  "Components": {}
+  "Signin": {
+    "title": "Créez votre compte",
+    "step1Title": "Choisissez votre type de compte",
+    "step2Title": "Renseignez vos informations personnelles",
+    "step3Title": "Complétez vos informations",
+    "step4Title": "Finalisez votre inscription",
+    "stepLabels": {
+      "step1": "Type",
+      "step2": "Identité",
+      "step3": "Détails",
+      "step4": "Services"
+    },
+    "roleLabel": "Je m'inscris en tant que :",
+    "roles": {
+      "part": {
+        "title": "Particulier",
+        "description": "Compte personnel pour accéder aux services"
+      },
+      "pro": {
+        "title": "Professionnel",
+        "description": "Compte entreprise avec vérification"
+      }
+    },
+    "roleWarning": "⚠️ Attention: Le choix entre particulier et professionnel est irréversible.",
+    "personalInfo": {
+      "firstName": "Nom",
+      "lastName": "Prénom",
+      "companyName": "Nom de l'entreprise",
+      "siret": "Numéro SIRET",
+      "email": "Adresse e-mail",
+      "phoneNumber": "Numéro de téléphone",
+      "password": "Mot de passe",
+      "passwordConfirm": "Confirmer le mot de passe"
+    },
+    "detailsInfo": {
+      "proPhotoTip": "Une photo professionnelle renforce votre crédibilité auprès des clients",
+      "photoLabel": "Photo de profil :",
+      "photoRequirements": "Format JPG ou PNG, 5MB max",
+      "proBioTip": "Une biographie détaillée augmente vos chances d'être sélectionné pour des missions",
+      "bioLabel": "Biographie :",
+      "bioPlaceholderPro": "Présentez votre parcours, vos compétences et votre expertise...",
+      "bioPlaceholderPart": "Parlez de vous, de vos passions et de ce qui vous motive...",
+      "addressTipPro": "L'adresse de l'entreprise est obligatoire pour valider votre inscription et garantir la transparence auprès des clients.",
+      "addressTipPart": "L'adresse est obligatoire pour valider votre inscription et recevoir des recommandations pertinentes.",
+      "addressLabel": "Adresse",
+      "addressPlaceholder": "Saisissez votre adresse",
+      "suiteLabel": "Complément d'adresse",
+      "suitePlaceholder": "Appartement, bâtiment, étage..."
+    },
+    "services": {
+      "wantsPresta": "Je souhaite également proposer des prestations de services",
+      "wantsPrestaTip": "Ce choix peut être modifié ultérieurement.",
+      "serviceType": "Type de prestation"
+    },
+    "legal": {
+      "acceptCgu": "J'accepte les <link>conditions générales d'utilisation</link>",
+      "acceptCgv": "J'accepte les <link>conditions générales de ventes</link>"
+    },
+    "navigation": {
+      "next": "Suivant",
+      "previous": "Précédent",
+      "finish": "Terminer l'inscription",
+      "submitting": "Inscription en cours...",
+      "backToLogin": "Retour à la connexion"
+    },
+    "errors": {
+      "role": "Veuillez sélectionner votre type de compte",
+      "firstName": "Le nom est requis",
+      "lastName": "Le prénom est requis",
+      "companyName": "Le nom de l'entreprise est requis",
+      "siret": "Le numéro SIRET est requis",
+      "siretInvalid": "Le numéro SIRET doit contenir 14 chiffres",
+      "email": "L'email est requis",
+      "emailInvalid": "Format d'email invalide",
+      "password": "Le mot de passe est requis",
+      "passwordLength": "Le mot de passe doit contenir au moins 12 caractères",
+      "passwordFormat": "Le mot de passe doit contenir au moins une majuscule, une minuscule et un chiffre",
+      "passwordConfirm": "Les mots de passe ne correspondent pas",
+      "phoneNumber": "Le numéro de téléphone est requis",
+      "phoneNumberInvalid": "Le numéro de téléphone doit contenir uniquement des chiffres",
+      "address": "L'adresse est requise",
+      "addressInvalid": "Veuillez sélectionner une adresse dans la liste",
+      "suite": "Votre complément d'addresse ne doit pas dépasser 500 caractères",
+      "bio": "Votre biographie ne doit pas dépasser 1000 caractères",
+      "photoSize": "La taille de l'image ne doit pas dépasser 5MB",
+      "photoFormat": "Seuls les formats JPG et PNG sont acceptés",
+      "idSvc": "Veuillez sélectionner un type de prestation",
+      "acceptCgu": "Vous devez accepter les conditions générales d'utilisation",
+      "acceptCgv": "Vous devez accepter les conditions générales de ventes",
+      "submit": "Erreur serveur, veuillez réessayer plus tard."
+    }
+  },
+  "Forgot": {
+    "title": "Mot de passe oublié",
+    "email": "Email",
+    "submit": "Envoyer le lien de réinitialisation",
+    "submitting": "Envoi en cours...",
+    "noAccount": "Pas encore de compte ? ",
+    "signin": "Inscrivez-vous",
+    "backToLogin": "Retour à la connexion",
+    "successTitle": "Email envoyé",
+    "successMessage": "Si un compte existe avec l'adresse {email}, vous recevrez un email avec les instructions pour réinitialiser votre mot de passe.",
+    "tryAnotherEmail": "Essayer une autre adresse email",
+    "errors": {
+      "emailRequired": "L'email est requis",
+      "emailInvalid": "Format d'email invalide",
+      "sendError": "Erreur lors de l'envoi du lien de réinitialisation",
+      "form": "Une erreur est survenue lors de l'envoi du formulaire."
+    }
+  },
+  "Home": {}
 }

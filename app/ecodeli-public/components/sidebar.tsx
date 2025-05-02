@@ -26,7 +26,7 @@ export default function Sidebar({ isMobile = false, isVisible = false, onClose }
   if (isMobile) {
     return (
       <>
-        {isVisible && (
+        {isVisible && ( 
           <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={onClose}></div>
         )}
         <aside className={clsx(

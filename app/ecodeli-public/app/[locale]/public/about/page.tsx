@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/headerNotCo";
-import Background from "@/components/backgroundNotCo";
+import Background from "@/components/background";
 import SearchBar from "@/components/search-services";
 import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from "@heroicons/react/24/outline";
 

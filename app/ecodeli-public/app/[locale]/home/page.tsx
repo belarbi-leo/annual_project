@@ -124,7 +124,7 @@ const trendingPrestations = [
     price: "35€/h",
     provider: "CleanExpert",
     reviews: 124,
-    image: "/api/placeholder/400/200"
+    image: "/Users/leombelarbi/Desktop/annual_project/app/ecodeli-public/public/deliveryman.jpg"
   },
   { 
     id: 2, 
@@ -134,7 +134,7 @@ const trendingPrestations = [
     price: "45€/h",
     provider: "TechRescue",
     reviews: 89,
-    image: "/api/placeholder/400/200"
+    image: "../../public/deliveryman.jpg"
   },
   { 
     id: 3, 
@@ -144,7 +144,7 @@ const trendingPrestations = [
     price: "15€",
     provider: "SpeedyGo",
     reviews: 156,
-    image: "/api/placeholder/400/200"
+    image: "/Users/leombelarbi/Desktop/annual_project/app/ecodeli-public/public/deliveryman.jpg"
   },
 ];
 

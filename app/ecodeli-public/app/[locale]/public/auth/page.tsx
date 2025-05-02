@@ -46,7 +46,7 @@ export default function Auth() {
   };
 
   return (
-    <main className=" min-h-screen flex items-center justify-center px-6">
+    <div className="min-h-screen flex items-center justify-center px-6">
       <div className="w-full max-w-md p-8 space-y-6 rounded-2xl shadow-lg bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white">
         {errors.form && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative dark:bg-red-900 dark:border-red-800 dark:text-red-100" role="alert">
@@ -85,12 +85,12 @@ export default function Auth() {
           </button>
         </form>
         <p className="text-center text-sm m-0">
-          {t("noAccount")}<Link href="/auth/sign" className="text-emerald-500 hover:underline">{t("signin")}</Link>
+          {t("noAccount")}<Link href="./auth/sign" className="text-emerald-500 hover:underline">{t("signin")}</Link>
         </p>
         <p className="text-center text-sm mt-1">
-          {t("forgot")}<Link href="/auth/forgot" className="text-emerald-500 hover:underline">{t("reset")}</Link>
+          {t("forgot")}<Link href="./auth/forgot" className="text-emerald-500 hover:underline">{t("reset")}</Link>
         </p>
       </div>
-    </main>
+    </div>
   );
 }
