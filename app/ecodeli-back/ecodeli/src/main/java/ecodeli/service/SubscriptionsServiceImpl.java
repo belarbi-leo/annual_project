@@ -47,6 +47,8 @@ public class SubscriptionsServiceImpl implements SubscriptionsService{
             sub.setInsurance(subscription.getInsurance());
             sub.setShippingReduction(subscription.getShippingReduction());
             sub.setSendPriority(subscription.getSendPriority());
+            sub.setTargetAudience(subscription.getTargetAudience());
+            sub.setActive(subscription.getActive());
             return subscriptionsRepository.save(sub);
         }).orElseThrow(() -> new RuntimeException("Subscription not found !"));
     }

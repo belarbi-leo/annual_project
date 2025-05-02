@@ -30,9 +30,11 @@ public class AdsDTOServiceImpl implements AdsDTOService {
         if (adDtoCreate.getStatusAd() == null) adDtoCreate.setStatusAd(StatusAdEnum.pending);
         if (adDtoCreate.getDateCreationAd() == null) adDtoCreate.setDateCreationAd(Timestamp.valueOf(LocalDateTime.now()));
 
+        System.out.println("titre" + adDtoCreate.getTitleAd());
         Object obj = adsMapper.fromDtoCreate(adDtoCreate);
-        if (obj instanceof Ads)
-            return adsMapper.toDtoRead(adsRepository.save((Ads) obj));
+        if (obj instanceof Ads){
+            System.out.println("titre apres mapping" + ((Ads) obj).getTitleAd());
+            return adsMapper.toDtoRead(adsRepository.save((Ads) obj));}
         else
             return obj;
     }

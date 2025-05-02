@@ -1,5 +1,6 @@
 package ecodeli.DTO.create;
 
+import ecodeli.enumeratation.Audience;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
@@ -25,4 +26,8 @@ public class SubscriptionsDTOCreate {
     private Integer permanentReduction;
     //DEFAULT 0
     private Integer sendPriority;
+    //DEFAULT 'part'
+    private Audience targetAudience;
+    //DEFAULT true
+    private Boolean active;
 }

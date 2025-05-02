@@ -70,7 +70,8 @@ public class AdsServiceImpl implements AdsService {
             a.setLongitudeEnd(ad.getLongitudeEnd());
             a.setDescriptionAd(ad.getDescriptionAd());
             a.setPriceAd(ad.getPriceAd());
-            a.setPhotoAd(ad.getPhotoAd());/*
+            a.setPhotoAd(ad.getPhotoAd());
+            a.setTitleAd(ad.getTitleAd());/*
             a.setRequests_ads_list(ad.getRequests_ads_list());
             a.setPackages_list(ad.getPackages_list());
             a.setOpinions_list(ad.getOpinions_list());

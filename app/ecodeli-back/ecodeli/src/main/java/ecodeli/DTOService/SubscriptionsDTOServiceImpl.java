@@ -2,6 +2,7 @@ package ecodeli.DTOService;
 
 import ecodeli.DTO.create.SubscriptionsDTOCreate;
 import ecodeli.DTO.read.SubscriptionsDTORead;
+import ecodeli.enumeratation.Audience;
 import ecodeli.modelMapper.SubscriptionsMapper;
 import ecodeli.repository.SubscriptionsRepository;
 import lombok.AllArgsConstructor;
@@ -26,6 +27,8 @@ public class SubscriptionsDTOServiceImpl implements SubscriptionsDTOService {
         if (subscriptionDtoCreate.getShippingReduction() == null) subscriptionDtoCreate.setShippingReduction(0);
         if (subscriptionDtoCreate.getPermanentReduction() == null) subscriptionDtoCreate.setPermanentReduction(0);
         if (subscriptionDtoCreate.getSendPriority() == null) subscriptionDtoCreate.setSendPriority(0);
+        if (subscriptionDtoCreate.getTargetAudience() == null) subscriptionDtoCreate.setTargetAudience(Audience.part);
+        if (subscriptionDtoCreate.getActive() == null) subscriptionDtoCreate.setActive(true);
 
         return subscriptionsMapper.toDtoRead(subscriptionsRepository.save(subscriptionsMapper.fromDtoCreate(subscriptionDtoCreate)));
     }

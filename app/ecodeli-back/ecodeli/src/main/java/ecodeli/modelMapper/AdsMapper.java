@@ -3,12 +3,9 @@ package ecodeli.modelMapper;
 import ecodeli.DTO.create.AdsDTOCreate;
 import ecodeli.DTO.read.AdsDTORead;
 import ecodeli.modele.Ads;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
-import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.*;
 
-@Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+@Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, unmappedTargetPolicy = ReportingPolicy.IGNORE/*ReportingPolicy.ERROR*/)
 public interface AdsMapper {
     public AdsDTORead toDtoRead(Ads ad);
 

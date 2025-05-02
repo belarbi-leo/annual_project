@@ -1,5 +1,6 @@
 package ecodeli.DTO.read;
 
+import ecodeli.enumeratation.Audience;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,4 +17,6 @@ public class SubscriptionsDTORead {
     private Integer shippingReduction;
     private Integer permanentReduction;
     private Integer sendPriority;
+    private Audience targetAudience;
+    private Boolean active;
 }

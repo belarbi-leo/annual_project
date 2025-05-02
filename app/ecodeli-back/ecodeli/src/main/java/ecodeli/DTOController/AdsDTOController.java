@@ -30,6 +30,7 @@ public class AdsDTOController {
     public ResponseEntity<Object> create(@Valid @RequestBody AdsDTOCreate adDTOCreate){
         Object obj = adsDTOService.create(adDTOCreate);
         if (obj instanceof AdsDTORead){
+            System.out.println("addto titre :"+((AdsDTORead) obj).getTitleAd());
             URI location = URI.create("/ads/" + ((AdsDTORead)obj).getIdAd());
             return ResponseEntity.created(location).body(obj);
         } else {

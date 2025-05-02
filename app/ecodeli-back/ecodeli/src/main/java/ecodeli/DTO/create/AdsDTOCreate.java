@@ -2,6 +2,7 @@ package ecodeli.DTO.create;
 
 import ecodeli.enumeratation.StatusAdEnum;
 import ecodeli.modele.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
@@ -63,4 +64,7 @@ public class AdsDTOCreate {
     @NotNull(message = "The price for the ad must be informed")
     private Float priceAd;
     private String photoAd;
+    @NotBlank(message = "Ad's title can't be blank")
+    @Size(max = 255, message = "Ad's title must be less than 255 characters")
+    private String titleAd;
 }

@@ -88,6 +88,8 @@ public class Ads {
     private Float priceAd;
     @Column(name="photo_ad", columnDefinition="text")
     private String photoAd;
+    @Column(name="title_ad", length = 255)
+    private String titleAd;
     @OneToMany(mappedBy = "ad")
     @JsonIgnore
     private List<RequestsAds> requestsAdsList = new ArrayList<>();

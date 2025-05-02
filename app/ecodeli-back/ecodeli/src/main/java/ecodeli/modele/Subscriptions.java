@@ -1,6 +1,7 @@
 package ecodeli.modele;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import ecodeli.enumeratation.Audience;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,6 +34,10 @@ public class Subscriptions {
     private Integer permanentReduction;
     @Column(name="send_priority")
     private Integer sendPriority;
+    @Column(name="target_audience")
+    private Audience targetAudience;
+    @Column(name="active")
+    private Boolean active;
     @OneToMany(mappedBy = "subscription")
     @JsonIgnore
     private List<Users> usersList = new ArrayList<>();

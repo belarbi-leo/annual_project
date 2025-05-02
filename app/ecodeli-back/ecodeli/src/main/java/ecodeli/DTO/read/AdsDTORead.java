@@ -43,4 +43,5 @@ public class AdsDTORead {
     private String descriptionAd;
     private Float priceAd;
     private String photoAd;
+    private String titleAd;
 }
