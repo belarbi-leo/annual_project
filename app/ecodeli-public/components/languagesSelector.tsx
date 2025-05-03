@@ -19,9 +19,10 @@ export default function LanguageSelector() {
   useEffect(() => {
     const fetchLanguages = async () => {
       try {
-        const languages = await fetchAllLanguages();
-        setLanguages(languages || []);
-      } catch (err) {
+        const response = await fetchAllLanguages();
+        if (response.status !== 200) notFound();
+        setLanguages(response.data || []);
+      } catch (error) {
         notFound();
       }
     };
@@ -48,7 +49,6 @@ export default function LanguageSelector() {
       router.push(newPath);
     }
   };
-
 
   return (
     <div className="relative">

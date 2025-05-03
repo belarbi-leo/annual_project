@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function SearchBar({ useImpactTitle = false, t = (key) => key }) {
+export default function SearchService({ useImpactTitle = false, t = (key) => key }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [locationQuery, setLocationQuery] = useState('');
   

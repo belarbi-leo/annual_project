@@ -1,28 +1,17 @@
-------------------------------
--- 1. Insertion dans les tables sans dépendances
-------------------------------
-INSERT INTO "languages" (name,iso,available) VALUES
+INSERT INTO "languages" (name, iso, available) VALUES
   ('Français','FR',true),
   ('Anglais','EN',false),
   ('Espagnol','ES',false),
   ('Allemand','DE',false),
   ('Italien','IT',false);
-INSERT INTO "subscriptions" (name_sub, description_sub) VALUES
-  ('Basic', 'Abonnement de base'),
-  ('Premium', 'Abonnement premium avec plus de fonctionnalités'),
-  ('Gold', 'Accès à toutes les fonctionnalités'),
-  ('Silver', 'Abonnement intermédiaire'),
-  ('Platinum', 'Abonnement haut de gamme');
 
--- primordial pour le fonctonnement du site :
--- services 
--- depots (5 lignes)
--- nfc (5 lignes)
+INSERT INTO "subscriptions" (name_sub, description_sub, price, insurance, shipping_reduction, permanent_reduction, send_priority) VALUES
+('Free', 'Offre gratuite sans assurance ni réduction', 0.00, 0.00, 0, 0, 0, 'part'),
+('Starter', 'Assurance jusqu’à 115€, 5% de réduction sur l’envoi, 5% de réduction permanente petits colis', 9.90, 115.00, 5, 5, 15, 'part'),
+('Premium', 'Assurance jusqu’à 3000€, envoi prioritaire gratuit 3 fois/mois, 5% sur tous les colis', 19.99, 3000.00, 9, 5, 0, 'part');
+('Pro Basic', 'Abonnement pro de base avec assurance 5000€, 10% de réduction', 29.90, 5000.00, 10, 10, 10, 'pro'),
+('Pro Plus', 'Offre pro avancée avec assurance 10 000€, 15% réduction, envoi prioritaire gratuit illimité', 49.90, 10000.00, 15, 15, 0, 'pro');
 
-
-------------------------------
--- 2. Insertion dans la table users. Remarque : Les colonnes id_subscription et id_langue font référence aux tables précédentes.
-------------------------------
 INSERT INTO "users" (date_registration, date_accept_cgu, role, account_status, date_status, email, password, phone_number, first_name, last_name, company_name, siret, bio, id_subscription, id_language) VALUES
   ('2025-01-01 09:00:00', '2025-01-01 08:59:50', 'admin', 'active', '2025-01-01 09:00:00', 'admin1@example.com', 'password0000', '0612345678', 'Alice', 'Dupont', NULL, NULL, NULL, 1, 1),
   ('2025-01-01 09:00:00', '2025-01-01 08:59:50', 'admin', 'active', '2025-01-01 09:00:00', 'admin2@example.com', 'password0000', '0612345678', 'David', 'Lefevre', NULL, NULL, NULL, 1, 1),
@@ -38,9 +27,6 @@ INSERT INTO "users" (date_registration, date_accept_cgu, role, account_status, d
   ('2025-01-01 09:00:00', '2025-01-01 08:59:50', 'pro', 'pro_pending', '2025-01-01 09:00:00', 'pro5@example.com', 'password0000', '0612345678', NULL, NULL, 'ESGI_Services', '10000000000003', 'Juste pour parler de notre entreprise, on est les meilleurs, pas de débat', 3, 1),
   ('2025-01-01 09:00:00', '2025-01-01 08:59:50', 'pro', 'overlays', '2025-01-02 09:00:00', 'pro6@example.com', 'password0000', '0612345678', NULL, NULL, 'Léo-Services', '10000000000003', 'Juste pour parler de notre entreprise, on est les meilleurs, pas de débat', 1, 1);
 
-------------------------------
--- 3. Insertion dans les tables principales et dépendantes
-------------------------------
 INSERT INTO "services" (id_admin_creator, date_creation_svc, name_svc, category, auth) VALUES
   (1, '2025-01-05 08:00:00', 'Garde d''enfants', 'sp', 'pro'),
   (1, '2025-01-06 09:30:00', 'Aide à domicile', 'sp', 'pro'),
@@ -60,6 +46,7 @@ INSERT INTO "services" (id_admin_creator, date_creation_svc, name_svc, category,
   (1, '2025-01-05 08:00:00', 'Consultant marketing', 'el', 'pro'),
   (1, '2025-01-06 09:30:00', 'Rédacteur de contenu', 'el', 'pro'),
   (1, '2025-01-07 10:00:00', 'Graphiste', 'el', 'pro');
+
 INSERT INTO "services_docs" (id_svc, name_doc) VALUES
   (1, 'Attestation de compétence, de conformité et de moralité'),
   (1, 'Certificat d''assurance responsabilité civile professionnelle'),
@@ -99,8 +86,7 @@ INSERT INTO "services_docs" (id_svc, name_doc) VALUES
   (17, 'Certificat d''assurance responsabilité civile professionnelle'),
   (18, 'Attestation de compétence, de conformité et de moralité'),
   (18, 'Certificat d''assurance responsabilité civile professionnelle');
--- materials (0 lignes)
--- requests_services
+
 INSERT INTO "requests_services" (id_user_req, id_admin_res, id_svc, status_req, date_req, date_res, reason_res) VALUES
   (8, 1, 1, 'approved', '2025-01-01 09:00:00', '2025-01-02 09:00:00', NULL),
   (9, 1, 8, 'approved', '2025-01-01 09:00:00', '2025-01-02 09:00:00', NULL),
@@ -117,7 +103,6 @@ INSERT INTO "requests_services" (id_user_req, id_admin_res, id_svc, status_req, 
   (10, 1, 5, 'pending', '2025-01-02 09:00:00', NULL, NULL),
   (10, 1, 2, 'pending', '2025-01-02 09:00:00', NULL, NULL);
 
--- requests_docs (5 lignes)
 INSERT INTO "requests_docs" (id_req_svc, doc_req, comment) VALUES
   (1, 'file.pdf', NULL),
   (1, 'file.pdf', NULL),
@@ -156,15 +141,30 @@ INSERT INTO "requests_docs" (id_req_svc, doc_req, comment) VALUES
   (14, 'file.pdf', 'Voici mon attestation de compétence, de conformité et de moralité, je suis très motivé pour ce service !'),
   (14, 'file.pdf', 'Voici mon assurance, datée de 2025.');
 
+3,4,5,8,9,10
+liv 4
+('active', 'completed', 'cancelled', 'accepted', 'pending');
+INSERT INTO "ads" (
+  id_user_creator, id_user_accept, id_svc, status_ad,
+  date_creation_ad, date_accept_ad, date_start_ad,
+  location_start, suite_start, locality_start, state_start, postal_code_start, country_start, latitude_start, longitude_start,
+  date_end_ad, location_end, suite_end, locality_end, state_end, postal_code_end, country_end, latitude_end, longitude_end,
+  title_ad, description_ad, price_ad, photo_ad
+) VALUES
 
--- nfc (5 lignes)
--- requests_ads (5 lignes)
--- routes (5 lignes)
--- packages (5 lignes)
--- stock_control (5 lignes)
--- disputes (5 lignes)
--- opinions (5 lignes)
--- payments (5 lignes)
--- matches (5 lignes)
--- depots (5 lignes)
--- ads (5 lignes)
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),
+(3, NULL, 4, ),

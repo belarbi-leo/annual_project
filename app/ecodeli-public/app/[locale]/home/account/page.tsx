@@ -14,7 +14,7 @@ import {
   HandIcon,
   FileTextIcon
 } from "lucide-react";
-
+ // ajoute changement subscriptions
 export default function AccountPage() {
   const [activeTab, setActiveTab] = useState("dashboard");
   const [username, setUsername] = useState("Sophie Martin");

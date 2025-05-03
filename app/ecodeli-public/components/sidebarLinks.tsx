@@ -1,20 +1,9 @@
 "use client";
 
+import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import {
-  HomeIcon,
-  TruckIcon,
-  ExclamationCircleIcon,
-  CreditCardIcon,
-  ChatBubbleLeftRightIcon,
-  CogIcon,
-  MapIcon,
-  ArrowLeftStartOnRectangleIcon,
-  ArchiveBoxIcon,
-  WrenchScrewdriverIcon,
-} from "@heroicons/react/24/outline";
-import clsx from "clsx";
+import { HomeIcon, TruckIcon, ExclamationCircleIcon, CreditCardIcon, ChatBubbleLeftRightIcon, CogIcon, MapIcon, ArrowLeftStartOnRectangleIcon, ArchiveBoxIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/outline";
 
 const links = [
   { name: "Accueil", href: "/home", icon: HomeIcon },
@@ -31,12 +20,12 @@ const links = [
   { name: "Déconnexion", href: "/logout", icon: ArrowLeftStartOnRectangleIcon, isLogout: true },
 ];
 
-interface NavLinksProps {
+interface SidebarLinksProps {
   isCollapsed: boolean;
   onNavigate?: () => void;
 }
 
-export default function NavLinks({ isCollapsed, onNavigate }: NavLinksProps) {
+export default function SidebarLinks({ isCollapsed, onNavigate }: SidebarLinksProps) {
   const pathname = usePathname();
 
   return (

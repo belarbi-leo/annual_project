@@ -334,8 +334,7 @@ export default function NewDeliveryRequest() {
 
       {isOpen && (
         <div 
-          className="fixed inset-0 flex justify-center items-center z-50"
-          style={{ background: "#00000091" }} 
+          className="fixed inset-0 flex justify-center items-center z-50 bg-black/60 dark:bg-black/70"
           role="dialog" 
           aria-modal="true" 
           aria-labelledby="modal-title"

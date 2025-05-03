@@ -8,6 +8,11 @@ export interface Subscriptions {
     idSub: number;
     nameSub: string;
     descriptionSub: string;
+    price: number;
+    insurance: number;
+    shippingReduction: number;
+    permanentReduction: number;
+    sendPriority: number;
 }
 export interface Services {
     idSvc?: number;
