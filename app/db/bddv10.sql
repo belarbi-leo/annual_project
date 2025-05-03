@@ -8,8 +8,7 @@ CREATE TYPE payment_status AS ENUM ('pending', 'completed', 'failed');
 CREATE TYPE request_ad_status AS ENUM ('pending', 'accept', 'refused');
 CREATE TYPE svc_category AS ENUM ('sp', 'tl', 'tr', 'id', 'el');
 CREATE TYPE svc_authorization AS ENUM ('part', 'pro', 'all');
-CREATE TYPE target_audience AS ENUM ('part', 'pro', 'all');
-CREATE TYPE status_sub AS ENUM ('active', 'cancelled');
+CREATE TYPE audience AS ENUM ('part', 'pro', 'all');
 
 CREATE TABLE "users" (
   "id_user" serial PRIMARY KEY,
@@ -101,7 +100,7 @@ CREATE TABLE "stock_control" (
 CREATE TABLE "ads" (
   "id_ad" serial PRIMARY KEY,
   "id_user_creator" integer NOT NULL,
-  "id_user_accept" integer NOT NULL,
+  "id_user_accept" integer /*NOT NULL*/,
   "id_svc" integer NOT NULL,
   "status_ad" ad_status DEFAULT 'pending',
   "date_creation_ad" timestamp DEFAULT 'now()',
@@ -124,7 +123,7 @@ CREATE TABLE "ads" (
   "country_end" varchar(255), 
   "latitude_end" decimal(9,6),
   "longitude_end" decimal(9,6),
-  "title_ad" varchar(255),
+  "title_ad" varchar(255) NOT NULL,
   "description_ad" varchar(255),
   "price_ad" decimal(10,2) NOT NULL, /*NOT NULL plutot que DEFAULT 0.0 parce que c'est mieux que ce soit les gens de l'appli qui choississent un prix*/
   "photo_ad" text
@@ -132,7 +131,7 @@ CREATE TABLE "ads" (
 
 CREATE TABLE "languages" (
   "id_language" serial PRIMARY KEY,
-  "name" varchar(30) UNIQUE,
+  "name" varchar(30) UNIQUE NOT NULL, /*NOT NULL*/
   "iso" varchar(2) UNIQUE NOT NULL,
   "available" boolean DEFAULT false
 );
@@ -151,8 +150,8 @@ CREATE TABLE "subscriptions" (
   "shipping_reduction" integer DEFAULT 0, /*DEFAULT 0*/
   "permanent_reduction" integer DEFAULT 0, /*DEFAULT 0*/
   "send_priority" integer DEFAULT 0, /*DEFAULT 0*/
-  "target_audience" target_audience DEFAULT 'part',
-  "status_sub" status_sub DEFAULT 'active'
+  "target_audience" audience DEFAULT 'part',
+  "active" boolean DEFAULT true
 );
 
 CREATE TABLE "requests_ads" (

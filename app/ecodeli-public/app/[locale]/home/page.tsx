@@ -91,7 +91,6 @@ export default function Home() {
             price: subscription.price, 
             insurance: subscription.insurance, 
             shippingReduction: subscription.shippingReduction, 
-            permanentReduction: subscription.permanentReduction, 
             sendPriority: subscription.sendPriority
           };
         });
@@ -240,7 +239,7 @@ export default function Home() {
           </div>
 
           {/* test : Affichage des abonnements */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
             {displaySubscriptions.map((subscription) => (
               <div
                 key={subscription.nameSub}
@@ -267,7 +266,7 @@ export default function Home() {
                 {/* 
                 // PAS OPTIMAL !!! Créer feature apres avoir recupe les données comme pour categories 
                 // const features: string[] = [];
-                // if (subscription.shippingReduction > 0) features.push(`${subscription.shippingReduction}% de réduction sur l'envoi`);
+                // if (subscription.shippingReduction > 0) features.push(`${subscription.shippingReduction}% de réduction sur l'envoi de colis`);
                 // if (subscription.permanentReduction > 0) features.push(`${subscription.permanentReduction}% de réduction permanente`);
                 // if (subscription.insurance > 0) {
                 //   features.push(`Assurance jusqu'à ${subscription.insurance.toLocaleString('fr-FR')}€`);
