@@ -3,7 +3,8 @@ import { fetchAllLanguages } from "@/lib/languages/fetchAllLanguages";
 
 async function getLocales() {
   const languages = await fetchAllLanguages();
-  return languages.map((lang: { iso: string }) => lang.iso.toLowerCase());
+  console.log('languages:', languages);
+  return languages.data.map((lang: { iso: string }) => lang.iso.toLowerCase());
 }
  
 export const routing = defineRouting({

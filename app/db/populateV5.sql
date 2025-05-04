@@ -5,10 +5,10 @@ INSERT INTO "languages" (name, iso, available) VALUES
   ('Allemand','DE',false),
   ('Italien','IT',false);
 
-INSERT INTO "subscriptions" (name_sub, description_sub, price, insurance, shipping_reduction, send_priority) VALUES
+INSERT INTO "subscriptions" (name_sub, description_sub, price, insurance, shipping_reduction, send_priority, target_audience) VALUES
 ('Free', 'Offre gratuite sans assurance ni réduction', 0.00, 0.00, 0, 0, 'part'),
 ('Starter', 'Assurance jusqu’à 115€, 5% de réduction sur l’envoi, 5% de réduction permanente petits colis', 9.90, 115.00, 5, 10, 'part'),
-('Premium', 'Assurance jusqu’à 3000€, envoi prioritaire gratuit 3 fois/mois, 5% sur tous les colis', 19.99, 3000.00, 9, 15, 'part');
+('Premium', 'Assurance jusqu’à 3000€, envoi prioritaire gratuit 3 fois/mois, 5% sur tous les colis', 19.99, 3000.00, 9, 15, 'part'),
 ('Pro Basic', 'Abonnement pro de base avec assurance 5000€, 10% de réduction', 29.90, 5000.00, 10, 15, 'pro'),
 ('Pro Plus', 'Offre pro avancée avec assurance 10 000€, 15% réduction, envoi prioritaire gratuit illimité', 49.90, 10000.00, 15, 20, 'pro');
 

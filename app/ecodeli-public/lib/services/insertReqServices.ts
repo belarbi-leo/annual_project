@@ -11,9 +11,6 @@ export async function insertReqService(data: ReqServices): Promise<{ status: num
     const res_data = await res.json();
     return { status: res.status, data: res_data };
   } catch (error) {
-    return { 
-      status: 500, 
-      data: 'Erreur serveur, veuillez réessayer plus tard.',
-    };
+    return { status: 500, data: [] , error: 'Error server'};
   }
 }
