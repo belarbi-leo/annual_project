@@ -39,7 +39,7 @@ public class GlobalExceptionHandler {
             return ResponseEntity.status(HttpStatus.CONFLICT).body(new ResponseErrorV2("email", message));
         }
 
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(new ResponseErrorV2("global error", message));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseErrorV2("global error", message));
     }
 
     //Pour les erreurs sur body manquant ou mal formé des requêtes

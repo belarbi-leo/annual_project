@@ -20,7 +20,6 @@ ecodeli/repository/AdsRepository.class
 ecodeli/repository/PaymentsRepository.class
 ecodeli/service/DepotsServiceImpl.class
 ecodeli/DTOService/RequestsDocsDTOService.class
-ecodeli/authentification/JwtUtil.class
 ecodeli/controller/RequestsServicesController.class
 ecodeli/DTO/create/RequestsServicesDTOCreate.class
 ecodeli/DTOService/SubscriptionsDTOService.class
@@ -59,7 +58,6 @@ ecodeli/DTO/read/PaymentsDTORead.class
 ecodeli/DTOController/PaymentsDTOController.class
 ecodeli/modele/Opinions.class
 ecodeli/modelMapper/subClassImpl/PackagesMapperSubClassImpl.class
-ecodeli/authentification/AuthResponse.class
 ecodeli/DTO/create/RoutesDTOCreate.class
 ecodeli/service/NFCService.class
 ecodeli/controller/ServicesDocsController.class
@@ -117,7 +115,6 @@ ecodeli/DTOController/SubscriptionsDTOController.class
 ecodeli/DTO/read/RequestsDocsDTORead.class
 ecodeli/service/RequestsDocsService.class
 ecodeli/controller/AdsController.class
-ecodeli/authentification/AuthController.class
 ecodeli/enumeratation/StatusReqAnnonceEnum.class
 ecodeli/enumeratation/RoleEnum.class
 ecodeli/controller/UsersController.class
@@ -163,7 +160,6 @@ ecodeli/DTOService/PackagesDTOServiceImpl.class
 ecodeli/repository/LanguagesRepository.class
 ecodeli/service/PaymentsServiceImpl.class
 ecodeli/DTO/read/DepotsDTORead.class
-ecodeli/authentification/SecurityConfig.class
 ecodeli/config/SecurityConfig.class
 ecodeli/repository/UsersRepository.class
 ecodeli/modelMapper/PackagesMapperImpl.class
@@ -189,7 +185,6 @@ ecodeli/modelMapper/subClassImpl/ServicesMapperSubClassImpl.class
 ecodeli/config/CorsConfig.class
 ecodeli/repository/SubscriptionsRepository.class
 ecodeli/DTOService/DepotsDTOServiceImpl.class
-ecodeli/authentification/CustomUserDetailsService.class
 ecodeli/service/NFCServiceImpl.class
 ecodeli/DTOService/UsersDTOService.class
 ecodeli/enumeratation/TypePackEnum.class
@@ -220,7 +215,6 @@ ecodeli/modelMapper/AdsMapperImpl.class
 ecodeli/modele/RequestsDocs.class
 ecodeli/modelMapper/DisputesMapperImpl.class
 ecodeli/service/UsersServiceImpl.class
-ecodeli/authentification/AuthRequest.class
 ecodeli/modele/Packages.class
 ecodeli/DTO/read/SubscriptionsDTORead.class
 ecodeli/modelMapper/subClassImpl/NFCMapperSubClassImpl.class

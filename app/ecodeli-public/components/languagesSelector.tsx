@@ -18,9 +18,9 @@ export default function LanguageSelector() {
   useEffect(() => {
     const fetchLanguages = async () => {
       try {
-        const response = await fetchAllLanguages();
-        if (response.status !== 200) notFound();
-        setLanguages(response.data || []);
+        const res = await fetchAllLanguages();
+        if (res.status !== 200) notFound();
+        setLanguages(res.data || []);
       } catch (error) {
         notFound();
       }

@@ -13,6 +13,8 @@ export interface Subscriptions {
     shippingReduction: number;
     permanentReduction: number;
     sendPriority: number;
+    targetAudience: 'part' | 'pro' | 'all';
+    active: boolean;
 }
 export interface Services {
     idSvc?: number;

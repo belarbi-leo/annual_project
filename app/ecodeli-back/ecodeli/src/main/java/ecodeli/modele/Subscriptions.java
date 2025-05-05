@@ -35,6 +35,7 @@ public class Subscriptions {
     @Column(name="send_priority")
     private Integer sendPriority;
     @Column(name="target_audience")
+    @Enumerated(EnumType.STRING)
     private Audience targetAudience;
     @Column(name="active")
     private Boolean active;

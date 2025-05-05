@@ -84,12 +84,6 @@
 /Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/ecodeli/src/main/java/ecodeli/DTOService/UsersDTOService.java
 /Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/ecodeli/src/main/java/ecodeli/DTOService/UsersDTOServiceImpl.java
 /Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/ecodeli/src/main/java/ecodeli/EcodeliApplication.java
-/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/ecodeli/src/main/java/ecodeli/authentification/AuthController.java
-/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/ecodeli/src/main/java/ecodeli/authentification/AuthRequest.java
-/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/ecodeli/src/main/java/ecodeli/authentification/AuthResponse.java
-/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/ecodeli/src/main/java/ecodeli/authentification/CustomUserDetailsService.java
-/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/ecodeli/src/main/java/ecodeli/authentification/JwtUtil.java
-/Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/ecodeli/src/main/java/ecodeli/authentification/SecurityConfig.java
 /Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/ecodeli/src/main/java/ecodeli/config/ApiProperties.java
 /Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/ecodeli/src/main/java/ecodeli/config/CorsConfig.java
 /Users/leombelarbi/Desktop/annual_project/app/ecodeli-back/ecodeli/src/main/java/ecodeli/config/SecurityConfig.java

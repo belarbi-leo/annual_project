@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Services, Subscriptions } from '@/lib/types';
+import SubscriptionDisplay from "@/components/subscriptions"
 import { fetchServicesByAuth } from "@/lib/services/fetchServicesByAuth"; 
 import { fetchAllSubscriptions } from "@/lib/subscriptions/fetchSubByAudience"; // modif quand bryan add new attribut 
 
@@ -90,7 +91,9 @@ export default function Home() {
             price: subscription.price, 
             insurance: subscription.insurance, 
             shippingReduction: subscription.shippingReduction, 
-            sendPriority: subscription.sendPriority
+            sendPriority: subscription.sendPriority,
+            targetAudience: subscription.targetAudience,
+            active: subscription.active
           };
         });
         setSubscriptions(subscriptions);
@@ -206,6 +209,9 @@ export default function Home() {
         </div>
         
         {/* Abonnements */}
+
+        < SubscriptionDisplay />
+        
         <div className="mb-12">
           <div className="relative mb-10">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-white my-5 relative z-10">Choisissez l'abonnement qui correspond à vos besoins et profitez de tous nos services</h2>
