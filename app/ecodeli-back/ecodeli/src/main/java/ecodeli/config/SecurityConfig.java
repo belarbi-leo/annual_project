@@ -9,7 +9,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
-@Profile({"dev","prod"})
+@Profile("dev")
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {

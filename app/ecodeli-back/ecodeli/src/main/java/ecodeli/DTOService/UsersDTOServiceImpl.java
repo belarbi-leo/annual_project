@@ -82,6 +82,10 @@ public class UsersDTOServiceImpl implements UsersDTOService {
         return Optional.empty();*/
     }
 
+    public Optional<UsersDTORead> findByEmail(String email){
+        return usersRepository.findByEmail(email).map(usersMapper::toDtoRead);
+    }
+
     @Override
     public Optional<Object> update(Integer id, UsersDTOCreate userDtoCreate) {
         return usersRepository.findById(id).map(usr -> {
