@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-05-08T14:19:42+0200",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
+    date = "2025-05-08T15:25:52+0200",
+    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
 )
 @Component
 public class ServicesMapperImpl implements ServicesMapper {
@@ -22,12 +22,12 @@ public class ServicesMapperImpl implements ServicesMapper {
 
         ServicesDTORead servicesDTORead = new ServicesDTORead();
 
-        servicesDTORead.setIdSvc( service.getIdSvc() );
         servicesDTORead.setAdminCreator( service.getAdminCreator() );
-        servicesDTORead.setDateCreationSvc( service.getDateCreationSvc() );
-        servicesDTORead.setNameSvc( service.getNameSvc() );
-        servicesDTORead.setCategory( service.getCategory() );
         servicesDTORead.setAuth( service.getAuth() );
+        servicesDTORead.setCategory( service.getCategory() );
+        servicesDTORead.setDateCreationSvc( service.getDateCreationSvc() );
+        servicesDTORead.setIdSvc( service.getIdSvc() );
+        servicesDTORead.setNameSvc( service.getNameSvc() );
 
         return servicesDTORead;
     }
@@ -40,10 +40,10 @@ public class ServicesMapperImpl implements ServicesMapper {
 
         Services services = new Services();
 
+        services.setAuth( serviceDtoCreate.getAuth() );
+        services.setCategory( serviceDtoCreate.getCategory() );
         services.setDateCreationSvc( serviceDtoCreate.getDateCreationSvc() );
         services.setNameSvc( serviceDtoCreate.getNameSvc() );
-        services.setCategory( serviceDtoCreate.getCategory() );
-        services.setAuth( serviceDtoCreate.getAuth() );
 
         return services;
     }
@@ -54,17 +54,17 @@ public class ServicesMapperImpl implements ServicesMapper {
             return service;
         }
 
+        if ( serviceDtoCreate.getAuth() != null ) {
+            service.setAuth( serviceDtoCreate.getAuth() );
+        }
+        if ( serviceDtoCreate.getCategory() != null ) {
+            service.setCategory( serviceDtoCreate.getCategory() );
+        }
         if ( serviceDtoCreate.getDateCreationSvc() != null ) {
             service.setDateCreationSvc( serviceDtoCreate.getDateCreationSvc() );
         }
         if ( serviceDtoCreate.getNameSvc() != null ) {
             service.setNameSvc( serviceDtoCreate.getNameSvc() );
-        }
-        if ( serviceDtoCreate.getCategory() != null ) {
-            service.setCategory( serviceDtoCreate.getCategory() );
-        }
-        if ( serviceDtoCreate.getAuth() != null ) {
-            service.setAuth( serviceDtoCreate.getAuth() );
         }
 
         return service;

@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-05-08T14:19:42+0200",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
+    date = "2025-05-08T15:25:52+0200",
+    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
 )
 @Component
 public class RequestsDocsMapperImpl implements RequestsDocsMapper {
@@ -22,10 +22,10 @@ public class RequestsDocsMapperImpl implements RequestsDocsMapper {
 
         RequestsDocsDTORead requestsDocsDTORead = new RequestsDocsDTORead();
 
+        requestsDocsDTORead.setComment( requestDoc.getComment() );
+        requestsDocsDTORead.setDocReq( requestDoc.getDocReq() );
         requestsDocsDTORead.setIdDocReq( requestDoc.getIdDocReq() );
         requestsDocsDTORead.setReqSvc( requestDoc.getReqSvc() );
-        requestsDocsDTORead.setDocReq( requestDoc.getDocReq() );
-        requestsDocsDTORead.setComment( requestDoc.getComment() );
 
         return requestsDocsDTORead;
     }
@@ -38,8 +38,8 @@ public class RequestsDocsMapperImpl implements RequestsDocsMapper {
 
         RequestsDocs requestsDocs = new RequestsDocs();
 
-        requestsDocs.setDocReq( requestDocDtoCreate.getDocReq() );
         requestsDocs.setComment( requestDocDtoCreate.getComment() );
+        requestsDocs.setDocReq( requestDocDtoCreate.getDocReq() );
 
         return requestsDocs;
     }
@@ -50,11 +50,11 @@ public class RequestsDocsMapperImpl implements RequestsDocsMapper {
             return requestDoc;
         }
 
-        if ( requestDocDtoCreate.getDocReq() != null ) {
-            requestDoc.setDocReq( requestDocDtoCreate.getDocReq() );
-        }
         if ( requestDocDtoCreate.getComment() != null ) {
             requestDoc.setComment( requestDocDtoCreate.getComment() );
+        }
+        if ( requestDocDtoCreate.getDocReq() != null ) {
+            requestDoc.setDocReq( requestDocDtoCreate.getDocReq() );
         }
 
         return requestDoc;

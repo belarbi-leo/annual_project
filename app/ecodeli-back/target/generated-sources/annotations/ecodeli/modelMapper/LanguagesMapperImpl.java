@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-05-08T14:19:42+0200",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
+    date = "2025-05-08T15:25:52+0200",
+    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
 )
 @Component
 public class LanguagesMapperImpl implements LanguagesMapper {
@@ -22,10 +22,10 @@ public class LanguagesMapperImpl implements LanguagesMapper {
 
         LanguagesDTORead languagesDTORead = new LanguagesDTORead();
 
-        languagesDTORead.setIdLanguage( language.getIdLanguage() );
-        languagesDTORead.setName( language.getName() );
-        languagesDTORead.setIso( language.getIso() );
         languagesDTORead.setAvailable( language.getAvailable() );
+        languagesDTORead.setIdLanguage( language.getIdLanguage() );
+        languagesDTORead.setIso( language.getIso() );
+        languagesDTORead.setName( language.getName() );
 
         return languagesDTORead;
     }
@@ -38,9 +38,9 @@ public class LanguagesMapperImpl implements LanguagesMapper {
 
         Languages languages = new Languages();
 
-        languages.setName( languageDtoCreate.getName() );
-        languages.setIso( languageDtoCreate.getIso() );
         languages.setAvailable( languageDtoCreate.getAvailable() );
+        languages.setIso( languageDtoCreate.getIso() );
+        languages.setName( languageDtoCreate.getName() );
 
         return languages;
     }
@@ -51,14 +51,14 @@ public class LanguagesMapperImpl implements LanguagesMapper {
             return language;
         }
 
-        if ( languageDtoCreate.getName() != null ) {
-            language.setName( languageDtoCreate.getName() );
+        if ( languageDtoCreate.getAvailable() != null ) {
+            language.setAvailable( languageDtoCreate.getAvailable() );
         }
         if ( languageDtoCreate.getIso() != null ) {
             language.setIso( languageDtoCreate.getIso() );
         }
-        if ( languageDtoCreate.getAvailable() != null ) {
-            language.setAvailable( languageDtoCreate.getAvailable() );
+        if ( languageDtoCreate.getName() != null ) {
+            language.setName( languageDtoCreate.getName() );
         }
 
         return language;

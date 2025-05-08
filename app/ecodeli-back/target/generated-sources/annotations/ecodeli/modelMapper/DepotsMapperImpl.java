@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-05-08T14:19:42+0200",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
+    date = "2025-05-08T15:25:52+0200",
+    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
 )
 @Component
 public class DepotsMapperImpl implements DepotsMapper {
@@ -22,16 +22,16 @@ public class DepotsMapperImpl implements DepotsMapper {
 
         DepotsDTORead depotsDTORead = new DepotsDTORead();
 
-        depotsDTORead.setIdDepot( depot.getIdDepot() );
-        depotsDTORead.setStorageCapacityDepot( depot.getStorageCapacityDepot() );
-        depotsDTORead.setLocation( depot.getLocation() );
-        depotsDTORead.setSuite( depot.getSuite() );
-        depotsDTORead.setLocality( depot.getLocality() );
-        depotsDTORead.setState( depot.getState() );
-        depotsDTORead.setPostalCode( depot.getPostalCode() );
         depotsDTORead.setCountry( depot.getCountry() );
+        depotsDTORead.setIdDepot( depot.getIdDepot() );
         depotsDTORead.setLatitude( depot.getLatitude() );
+        depotsDTORead.setLocality( depot.getLocality() );
+        depotsDTORead.setLocation( depot.getLocation() );
         depotsDTORead.setLongitude( depot.getLongitude() );
+        depotsDTORead.setPostalCode( depot.getPostalCode() );
+        depotsDTORead.setState( depot.getState() );
+        depotsDTORead.setStorageCapacityDepot( depot.getStorageCapacityDepot() );
+        depotsDTORead.setSuite( depot.getSuite() );
 
         return depotsDTORead;
     }
@@ -44,15 +44,15 @@ public class DepotsMapperImpl implements DepotsMapper {
 
         Depots depots = new Depots();
 
-        depots.setStorageCapacityDepot( depotDtoCreate.getStorageCapacityDepot() );
-        depots.setLocation( depotDtoCreate.getLocation() );
-        depots.setSuite( depotDtoCreate.getSuite() );
-        depots.setLocality( depotDtoCreate.getLocality() );
-        depots.setState( depotDtoCreate.getState() );
-        depots.setPostalCode( depotDtoCreate.getPostalCode() );
         depots.setCountry( depotDtoCreate.getCountry() );
         depots.setLatitude( depotDtoCreate.getLatitude() );
+        depots.setLocality( depotDtoCreate.getLocality() );
+        depots.setLocation( depotDtoCreate.getLocation() );
         depots.setLongitude( depotDtoCreate.getLongitude() );
+        depots.setPostalCode( depotDtoCreate.getPostalCode() );
+        depots.setState( depotDtoCreate.getState() );
+        depots.setStorageCapacityDepot( depotDtoCreate.getStorageCapacityDepot() );
+        depots.setSuite( depotDtoCreate.getSuite() );
 
         return depots;
     }
@@ -63,32 +63,32 @@ public class DepotsMapperImpl implements DepotsMapper {
             return depot;
         }
 
-        if ( depotDtoCreate.getStorageCapacityDepot() != null ) {
-            depot.setStorageCapacityDepot( depotDtoCreate.getStorageCapacityDepot() );
-        }
-        if ( depotDtoCreate.getLocation() != null ) {
-            depot.setLocation( depotDtoCreate.getLocation() );
-        }
-        if ( depotDtoCreate.getSuite() != null ) {
-            depot.setSuite( depotDtoCreate.getSuite() );
-        }
-        if ( depotDtoCreate.getLocality() != null ) {
-            depot.setLocality( depotDtoCreate.getLocality() );
-        }
-        if ( depotDtoCreate.getState() != null ) {
-            depot.setState( depotDtoCreate.getState() );
-        }
-        if ( depotDtoCreate.getPostalCode() != null ) {
-            depot.setPostalCode( depotDtoCreate.getPostalCode() );
-        }
         if ( depotDtoCreate.getCountry() != null ) {
             depot.setCountry( depotDtoCreate.getCountry() );
         }
         if ( depotDtoCreate.getLatitude() != null ) {
             depot.setLatitude( depotDtoCreate.getLatitude() );
         }
+        if ( depotDtoCreate.getLocality() != null ) {
+            depot.setLocality( depotDtoCreate.getLocality() );
+        }
+        if ( depotDtoCreate.getLocation() != null ) {
+            depot.setLocation( depotDtoCreate.getLocation() );
+        }
         if ( depotDtoCreate.getLongitude() != null ) {
             depot.setLongitude( depotDtoCreate.getLongitude() );
+        }
+        if ( depotDtoCreate.getPostalCode() != null ) {
+            depot.setPostalCode( depotDtoCreate.getPostalCode() );
+        }
+        if ( depotDtoCreate.getState() != null ) {
+            depot.setState( depotDtoCreate.getState() );
+        }
+        if ( depotDtoCreate.getStorageCapacityDepot() != null ) {
+            depot.setStorageCapacityDepot( depotDtoCreate.getStorageCapacityDepot() );
+        }
+        if ( depotDtoCreate.getSuite() != null ) {
+            depot.setSuite( depotDtoCreate.getSuite() );
         }
 
         return depot;

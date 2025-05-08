@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-05-08T14:19:42+0200",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
+    date = "2025-05-08T15:25:52+0200",
+    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
 )
 @Component
 public class DisputesMapperImpl implements DisputesMapper {
@@ -22,15 +22,15 @@ public class DisputesMapperImpl implements DisputesMapper {
 
         DisputesDTORead disputesDTORead = new DisputesDTORead();
 
-        disputesDTORead.setIdDispute( dispute.getIdDispute() );
         disputesDTORead.setAd( dispute.getAd() );
-        disputesDTORead.setUser( dispute.getUser() );
-        disputesDTORead.setDateStatusDispute( dispute.getDateStatusDispute() );
-        disputesDTORead.setStatusDispute( dispute.getStatusDispute() );
-        disputesDTORead.setDescriptionDispute( dispute.getDescriptionDispute() );
         disputesDTORead.setDateEndDispute( dispute.getDateEndDispute() );
+        disputesDTORead.setDateStatusDispute( dispute.getDateStatusDispute() );
+        disputesDTORead.setDescriptionDispute( dispute.getDescriptionDispute() );
+        disputesDTORead.setIdDispute( dispute.getIdDispute() );
         disputesDTORead.setPhotoDispute( dispute.getPhotoDispute() );
         disputesDTORead.setResolutionText( dispute.getResolutionText() );
+        disputesDTORead.setStatusDispute( dispute.getStatusDispute() );
+        disputesDTORead.setUser( dispute.getUser() );
 
         return disputesDTORead;
     }
@@ -43,12 +43,12 @@ public class DisputesMapperImpl implements DisputesMapper {
 
         Disputes disputes = new Disputes();
 
-        disputes.setDateStatusDispute( disputeDtoCreate.getDateStatusDispute() );
-        disputes.setStatusDispute( disputeDtoCreate.getStatusDispute() );
-        disputes.setDescriptionDispute( disputeDtoCreate.getDescriptionDispute() );
         disputes.setDateEndDispute( disputeDtoCreate.getDateEndDispute() );
+        disputes.setDateStatusDispute( disputeDtoCreate.getDateStatusDispute() );
+        disputes.setDescriptionDispute( disputeDtoCreate.getDescriptionDispute() );
         disputes.setPhotoDispute( disputeDtoCreate.getPhotoDispute() );
         disputes.setResolutionText( disputeDtoCreate.getResolutionText() );
+        disputes.setStatusDispute( disputeDtoCreate.getStatusDispute() );
 
         return disputes;
     }
@@ -59,23 +59,23 @@ public class DisputesMapperImpl implements DisputesMapper {
             return dispute;
         }
 
+        if ( disputeDtoCreate.getDateEndDispute() != null ) {
+            dispute.setDateEndDispute( disputeDtoCreate.getDateEndDispute() );
+        }
         if ( disputeDtoCreate.getDateStatusDispute() != null ) {
             dispute.setDateStatusDispute( disputeDtoCreate.getDateStatusDispute() );
         }
-        if ( disputeDtoCreate.getStatusDispute() != null ) {
-            dispute.setStatusDispute( disputeDtoCreate.getStatusDispute() );
-        }
         if ( disputeDtoCreate.getDescriptionDispute() != null ) {
             dispute.setDescriptionDispute( disputeDtoCreate.getDescriptionDispute() );
-        }
-        if ( disputeDtoCreate.getDateEndDispute() != null ) {
-            dispute.setDateEndDispute( disputeDtoCreate.getDateEndDispute() );
         }
         if ( disputeDtoCreate.getPhotoDispute() != null ) {
             dispute.setPhotoDispute( disputeDtoCreate.getPhotoDispute() );
         }
         if ( disputeDtoCreate.getResolutionText() != null ) {
             dispute.setResolutionText( disputeDtoCreate.getResolutionText() );
+        }
+        if ( disputeDtoCreate.getStatusDispute() != null ) {
+            dispute.setStatusDispute( disputeDtoCreate.getStatusDispute() );
         }
 
         return dispute;

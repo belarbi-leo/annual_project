@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-05-08T14:19:42+0200",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 23.0.2 (Homebrew)"
+    date = "2025-05-08T15:25:52+0200",
+    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
 )
 @Component
 public class OpinionsMapperImpl implements OpinionsMapper {
@@ -22,12 +22,12 @@ public class OpinionsMapperImpl implements OpinionsMapper {
 
         OpinionsDTORead opinionsDTORead = new OpinionsDTORead();
 
-        opinionsDTORead.setIdOpinion( opinion.getIdOpinion() );
         opinionsDTORead.setAd( opinion.getAd() );
+        opinionsDTORead.setDateOpinion( opinion.getDateOpinion() );
+        opinionsDTORead.setDescriptionOpinion( opinion.getDescriptionOpinion() );
+        opinionsDTORead.setIdOpinion( opinion.getIdOpinion() );
         opinionsDTORead.setNoteOpinion( opinion.getNoteOpinion() );
         opinionsDTORead.setTitleOpinion( opinion.getTitleOpinion() );
-        opinionsDTORead.setDescriptionOpinion( opinion.getDescriptionOpinion() );
-        opinionsDTORead.setDateOpinion( opinion.getDateOpinion() );
 
         return opinionsDTORead;
     }
@@ -40,10 +40,10 @@ public class OpinionsMapperImpl implements OpinionsMapper {
 
         Opinions opinions = new Opinions();
 
+        opinions.setDateOpinion( opinionDtoCreate.getDateOpinion() );
+        opinions.setDescriptionOpinion( opinionDtoCreate.getDescriptionOpinion() );
         opinions.setNoteOpinion( opinionDtoCreate.getNoteOpinion() );
         opinions.setTitleOpinion( opinionDtoCreate.getTitleOpinion() );
-        opinions.setDescriptionOpinion( opinionDtoCreate.getDescriptionOpinion() );
-        opinions.setDateOpinion( opinionDtoCreate.getDateOpinion() );
 
         return opinions;
     }
@@ -54,15 +54,15 @@ public class OpinionsMapperImpl implements OpinionsMapper {
             return opinion;
         }
 
-        opinion.setNoteOpinion( opinionDtoCreate.getNoteOpinion() );
-        if ( opinionDtoCreate.getTitleOpinion() != null ) {
-            opinion.setTitleOpinion( opinionDtoCreate.getTitleOpinion() );
+        if ( opinionDtoCreate.getDateOpinion() != null ) {
+            opinion.setDateOpinion( opinionDtoCreate.getDateOpinion() );
         }
         if ( opinionDtoCreate.getDescriptionOpinion() != null ) {
             opinion.setDescriptionOpinion( opinionDtoCreate.getDescriptionOpinion() );
         }
-        if ( opinionDtoCreate.getDateOpinion() != null ) {
-            opinion.setDateOpinion( opinionDtoCreate.getDateOpinion() );
+        opinion.setNoteOpinion( opinionDtoCreate.getNoteOpinion() );
+        if ( opinionDtoCreate.getTitleOpinion() != null ) {
+            opinion.setTitleOpinion( opinionDtoCreate.getTitleOpinion() );
         }
 
         return opinion;
